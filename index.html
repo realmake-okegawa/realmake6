@@ -334,6 +334,23 @@
       position: relative;
       isolation: isolate;
       overflow: hidden;
+      background-image:
+        linear-gradient(90deg, rgba(255, 255, 255, .82) 0%, rgba(255, 255, 255, .68) 52%, rgba(255, 255, 255, .38) 100%),
+        var(--section-bg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .section-photo.section-muted {
+      background-image:
+        linear-gradient(90deg, rgba(246, 244, 239, .84) 0%, rgba(246, 244, 239, .70) 52%, rgba(246, 244, 239, .40) 100%),
+        var(--section-bg);
+    }
+
+    .section-photo > .container {
+      position: relative;
+      z-index: 1;
     }
 
     .section-photo::before,
@@ -345,22 +362,15 @@
     }
 
     .section-photo::before {
-      z-index: -2;
-      background: var(--section-bg) center / cover no-repeat;
-      transform: scale(1.02);
+      display: none;
     }
 
     .section-photo::after {
-      z-index: -1;
-      background:
-        linear-gradient(90deg, rgba(255, 255, 255, .96) 0%, rgba(255, 255, 255, .92) 52%, rgba(255, 255, 255, .74) 100%),
-        linear-gradient(0deg, rgba(255, 255, 255, .92), rgba(255, 255, 255, .92));
+      display: none;
     }
 
     .section-photo.section-muted::after {
-      background:
-        linear-gradient(90deg, rgba(246, 244, 239, .97) 0%, rgba(246, 244, 239, .93) 52%, rgba(246, 244, 239, .76) 100%),
-        linear-gradient(0deg, rgba(246, 244, 239, .92), rgba(246, 244, 239, .92));
+      display: none;
     }
 
     .section-photo-dark {
@@ -726,6 +736,81 @@
       cursor: pointer;
       color: var(--green);
       font-weight: 900;
+    }
+
+    .blog-archive {
+      grid-column: 1 / -1;
+      margin-top: 4px;
+    }
+
+    .blog-archive > summary {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 12px 20px;
+      background: var(--green);
+      color: #fff;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 16px 34px rgba(0, 111, 91, .22);
+    }
+
+    .blog-archive > summary::marker {
+      content: "";
+    }
+
+    .blog-archive-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .blog-archive-item {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .9);
+      box-shadow: 0 10px 24px rgba(18, 50, 75, .05);
+    }
+
+    .blog-archive-item > summary {
+      display: grid;
+      gap: 5px;
+      padding: 15px 18px;
+      color: var(--navy);
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .blog-archive-item > summary::marker {
+      content: "";
+    }
+
+    .blog-archive-item > summary:hover {
+      background: rgba(0, 111, 91, .06);
+    }
+
+    .blog-archive-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 900;
+    }
+
+    .blog-archive-item > summary strong {
+      font-size: 1rem;
+      line-height: 1.45;
+    }
+
+    .blog-archive-item .blog-card {
+      border: 0;
+      border-top: 1px solid var(--line);
+      border-radius: 0;
+      box-shadow: none;
     }
 
     .profile {
@@ -1171,7 +1256,7 @@
       </div>
     </div>
 
-    <section class="section section-muted section-photo" style="--section-bg: url(&#39;assets/sections/roof-finish.jpg&#39;);">
+    <section class="section section-muted section-photo" style="--section-bg: url(&#39;assets/images/work-roof-finish.jpg&#39;);">
       <div class="container">
         <div class="section-head">
           <div>
@@ -1203,7 +1288,7 @@
       </div>
     </section>
 
-    <section class="section section-photo" id="strength" style="--section-bg: url(&#39;assets/sections/black-exterior-angle.jpg&#39;);">
+    <section class="section section-photo" id="strength" style="--section-bg: url(&#39;assets/images/work-wall-finish.jpg&#39;);">
       <div class="container">
         <div class="section-head">
           <div>
@@ -1232,7 +1317,7 @@
       </div>
     </section>
 
-    <section class="section section-muted section-photo" id="services" style="--section-bg: url(&#39;assets/sections/brown-house-wide.jpg&#39;);">
+    <section class="section section-muted section-photo" id="services" style="--section-bg: url(&#39;assets/images/work-roof-tile-coating-1.jpg&#39;);">
       <div class="container">
         <div class="section-head">
           <div>
@@ -1254,7 +1339,7 @@
       </div>
     </section>
 
-    <section class="section section-photo" style="--section-bg: url(&#39;assets/sections/white-after-front.jpg&#39;);">
+    <section class="section section-photo" style="--section-bg: url(&#39;assets/images/work-scaffold.jpg&#39;);">
       <div class="container">
         <div class="section-head">
           <div>
@@ -1273,7 +1358,7 @@
       </div>
     </section>
 
-    <section class="section section-muted section-photo" id="works" style="--section-bg: url(&#39;assets/sections/black-exterior-front.jpg&#39;);">
+    <section class="section section-muted section-photo" id="works" style="--section-bg: url(&#39;assets/images/work-roof-tile-coating-2.jpg&#39;);">
       <div class="container">
         <div class="section-head">
           <div>
@@ -1309,7 +1394,7 @@
       </div>
     </section>
 
-    <section class="section section-photo" id="blog" style="--section-bg: url(&#39;assets/sections/brown-house-front.jpg&#39;);">
+    <section class="section section-photo" id="blog" style="--section-bg: url(&#39;assets/blog/2026-06-15-undercoat-work-2.jpg&#39;);">
       <div class="container">
         <div class="section-head">
           <div>
@@ -1377,226 +1462,291 @@
               </div>
             </div>
           </article>
-          <article class="blog-card">
-            <img src="./index_files/2026-06-12-diy-paint-tools-1.jpg" alt="初めてのDIY塗装でそろえる道具の説明画像">
-            <div class="blog-body">
-              <div class="blog-meta"><time datetime="2026-06-12">2026.06.12</time><span>DIY塗装</span></div>
-              <h3>初めてのDIY塗装でそろえる道具</h3>
-              <p>おはようございます☀️<br><br>今日は、【初めてのDIY塗装でそろえる道具】についてです✅<br><br>木製の踏み台や棚、プランター台などを自分で塗って楽しむ方も増えています😊<br><br>ただ、初めてだと、「何を用意すればいいの？」と思う方も多いと思います🤔<br><br>小さな木製品を塗るくらいであれば、最初から高い道具をたくさんそろえる必要はありません☝🏼<br><br>まずは、このあたりがあれ...</p>
-              <details class="blog-more">
-                <summary>続きを読む</summary>
-                <p>おはようございます☀️</p>
-              <p>今日は、【初めてのDIY塗装でそろえる道具】についてです✅</p>
-              <p>木製の踏み台や棚、プランター台などを自分で塗って楽しむ方も増えています😊</p>
-              <p>ただ、初めてだと、「何を用意すればいいの？」と思う方も多いと思います🤔</p>
-              <p>小さな木製品を塗るくらいであれば、最初から高い道具をたくさんそろえる必要はありません☝🏼</p>
-              <p>まずは、このあたりがあれば始めやすいです。</p>
-              <p>✅ ① サンドペーパー<br>木を塗る前に、表面を整えるために使います。<br>ザラつきや毛羽立ちを軽く取るだけでも、仕上がりがかなり変わります✨<br>初めてなら、120番〜240番くらいが使いやすいと思います。</p>
-              <p>✅ ② 刷毛<br>細かい部分や角、木の隙間などを塗る時に使います。<br>小さな踏み台や棚なら、まずは中くらいの刷毛が1本あれば使いやすいです😊</p>
-              <p>✅ ③ ローラー<br>広い面を塗る時に便利です。<br>踏み台の天板や棚板など、平らな部分を塗る時はローラーを使うと早く塗れます☝🏼<br>ただし、小さい物なら刷毛だけでも大丈夫です👍🏼</p>
-              <p>✅ ④ マスキングテープ<br>塗りたくない部分を守ったり、色を分けたい時に使います。<br>きれいなラインを出したい時にも便利です✨</p>
-              <p>✅ ⑤ 養生シート・新聞紙<br>床やまわりを汚さないために敷きます。<br>DIY塗装では、思ったより塗料が垂れたり飛んだりすることがあります💦<br>塗る前にまわりを守っておくと安心です✨</p>
-              <p>✅ ⑥ ウエス・雑巾<br>ペーパーがけをした後の粉やホコリを拭いたり、塗料が付いてしまった時に使います。<br>塗る前にホコリを落とすだけでも、仕上がりがきれいになります😊</p>
-              <p>✅ ⑦ 水性ペンキ<br>初めてのDIYなら、水性ペンキが扱いやすいと思います☝🏼<br>臭いが少なく、道具も水で洗えるものが多いので、初心者の方には使いやすいです🎨<br>ただし、屋外で使う物なら、屋外用・木部用など、用途に合った塗料を選ぶことが大切です☝🏼</p>
-              <p>DIY塗装は、道具を完璧にそろえることよりも、<br>✅ 塗る前に整える<br>✅ まわりを汚さないようにする<br>✅ 薄く丁寧に塗る<br>✅ しっかり乾かす<br>このあたりが大切です✨</p>
-              <p>まずは小さな木製品から、気軽にDIY塗装を楽しんでみるのもおすすめです😊</p>
+          <details class="blog-archive">
+            <summary>ブログ記事をもっと見る</summary>
+            <div class="blog-archive-list">
+              <details class="blog-archive-item">
+                <summary>
+                  <span class="blog-archive-meta"><time datetime="2026-06-12">2026.06.12</time><span>DIY塗装</span></span>
+                  <strong>初めてのDIY塗装でそろえる道具</strong>
+                </summary>
+                          <article class="blog-card">
+                            <img src="./index_files/2026-06-12-diy-paint-tools-1.jpg" alt="初めてのDIY塗装でそろえる道具の説明画像">
+                            <div class="blog-body">
+                              <div class="blog-meta"><time datetime="2026-06-12">2026.06.12</time><span>DIY塗装</span></div>
+                              <h3>初めてのDIY塗装でそろえる道具</h3>
+                              <p>おはようございます☀️<br><br>今日は、【初めてのDIY塗装でそろえる道具】についてです✅<br><br>木製の踏み台や棚、プランター台などを自分で塗って楽しむ方も増えています😊<br><br>ただ、初めてだと、「何を用意すればいいの？」と思う方も多いと思います🤔<br><br>小さな木製品を塗るくらいであれば、最初から高い道具をたくさんそろえる必要はありません☝🏼<br><br>まずは、このあたりがあれ...</p>
+                              <details class="blog-more">
+                                <summary>続きを読む</summary>
+                                <p>おはようございます☀️</p>
+                              <p>今日は、【初めてのDIY塗装でそろえる道具】についてです✅</p>
+                              <p>木製の踏み台や棚、プランター台などを自分で塗って楽しむ方も増えています😊</p>
+                              <p>ただ、初めてだと、「何を用意すればいいの？」と思う方も多いと思います🤔</p>
+                              <p>小さな木製品を塗るくらいであれば、最初から高い道具をたくさんそろえる必要はありません☝🏼</p>
+                              <p>まずは、このあたりがあれば始めやすいです。</p>
+                              <p>✅ ① サンドペーパー<br>木を塗る前に、表面を整えるために使います。<br>ザラつきや毛羽立ちを軽く取るだけでも、仕上がりがかなり変わります✨<br>初めてなら、120番〜240番くらいが使いやすいと思います。</p>
+                              <p>✅ ② 刷毛<br>細かい部分や角、木の隙間などを塗る時に使います。<br>小さな踏み台や棚なら、まずは中くらいの刷毛が1本あれば使いやすいです😊</p>
+                              <p>✅ ③ ローラー<br>広い面を塗る時に便利です。<br>踏み台の天板や棚板など、平らな部分を塗る時はローラーを使うと早く塗れます☝🏼<br>ただし、小さい物なら刷毛だけでも大丈夫です👍🏼</p>
+                              <p>✅ ④ マスキングテープ<br>塗りたくない部分を守ったり、色を分けたい時に使います。<br>きれいなラインを出したい時にも便利です✨</p>
+                              <p>✅ ⑤ 養生シート・新聞紙<br>床やまわりを汚さないために敷きます。<br>DIY塗装では、思ったより塗料が垂れたり飛んだりすることがあります💦<br>塗る前にまわりを守っておくと安心です✨</p>
+                              <p>✅ ⑥ ウエス・雑巾<br>ペーパーがけをした後の粉やホコリを拭いたり、塗料が付いてしまった時に使います。<br>塗る前にホコリを落とすだけでも、仕上がりがきれいになります😊</p>
+                              <p>✅ ⑦ 水性ペンキ<br>初めてのDIYなら、水性ペンキが扱いやすいと思います☝🏼<br>臭いが少なく、道具も水で洗えるものが多いので、初心者の方には使いやすいです🎨<br>ただし、屋外で使う物なら、屋外用・木部用など、用途に合った塗料を選ぶことが大切です☝🏼</p>
+                              <p>DIY塗装は、道具を完璧にそろえることよりも、<br>✅ 塗る前に整える<br>✅ まわりを汚さないようにする<br>✅ 薄く丁寧に塗る<br>✅ しっかり乾かす<br>このあたりが大切です✨</p>
+                              <p>まずは小さな木製品から、気軽にDIY塗装を楽しんでみるのもおすすめです😊</p>
+                              </details>
+                            </div>
+                          </article>
+              </details>
+              <details class="blog-archive-item">
+                <summary>
+                  <span class="blog-archive-meta"><time datetime="2026-06-11">2026.06.11</time><span>現場ブログ</span></span>
+                  <strong>雨漏り解消後の工事再開</strong>
+                </summary>
+                          <article class="blog-card">
+                            <img src="./index_files/2026-06-11-leak-repair-resume-1.jpg" alt="雨漏り解消後に工事を再開する現場のサビ止め作業">
+                            <div class="blog-body">
+                              <div class="blog-meta"><time datetime="2026-06-11">2026.06.11</time><span>現場ブログ</span></div>
+                              <h3>雨漏り解消後の工事再開</h3>
+                              <p>おはようございます☀</p>
+                              <p>雨漏りが止まらずにストップしていた現場が、ようやく雨漏りが解消されたとの連絡があり、工事を再開することができます✨</p>
+                              <p>梅雨ではありますが、天気を見ながら計画的に進めていきたいと思います💪🏼</p>
+                              <div class="blog-gallery">
+                                <a href="./index_files/2026-06-11-leak-repair-resume-2.jpg" target="_blank" rel="noopener" aria-label="サビ止め施工後の庇まわりを大きく表示"><img src="./index_files/2026-06-11-leak-repair-resume-2.jpg" alt="サビ止め施工後の庇まわり"></a>
+                                <a href="./index_files/2026-06-11-leak-repair-resume-3.jpg" target="_blank" rel="noopener" aria-label="屋根まわりのサビ止め施工後を大きく表示"><img src="./index_files/2026-06-11-leak-repair-resume-3.jpg" alt="屋根まわりのサビ止め施工後"></a>
+                              </div>
+                            </div>
+                          </article>
+              </details>
+              <details class="blog-archive-item">
+                <summary>
+                  <span class="blog-archive-meta"><time datetime="2026-06-10">2026.06.10</time><span>現場ブログ</span></span>
+                  <strong>梅雨時期の網戸張替え</strong>
+                </summary>
+                          <article class="blog-card">
+                            <div class="blog-body">
+                              <div class="blog-meta"><time datetime="2026-06-10">2026.06.10</time><span>現場ブログ</span></div>
+                              <h3>梅雨時期の網戸張替え</h3>
+                              <p>おはようございます！<br><br>梅雨ですね〜☔️<br><br>昨日は朝から雨だったので、【網戸の張替え】をしました💪🏼<br><br>だんだんとコツを掴んできて、スピードもクオリティも上がってきました✨<br><br>梅雨が終わると暑い夏がやってきます🔥<br><br>窓を開けることが多くなると思うので、この梅雨時期に網戸が破れていないか、穴は空いていないかの確認をしてみてください☝🏼<br><br>穴が空いている...</p>
+                              <details class="blog-more">
+                                <summary>続きを読む</summary>
+                                <p>おはようございます！</p>
+                              <p>梅雨ですね〜☔️</p>
+                              <p>昨日は朝から雨だったので、【網戸の張替え】をしました💪🏼</p>
+                              <p>だんだんとコツを掴んできて、スピードもクオリティも上がってきました✨</p>
+                              <p>梅雨が終わると暑い夏がやってきます🔥</p>
+                              <p>窓を開けることが多くなると思うので、この梅雨時期に網戸が破れていないか、穴は空いていないかの確認をしてみてください☝🏼</p>
+                              <p>穴が空いていると虫が侵入してしまうので注意しましょう⚠️</p>
+                              </details>
+                            </div>
+                          </article>
+              </details>
+              <details class="blog-archive-item">
+                <summary>
+                  <span class="blog-archive-meta"><time datetime="2026-06-09">2026.06.09</time><span>DIY塗装</span></span>
+                  <strong>DIY塗装で失敗しやすい3つのこと</strong>
+                </summary>
+                          <article class="blog-card">
+                            <div class="blog-body">
+                              <div class="blog-meta"><time datetime="2026-06-09">2026.06.09</time><span>DIY塗装</span></div>
+                              <h3>DIY塗装で失敗しやすい3つのこと</h3>
+                              <p>おはようございます☀️<br><br>今日は、【DIY塗装で失敗しやすい3つのこと】についてです✅<br><br>最近は、DIYを楽しむ方も増えていますね😊<br><br>木製の踏み台や棚、プランター台などを自分で塗るだけでも、雰囲気がかなり変わるので楽しいと思います🎨<br><br>ただ、DIY塗装でよくある失敗もあります☝🏼<br><br>特に気をつけたいのが、この3つです。<br><br>① 厚く塗りすぎる<br>「一回で...</p>
+                              <details class="blog-more">
+                                <summary>続きを読む</summary>
+                                <p>おはようございます☀️</p>
+                              <p>今日は、【DIY塗装で失敗しやすい3つのこと】についてです✅</p>
+                              <p>最近は、DIYを楽しむ方も増えていますね😊</p>
+                              <p>木製の踏み台や棚、プランター台などを自分で塗るだけでも、雰囲気がかなり変わるので楽しいと思います🎨</p>
+                              <p>ただ、DIY塗装でよくある失敗もあります☝🏼</p>
+                              <p>特に気をつけたいのが、この3つです。</p>
+                              <p>① 厚く塗りすぎる<br>「一回でキレイに仕上げたい」と思って塗料をたっぷり付けすぎると、<br>・タレる<br>・ムラになる<br>・乾きにくくなる<br>原因になることがあります💦</p>
+                              <p>塗装は、一度で完璧に仕上げようとするより、薄く塗って重ねる方がキレイに仕上がりやすいです☝🏼</p>
+                              <p>② 乾く前に重ね塗りする<br>表面が乾いて見えても、中までしっかり乾いていないことがあります。<br>乾く前に重ね塗りすると、<br>・ベタつく<br>・塗膜がよれる<br>・仕上がりが悪くなる<br>こともあります😥<br>塗料に書いてある乾燥時間は、できるだけ守るのがおすすめです☝🏼</p>
+                              <p>③ ホコリを落とさず塗る<br>ペーパーがけをした後や、木材を置いていた場所には、細かい粉やホコリが残っていることがあります☝🏼<br>そのまま塗ってしまうと、<br>・表面がザラザラする<br>・ゴミが混ざる<br>・仕上がりが汚く見える<br>原因になることがあります💦<br>塗る前に、乾いた布や軍手などでホコリをしっかり落としておくと安心です😊</p>
+                              <p>DIY塗装は、難しそうに見えるかもしれませんが、<br>✅ 薄く塗る<br>✅ しっかり乾かす<br>✅ ホコリを落とす<br>この3つを意識するだけでも、仕上がりはかなり変わります✨</p>
+                              <p>焦らず、少しずつ丁寧に😊</p>
+                              <p>今日お伝えしたことを意識して、気軽にDIY塗装を楽しんでみてください💪🏼</p>
+                              </details>
+                            </div>
+                          </article>
+              </details>
+              <details class="blog-archive-item">
+                <summary>
+                  <span class="blog-archive-meta"><time datetime="2026-06-08">2026.06.08</time><span>現場ブログ</span></span>
+                  <strong>初めてのポスト交換作業</strong>
+                </summary>
+                          <article class="blog-card">
+                            <div class="blog-body">
+                              <div class="blog-meta"><time datetime="2026-06-08">2026.06.08</time><span>現場ブログ</span></div>
+                              <h3>初めてのポスト交換作業</h3>
+                              <p>おはようございます✨<br><br>昨日は日曜日だったのですが、月曜日が雨予報ということで急遽作業をさせて頂きました💪🏼<br><br>初めての【ポスト交換】でした🔥<br><br>初めての経験なので、事前に下調べ、勉強をしました！<br><br>勉強の甲斐あって順調に交換することができました✨<br><br>ブロック塀が乾いた頃に補修と最終確認にまた伺う予定です🫡<br><br>新しい知識とスキルを得られたことに感謝で...</p>
+                              <details class="blog-more">
+                                <summary>続きを読む</summary>
+                                <p>おはようございます✨</p>
+                              <p>昨日は日曜日だったのですが、月曜日が雨予報ということで急遽作業をさせて頂きました💪🏼</p>
+                              <p>初めての【ポスト交換】でした🔥</p>
+                              <p>初めての経験なので、事前に下調べ、勉強をしました！</p>
+                              <p>勉強の甲斐あって順調に交換することができました✨</p>
+                              <p>ブロック塀が乾いた頃に補修と最終確認にまた伺う予定です🫡</p>
+                              <p>新しい知識とスキルを得られたことに感謝です✨🙏🏻</p>
+                              <p>ご依頼ありがとうございました✨</p>
+                              </details>
+                            </div>
+                          </article>
+              </details>
+              <details class="blog-archive-item">
+                <summary>
+                  <span class="blog-archive-meta"><time datetime="2026-06-07">2026.06.07</time><span>DIY塗装</span></span>
+                  <strong>木を塗る前のペーパーがけが大切な理由</strong>
+                </summary>
+                          <article class="blog-card">
+                            <img src="./index_files/2026-06-07-wood-sanding-1.jpg" alt="木を塗る前のペーパーがけが大切という説明画像">
+                            <div class="blog-body">
+                              <div class="blog-meta"><time datetime="2026-06-07">2026.06.07</time><span>DIY塗装</span></div>
+                              <h3>木を塗る前のペーパーがけが大切な理由</h3>
+                              <p>おはようございます☀️<br><br>今日は、【木を塗る前のペーパーがけ】についてです✅<br><br>DIYで木製の踏み台や棚を作った時、「そのまま塗ればいいんじゃないの？」と思う方も多いかもしれません🤔<br><br>もちろん、そのまま塗ることもできます。<br><br>ただ、塗る前に少しだけペーパーをかけると、仕上がりがかなり変わります☝🏼<br><br>ペーパーがけをする理由は、<br>・木の表面のザラつきを整...</p>
+                              <details class="blog-more">
+                                <summary>続きを読む</summary>
+                                <p>おはようございます☀️</p>
+                              <p>今日は、【木を塗る前のペーパーがけ】についてです✅</p>
+                              <p>DIYで木製の踏み台や棚を作った時、「そのまま塗ればいいんじゃないの？」と思う方も多いかもしれません🤔</p>
+                              <p>もちろん、そのまま塗ることもできます。</p>
+                              <p>ただ、塗る前に少しだけペーパーをかけると、仕上がりがかなり変わります☝🏼</p>
+                              <p>ペーパーがけをする理由は、<br>・木の表面のザラつきを整える<br>・毛羽立ちを取る<br>・汚れや小さな傷を目立ちにくくする<br>・塗料を均一に塗りやすくする<br>こういった効果があるからです✨</p>
+                              <p>特に木材は、見た目ではきれいに見えても、触ると少しザラザラしていることがあります💦</p>
+                              <p>この状態のまま塗ると、<br>・仕上がりがデコボコする<br>・刷毛が引っかかる<br>・ムラになりやすい<br>・触った時にザラつきが残る<br>ことがあります💦</p>
+                              <p>初めてのDIYなら、まずは【120番〜240番くらい】のサンドペーパーが使いやすいと思います😊</p>
+                              <p>最初に120番前後で表面を整えて、最後に240番前後で軽く仕上げるイメージです☝🏼</p>
+                              <p>ペーパーをかけた後は、木の粉やホコリをしっかり落としてから塗装します✨</p>
+                              <p>ここを省いてしまうと、せっかくペーパーをかけても、ホコリが塗膜に残ってしまいます⚠️</p>
+                              <p>DIY塗装は、塗る作業に目が行きがちですが<br>実は、【塗る前の準備】がとても大切です☝🏼</p>
+                              <p>少し手間はかかりますが、このひと手間で、見た目も触り心地もかなり良くなります😊</p>
+                              <p>初めてDIYに挑戦する方は、ぜひ塗る前のペーパーがけも試してみてください✨</p>
+                              </details>
+                              <div class="blog-gallery">
+                                <a href="./index_files/2026-06-07-wood-sanding-2.jpg" target="_blank" rel="noopener" aria-label="DIYで踏み台を塗る前にペーパーがけをする説明画像を大きく表示"><img src="./index_files/2026-06-07-wood-sanding-2.jpg" alt="DIYで踏み台を塗る前にペーパーがけをする説明画像"></a>
+                              </div>
+                            </div>
+                          </article>
+              </details>
+              <details class="blog-archive-item">
+                <summary>
+                  <span class="blog-archive-meta"><time datetime="2026-06-06">2026.06.06</time><span>DIY塗装</span></span>
+                  <strong>初めてのDIYにおすすめな小さな木製品づくり</strong>
+                </summary>
+                          <article class="blog-card">
+                            <img src="./index_files/2026-06-06-first-diy-1.jpg" alt="初めてのDIYにおすすめの木製踏み台塗装">
+                            <div class="blog-body">
+                              <div class="blog-meta"><time datetime="2026-06-06">2026.06.06</time><span>DIY塗装</span></div>
+                              <h3>初めてのDIYにおすすめな小さな木製品づくり</h3>
+                              <p>おはようございます☀️<br><br>今日は少し外壁塗装とは離れて、【初めてのDIYにおすすめなもの】についてです😊<br><br>最近は、ご自宅でDIYを楽しむ方も増えていますよね💪🏼<br><br>ただ、いきなり大きな家具を作ったり、家の外壁を塗ったりするのは、少しハードルが高いと思います💦<br><br>そこで個人的におすすめなのが、【小さな木製品を作って塗装するDIY】です☝🏼<br><br>例えば...</p>
+                              <details class="blog-more">
+                                <summary>続きを読む</summary>
+                                <p>おはようございます☀️</p>
+                              <p>今日は少し外壁塗装とは離れて、【初めてのDIYにおすすめなもの】についてです😊</p>
+                              <p>最近は、ご自宅でDIYを楽しむ方も増えていますよね💪🏼</p>
+                              <p>ただ、いきなり大きな家具を作ったり、家の外壁を塗ったりするのは、少しハードルが高いと思います💦</p>
+                              <p>そこで個人的におすすめなのが、【小さな木製品を作って塗装するDIY】です☝🏼</p>
+                              <p>例えば、<br>・木製の踏み台<br>・小さな棚<br>・プランター台<br>・すのこを使った収納<br>・玄関まわりの小物置き<br>このあたりは、初めての方でも挑戦しやすいと思います😊</p>
+                              <p>特に木製の踏み台やプランター台は、形もシンプルで、使い道もあるのでおすすめです✨</p>
+                              <p>そしてDIYで楽しいのが、最後の【塗装】です🤭🎨</p>
+                              <p>同じ木材でも、色を塗るだけで雰囲気がかなり変わります✨</p>
+                              <p>ナチュラル系にしたり、白っぽくして明るくしたり、濃い色で落ち着いた雰囲気にしたり😊</p>
+                              <p>自分の好みに合わせて仕上げられるのが、DIYの良いところだと思います✨</p>
+                              <p>ただし、塗装する時は少しだけポイントがあります☝🏼</p>
+                              <p>✅ いきなり塗らずに軽くペーパーをかける<br>✅ ホコリをしっかり落とす<br>✅ 一度に厚く塗りすぎない<br>✅ 乾かす時間をしっかり取る<br>このあたりを意識するだけでも、仕上がりがかなり変わります☝🏼</p>
+                              <p>大きな工事はプロに任せるとしても、小さなDIYなら、ご自宅で楽しみながら家への愛着も湧くと思います🏠</p>
+                              <p>まずは小さな木製品から、気軽に挑戦してみると良いと思います🙆🏻</p>
+                              </details>
+                              <div class="blog-gallery">
+                                <a href="./index_files/2026-06-06-first-diy-2.jpg" target="_blank" rel="noopener" aria-label="木製踏み台を使った初めてのDIY手順を大きく表示"><img src="./index_files/2026-06-06-first-diy-2.jpg" alt="木製踏み台を使った初めてのDIY手順"></a>
+                              </div>
+                            </div>
+                          </article>
+              </details>
+              <details class="blog-archive-item">
+                <summary>
+                  <span class="blog-archive-meta"><time datetime="2026-06-05">2026.06.05</time><span>注意喚起</span></span>
+                  <strong>突然の屋根点検営業への対応方法</strong>
+                </summary>
+                          <article class="blog-card">
+                            <div class="blog-body">
+                              <div class="blog-meta"><time datetime="2026-06-05">2026.06.05</time><span>注意喚起</span></div>
+                              <h3>突然の屋根点検営業への対応方法</h3>
+                              <p>おはようございます☀️<br><br>昨日は、台風後に増えやすい【屋根点検の訪問営業】についてお話しました☝🏼<br><br>今日はその続きで、もし本当に<br>「屋根が浮いて見えました」<br>「無料で点検しますよ」<br>「このままだと雨漏りしますよ」<br>と言われた時に、まずどう対応すればいいのかについてです☝🏼<br><br>台風の後は、お家のことが心配になりやすい時期です🌀<br><br>だからこそ、不安な言葉...</p>
+                              <details class="blog-more">
+                                <summary>続きを読む</summary>
+                                <p>おはようございます☀️</p>
+                              <p>昨日は、台風後に増えやすい【屋根点検の訪問営業】についてお話しました☝🏼</p>
+                              <p>今日はその続きで、もし本当に<br>「屋根が浮いて見えました」<br>「無料で点検しますよ」<br>「このままだと雨漏りしますよ」<br>と言われた時に、まずどう対応すればいいのかについてです☝🏼</p>
+                              <p>台風の後は、お家のことが心配になりやすい時期です🌀</p>
+                              <p>だからこそ、不安な言葉を言われると、ついその場で見てもらいたくなるかもしれません😥</p>
+                              <p>ですが、いきなり来た業者さんをその場ですぐ屋根に上げるのは、一度冷静になった方が良いと思います⚠️</p>
+                              <p>まず確認してほしいのは、<br>✅ 会社名と担当者名<br>✅ 名刺や会社情報<br>✅ どこの会社なのか<br>✅ 実在している会社なのか<br>このあたりです。</p>
+                              <p>そして大切なのは、その場で屋根に上げたり、その場で契約したりしないこと⚠️</p>
+                              <p>「今すぐ確認した方がいいです」<br>「今日だけ安くできます」<br>「このままだと雨漏りします」<br>と言われても、まずは一度断って大丈夫です❗️</p>
+                              <p>その後で、その会社をしっかり調べてみてください✅</p>
+                              <p>・会社名で検索する<br>・口コミを見る<br>・所在地を確認する<br>・施工事例があるか見る<br>・本当に信頼できそうか確認する<br>こういった確認はとても大切です😊</p>
+                              <p>それでも気になる場合は、家族と相談したり、しっかりとリサーチして信頼できそうな会社に改めて問い合わせてみるのが安心だと思います✨</p>
+                              <p>屋根は、普段お客様が確認しにくい場所です。</p>
+                              <p>だからこそ、「言われたから信じる」、その場で判断するのではなく、一度落ち着いて、しっかり調べてからどこに相談するのかが、とても大切だと思っています✨</p>
+                              </details>
+                            </div>
+                          </article>
+              </details>
+              <details class="blog-archive-item">
+                <summary>
+                  <span class="blog-archive-meta"><time datetime="2026-06-04">2026.06.04</time><span>注意喚起</span></span>
+                  <strong>台風後の屋根点検詐欺に注意</strong>
+                </summary>
+                          <article class="blog-card">
+                            <div class="blog-body">
+                              <div class="blog-meta"><time datetime="2026-06-04">2026.06.04</time><span>注意喚起</span></div>
+                              <h3>台風後の屋根点検詐欺に注意</h3>
+                              <p>台風の後は、<br>「近くで工事していて屋根が浮いて見えました」<br>「台風で瓦がズレているかもしれません」<br>「無料で屋根を見ますよ」<br>こういう訪問営業が増えることがあります🌀<br><br>もちろん、全部が悪いわけではありません☝🏼<br><br>ただ、いきなり来た人を屋根に上げてしまうのは注意が必要です⚠️<br><br>なぜなら、<br>・本当に傷んでいるか分からない<br>・屋根に上がった後に不安を煽ら...</p>
+                              <details class="blog-more">
+                                <summary>続きを読む</summary>
+                                <p>台風の後は、<br>「近くで工事していて屋根が浮いて見えました」<br>「台風で瓦がズレているかもしれません」<br>「無料で屋根を見ますよ」<br>こういう訪問営業が増えることがあります🌀</p>
+                              <p>もちろん、全部が悪いわけではありません☝🏼</p>
+                              <p>ただ、いきなり来た人を屋根に上げてしまうのは注意が必要です⚠️</p>
+                              <p>なぜなら、<br>・本当に傷んでいるか分からない<br>・屋根に上がった後に不安を煽られる<br>・その場で高額契約を迫られる<br>・場合によっては屋根を傷つけられる可能性もある<br>こういったトラブルがあるからです。</p>
+                              <p>大切なのは、<br>✅ その場で契約しない<br>✅ 屋根にすぐ上げない<br>✅ 写真や動画を見せてもらう<br>✅ 家族に相談する<br>✅ 地元で信頼できる会社に確認する<br>ということです☝🏼</p>
+                              <p>台風の後は不安になりやすい時期ですが、焦って決める必要はありません❗️</p>
+                              <p>「今すぐ直さないと雨漏りしますよ」<br>「今日契約すれば安くします」<br>「保険で無料で直せます」<br>こういう言葉が出たら、一度冷静になってください⚠️</p>
+                              <p>家を守るためには、工事そのものだけでなく、まず誰に相談するか、誰に見てもらうかも大切だと思います😊</p>
+                              </details>
+                            </div>
+                          </article>
+              </details>
+              <details class="blog-archive-item">
+                <summary>
+                  <span class="blog-archive-meta"><time datetime="2026-06-03">2026.06.03</time><span>地域活動</span></span>
+                  <strong>第29回べに花まつりへのご協力</strong>
+                </summary>
+                          <article class="blog-card">
+                            <div class="blog-body">
+                              <div class="blog-meta"><time datetime="2026-06-03">2026.06.03</time><span>地域活動</span></div>
+                              <h3>第29回べに花まつりへのご協力</h3>
+                              <p>改めてですが、地元である桶川市で行われる【第29回べに花まつり】を盛り上げるためにご協力をさせて頂きました✨<br><br>僕は生まれも育ちも桶川です！<br><br>もう41年もお世話になっている地元に、初めてちゃんとしたご協力ができたかなと思います。<br><br>べに花祭りは6月20・21日に【道の駅 べに花の郷おけがわ】で開催されます✨<br><br>地元が少しでも元気に活気溢れる事を願っています...</p>
+                              <details class="blog-more">
+                                <summary>続きを読む</summary>
+                                <p>改めてですが、地元である桶川市で行われる【第29回べに花まつり】を盛り上げるためにご協力をさせて頂きました✨</p>
+                              <p>僕は生まれも育ちも桶川です！</p>
+                              <p>もう41年もお世話になっている地元に、初めてちゃんとしたご協力ができたかなと思います。</p>
+                              <p>べに花祭りは6月20・21日に【道の駅 べに花の郷おけがわ】で開催されます✨</p>
+                              <p>地元が少しでも元気に活気溢れる事を願っています🔥</p>
+                              <p>改めてこの度のご縁に感謝いたします🙏🏻</p>
+                              </details>
+                            </div>
+                          </article>
               </details>
             </div>
-          </article>
-          <article class="blog-card">
-            <img src="./index_files/2026-06-11-leak-repair-resume-1.jpg" alt="雨漏り解消後に工事を再開する現場のサビ止め作業">
-            <div class="blog-body">
-              <div class="blog-meta"><time datetime="2026-06-11">2026.06.11</time><span>現場ブログ</span></div>
-              <h3>雨漏り解消後の工事再開</h3>
-              <p>おはようございます☀</p>
-              <p>雨漏りが止まらずにストップしていた現場が、ようやく雨漏りが解消されたとの連絡があり、工事を再開することができます✨</p>
-              <p>梅雨ではありますが、天気を見ながら計画的に進めていきたいと思います💪🏼</p>
-              <div class="blog-gallery">
-                <a href="./index_files/2026-06-11-leak-repair-resume-2.jpg" target="_blank" rel="noopener" aria-label="サビ止め施工後の庇まわりを大きく表示"><img src="./index_files/2026-06-11-leak-repair-resume-2.jpg" alt="サビ止め施工後の庇まわり"></a>
-                <a href="./index_files/2026-06-11-leak-repair-resume-3.jpg" target="_blank" rel="noopener" aria-label="屋根まわりのサビ止め施工後を大きく表示"><img src="./index_files/2026-06-11-leak-repair-resume-3.jpg" alt="屋根まわりのサビ止め施工後"></a>
-              </div>
-            </div>
-          </article>
-          <article class="blog-card">
-            <div class="blog-body">
-              <div class="blog-meta"><time datetime="2026-06-10">2026.06.10</time><span>現場ブログ</span></div>
-              <h3>梅雨時期の網戸張替え</h3>
-              <p>おはようございます！<br><br>梅雨ですね〜☔️<br><br>昨日は朝から雨だったので、【網戸の張替え】をしました💪🏼<br><br>だんだんとコツを掴んできて、スピードもクオリティも上がってきました✨<br><br>梅雨が終わると暑い夏がやってきます🔥<br><br>窓を開けることが多くなると思うので、この梅雨時期に網戸が破れていないか、穴は空いていないかの確認をしてみてください☝🏼<br><br>穴が空いている...</p>
-              <details class="blog-more">
-                <summary>続きを読む</summary>
-                <p>おはようございます！</p>
-              <p>梅雨ですね〜☔️</p>
-              <p>昨日は朝から雨だったので、【網戸の張替え】をしました💪🏼</p>
-              <p>だんだんとコツを掴んできて、スピードもクオリティも上がってきました✨</p>
-              <p>梅雨が終わると暑い夏がやってきます🔥</p>
-              <p>窓を開けることが多くなると思うので、この梅雨時期に網戸が破れていないか、穴は空いていないかの確認をしてみてください☝🏼</p>
-              <p>穴が空いていると虫が侵入してしまうので注意しましょう⚠️</p>
-              </details>
-            </div>
-          </article>
-          <article class="blog-card">
-            <div class="blog-body">
-              <div class="blog-meta"><time datetime="2026-06-09">2026.06.09</time><span>DIY塗装</span></div>
-              <h3>DIY塗装で失敗しやすい3つのこと</h3>
-              <p>おはようございます☀️<br><br>今日は、【DIY塗装で失敗しやすい3つのこと】についてです✅<br><br>最近は、DIYを楽しむ方も増えていますね😊<br><br>木製の踏み台や棚、プランター台などを自分で塗るだけでも、雰囲気がかなり変わるので楽しいと思います🎨<br><br>ただ、DIY塗装でよくある失敗もあります☝🏼<br><br>特に気をつけたいのが、この3つです。<br><br>① 厚く塗りすぎる<br>「一回で...</p>
-              <details class="blog-more">
-                <summary>続きを読む</summary>
-                <p>おはようございます☀️</p>
-              <p>今日は、【DIY塗装で失敗しやすい3つのこと】についてです✅</p>
-              <p>最近は、DIYを楽しむ方も増えていますね😊</p>
-              <p>木製の踏み台や棚、プランター台などを自分で塗るだけでも、雰囲気がかなり変わるので楽しいと思います🎨</p>
-              <p>ただ、DIY塗装でよくある失敗もあります☝🏼</p>
-              <p>特に気をつけたいのが、この3つです。</p>
-              <p>① 厚く塗りすぎる<br>「一回でキレイに仕上げたい」と思って塗料をたっぷり付けすぎると、<br>・タレる<br>・ムラになる<br>・乾きにくくなる<br>原因になることがあります💦</p>
-              <p>塗装は、一度で完璧に仕上げようとするより、薄く塗って重ねる方がキレイに仕上がりやすいです☝🏼</p>
-              <p>② 乾く前に重ね塗りする<br>表面が乾いて見えても、中までしっかり乾いていないことがあります。<br>乾く前に重ね塗りすると、<br>・ベタつく<br>・塗膜がよれる<br>・仕上がりが悪くなる<br>こともあります😥<br>塗料に書いてある乾燥時間は、できるだけ守るのがおすすめです☝🏼</p>
-              <p>③ ホコリを落とさず塗る<br>ペーパーがけをした後や、木材を置いていた場所には、細かい粉やホコリが残っていることがあります☝🏼<br>そのまま塗ってしまうと、<br>・表面がザラザラする<br>・ゴミが混ざる<br>・仕上がりが汚く見える<br>原因になることがあります💦<br>塗る前に、乾いた布や軍手などでホコリをしっかり落としておくと安心です😊</p>
-              <p>DIY塗装は、難しそうに見えるかもしれませんが、<br>✅ 薄く塗る<br>✅ しっかり乾かす<br>✅ ホコリを落とす<br>この3つを意識するだけでも、仕上がりはかなり変わります✨</p>
-              <p>焦らず、少しずつ丁寧に😊</p>
-              <p>今日お伝えしたことを意識して、気軽にDIY塗装を楽しんでみてください💪🏼</p>
-              </details>
-            </div>
-          </article>
-          <article class="blog-card">
-            <div class="blog-body">
-              <div class="blog-meta"><time datetime="2026-06-08">2026.06.08</time><span>現場ブログ</span></div>
-              <h3>初めてのポスト交換作業</h3>
-              <p>おはようございます✨<br><br>昨日は日曜日だったのですが、月曜日が雨予報ということで急遽作業をさせて頂きました💪🏼<br><br>初めての【ポスト交換】でした🔥<br><br>初めての経験なので、事前に下調べ、勉強をしました！<br><br>勉強の甲斐あって順調に交換することができました✨<br><br>ブロック塀が乾いた頃に補修と最終確認にまた伺う予定です🫡<br><br>新しい知識とスキルを得られたことに感謝で...</p>
-              <details class="blog-more">
-                <summary>続きを読む</summary>
-                <p>おはようございます✨</p>
-              <p>昨日は日曜日だったのですが、月曜日が雨予報ということで急遽作業をさせて頂きました💪🏼</p>
-              <p>初めての【ポスト交換】でした🔥</p>
-              <p>初めての経験なので、事前に下調べ、勉強をしました！</p>
-              <p>勉強の甲斐あって順調に交換することができました✨</p>
-              <p>ブロック塀が乾いた頃に補修と最終確認にまた伺う予定です🫡</p>
-              <p>新しい知識とスキルを得られたことに感謝です✨🙏🏻</p>
-              <p>ご依頼ありがとうございました✨</p>
-              </details>
-            </div>
-          </article>
-          <article class="blog-card">
-            <img src="./index_files/2026-06-07-wood-sanding-1.jpg" alt="木を塗る前のペーパーがけが大切という説明画像">
-            <div class="blog-body">
-              <div class="blog-meta"><time datetime="2026-06-07">2026.06.07</time><span>DIY塗装</span></div>
-              <h3>木を塗る前のペーパーがけが大切な理由</h3>
-              <p>おはようございます☀️<br><br>今日は、【木を塗る前のペーパーがけ】についてです✅<br><br>DIYで木製の踏み台や棚を作った時、「そのまま塗ればいいんじゃないの？」と思う方も多いかもしれません🤔<br><br>もちろん、そのまま塗ることもできます。<br><br>ただ、塗る前に少しだけペーパーをかけると、仕上がりがかなり変わります☝🏼<br><br>ペーパーがけをする理由は、<br>・木の表面のザラつきを整...</p>
-              <details class="blog-more">
-                <summary>続きを読む</summary>
-                <p>おはようございます☀️</p>
-              <p>今日は、【木を塗る前のペーパーがけ】についてです✅</p>
-              <p>DIYで木製の踏み台や棚を作った時、「そのまま塗ればいいんじゃないの？」と思う方も多いかもしれません🤔</p>
-              <p>もちろん、そのまま塗ることもできます。</p>
-              <p>ただ、塗る前に少しだけペーパーをかけると、仕上がりがかなり変わります☝🏼</p>
-              <p>ペーパーがけをする理由は、<br>・木の表面のザラつきを整える<br>・毛羽立ちを取る<br>・汚れや小さな傷を目立ちにくくする<br>・塗料を均一に塗りやすくする<br>こういった効果があるからです✨</p>
-              <p>特に木材は、見た目ではきれいに見えても、触ると少しザラザラしていることがあります💦</p>
-              <p>この状態のまま塗ると、<br>・仕上がりがデコボコする<br>・刷毛が引っかかる<br>・ムラになりやすい<br>・触った時にザラつきが残る<br>ことがあります💦</p>
-              <p>初めてのDIYなら、まずは【120番〜240番くらい】のサンドペーパーが使いやすいと思います😊</p>
-              <p>最初に120番前後で表面を整えて、最後に240番前後で軽く仕上げるイメージです☝🏼</p>
-              <p>ペーパーをかけた後は、木の粉やホコリをしっかり落としてから塗装します✨</p>
-              <p>ここを省いてしまうと、せっかくペーパーをかけても、ホコリが塗膜に残ってしまいます⚠️</p>
-              <p>DIY塗装は、塗る作業に目が行きがちですが<br>実は、【塗る前の準備】がとても大切です☝🏼</p>
-              <p>少し手間はかかりますが、このひと手間で、見た目も触り心地もかなり良くなります😊</p>
-              <p>初めてDIYに挑戦する方は、ぜひ塗る前のペーパーがけも試してみてください✨</p>
-              </details>
-              <div class="blog-gallery">
-                <a href="./index_files/2026-06-07-wood-sanding-2.jpg" target="_blank" rel="noopener" aria-label="DIYで踏み台を塗る前にペーパーがけをする説明画像を大きく表示"><img src="./index_files/2026-06-07-wood-sanding-2.jpg" alt="DIYで踏み台を塗る前にペーパーがけをする説明画像"></a>
-              </div>
-            </div>
-          </article>
-          <article class="blog-card">
-            <img src="./index_files/2026-06-06-first-diy-1.jpg" alt="初めてのDIYにおすすめの木製踏み台塗装">
-            <div class="blog-body">
-              <div class="blog-meta"><time datetime="2026-06-06">2026.06.06</time><span>DIY塗装</span></div>
-              <h3>初めてのDIYにおすすめな小さな木製品づくり</h3>
-              <p>おはようございます☀️<br><br>今日は少し外壁塗装とは離れて、【初めてのDIYにおすすめなもの】についてです😊<br><br>最近は、ご自宅でDIYを楽しむ方も増えていますよね💪🏼<br><br>ただ、いきなり大きな家具を作ったり、家の外壁を塗ったりするのは、少しハードルが高いと思います💦<br><br>そこで個人的におすすめなのが、【小さな木製品を作って塗装するDIY】です☝🏼<br><br>例えば...</p>
-              <details class="blog-more">
-                <summary>続きを読む</summary>
-                <p>おはようございます☀️</p>
-              <p>今日は少し外壁塗装とは離れて、【初めてのDIYにおすすめなもの】についてです😊</p>
-              <p>最近は、ご自宅でDIYを楽しむ方も増えていますよね💪🏼</p>
-              <p>ただ、いきなり大きな家具を作ったり、家の外壁を塗ったりするのは、少しハードルが高いと思います💦</p>
-              <p>そこで個人的におすすめなのが、【小さな木製品を作って塗装するDIY】です☝🏼</p>
-              <p>例えば、<br>・木製の踏み台<br>・小さな棚<br>・プランター台<br>・すのこを使った収納<br>・玄関まわりの小物置き<br>このあたりは、初めての方でも挑戦しやすいと思います😊</p>
-              <p>特に木製の踏み台やプランター台は、形もシンプルで、使い道もあるのでおすすめです✨</p>
-              <p>そしてDIYで楽しいのが、最後の【塗装】です🤭🎨</p>
-              <p>同じ木材でも、色を塗るだけで雰囲気がかなり変わります✨</p>
-              <p>ナチュラル系にしたり、白っぽくして明るくしたり、濃い色で落ち着いた雰囲気にしたり😊</p>
-              <p>自分の好みに合わせて仕上げられるのが、DIYの良いところだと思います✨</p>
-              <p>ただし、塗装する時は少しだけポイントがあります☝🏼</p>
-              <p>✅ いきなり塗らずに軽くペーパーをかける<br>✅ ホコリをしっかり落とす<br>✅ 一度に厚く塗りすぎない<br>✅ 乾かす時間をしっかり取る<br>このあたりを意識するだけでも、仕上がりがかなり変わります☝🏼</p>
-              <p>大きな工事はプロに任せるとしても、小さなDIYなら、ご自宅で楽しみながら家への愛着も湧くと思います🏠</p>
-              <p>まずは小さな木製品から、気軽に挑戦してみると良いと思います🙆🏻</p>
-              </details>
-              <div class="blog-gallery">
-                <a href="./index_files/2026-06-06-first-diy-2.jpg" target="_blank" rel="noopener" aria-label="木製踏み台を使った初めてのDIY手順を大きく表示"><img src="./index_files/2026-06-06-first-diy-2.jpg" alt="木製踏み台を使った初めてのDIY手順"></a>
-              </div>
-            </div>
-          </article>
-          <article class="blog-card">
-            <div class="blog-body">
-              <div class="blog-meta"><time datetime="2026-06-05">2026.06.05</time><span>注意喚起</span></div>
-              <h3>突然の屋根点検営業への対応方法</h3>
-              <p>おはようございます☀️<br><br>昨日は、台風後に増えやすい【屋根点検の訪問営業】についてお話しました☝🏼<br><br>今日はその続きで、もし本当に<br>「屋根が浮いて見えました」<br>「無料で点検しますよ」<br>「このままだと雨漏りしますよ」<br>と言われた時に、まずどう対応すればいいのかについてです☝🏼<br><br>台風の後は、お家のことが心配になりやすい時期です🌀<br><br>だからこそ、不安な言葉...</p>
-              <details class="blog-more">
-                <summary>続きを読む</summary>
-                <p>おはようございます☀️</p>
-              <p>昨日は、台風後に増えやすい【屋根点検の訪問営業】についてお話しました☝🏼</p>
-              <p>今日はその続きで、もし本当に<br>「屋根が浮いて見えました」<br>「無料で点検しますよ」<br>「このままだと雨漏りしますよ」<br>と言われた時に、まずどう対応すればいいのかについてです☝🏼</p>
-              <p>台風の後は、お家のことが心配になりやすい時期です🌀</p>
-              <p>だからこそ、不安な言葉を言われると、ついその場で見てもらいたくなるかもしれません😥</p>
-              <p>ですが、いきなり来た業者さんをその場ですぐ屋根に上げるのは、一度冷静になった方が良いと思います⚠️</p>
-              <p>まず確認してほしいのは、<br>✅ 会社名と担当者名<br>✅ 名刺や会社情報<br>✅ どこの会社なのか<br>✅ 実在している会社なのか<br>このあたりです。</p>
-              <p>そして大切なのは、その場で屋根に上げたり、その場で契約したりしないこと⚠️</p>
-              <p>「今すぐ確認した方がいいです」<br>「今日だけ安くできます」<br>「このままだと雨漏りします」<br>と言われても、まずは一度断って大丈夫です❗️</p>
-              <p>その後で、その会社をしっかり調べてみてください✅</p>
-              <p>・会社名で検索する<br>・口コミを見る<br>・所在地を確認する<br>・施工事例があるか見る<br>・本当に信頼できそうか確認する<br>こういった確認はとても大切です😊</p>
-              <p>それでも気になる場合は、家族と相談したり、しっかりとリサーチして信頼できそうな会社に改めて問い合わせてみるのが安心だと思います✨</p>
-              <p>屋根は、普段お客様が確認しにくい場所です。</p>
-              <p>だからこそ、「言われたから信じる」、その場で判断するのではなく、一度落ち着いて、しっかり調べてからどこに相談するのかが、とても大切だと思っています✨</p>
-              </details>
-            </div>
-          </article>
-          <article class="blog-card">
-            <div class="blog-body">
-              <div class="blog-meta"><time datetime="2026-06-04">2026.06.04</time><span>注意喚起</span></div>
-              <h3>台風後の屋根点検詐欺に注意</h3>
-              <p>台風の後は、<br>「近くで工事していて屋根が浮いて見えました」<br>「台風で瓦がズレているかもしれません」<br>「無料で屋根を見ますよ」<br>こういう訪問営業が増えることがあります🌀<br><br>もちろん、全部が悪いわけではありません☝🏼<br><br>ただ、いきなり来た人を屋根に上げてしまうのは注意が必要です⚠️<br><br>なぜなら、<br>・本当に傷んでいるか分からない<br>・屋根に上がった後に不安を煽ら...</p>
-              <details class="blog-more">
-                <summary>続きを読む</summary>
-                <p>台風の後は、<br>「近くで工事していて屋根が浮いて見えました」<br>「台風で瓦がズレているかもしれません」<br>「無料で屋根を見ますよ」<br>こういう訪問営業が増えることがあります🌀</p>
-              <p>もちろん、全部が悪いわけではありません☝🏼</p>
-              <p>ただ、いきなり来た人を屋根に上げてしまうのは注意が必要です⚠️</p>
-              <p>なぜなら、<br>・本当に傷んでいるか分からない<br>・屋根に上がった後に不安を煽られる<br>・その場で高額契約を迫られる<br>・場合によっては屋根を傷つけられる可能性もある<br>こういったトラブルがあるからです。</p>
-              <p>大切なのは、<br>✅ その場で契約しない<br>✅ 屋根にすぐ上げない<br>✅ 写真や動画を見せてもらう<br>✅ 家族に相談する<br>✅ 地元で信頼できる会社に確認する<br>ということです☝🏼</p>
-              <p>台風の後は不安になりやすい時期ですが、焦って決める必要はありません❗️</p>
-              <p>「今すぐ直さないと雨漏りしますよ」<br>「今日契約すれば安くします」<br>「保険で無料で直せます」<br>こういう言葉が出たら、一度冷静になってください⚠️</p>
-              <p>家を守るためには、工事そのものだけでなく、まず誰に相談するか、誰に見てもらうかも大切だと思います😊</p>
-              </details>
-            </div>
-          </article>
-          <article class="blog-card">
-            <div class="blog-body">
-              <div class="blog-meta"><time datetime="2026-06-03">2026.06.03</time><span>地域活動</span></div>
-              <h3>第29回べに花まつりへのご協力</h3>
-              <p>改めてですが、地元である桶川市で行われる【第29回べに花まつり】を盛り上げるためにご協力をさせて頂きました✨<br><br>僕は生まれも育ちも桶川です！<br><br>もう41年もお世話になっている地元に、初めてちゃんとしたご協力ができたかなと思います。<br><br>べに花祭りは6月20・21日に【道の駅 べに花の郷おけがわ】で開催されます✨<br><br>地元が少しでも元気に活気溢れる事を願っています...</p>
-              <details class="blog-more">
-                <summary>続きを読む</summary>
-                <p>改めてですが、地元である桶川市で行われる【第29回べに花まつり】を盛り上げるためにご協力をさせて頂きました✨</p>
-              <p>僕は生まれも育ちも桶川です！</p>
-              <p>もう41年もお世話になっている地元に、初めてちゃんとしたご協力ができたかなと思います。</p>
-              <p>べに花祭りは6月20・21日に【道の駅 べに花の郷おけがわ】で開催されます✨</p>
-              <p>地元が少しでも元気に活気溢れる事を願っています🔥</p>
-              <p>改めてこの度のご縁に感謝いたします🙏🏻</p>
-              </details>
-            </div>
-          </article>
+          </details>
           <!-- BLOG-POSTS END -->
         </div>
       </div>
     </section>
 
-    <section class="section section-muted section-photo" id="profile" style="--section-bg: url(&#39;assets/sections/black-after.jpg&#39;);">
+    <section class="section section-muted section-photo" id="profile" style="--section-bg: url(&#39;assets/images/work-washing.jpg&#39;);">
       <div class="container profile">
         <div class="profile-photo">
           <img src="./index_files/owner.jpg" alt="Real Make 代表 大川亮太">
@@ -1612,7 +1762,7 @@
       </div>
     </section>
 
-    <section class="section section-muted section-photo" id="contact" style="--section-bg: url(&#39;assets/sections/white-after-side.jpg&#39;);">
+    <section class="section section-muted section-photo" id="contact" style="--section-bg: url(&#39;assets/images/work-balcony-finish.jpg&#39;);">
       <div class="container area-contact">
         <div class="panel">
           <p class="section-label">Area</p>
