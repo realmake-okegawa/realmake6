@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
+<!-- saved from url=(0032)http://127.0.0.1:8789/index.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Real Make（リアルメイク）｜桶川市の外壁塗装・屋根塗装</title>
   <meta name="description" content="Real Make（リアルメイク）は桶川市・北本市を中心に埼玉県全域対応の外壁塗装・屋根塗装・防水工事店です。職人直営で丁寧施工、分かりやすい説明、適正価格を大切にしています。">
@@ -322,7 +322,7 @@
     }
 
     .section {
-      padding: 104px 0;
+      padding: 88px 0;
       background: var(--paper);
     }
 
@@ -334,8 +334,6 @@
       position: relative;
       isolation: isolate;
       overflow: hidden;
-      color: #fff;
-      background: #0d1b27;
     }
 
     .section-photo::before,
@@ -355,14 +353,14 @@
     .section-photo::after {
       z-index: -1;
       background:
-        linear-gradient(90deg, rgba(9, 20, 30, .88) 0%, rgba(9, 20, 30, .66) 47%, rgba(9, 20, 30, .36) 100%),
-        linear-gradient(0deg, rgba(9, 20, 30, .66) 0%, rgba(9, 20, 30, .18) 50%, rgba(9, 20, 30, .62) 100%);
+        linear-gradient(90deg, rgba(255, 255, 255, .96) 0%, rgba(255, 255, 255, .92) 52%, rgba(255, 255, 255, .74) 100%),
+        linear-gradient(0deg, rgba(255, 255, 255, .92), rgba(255, 255, 255, .92));
     }
 
     .section-photo.section-muted::after {
       background:
-        linear-gradient(90deg, rgba(9, 20, 30, .84) 0%, rgba(9, 20, 30, .62) 48%, rgba(9, 20, 30, .32) 100%),
-        linear-gradient(0deg, rgba(9, 20, 30, .70) 0%, rgba(9, 20, 30, .20) 48%, rgba(9, 20, 30, .66) 100%);
+        linear-gradient(90deg, rgba(246, 244, 239, .97) 0%, rgba(246, 244, 239, .93) 52%, rgba(246, 244, 239, .76) 100%),
+        linear-gradient(0deg, rgba(246, 244, 239, .92), rgba(246, 244, 239, .92));
     }
 
     .section-photo-dark {
@@ -384,17 +382,6 @@
 
     .section-photo-dark .section-label {
       color: #f4d49f;
-    }
-
-    .section-photo .section-title,
-    .section-photo .section-copy {
-      color: #fff;
-      text-shadow: 0 2px 18px rgba(0, 0, 0, .34);
-    }
-
-    .section-photo .section-label {
-      color: #f4d49f;
-      text-shadow: 0 2px 16px rgba(0, 0, 0, .36);
     }
 
     .section-head {
@@ -442,11 +429,10 @@
     .work-card,
     .profile-note,
     .contact-panel {
-      border: 1px solid rgba(255, 255, 255, .24);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, .92);
-      box-shadow: 0 20px 44px rgba(0, 0, 0, .16);
-      backdrop-filter: blur(10px);
+      background: var(--paper);
+      box-shadow: 0 10px 26px rgba(18, 50, 75, .06);
     }
 
     .panel {
@@ -655,11 +641,10 @@
       display: grid;
       overflow: hidden;
       margin: 0;
-      border: 1px solid rgba(255, 255, 255, .24);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, .94);
-      box-shadow: 0 20px 44px rgba(0, 0, 0, .16);
-      backdrop-filter: blur(10px);
+      background: var(--paper);
+      box-shadow: 0 10px 26px rgba(18, 50, 75, .06);
     }
 
     .blog-card-featured {
@@ -743,77 +728,6 @@
       font-weight: 900;
     }
 
-    .blog-archive {
-      grid-column: 1 / -1;
-      margin-top: 8px;
-    }
-
-    .blog-archive > summary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      border-radius: 999px;
-      padding: 12px 20px;
-      background: var(--green);
-      color: #fff;
-      font-weight: 900;
-      cursor: pointer;
-      box-shadow: 0 16px 34px rgba(0, 111, 91, .22);
-    }
-
-    .blog-archive-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .blog-archive-item {
-      border: 1px solid rgba(255, 255, 255, .24);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, .94);
-      box-shadow: 0 16px 34px rgba(0, 0, 0, .14);
-      backdrop-filter: blur(10px);
-    }
-
-    .blog-archive-item summary {
-      display: grid;
-      gap: 4px;
-      padding: 18px 20px;
-      cursor: pointer;
-    }
-
-    .blog-archive-item summary span {
-      color: var(--gold);
-      font-size: .82rem;
-      font-weight: 900;
-    }
-
-    .blog-archive-item summary strong {
-      color: var(--navy);
-      font-size: 1.05rem;
-      line-height: 1.45;
-    }
-
-    .blog-archive-body {
-      padding: 0 20px 20px;
-      color: var(--sub);
-      font-size: .93rem;
-    }
-
-    .blog-archive-body p {
-      margin-bottom: 0;
-    }
-
-    .blog-archive-body p + p {
-      margin-top: 12px;
-    }
-
-    .blog-archive-body .blog-gallery {
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      max-width: 760px;
-    }
-
     .profile {
       display: grid;
       grid-template-columns: minmax(260px, 390px) 1fr;
@@ -858,10 +772,10 @@
     }
 
     .area-list span {
-      border: 1px solid rgba(215, 211, 200, .82);
+      border: 1px solid #d7d3c8;
       border-radius: 999px;
       padding: 7px 12px;
-      background: rgba(255, 255, 255, .78);
+      background: #fff;
       color: #3d4b56;
       font-size: .9rem;
       font-weight: 700;
@@ -870,8 +784,8 @@
     .contact-panel {
       padding: 32px;
       color: #fff;
-      background: rgba(13, 27, 39, .88);
-      border-color: rgba(255, 255, 255, .22);
+      background: var(--navy);
+      border-color: var(--navy);
       box-shadow: var(--shadow);
     }
 
@@ -1201,21 +1115,21 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Real Make ホーム">
-        <img src="assets/images/logo.png" alt="Real Make ロゴ">
+      <a class="brand" href="http://127.0.0.1:8789/index.html#top" aria-label="Real Make ホーム">
+        <img src="./index_files/logo.png" alt="Real Make ロゴ">
         <span class="brand-text">Real Make<span>外壁塗装・屋根塗装</span></span>
       </a>
       <nav class="nav" aria-label="主要メニュー">
-        <a href="#strength">選ばれる理由</a>
-        <a href="#services">対応工事</a>
-        <a href="#works">施工事例</a>
-        <a href="#blog">ブログ</a>
-        <a href="#profile">代表挨拶</a>
-        <a href="#contact">お問い合わせ</a>
+        <a href="http://127.0.0.1:8789/index.html#strength">選ばれる理由</a>
+        <a href="http://127.0.0.1:8789/index.html#services">対応工事</a>
+        <a href="http://127.0.0.1:8789/index.html#works">施工事例</a>
+        <a href="http://127.0.0.1:8789/index.html#blog">ブログ</a>
+        <a href="http://127.0.0.1:8789/index.html#profile">代表挨拶</a>
+        <a href="http://127.0.0.1:8789/index.html#contact">お問い合わせ</a>
       </nav>
       <div class="header-actions">
         <a class="button button-dark" href="tel:09014340189" aria-label="Real Makeへ電話する">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.6c0 .7-.5 1.2-1.2 1.2C10.6 21.6 2.4 13.4 2.4 3.4c0-.7.5-1.2 1.2-1.2h3.6c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.8.6 4 .1.4 0 .9-.3 1.2l-2.1 2.2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.6c0 .7-.5 1.2-1.2 1.2C10.6 21.6 2.4 13.4 2.4 3.4c0-.7.5-1.2 1.2-1.2h3.6c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.8.6 4 .1.4 0 .9-.3 1.2l-2.1 2.2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>
           電話相談
         </a>
       </div>
@@ -1230,15 +1144,15 @@
         <p class="hero-lead">Real Make（リアルメイク）は、外壁塗装・屋根塗装・防水・コーキングまで対応する職人直営の施工店です。家の状態を分かりやすく説明し、必要な工事を丁寧にご提案します。</p>
         <div class="hero-actions">
           <a class="button button-primary" href="tel:09014340189">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.6c0 .7-.5 1.2-1.2 1.2C10.6 21.6 2.4 13.4 2.4 3.4c0-.7.5-1.2 1.2-1.2h3.6c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.8.6 4 .1.4 0 .9-.3 1.2l-2.1 2.2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.6c0 .7-.5 1.2-1.2 1.2C10.6 21.6 2.4 13.4 2.4 3.4c0-.7.5-1.2 1.2-1.2h3.6c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.8.6 4 .1.4 0 .9-.3 1.2l-2.1 2.2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>
             090-1434-0189
           </a>
-          <a class="button button-light" href="#works">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16v13H4V7Zm4-3h8l2 3H6l2-3Zm4 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <a class="button button-light" href="http://127.0.0.1:8789/index.html#works">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16v13H4V7Zm4-3h8l2 3H6l2-3Zm4 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>
             施工事例を見る
           </a>
           <a class="button button-line button-stack" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 5.5h15v9.2h-8.1L7 18.5v-3.8H4.5V5.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 5.5h15v9.2h-8.1L7 18.5v-3.8H4.5V5.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>
             <span><strong>LINEで無料相談する</strong><small>写真を送って相談OK</small></span>
           </a>
         </div>
@@ -1257,7 +1171,7 @@
       </div>
     </div>
 
-    <section class="section section-muted section-photo" style="--section-bg: url('assets/sections/roof-finish.jpg');">
+    <section class="section section-muted section-photo" style="--section-bg: url(&#39;assets/sections/roof-finish.jpg&#39;);">
       <div class="container">
         <div class="section-head">
           <div>
@@ -1289,7 +1203,7 @@
       </div>
     </section>
 
-    <section class="section section-photo" id="strength" style="--section-bg: url('assets/sections/black-exterior-angle.jpg');">
+    <section class="section section-photo" id="strength" style="--section-bg: url(&#39;assets/sections/black-exterior-angle.jpg&#39;);">
       <div class="container">
         <div class="section-head">
           <div>
@@ -1318,7 +1232,7 @@
       </div>
     </section>
 
-    <section class="section section-muted section-photo" id="services" style="--section-bg: url('assets/sections/brown-house-wide.jpg');">
+    <section class="section section-muted section-photo" id="services" style="--section-bg: url(&#39;assets/sections/brown-house-wide.jpg&#39;);">
       <div class="container">
         <div class="section-head">
           <div>
@@ -1340,7 +1254,7 @@
       </div>
     </section>
 
-    <section class="section section-photo" style="--section-bg: url('assets/sections/white-after-front.jpg');">
+    <section class="section section-photo" style="--section-bg: url(&#39;assets/sections/white-after-front.jpg&#39;);">
       <div class="container">
         <div class="section-head">
           <div>
@@ -1359,7 +1273,7 @@
       </div>
     </section>
 
-    <section class="section section-muted section-photo" id="works" style="--section-bg: url('assets/sections/black-exterior-front.jpg');">
+    <section class="section section-muted section-photo" id="works" style="--section-bg: url(&#39;assets/sections/black-exterior-front.jpg&#39;);">
       <div class="container">
         <div class="section-head">
           <div>
@@ -1369,33 +1283,33 @@
           <p class="section-copy">工事は完成後だけでなく、途中の工程も大切です。高圧洗浄、下塗り、中塗り、コーキング、防水まで、実際の現場写真を掲載しています。</p>
         </div>
         <div class="works">
-          <figure class="work-card"><img src="images/gallery-roof-finish.jpg" alt="屋根塗装の仕上がり" loading="lazy"><figcaption>屋根 仕上がり</figcaption></figure>
-          <figure class="work-card"><img src="images/gallery-black-exterior-angle.jpg" alt="黒い外壁の施工後外観" loading="lazy"><figcaption>外壁 施工後</figcaption></figure>
-          <figure class="work-card"><img src="images/gallery-brown-house-wide.jpg" alt="外壁メンテナンス後の住宅外観" loading="lazy"><figcaption>外観 施工後</figcaption></figure>
-          <figure class="work-card"><img src="images/gallery-white-after-front.jpg" alt="白い外壁の施工後外観" loading="lazy"><figcaption>白外壁 施工後</figcaption></figure>
-          <figure class="work-card"><img src="images/gallery-work-scaffold.jpg" alt="外壁塗装の足場設置" loading="lazy"><figcaption>足場設置</figcaption></figure>
+          <figure class="work-card"><img src="./index_files/roof-finish.jpg" alt="屋根塗装の仕上がり"><figcaption>屋根 仕上がり</figcaption></figure>
+          <figure class="work-card"><img src="./index_files/black-exterior-angle.jpg" alt="黒い外壁の施工後外観"><figcaption>外壁 施工後</figcaption></figure>
+          <figure class="work-card"><img src="./index_files/brown-house-wide.jpg" alt="外壁メンテナンス後の住宅外観"><figcaption>外観 施工後</figcaption></figure>
+          <figure class="work-card"><img src="./index_files/white-after-front.jpg" alt="白い外壁の施工後外観"><figcaption>白外壁 施工後</figcaption></figure>
+          <figure class="work-card"><img src="./index_files/work-scaffold.jpg" alt="外壁塗装の足場設置"><figcaption>足場設置</figcaption></figure>
         </div>
         <details class="works-more">
           <summary>施工写真をもっと見る</summary>
           <div class="works">
-            <figure class="work-card"><img src="images/gallery-work-washing.jpg" alt="外壁の高圧洗浄" loading="lazy"><figcaption>高圧洗浄</figcaption></figure>
-            <figure class="work-card"><img src="images/gallery-work-wall-primer.jpg" alt="11月5日の外壁塗装の下塗り" loading="lazy"><figcaption>11/5 外壁 下塗り</figcaption></figure>
-            <figure class="work-card"><img src="images/gallery-work-wall-midcoat.jpg" alt="11月6日の外壁塗装の中塗り" loading="lazy"><figcaption>11/6 外壁 中塗り</figcaption></figure>
-            <figure class="work-card"><img src="images/gallery-work-wall-finish.jpg" alt="外壁塗装の上塗り後" loading="lazy"><figcaption>外壁 上塗り後</figcaption></figure>
-            <figure class="work-card"><img src="images/gallery-work-roof-primer.jpg" alt="10月13日の屋根塗装の下塗り" loading="lazy"><figcaption>10/13 屋根 下塗り</figcaption></figure>
-            <figure class="work-card"><img src="images/gallery-work-roof-topcoat.jpg" alt="10月20日の屋根塗装の上塗り" loading="lazy"><figcaption>10/20 屋根 上塗り</figcaption></figure>
-            <figure class="work-card"><img src="images/gallery-work-balcony-finish.jpg" alt="10月28日の防水塗装完了後" loading="lazy"><figcaption>10/28 防水塗装 完了後</figcaption></figure>
-            <figure class="work-card"><img src="images/gallery-work-roof-tile-coating-1.jpg" alt="屋根瓦の塗装作業" loading="lazy"><figcaption>屋根瓦 塗装作業</figcaption></figure>
-            <figure class="work-card"><img src="images/gallery-work-roof-tile-coating-2.jpg" alt="屋根瓦の塗装途中" loading="lazy"><figcaption>屋根瓦 塗装途中</figcaption></figure>
-            <figure class="work-card"><img src="images/gallery-work-roof-metal-coating.jpg" alt="屋根板金まわりの塗装" loading="lazy"><figcaption>屋根板金 塗装</figcaption></figure>
-            <figure class="work-card"><img src="images/gallery-work-gutter-coating.jpg" alt="雨樋の塗装作業" loading="lazy"><figcaption>雨樋 塗装</figcaption></figure>
-            <figure class="work-card"><img src="images/gallery-work-roof-washing-before-after.jpg" alt="屋根の洗浄前と洗浄後の比較" loading="lazy"><figcaption>屋根 洗浄前後</figcaption></figure>
+          <figure class="work-card"><img src="./index_files/work-washing.jpg" alt="外壁の高圧洗浄"><figcaption>高圧洗浄</figcaption></figure>
+          <figure class="work-card"><img src="./index_files/work-wall-primer.jpg" alt="11月5日の外壁塗装の下塗り"><figcaption>11/5 外壁 下塗り</figcaption></figure>
+          <figure class="work-card"><img src="./index_files/work-wall-midcoat.jpg" alt="11月6日の外壁塗装の中塗り"><figcaption>11/6 外壁 中塗り</figcaption></figure>
+          <figure class="work-card"><img src="./index_files/work-wall-finish.jpg" alt="外壁塗装の上塗り後"><figcaption>外壁 上塗り後</figcaption></figure>
+          <figure class="work-card"><img src="./index_files/work-roof-primer.jpg" alt="10月13日の屋根塗装の下塗り"><figcaption>10/13 屋根 下塗り</figcaption></figure>
+          <figure class="work-card"><img src="./index_files/work-roof-topcoat.jpg" alt="10月20日の屋根塗装の上塗り"><figcaption>10/20 屋根 上塗り</figcaption></figure>
+          <figure class="work-card"><img src="./index_files/work-balcony-finish.jpg" alt="10月28日の防水塗装完了後"><figcaption>10/28 防水塗装 完了後</figcaption></figure>
+          <figure class="work-card"><img src="./index_files/work-roof-tile-coating-1.jpg" alt="屋根瓦の塗装作業"><figcaption>屋根瓦 塗装作業</figcaption></figure>
+          <figure class="work-card"><img src="./index_files/work-roof-tile-coating-2.jpg" alt="屋根瓦の塗装途中"><figcaption>屋根瓦 塗装途中</figcaption></figure>
+          <figure class="work-card"><img src="./index_files/work-roof-metal-coating.jpg" alt="屋根板金まわりの塗装"><figcaption>屋根板金 塗装</figcaption></figure>
+          <figure class="work-card"><img src="./index_files/work-gutter-coating.jpg" alt="雨樋の塗装作業"><figcaption>雨樋 塗装</figcaption></figure>
+          <figure class="work-card"><img src="./index_files/work-roof-washing-before-after.jpg" alt="屋根の洗浄前と洗浄後の比較"><figcaption>屋根 洗浄前後</figcaption></figure>
           </div>
         </details>
       </div>
     </section>
 
-    <section class="section section-photo" id="blog" style="--section-bg: url('assets/sections/brown-house-front.jpg');">
+    <section class="section section-photo" id="blog" style="--section-bg: url(&#39;assets/sections/brown-house-front.jpg&#39;);">
       <div class="container">
         <div class="section-head">
           <div>
@@ -1407,7 +1321,22 @@
         <div class="blog-list">
           <!-- BLOG-POSTS START -->
           <article class="blog-card blog-card-featured">
-            <img src="assets/blog/2026-06-14-masking-work-1.jpg" alt="窓の換気を考えながら進めた養生作業の様子1">
+            <img src="./index_files/2026-06-15-undercoat-work-1.jpg" alt="軒天の下塗り作業中の様子">
+            <div class="blog-body">
+              <div class="blog-meta"><time datetime="2026-06-15">2026.06.15</time><span>現場ブログ</span></div>
+              <h3>晴れ間を活かした破風・軒天・壁の下塗り</h3>
+              <p>おはようございます☀</p>
+              <p>昨日は日曜日でしたが、梅雨なので晴れ間を無駄にしないようにお客様から許可を頂き作業をさせて頂きました😊</p>
+              <p>作業内容は破風、軒天、壁の下塗りを開始しました💪🏼</p>
+              <p>立派なお宅なので塗りごたえがありますが、しっかりと進めていきたいと思います🔥</p>
+              <div class="blog-gallery">
+                <a href="./index_files/2026-06-15-undercoat-work-2.jpg" target="_blank" rel="noopener" aria-label="壁の下塗りを進めている現場の様子を大きく表示"><img src="./index_files/2026-06-15-undercoat-work-2.jpg" alt="壁の下塗りを進めている現場の様子"></a>
+                <a href="./index_files/2026-06-15-undercoat-work-3.jpg" target="_blank" rel="noopener" aria-label="破風まわりの下塗り後の様子を大きく表示"><img src="./index_files/2026-06-15-undercoat-work-3.jpg" alt="破風まわりの下塗り後の様子"></a>
+              </div>
+            </div>
+          </article>
+          <article class="blog-card">
+            <img src="./index_files/2026-06-14-masking-work-1.jpg" alt="窓の換気を考えながら進めた養生作業の様子1">
             <div class="blog-body">
               <div class="blog-meta"><time datetime="2026-06-14">2026.06.14</time><span>現場ブログ</span></div>
               <h3>暑い日の養生作業と梅雨時期の進め方</h3>
@@ -1422,12 +1351,12 @@
               <p>梅雨時期なので天気を見ながら臨機応変に進めていきたいと思っています🔥</p>
               </details>
               <div class="blog-gallery">
-                <a href="assets/blog/2026-06-14-masking-work-2.jpg" target="_blank" rel="noopener" aria-label="窓の換気を考えながら進めた養生作業の様子2を大きく表示"><img src="assets/blog/2026-06-14-masking-work-2.jpg" alt="窓の換気を考えながら進めた養生作業の様子2"></a>
+                <a href="./index_files/2026-06-14-masking-work-2.jpg" target="_blank" rel="noopener" aria-label="窓の換気を考えながら進めた養生作業の様子2を大きく表示"><img src="./index_files/2026-06-14-masking-work-2.jpg" alt="窓の換気を考えながら進めた養生作業の様子2"></a>
               </div>
             </div>
           </article>
           <article class="blog-card">
-            <img src="assets/blog/2026-06-13-before-after-1.jpg" alt="1年前に完工した外壁塗装現場のビフォー写真1">
+            <img src="./index_files/2026-06-13-before-after-1.jpg" alt="1年前に完工した外壁塗装現場のビフォー写真1">
             <div class="blog-body">
               <div class="blog-meta"><time datetime="2026-06-13">2026.06.13</time><span>施工事例</span></div>
               <h3>1年前に完工した現場のビフォーアフター</h3>
@@ -1438,18 +1367,18 @@
               <p>近々、1年点検に伺おうと思っています！</p>
               <p>Real Makeは塗り替えした後も長いお付き合いをさせて頂いております✨</p>
               <div class="blog-gallery">
-                <a href="assets/blog/2026-06-13-before-after-2.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のアフター写真1を大きく表示"><img src="assets/blog/2026-06-13-before-after-2.jpg" alt="1年前に完工した外壁塗装現場のアフター写真1"></a>
-                <a href="assets/blog/2026-06-13-before-after-3.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のビフォー写真2を大きく表示"><img src="assets/blog/2026-06-13-before-after-3.jpg" alt="1年前に完工した外壁塗装現場のビフォー写真2"></a>
-                <a href="assets/blog/2026-06-13-before-after-4.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のアフター写真2を大きく表示"><img src="assets/blog/2026-06-13-before-after-4.jpg" alt="1年前に完工した外壁塗装現場のアフター写真2"></a>
-                <a href="assets/blog/2026-06-13-before-after-5.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のビフォー写真3を大きく表示"><img src="assets/blog/2026-06-13-before-after-5.jpg" alt="1年前に完工した外壁塗装現場のビフォー写真3"></a>
-                <a href="assets/blog/2026-06-13-before-after-6.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のアフター写真3を大きく表示"><img src="assets/blog/2026-06-13-before-after-6.jpg" alt="1年前に完工した外壁塗装現場のアフター写真3"></a>
-                <a href="assets/blog/2026-06-13-before-after-7.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のビフォー写真4を大きく表示"><img src="assets/blog/2026-06-13-before-after-7.jpg" alt="1年前に完工した外壁塗装現場のビフォー写真4"></a>
-                <a href="assets/blog/2026-06-13-before-after-8.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のアフター写真4を大きく表示"><img src="assets/blog/2026-06-13-before-after-8.jpg" alt="1年前に完工した外壁塗装現場のアフター写真4"></a>
+                <a href="./index_files/2026-06-13-before-after-2.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のアフター写真1を大きく表示"><img src="./index_files/2026-06-13-before-after-2.jpg" alt="1年前に完工した外壁塗装現場のアフター写真1"></a>
+                <a href="./index_files/2026-06-13-before-after-3.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のビフォー写真2を大きく表示"><img src="./index_files/2026-06-13-before-after-3.jpg" alt="1年前に完工した外壁塗装現場のビフォー写真2"></a>
+                <a href="./index_files/2026-06-13-before-after-4.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のアフター写真2を大きく表示"><img src="./index_files/2026-06-13-before-after-4.jpg" alt="1年前に完工した外壁塗装現場のアフター写真2"></a>
+                <a href="./index_files/2026-06-13-before-after-5.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のビフォー写真3を大きく表示"><img src="./index_files/2026-06-13-before-after-5.jpg" alt="1年前に完工した外壁塗装現場のビフォー写真3"></a>
+                <a href="./index_files/2026-06-13-before-after-6.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のアフター写真3を大きく表示"><img src="./index_files/2026-06-13-before-after-6.jpg" alt="1年前に完工した外壁塗装現場のアフター写真3"></a>
+                <a href="./index_files/2026-06-13-before-after-7.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のビフォー写真4を大きく表示"><img src="./index_files/2026-06-13-before-after-7.jpg" alt="1年前に完工した外壁塗装現場のビフォー写真4"></a>
+                <a href="./index_files/2026-06-13-before-after-8.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のアフター写真4を大きく表示"><img src="./index_files/2026-06-13-before-after-8.jpg" alt="1年前に完工した外壁塗装現場のアフター写真4"></a>
               </div>
             </div>
           </article>
           <article class="blog-card">
-            <img src="assets/blog/2026-06-12-diy-paint-tools-1.jpg" alt="初めてのDIY塗装でそろえる道具の説明画像">
+            <img src="./index_files/2026-06-12-diy-paint-tools-1.jpg" alt="初めてのDIY塗装でそろえる道具の説明画像">
             <div class="blog-body">
               <div class="blog-meta"><time datetime="2026-06-12">2026.06.12</time><span>DIY塗装</span></div>
               <h3>初めてのDIY塗装でそろえる道具</h3>
@@ -1474,131 +1403,45 @@
               </details>
             </div>
           </article>
-          <details class="blog-archive">
-            <summary>ブログ記事一覧を見る</summary>
-            <div class="blog-archive-list">
-              <article class="blog-archive-item">
-                <details>
-                  <summary>
-                    <span>2026.06.14　現場ブログ</span>
-                    <strong>暑い日の養生作業と梅雨時期の進め方</strong>
-                  </summary>
-                  <div class="blog-archive-body">
-                    <p>おはようございます☀</p>
-              <p>昨日は30℃で暑かったです💦</p>
-              <p>そんな中、養生の続きを進めました！</p>
-              <p>梅雨時期で蒸したり、暑かったりもあるので窓が開けられて少しでも換気ができるように考えて養生をしています✨</p>
-              <p>今日は日曜日ですが、明日が雨予報でもあるので午前中の私用が済んだら現場へ向かおうと思います💪🏼</p>
-              <p>梅雨時期なので天気を見ながら臨機応変に進めていきたいと思っています🔥</p>
-                    <div class="blog-gallery">
-                      <a href="assets/blog/2026-06-14-masking-work-1.jpg" target="_blank" rel="noopener" aria-label="窓の換気を考えながら進めた養生作業の様子1を大きく表示"><img src="assets/blog/2026-06-14-masking-work-1.jpg" alt="窓の換気を考えながら進めた養生作業の様子1"></a>
-                      <a href="assets/blog/2026-06-14-masking-work-2.jpg" target="_blank" rel="noopener" aria-label="窓の換気を考えながら進めた養生作業の様子2を大きく表示"><img src="assets/blog/2026-06-14-masking-work-2.jpg" alt="窓の換気を考えながら進めた養生作業の様子2"></a>
-                    </div>
-                  </div>
-                </details>
-              </article>
-              <article class="blog-archive-item">
-                <details>
-                  <summary>
-                    <span>2026.06.13　施工事例</span>
-                    <strong>1年前に完工した現場のビフォーアフター</strong>
-                  </summary>
-                  <div class="blog-archive-body">
-                    <p>おはようございます☀</p>
-              <p>今日はちょうど1年前に完工した現場のビフォーアフターの紹介です✨</p>
-              <p>壁は白とグレーの2色で仕上げています☝🏼</p>
-              <p>天気の関係もあると思いますが、とてもきれいに仕上がってお客様も大変喜んで頂きました😊</p>
-              <p>近々、1年点検に伺おうと思っています！</p>
-              <p>Real Makeは塗り替えした後も長いお付き合いをさせて頂いております✨</p>
-                    <div class="blog-gallery">
-                      <a href="assets/blog/2026-06-13-before-after-1.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のビフォー写真1を大きく表示"><img src="assets/blog/2026-06-13-before-after-1.jpg" alt="1年前に完工した外壁塗装現場のビフォー写真1"></a>
-                      <a href="assets/blog/2026-06-13-before-after-2.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のアフター写真1を大きく表示"><img src="assets/blog/2026-06-13-before-after-2.jpg" alt="1年前に完工した外壁塗装現場のアフター写真1"></a>
-                      <a href="assets/blog/2026-06-13-before-after-3.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のビフォー写真2を大きく表示"><img src="assets/blog/2026-06-13-before-after-3.jpg" alt="1年前に完工した外壁塗装現場のビフォー写真2"></a>
-                      <a href="assets/blog/2026-06-13-before-after-4.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のアフター写真2を大きく表示"><img src="assets/blog/2026-06-13-before-after-4.jpg" alt="1年前に完工した外壁塗装現場のアフター写真2"></a>
-                      <a href="assets/blog/2026-06-13-before-after-5.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のビフォー写真3を大きく表示"><img src="assets/blog/2026-06-13-before-after-5.jpg" alt="1年前に完工した外壁塗装現場のビフォー写真3"></a>
-                      <a href="assets/blog/2026-06-13-before-after-6.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のアフター写真3を大きく表示"><img src="assets/blog/2026-06-13-before-after-6.jpg" alt="1年前に完工した外壁塗装現場のアフター写真3"></a>
-                      <a href="assets/blog/2026-06-13-before-after-7.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のビフォー写真4を大きく表示"><img src="assets/blog/2026-06-13-before-after-7.jpg" alt="1年前に完工した外壁塗装現場のビフォー写真4"></a>
-                      <a href="assets/blog/2026-06-13-before-after-8.jpg" target="_blank" rel="noopener" aria-label="1年前に完工した外壁塗装現場のアフター写真4を大きく表示"><img src="assets/blog/2026-06-13-before-after-8.jpg" alt="1年前に完工した外壁塗装現場のアフター写真4"></a>
-                    </div>
-                  </div>
-                </details>
-              </article>
-              <article class="blog-archive-item">
-                <details>
-                  <summary>
-                    <span>2026.06.12　DIY塗装</span>
-                    <strong>初めてのDIY塗装でそろえる道具</strong>
-                  </summary>
-                  <div class="blog-archive-body">
-                    <p>おはようございます☀️</p>
-              <p>今日は、【初めてのDIY塗装でそろえる道具】についてです✅</p>
-              <p>木製の踏み台や棚、プランター台などを自分で塗って楽しむ方も増えています😊</p>
-              <p>ただ、初めてだと、「何を用意すればいいの？」と思う方も多いと思います🤔</p>
-              <p>小さな木製品を塗るくらいであれば、最初から高い道具をたくさんそろえる必要はありません☝🏼</p>
-              <p>まずは、このあたりがあれば始めやすいです。</p>
-              <p>✅ ① サンドペーパー<br>木を塗る前に、表面を整えるために使います。<br>ザラつきや毛羽立ちを軽く取るだけでも、仕上がりがかなり変わります✨<br>初めてなら、120番〜240番くらいが使いやすいと思います。</p>
-              <p>✅ ② 刷毛<br>細かい部分や角、木の隙間などを塗る時に使います。<br>小さな踏み台や棚なら、まずは中くらいの刷毛が1本あれば使いやすいです😊</p>
-              <p>✅ ③ ローラー<br>広い面を塗る時に便利です。<br>踏み台の天板や棚板など、平らな部分を塗る時はローラーを使うと早く塗れます☝🏼<br>ただし、小さい物なら刷毛だけでも大丈夫です👍🏼</p>
-              <p>✅ ④ マスキングテープ<br>塗りたくない部分を守ったり、色を分けたい時に使います。<br>きれいなラインを出したい時にも便利です✨</p>
-              <p>✅ ⑤ 養生シート・新聞紙<br>床やまわりを汚さないために敷きます。<br>DIY塗装では、思ったより塗料が垂れたり飛んだりすることがあります💦<br>塗る前にまわりを守っておくと安心です✨</p>
-              <p>✅ ⑥ ウエス・雑巾<br>ペーパーがけをした後の粉やホコリを拭いたり、塗料が付いてしまった時に使います。<br>塗る前にホコリを落とすだけでも、仕上がりがきれいになります😊</p>
-              <p>✅ ⑦ 水性ペンキ<br>初めてのDIYなら、水性ペンキが扱いやすいと思います☝🏼<br>臭いが少なく、道具も水で洗えるものが多いので、初心者の方には使いやすいです🎨<br>ただし、屋外で使う物なら、屋外用・木部用など、用途に合った塗料を選ぶことが大切です☝🏼</p>
-              <p>DIY塗装は、道具を完璧にそろえることよりも、<br>✅ 塗る前に整える<br>✅ まわりを汚さないようにする<br>✅ 薄く丁寧に塗る<br>✅ しっかり乾かす<br>このあたりが大切です✨</p>
-              <p>まずは小さな木製品から、気軽にDIY塗装を楽しんでみるのもおすすめです😊</p>
-                    <div class="blog-gallery">
-                      <a href="assets/blog/2026-06-12-diy-paint-tools-1.jpg" target="_blank" rel="noopener" aria-label="初めてのDIY塗装でそろえる道具の説明画像を大きく表示"><img src="assets/blog/2026-06-12-diy-paint-tools-1.jpg" alt="初めてのDIY塗装でそろえる道具の説明画像"></a>
-                    </div>
-                  </div>
-                </details>
-              </article>
-              <article class="blog-archive-item">
-                <details>
-                  <summary>
-                    <span>2026.06.11　現場ブログ</span>
-                    <strong>雨漏り解消後の工事再開</strong>
-                  </summary>
-                  <div class="blog-archive-body">
-                    <p>おはようございます☀</p>
+          <article class="blog-card">
+            <img src="./index_files/2026-06-11-leak-repair-resume-1.jpg" alt="雨漏り解消後に工事を再開する現場のサビ止め作業">
+            <div class="blog-body">
+              <div class="blog-meta"><time datetime="2026-06-11">2026.06.11</time><span>現場ブログ</span></div>
+              <h3>雨漏り解消後の工事再開</h3>
+              <p>おはようございます☀</p>
               <p>雨漏りが止まらずにストップしていた現場が、ようやく雨漏りが解消されたとの連絡があり、工事を再開することができます✨</p>
               <p>梅雨ではありますが、天気を見ながら計画的に進めていきたいと思います💪🏼</p>
-                    <div class="blog-gallery">
-                      <a href="assets/blog/2026-06-11-leak-repair-resume-1.jpg" target="_blank" rel="noopener" aria-label="雨漏り解消後に工事を再開する現場のサビ止め作業を大きく表示"><img src="assets/blog/2026-06-11-leak-repair-resume-1.jpg" alt="雨漏り解消後に工事を再開する現場のサビ止め作業"></a>
-                      <a href="assets/blog/2026-06-11-leak-repair-resume-2.jpg" target="_blank" rel="noopener" aria-label="サビ止め施工後の庇まわりを大きく表示"><img src="assets/blog/2026-06-11-leak-repair-resume-2.jpg" alt="サビ止め施工後の庇まわり"></a>
-                      <a href="assets/blog/2026-06-11-leak-repair-resume-3.jpg" target="_blank" rel="noopener" aria-label="屋根まわりのサビ止め施工後を大きく表示"><img src="assets/blog/2026-06-11-leak-repair-resume-3.jpg" alt="屋根まわりのサビ止め施工後"></a>
-                    </div>
-                  </div>
-                </details>
-              </article>
-              <article class="blog-archive-item">
-                <details>
-                  <summary>
-                    <span>2026.06.10　現場ブログ</span>
-                    <strong>梅雨時期の網戸張替え</strong>
-                  </summary>
-                  <div class="blog-archive-body">
-                    <p>おはようございます！</p>
+              <div class="blog-gallery">
+                <a href="./index_files/2026-06-11-leak-repair-resume-2.jpg" target="_blank" rel="noopener" aria-label="サビ止め施工後の庇まわりを大きく表示"><img src="./index_files/2026-06-11-leak-repair-resume-2.jpg" alt="サビ止め施工後の庇まわり"></a>
+                <a href="./index_files/2026-06-11-leak-repair-resume-3.jpg" target="_blank" rel="noopener" aria-label="屋根まわりのサビ止め施工後を大きく表示"><img src="./index_files/2026-06-11-leak-repair-resume-3.jpg" alt="屋根まわりのサビ止め施工後"></a>
+              </div>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-body">
+              <div class="blog-meta"><time datetime="2026-06-10">2026.06.10</time><span>現場ブログ</span></div>
+              <h3>梅雨時期の網戸張替え</h3>
+              <p>おはようございます！<br><br>梅雨ですね〜☔️<br><br>昨日は朝から雨だったので、【網戸の張替え】をしました💪🏼<br><br>だんだんとコツを掴んできて、スピードもクオリティも上がってきました✨<br><br>梅雨が終わると暑い夏がやってきます🔥<br><br>窓を開けることが多くなると思うので、この梅雨時期に網戸が破れていないか、穴は空いていないかの確認をしてみてください☝🏼<br><br>穴が空いている...</p>
+              <details class="blog-more">
+                <summary>続きを読む</summary>
+                <p>おはようございます！</p>
               <p>梅雨ですね〜☔️</p>
               <p>昨日は朝から雨だったので、【網戸の張替え】をしました💪🏼</p>
               <p>だんだんとコツを掴んできて、スピードもクオリティも上がってきました✨</p>
               <p>梅雨が終わると暑い夏がやってきます🔥</p>
               <p>窓を開けることが多くなると思うので、この梅雨時期に網戸が破れていないか、穴は空いていないかの確認をしてみてください☝🏼</p>
               <p>穴が空いていると虫が侵入してしまうので注意しましょう⚠️</p>
-                    <div class="blog-gallery">
-                      <a href="assets/blog/2026-06-10-screen-repair-1.jpg" target="_blank" rel="noopener" aria-label="網戸の張替え作業中の様子を大きく表示"><img src="assets/blog/2026-06-10-screen-repair-1.jpg" alt="網戸の張替え作業中の様子"></a>
-                      <a href="assets/blog/2026-06-10-screen-repair-2.jpg" target="_blank" rel="noopener" aria-label="網戸張替え作業中の網戸全体を大きく表示"><img src="assets/blog/2026-06-10-screen-repair-2.jpg" alt="網戸張替え作業中の網戸全体"></a>
-                      <a href="assets/blog/2026-06-10-screen-repair-3.jpg" target="_blank" rel="noopener" aria-label="張替え後の網戸を大きく表示"><img src="assets/blog/2026-06-10-screen-repair-3.jpg" alt="張替え後の網戸"></a>
-                    </div>
-                  </div>
-                </details>
-              </article>
-              <article class="blog-archive-item">
-                <details>
-                  <summary>
-                    <span>2026.06.09　DIY塗装</span>
-                    <strong>DIY塗装で失敗しやすい3つのこと</strong>
-                  </summary>
-                  <div class="blog-archive-body">
-                    <p>おはようございます☀️</p>
+              </details>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-body">
+              <div class="blog-meta"><time datetime="2026-06-09">2026.06.09</time><span>DIY塗装</span></div>
+              <h3>DIY塗装で失敗しやすい3つのこと</h3>
+              <p>おはようございます☀️<br><br>今日は、【DIY塗装で失敗しやすい3つのこと】についてです✅<br><br>最近は、DIYを楽しむ方も増えていますね😊<br><br>木製の踏み台や棚、プランター台などを自分で塗るだけでも、雰囲気がかなり変わるので楽しいと思います🎨<br><br>ただ、DIY塗装でよくある失敗もあります☝🏼<br><br>特に気をつけたいのが、この3つです。<br><br>① 厚く塗りすぎる<br>「一回で...</p>
+              <details class="blog-more">
+                <summary>続きを読む</summary>
+                <p>おはようございます☀️</p>
               <p>今日は、【DIY塗装で失敗しやすい3つのこと】についてです✅</p>
               <p>最近は、DIYを楽しむ方も増えていますね😊</p>
               <p>木製の踏み台や棚、プランター台などを自分で塗るだけでも、雰囲気がかなり変わるので楽しいと思います🎨</p>
@@ -1611,20 +1454,17 @@
               <p>DIY塗装は、難しそうに見えるかもしれませんが、<br>✅ 薄く塗る<br>✅ しっかり乾かす<br>✅ ホコリを落とす<br>この3つを意識するだけでも、仕上がりはかなり変わります✨</p>
               <p>焦らず、少しずつ丁寧に😊</p>
               <p>今日お伝えしたことを意識して、気軽にDIY塗装を楽しんでみてください💪🏼</p>
-                    <div class="blog-gallery">
-                      <a href="assets/blog/2026-06-09-diy-painting-mistakes-1.jpg" target="_blank" rel="noopener" aria-label="DIY塗装で失敗しやすい3つのことを大きく表示"><img src="assets/blog/2026-06-09-diy-painting-mistakes-1.jpg" alt="DIY塗装で失敗しやすい3つのこと"></a>
-                    </div>
-                  </div>
-                </details>
-              </article>
-              <article class="blog-archive-item">
-                <details>
-                  <summary>
-                    <span>2026.06.08　現場ブログ</span>
-                    <strong>初めてのポスト交換作業</strong>
-                  </summary>
-                  <div class="blog-archive-body">
-                    <p>おはようございます✨</p>
+              </details>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-body">
+              <div class="blog-meta"><time datetime="2026-06-08">2026.06.08</time><span>現場ブログ</span></div>
+              <h3>初めてのポスト交換作業</h3>
+              <p>おはようございます✨<br><br>昨日は日曜日だったのですが、月曜日が雨予報ということで急遽作業をさせて頂きました💪🏼<br><br>初めての【ポスト交換】でした🔥<br><br>初めての経験なので、事前に下調べ、勉強をしました！<br><br>勉強の甲斐あって順調に交換することができました✨<br><br>ブロック塀が乾いた頃に補修と最終確認にまた伺う予定です🫡<br><br>新しい知識とスキルを得られたことに感謝で...</p>
+              <details class="blog-more">
+                <summary>続きを読む</summary>
+                <p>おはようございます✨</p>
               <p>昨日は日曜日だったのですが、月曜日が雨予報ということで急遽作業をさせて頂きました💪🏼</p>
               <p>初めての【ポスト交換】でした🔥</p>
               <p>初めての経験なので、事前に下調べ、勉強をしました！</p>
@@ -1632,21 +1472,18 @@
               <p>ブロック塀が乾いた頃に補修と最終確認にまた伺う予定です🫡</p>
               <p>新しい知識とスキルを得られたことに感謝です✨🙏🏻</p>
               <p>ご依頼ありがとうございました✨</p>
-                    <div class="blog-gallery">
-                      <a href="assets/blog/2026-06-08-post-replacement-1.jpg" target="_blank" rel="noopener" aria-label="ブロック塀に設置した新しいポストの正面を大きく表示"><img src="assets/blog/2026-06-08-post-replacement-1.jpg" alt="ブロック塀に設置した新しいポストの正面"></a>
-                      <a href="assets/blog/2026-06-08-post-replacement-2.jpg" target="_blank" rel="noopener" aria-label="交換後のポスト全体の仕上がりを大きく表示"><img src="assets/blog/2026-06-08-post-replacement-2.jpg" alt="交換後のポスト全体の仕上がり"></a>
-                    </div>
-                  </div>
-                </details>
-              </article>
-              <article class="blog-archive-item">
-                <details>
-                  <summary>
-                    <span>2026.06.07　DIY塗装</span>
-                    <strong>木を塗る前のペーパーがけが大切な理由</strong>
-                  </summary>
-                  <div class="blog-archive-body">
-                    <p>おはようございます☀️</p>
+              </details>
+            </div>
+          </article>
+          <article class="blog-card">
+            <img src="./index_files/2026-06-07-wood-sanding-1.jpg" alt="木を塗る前のペーパーがけが大切という説明画像">
+            <div class="blog-body">
+              <div class="blog-meta"><time datetime="2026-06-07">2026.06.07</time><span>DIY塗装</span></div>
+              <h3>木を塗る前のペーパーがけが大切な理由</h3>
+              <p>おはようございます☀️<br><br>今日は、【木を塗る前のペーパーがけ】についてです✅<br><br>DIYで木製の踏み台や棚を作った時、「そのまま塗ればいいんじゃないの？」と思う方も多いかもしれません🤔<br><br>もちろん、そのまま塗ることもできます。<br><br>ただ、塗る前に少しだけペーパーをかけると、仕上がりがかなり変わります☝🏼<br><br>ペーパーがけをする理由は、<br>・木の表面のザラつきを整...</p>
+              <details class="blog-more">
+                <summary>続きを読む</summary>
+                <p>おはようございます☀️</p>
               <p>今日は、【木を塗る前のペーパーがけ】についてです✅</p>
               <p>DIYで木製の踏み台や棚を作った時、「そのまま塗ればいいんじゃないの？」と思う方も多いかもしれません🤔</p>
               <p>もちろん、そのまま塗ることもできます。</p>
@@ -1661,21 +1498,21 @@
               <p>DIY塗装は、塗る作業に目が行きがちですが<br>実は、【塗る前の準備】がとても大切です☝🏼</p>
               <p>少し手間はかかりますが、このひと手間で、見た目も触り心地もかなり良くなります😊</p>
               <p>初めてDIYに挑戦する方は、ぜひ塗る前のペーパーがけも試してみてください✨</p>
-                    <div class="blog-gallery">
-                      <a href="assets/blog/2026-06-07-wood-sanding-1.jpg" target="_blank" rel="noopener" aria-label="木を塗る前のペーパーがけが大切という説明画像を大きく表示"><img src="assets/blog/2026-06-07-wood-sanding-1.jpg" alt="木を塗る前のペーパーがけが大切という説明画像"></a>
-                      <a href="assets/blog/2026-06-07-wood-sanding-2.jpg" target="_blank" rel="noopener" aria-label="DIYで踏み台を塗る前にペーパーがけをする説明画像を大きく表示"><img src="assets/blog/2026-06-07-wood-sanding-2.jpg" alt="DIYで踏み台を塗る前にペーパーがけをする説明画像"></a>
-                    </div>
-                  </div>
-                </details>
-              </article>
-              <article class="blog-archive-item">
-                <details>
-                  <summary>
-                    <span>2026.06.06　DIY塗装</span>
-                    <strong>初めてのDIYにおすすめな小さな木製品づくり</strong>
-                  </summary>
-                  <div class="blog-archive-body">
-                    <p>おはようございます☀️</p>
+              </details>
+              <div class="blog-gallery">
+                <a href="./index_files/2026-06-07-wood-sanding-2.jpg" target="_blank" rel="noopener" aria-label="DIYで踏み台を塗る前にペーパーがけをする説明画像を大きく表示"><img src="./index_files/2026-06-07-wood-sanding-2.jpg" alt="DIYで踏み台を塗る前にペーパーがけをする説明画像"></a>
+              </div>
+            </div>
+          </article>
+          <article class="blog-card">
+            <img src="./index_files/2026-06-06-first-diy-1.jpg" alt="初めてのDIYにおすすめの木製踏み台塗装">
+            <div class="blog-body">
+              <div class="blog-meta"><time datetime="2026-06-06">2026.06.06</time><span>DIY塗装</span></div>
+              <h3>初めてのDIYにおすすめな小さな木製品づくり</h3>
+              <p>おはようございます☀️<br><br>今日は少し外壁塗装とは離れて、【初めてのDIYにおすすめなもの】についてです😊<br><br>最近は、ご自宅でDIYを楽しむ方も増えていますよね💪🏼<br><br>ただ、いきなり大きな家具を作ったり、家の外壁を塗ったりするのは、少しハードルが高いと思います💦<br><br>そこで個人的におすすめなのが、【小さな木製品を作って塗装するDIY】です☝🏼<br><br>例えば...</p>
+              <details class="blog-more">
+                <summary>続きを読む</summary>
+                <p>おはようございます☀️</p>
               <p>今日は少し外壁塗装とは離れて、【初めてのDIYにおすすめなもの】についてです😊</p>
               <p>最近は、ご自宅でDIYを楽しむ方も増えていますよね💪🏼</p>
               <p>ただ、いきなり大きな家具を作ったり、家の外壁を塗ったりするのは、少しハードルが高いと思います💦</p>
@@ -1690,21 +1527,20 @@
               <p>✅ いきなり塗らずに軽くペーパーをかける<br>✅ ホコリをしっかり落とす<br>✅ 一度に厚く塗りすぎない<br>✅ 乾かす時間をしっかり取る<br>このあたりを意識するだけでも、仕上がりがかなり変わります☝🏼</p>
               <p>大きな工事はプロに任せるとしても、小さなDIYなら、ご自宅で楽しみながら家への愛着も湧くと思います🏠</p>
               <p>まずは小さな木製品から、気軽に挑戦してみると良いと思います🙆🏻</p>
-                    <div class="blog-gallery">
-                      <a href="assets/blog/2026-06-06-first-diy-1.jpg" target="_blank" rel="noopener" aria-label="初めてのDIYにおすすめの木製踏み台塗装を大きく表示"><img src="assets/blog/2026-06-06-first-diy-1.jpg" alt="初めてのDIYにおすすめの木製踏み台塗装"></a>
-                      <a href="assets/blog/2026-06-06-first-diy-2.jpg" target="_blank" rel="noopener" aria-label="木製踏み台を使った初めてのDIY手順を大きく表示"><img src="assets/blog/2026-06-06-first-diy-2.jpg" alt="木製踏み台を使った初めてのDIY手順"></a>
-                    </div>
-                  </div>
-                </details>
-              </article>
-              <article class="blog-archive-item">
-                <details>
-                  <summary>
-                    <span>2026.06.05　注意喚起</span>
-                    <strong>突然の屋根点検営業への対応方法</strong>
-                  </summary>
-                  <div class="blog-archive-body">
-                    <p>おはようございます☀️</p>
+              </details>
+              <div class="blog-gallery">
+                <a href="./index_files/2026-06-06-first-diy-2.jpg" target="_blank" rel="noopener" aria-label="木製踏み台を使った初めてのDIY手順を大きく表示"><img src="./index_files/2026-06-06-first-diy-2.jpg" alt="木製踏み台を使った初めてのDIY手順"></a>
+              </div>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-body">
+              <div class="blog-meta"><time datetime="2026-06-05">2026.06.05</time><span>注意喚起</span></div>
+              <h3>突然の屋根点検営業への対応方法</h3>
+              <p>おはようございます☀️<br><br>昨日は、台風後に増えやすい【屋根点検の訪問営業】についてお話しました☝🏼<br><br>今日はその続きで、もし本当に<br>「屋根が浮いて見えました」<br>「無料で点検しますよ」<br>「このままだと雨漏りしますよ」<br>と言われた時に、まずどう対応すればいいのかについてです☝🏼<br><br>台風の後は、お家のことが心配になりやすい時期です🌀<br><br>だからこそ、不安な言葉...</p>
+              <details class="blog-more">
+                <summary>続きを読む</summary>
+                <p>おはようございます☀️</p>
               <p>昨日は、台風後に増えやすい【屋根点検の訪問営業】についてお話しました☝🏼</p>
               <p>今日はその続きで、もし本当に<br>「屋根が浮いて見えました」<br>「無料で点検しますよ」<br>「このままだと雨漏りしますよ」<br>と言われた時に、まずどう対応すればいいのかについてです☝🏼</p>
               <p>台風の後は、お家のことが心配になりやすい時期です🌀</p>
@@ -1718,20 +1554,17 @@
               <p>それでも気になる場合は、家族と相談したり、しっかりとリサーチして信頼できそうな会社に改めて問い合わせてみるのが安心だと思います✨</p>
               <p>屋根は、普段お客様が確認しにくい場所です。</p>
               <p>だからこそ、「言われたから信じる」、その場で判断するのではなく、一度落ち着いて、しっかり調べてからどこに相談するのかが、とても大切だと思っています✨</p>
-                    <div class="blog-gallery">
-                      <a href="assets/blog/2026-06-05-roof-sales-response-1.jpg" target="_blank" rel="noopener" aria-label="突然の屋根点検訪問営業への対応方法を大きく表示"><img src="assets/blog/2026-06-05-roof-sales-response-1.jpg" alt="突然の屋根点検訪問営業への対応方法"></a>
-                    </div>
-                  </div>
-                </details>
-              </article>
-              <article class="blog-archive-item">
-                <details>
-                  <summary>
-                    <span>2026.06.04　注意喚起</span>
-                    <strong>台風後の屋根点検詐欺に注意</strong>
-                  </summary>
-                  <div class="blog-archive-body">
-                    <p>台風の後は、<br>「近くで工事していて屋根が浮いて見えました」<br>「台風で瓦がズレているかもしれません」<br>「無料で屋根を見ますよ」<br>こういう訪問営業が増えることがあります🌀</p>
+              </details>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-body">
+              <div class="blog-meta"><time datetime="2026-06-04">2026.06.04</time><span>注意喚起</span></div>
+              <h3>台風後の屋根点検詐欺に注意</h3>
+              <p>台風の後は、<br>「近くで工事していて屋根が浮いて見えました」<br>「台風で瓦がズレているかもしれません」<br>「無料で屋根を見ますよ」<br>こういう訪問営業が増えることがあります🌀<br><br>もちろん、全部が悪いわけではありません☝🏼<br><br>ただ、いきなり来た人を屋根に上げてしまうのは注意が必要です⚠️<br><br>なぜなら、<br>・本当に傷んでいるか分からない<br>・屋根に上がった後に不安を煽ら...</p>
+              <details class="blog-more">
+                <summary>続きを読む</summary>
+                <p>台風の後は、<br>「近くで工事していて屋根が浮いて見えました」<br>「台風で瓦がズレているかもしれません」<br>「無料で屋根を見ますよ」<br>こういう訪問営業が増えることがあります🌀</p>
               <p>もちろん、全部が悪いわけではありません☝🏼</p>
               <p>ただ、いきなり来た人を屋根に上げてしまうのは注意が必要です⚠️</p>
               <p>なぜなら、<br>・本当に傷んでいるか分からない<br>・屋根に上がった後に不安を煽られる<br>・その場で高額契約を迫られる<br>・場合によっては屋根を傷つけられる可能性もある<br>こういったトラブルがあるからです。</p>
@@ -1739,44 +1572,34 @@
               <p>台風の後は不安になりやすい時期ですが、焦って決める必要はありません❗️</p>
               <p>「今すぐ直さないと雨漏りしますよ」<br>「今日契約すれば安くします」<br>「保険で無料で直せます」<br>こういう言葉が出たら、一度冷静になってください⚠️</p>
               <p>家を守るためには、工事そのものだけでなく、まず誰に相談するか、誰に見てもらうかも大切だと思います😊</p>
-                    <div class="blog-gallery">
-                      <a href="assets/blog/2026-06-04-roof-inspection-scam-1.jpg" target="_blank" rel="noopener" aria-label="台風後に増える屋根点検詐欺への注意喚起を大きく表示"><img src="assets/blog/2026-06-04-roof-inspection-scam-1.jpg" alt="台風後に増える屋根点検詐欺への注意喚起"></a>
-                    </div>
-                  </div>
-                </details>
-              </article>
-              <article class="blog-archive-item">
-                <details>
-                  <summary>
-                    <span>2026.06.03　地域活動</span>
-                    <strong>第29回べに花まつりへのご協力</strong>
-                  </summary>
-                  <div class="blog-archive-body">
-                    <p>改めてですが、地元である桶川市で行われる【第29回べに花まつり】を盛り上げるためにご協力をさせて頂きました✨</p>
+              </details>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-body">
+              <div class="blog-meta"><time datetime="2026-06-03">2026.06.03</time><span>地域活動</span></div>
+              <h3>第29回べに花まつりへのご協力</h3>
+              <p>改めてですが、地元である桶川市で行われる【第29回べに花まつり】を盛り上げるためにご協力をさせて頂きました✨<br><br>僕は生まれも育ちも桶川です！<br><br>もう41年もお世話になっている地元に、初めてちゃんとしたご協力ができたかなと思います。<br><br>べに花祭りは6月20・21日に【道の駅 べに花の郷おけがわ】で開催されます✨<br><br>地元が少しでも元気に活気溢れる事を願っています...</p>
+              <details class="blog-more">
+                <summary>続きを読む</summary>
+                <p>改めてですが、地元である桶川市で行われる【第29回べに花まつり】を盛り上げるためにご協力をさせて頂きました✨</p>
               <p>僕は生まれも育ちも桶川です！</p>
               <p>もう41年もお世話になっている地元に、初めてちゃんとしたご協力ができたかなと思います。</p>
               <p>べに花祭りは6月20・21日に【道の駅 べに花の郷おけがわ】で開催されます✨</p>
               <p>地元が少しでも元気に活気溢れる事を願っています🔥</p>
               <p>改めてこの度のご縁に感謝いたします🙏🏻</p>
-                    <div class="blog-gallery">
-                      <a href="assets/blog/2026-06-03-benibana-festival-1.jpg" target="_blank" rel="noopener" aria-label="新聞広告に掲載されたReal Makeの広告を大きく表示"><img src="assets/blog/2026-06-03-benibana-festival-1.jpg" alt="新聞広告に掲載されたReal Makeの広告"></a>
-                      <a href="assets/blog/2026-06-03-benibana-festival-2.jpg" target="_blank" rel="noopener" aria-label="第29回べに花まつりの記事と協賛広告を大きく表示"><img src="assets/blog/2026-06-03-benibana-festival-2.jpg" alt="第29回べに花まつりの記事と協賛広告"></a>
-                      <a href="assets/blog/2026-06-03-benibana-festival-3.jpg" target="_blank" rel="noopener" aria-label="第29回べに花まつりの新聞紙面全体を大きく表示"><img src="assets/blog/2026-06-03-benibana-festival-3.jpg" alt="第29回べに花まつりの新聞紙面全体"></a>
-                    </div>
-                  </div>
-                </details>
-              </article>
+              </details>
             </div>
-          </details>
+          </article>
           <!-- BLOG-POSTS END -->
         </div>
       </div>
     </section>
 
-    <section class="section section-muted section-photo" id="profile" style="--section-bg: url('assets/sections/black-after.jpg');">
+    <section class="section section-muted section-photo" id="profile" style="--section-bg: url(&#39;assets/sections/black-after.jpg&#39;);">
       <div class="container profile">
         <div class="profile-photo">
-          <img src="assets/images/owner.jpg" alt="Real Make 代表 大川亮太">
+          <img src="./index_files/owner.jpg" alt="Real Make 代表 大川亮太">
         </div>
         <div class="profile-note">
           <p class="section-label">Message</p>
@@ -1789,7 +1612,7 @@
       </div>
     </section>
 
-    <section class="section section-muted section-photo" id="contact" style="--section-bg: url('assets/sections/white-after-side.jpg');">
+    <section class="section section-muted section-photo" id="contact" style="--section-bg: url(&#39;assets/sections/white-after-side.jpg&#39;);">
       <div class="container area-contact">
         <div class="panel">
           <p class="section-label">Area</p>
@@ -1814,29 +1637,27 @@
           <p>営業時間 8:00-18:00</p>
           <div class="contact-actions">
             <a class="button button-primary" href="tel:09014340189">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.6c0 .7-.5 1.2-1.2 1.2C10.6 21.6 2.4 13.4 2.4 3.4c0-.7.5-1.2 1.2-1.2h3.6c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.8.6 4 .1.4 0 .9-.3 1.2l-2.1 2.2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.6c0 .7-.5 1.2-1.2 1.2C10.6 21.6 2.4 13.4 2.4 3.4c0-.7.5-1.2 1.2-1.2h3.6c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.8.6 4 .1.4 0 .9-.3 1.2l-2.1 2.2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>
               電話で相談する
             </a>
             <a class="button button-line" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 5.5h15v9.2h-8.1L7 18.5v-3.8H4.5V5.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 5.5h15v9.2h-8.1L7 18.5v-3.8H4.5V5.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>
               LINEで無料相談する
             </a>
           </div>
           <div class="line-consult">
             <a class="line-qr" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener" aria-label="Real Make LINE公式アカウントを開く">
-              <img src="images/line-qr.jpg" alt="Real Make LINE公式アカウント QRコード" loading="lazy">
+              <img src="./index_files/line-qr.jpg" alt="Real Make LINE公式アカウント QRコード">
             </a>
             <div>
               <h3>LINE公式アカウントで無料相談</h3>
               <p>外壁・屋根の気になる箇所を写真で送ってご相談いただけます。</p>
-              <a class="button button-line" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">
-                LINEで相談する
-              </a>
+              <a class="button button-line" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">LINEで相談する</a>
             </div>
           </div>
           <div class="sns-links">
             <a href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">LINE公式</a>
-            <a href="https://www.instagram.com/real_make?igsh=MXV6NnlhaG04YjhzaQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.instagram.com/real_make?igsh=MXV6NnlhaG04YjhzaQ%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener">Instagram</a>
             <a href="https://www.facebook.com/share/1CdfZkJEoK/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
           </div>
         </div>
@@ -1848,7 +1669,7 @@
     <div class="container footer-inner">
       <div>
         <div class="footer-brand">
-          <img src="assets/images/logo.png" alt="Real Make ロゴ">
+          <img src="./index_files/logo.png" alt="Real Make ロゴ">
           <span>Real Make（リアルメイク）</span>
         </div>
         <p>埼玉県全域対応 / 外壁塗装・屋根塗装・防水・コーキング工事</p>
@@ -1860,7 +1681,8 @@
   <div class="fixed-cta" aria-label="固定お問い合わせ">
     <a class="tel" href="tel:09014340189">電話する</a>
     <a class="line" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">LINE相談</a>
-    <a class="contact" href="#contact">相談内容を見る</a>
+    <a class="contact" href="http://127.0.0.1:8789/index.html#contact">相談内容を見る</a>
   </div>
-</body>
-</html>
+
+
+</body></html>
