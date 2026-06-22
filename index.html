@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0043)http://127.0.0.1:8790/index.html?v=20260623 -->
+<!-- saved from url=(0047)http://127.0.0.1:8793/index.html?v=reviews-full -->
 <html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -402,6 +402,12 @@
       margin-bottom: 42px;
     }
 
+    .section-head-center {
+      display: block;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
     .section-label {
       margin-bottom: 10px;
       color: var(--gold);
@@ -436,6 +442,8 @@
     .service,
     .reason,
     .step,
+    .price-card,
+    .review-card,
     .work-card,
     .profile-note,
     .contact-panel {
@@ -561,6 +569,165 @@
       color: var(--gold);
       font-size: .78rem;
       font-weight: 900;
+    }
+
+    .price-intro,
+    .reviews-intro {
+      max-width: 760px;
+      margin: -12px auto 42px;
+      color: var(--sub);
+      text-align: center;
+      line-height: 1.9;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .price-card {
+      position: relative;
+      min-height: 240px;
+      padding: 30px 22px;
+      text-align: center;
+    }
+
+    .price-card.featured {
+      border-color: rgba(33, 154, 181, .75);
+      box-shadow: 0 18px 42px rgba(33, 154, 181, .16);
+    }
+
+    .price-badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      padding: 7px 14px;
+      background: #219ab5;
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .price-card h3 {
+      margin: 8px 0 18px;
+      color: var(--navy);
+      line-height: 1.45;
+    }
+
+    .price-main {
+      margin-bottom: 8px;
+      color: #0d1b27;
+      font-size: clamp(1.7rem, 3vw, 2.25rem);
+      font-weight: 900;
+      line-height: 1.15;
+    }
+
+    .price-sub {
+      margin-bottom: 20px;
+      color: var(--sub);
+      font-size: .88rem;
+      font-weight: 800;
+    }
+
+    .price-detail {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--sub);
+      font-size: .92rem;
+      line-height: 1.75;
+    }
+
+    .price-footnote {
+      margin-top: 26px;
+      border: 1px dashed #d5cfc5;
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      background: rgba(255, 255, 255, .78);
+      color: #344451;
+      line-height: 1.8;
+    }
+
+    .review-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: -16px auto 42px;
+      border-radius: 999px;
+      padding: 12px 18px;
+      background: rgba(255, 255, 255, .86);
+      color: var(--navy);
+      font-weight: 900;
+      box-shadow: 0 10px 26px rgba(18, 50, 75, .07);
+    }
+
+    .review-rating .review-stars {
+      margin: 0;
+    }
+
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .review-card {
+      position: relative;
+      min-height: 270px;
+      padding: 34px 28px 28px;
+    }
+
+    .review-card::before {
+      content: "“";
+      display: block;
+      margin-bottom: 8px;
+      color: #219ab5;
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: .7;
+      opacity: .62;
+    }
+
+    .review-stars {
+      margin-bottom: 18px;
+      color: var(--gold);
+      font-size: 1.1rem;
+      letter-spacing: .08em;
+    }
+
+    .review-card h3 {
+      margin-bottom: 10px;
+      color: var(--navy);
+      line-height: 1.45;
+    }
+
+    .review-card p {
+      margin-bottom: 18px;
+      color: var(--sub);
+      line-height: 1.8;
+    }
+
+    .review-card strong {
+      color: var(--navy);
+      font-weight: 900;
+    }
+
+    .review-ready {
+      margin-top: 18px;
+      text-align: center;
+      padding: 18px 20px;
+      border: 1px solid rgba(0, 111, 91, .22);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .78);
+      color: #2a3d4b;
+      font-size: .92rem;
+      font-weight: 800;
     }
 
     .works {
@@ -1041,6 +1208,8 @@
       .reasons,
       .services,
       .process,
+      .price-grid,
+      .reviews,
       .works,
       .blog-list {
         grid-template-columns: repeat(2, 1fr);
@@ -1136,6 +1305,8 @@
       .reasons,
       .services,
       .process,
+      .price-grid,
+      .reviews,
       .works,
       .blog-list {
         grid-template-columns: 1fr;
@@ -1230,17 +1401,19 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="http://127.0.0.1:8790/index.html#top" aria-label="Real Make ホーム">
+      <a class="brand" href="http://127.0.0.1:8793/index.html?v=reviews-full#top" aria-label="Real Make ホーム">
         <img src="./index_files/logo.png" alt="Real Make ロゴ">
         <span class="brand-text">Real Make<span>外壁塗装・屋根塗装</span></span>
       </a>
       <nav class="nav" aria-label="主要メニュー">
-        <a href="http://127.0.0.1:8790/index.html#strength">選ばれる理由</a>
-        <a href="http://127.0.0.1:8790/index.html#services">対応工事</a>
-        <a href="http://127.0.0.1:8790/index.html#works">施工事例</a>
-        <a href="http://127.0.0.1:8790/index.html#blog">ブログ</a>
-        <a href="http://127.0.0.1:8790/index.html#profile">代表挨拶</a>
-        <a href="http://127.0.0.1:8790/index.html#contact">お問い合わせ</a>
+        <a href="http://127.0.0.1:8793/index.html?v=reviews-full#strength">選ばれる理由</a>
+        <a href="http://127.0.0.1:8793/index.html?v=reviews-full#services">対応工事</a>
+        <a href="http://127.0.0.1:8793/index.html?v=reviews-full#price">料金目安</a>
+        <a href="http://127.0.0.1:8793/index.html?v=reviews-full#works">施工事例</a>
+        <a href="http://127.0.0.1:8793/index.html?v=reviews-full#reviews">クチコミ</a>
+        <a href="http://127.0.0.1:8793/index.html?v=reviews-full#blog">ブログ</a>
+        <a href="http://127.0.0.1:8793/index.html?v=reviews-full#profile">代表挨拶</a>
+        <a href="http://127.0.0.1:8793/index.html?v=reviews-full#contact">お問い合わせ</a>
       </nav>
       <div class="header-actions">
         <a class="button button-dark" href="tel:09014340189" aria-label="Real Makeへ電話する">
@@ -1262,7 +1435,7 @@
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.6c0 .7-.5 1.2-1.2 1.2C10.6 21.6 2.4 13.4 2.4 3.4c0-.7.5-1.2 1.2-1.2h3.6c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.8.6 4 .1.4 0 .9-.3 1.2l-2.1 2.2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>
             090-1434-0189
           </a>
-          <a class="button button-light" href="http://127.0.0.1:8790/index.html#works">
+          <a class="button button-light" href="http://127.0.0.1:8793/index.html?v=reviews-full#works">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16v13H4V7Zm4-3h8l2 3H6l2-3Zm4 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>
             施工事例を見る
           </a>
@@ -1369,7 +1542,47 @@
       </div>
     </section>
 
-    <section class="section section-photo" style="--section-bg: url(&#39;assets/images/work-scaffold.jpg&#39;);">
+    <section class="section section-photo" id="price" style="--section-bg: url(&#39;assets/images/work-roof-metal-coating.jpg&#39;);">
+      <div class="container">
+        <div class="section-head section-head-center">
+          <div>
+            <p class="section-label">Price</p>
+            <h2 class="section-title">料金の目安</h2>
+          </div>
+        </div>
+        <p class="price-intro">一般的な戸建て（約30坪）を想定した参考価格です。建物の大きさや劣化状況・塗料グレードにより変動するため、まずは無料診断で正確なお見積りをご提示します。</p>
+        <div class="price-grid">
+          <article class="price-card">
+            <h3>外壁塗装</h3>
+            <div class="price-main">80万〜120万円</div>
+            <p class="price-sub">一般的な戸建て（約30坪）</p>
+            <p class="price-detail">高圧洗浄・下地補修・3回塗りを含む、シリコン塗料での目安です。</p>
+          </article>
+          <article class="price-card">
+            <h3>屋根塗装</h3>
+            <div class="price-main">35万〜60万円</div>
+            <p class="price-sub">塗装の場合（足場別）</p>
+            <p class="price-detail">遮熱・高耐久塗料など、屋根材に合わせてご提案します。</p>
+          </article>
+          <article class="price-card featured">
+            <span class="price-badge">いちばんお得</span>
+            <h3>外壁＋屋根セット</h3>
+            <div class="price-main">120万〜160万円</div>
+            <p class="price-sub">足場代をまとめて節約</p>
+            <p class="price-detail">外壁と屋根を同時施工。足場が1回分で済み、まとめてお得に。</p>
+          </article>
+          <article class="price-card">
+            <h3>防水・コーキング</h3>
+            <div class="price-main">10万〜45万円</div>
+            <p class="price-sub">部分施工</p>
+            <p class="price-detail">目地のコーキング打ち替え、ベランダ防水など。傷み具合により変動します。</p>
+          </article>
+        </div>
+        <p class="price-footnote">※上記は一般的な戸建て（約30坪）を想定した目安です。建物の大きさ・劣化状況・塗料グレードによって変動します。正確な金額は、無料の現地調査・お見積りで建物を見てからご提示します。</p>
+      </div>
+    </section>
+
+    <section class="section section-muted section-photo" style="--section-bg: url(&#39;assets/images/work-scaffold.jpg&#39;);">
       <div class="container">
         <div class="section-head">
           <div>
@@ -1388,7 +1601,7 @@
       </div>
     </section>
 
-    <section class="section section-muted section-photo" id="works" style="--section-bg: url(&#39;assets/images/work-roof-tile-coating-2.jpg&#39;);">
+    <section class="section section-photo" id="works" style="--section-bg: url(&#39;assets/images/work-roof-tile-coating-2.jpg&#39;);">
       <div class="container">
         <div class="section-head">
           <div>
@@ -1421,6 +1634,52 @@
           <figure class="work-card"><img src="./index_files/work-roof-washing-before-after.jpg" alt="屋根の洗浄前と洗浄後の比較"><figcaption>屋根 洗浄前後</figcaption></figure>
           </div>
         </details>
+      </div>
+    </section>
+
+    <section class="section section-muted section-photo" id="reviews" style="--section-bg: url(&#39;assets/sections/brown-house-wide.jpg&#39;);">
+      <div class="container">
+        <div class="section-head section-head-center">
+          <div>
+            <p class="section-label">Voice</p>
+            <h2 class="section-title">お客様の声</h2>
+          </div>
+        </div>
+        <p class="reviews-intro">施工させていただいたお客様から、Googleにお寄せいただいた声の一部です。</p>
+        <div class="review-rating"><span class="review-stars" aria-hidden="true">★★★★★</span><span>5.0</span><span>Googleクチコミ 11件</span></div>
+        <div class="reviews">
+          <article class="review-card">
+            <div class="review-stars" aria-hidden="true">★★★★★</div>
+            <p>リアルメイクさんに頼んで本当に良かったと思っています。</p>
+            <p>数年前から壁の塗り替えをしないといけないと思っていましたが、飛び込みで来る他社の営業の方々はあまり信用出来ず、、、。そんな時にリアルメイクさんに出会い、塗り替えに関する知識のない私達の思いを1番聞いてくれ、様々ご提案をいただきました。</p>
+            <p>決して安い買い物ではありませんが、安くて手を抜かれるのも困りますし、我が家の予算もある中で、長い目で見た時の事、家を建てた時の施工業者の施工内容など幅広く丁寧にご説明を頂き、納得の上で見積もりに判を押すことが出来ました。</p>
+            <p>最も時間が掛かってしまった色決めの時は、同色の施工事例の写真を見せて頂けたり、その色を一度我が家の壁に試し塗りしてくれ、完成のイメージを持つことが出来ました！我が家は薄いブルーグレーの様な色にしたんですが、玄関周りは明るくした方がいいとご提案頂き、今で担当の方の意見を聞いて本当に良かったと思ってます。</p>
+            <p>工事期間中、朝は暗いうちに仕事に行き、夜に帰ってくる私にとっては、施工中の様子を土日でしか確認出来なかったのですが、毎日施工前、施工後の写真をLINEで送って頂き、完成に近づくワクワク感を日々感じる事が出来ました！見積もり後に追加で費用のかかる工事箇所が見つかったんですが、見積もり内で対応して頂けました。</p>
+            <p>なにより私たち夫婦と一緒に完成を楽しみにしてくれている事がとても嬉しかったです。</p>
+            <p>完成の日は感じていたワクワク感以上の出来栄えで、沢山考えたからこそ愛着のある我が家になり、まるで新築の時の様な感動でした。本当にリアルメイクさんにお願いして良かったと改めて思いました！</p>
+            <p>ご近所さんからも、「綺麗になったわね！」と沢山の声をかけて頂きました。また次回もリアルメイクさんにお願いするつもりです。</p>
+            <p>改めて本当にありがとうございました！</p>
+            <strong>たくや 様（外壁塗装／桶川市）</strong>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-hidden="true">★★★★★</div>
+            <p>塗り替え工事の際は大変お世話になりました✨</p>
+            <p>桶川市内で外壁塗装と屋根塗装をお願いしました。</p>
+            <p>印象に残っているのは、一度塗ったら10年くらいそのままになるので中々色を決められなかったのですが、何度も相談に乗って頂き塗り分けの部分も私達家族が納得いくまで打ち合わせをしてもらえた事です。</p>
+            <p>初めての塗り替えだったので不安な事が多かったのですが、安心してお任せする事ができました😊</p>
+            <p>それと作業した日はLINEで写真と作業内容の報告をして頂けたことも安心にしました✨</p>
+            <p>また家のことで何か気になることがあったらリアルメイクさんに相談しようと思います。ありがとうございました♪</p>
+            <strong>マリ 様（外壁・屋根塗装／桶川市）</strong>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-hidden="true">★★★★★</div>
+            <p>外壁の塗替えは築10年を超えた頃から常に頭の片隅にあったものの、その費用と効果の年数を考えるとなかなか決めきれず4年ほど経過していました。そんな時、親身に相談にのってくれたこちらに決めました。特によかった点は、以下の通りです。</p>
+            <p>・見積もりから金額の変更なし<br>・色のイメージを納得いくまで打ち合わせ<br>・途中経過を写真有りでこまめに連絡くれる<br>・作業中発覚した家の不備を共有、改善を提案してくれネットワークを活かして対応してくれる（うちは見積り内でやってくれました！）</p>
+            <p>結果、私たち家族は120%大満足でした！！</p>
+            <strong>りょうこ 様（外壁塗装／桶川市）</strong>
+          </article>
+        </div>
+        <p class="review-ready">出典：Google ビジネスプロフィールのクチコミ（★5.0／11件）。いただいたクチコミ本文を掲載しています。</p>
       </div>
     </section>
 
@@ -2020,7 +2279,7 @@
   <div class="fixed-cta" aria-label="固定お問い合わせ">
     <a class="tel" href="tel:09014340189">電話する</a>
     <a class="line" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">LINE相談</a>
-    <a class="contact" href="http://127.0.0.1:8790/index.html#contact">相談内容を見る</a>
+    <a class="contact" href="http://127.0.0.1:8793/index.html?v=reviews-full#contact">相談内容を見る</a>
   </div>
 
 
