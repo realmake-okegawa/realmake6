@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)http://127.0.0.1:8797/index.html?v=footer-address -->
-<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- saved from url=(0051)http://127.0.0.1:8798/index.html?v=roof-first-fixed -->
+<html lang="ja" class="reveal-ready"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Real Make（リアルメイク）｜桶川市の外壁塗装・屋根塗装</title>
@@ -1200,6 +1200,43 @@
       font-size: 1rem;
     }
 
+    html.reveal-ready .reveal-section,
+    html.reveal-ready .reveal-item {
+      opacity: 0;
+      transform: translateY(26px);
+      transition:
+        opacity .7s ease,
+        transform .7s ease;
+      will-change: opacity, transform;
+    }
+
+    html.reveal-ready .reveal-section.is-visible,
+    html.reveal-ready .reveal-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    html.reveal-ready .reveal-delay-1 {
+      transition-delay: .08s;
+    }
+
+    html.reveal-ready .reveal-delay-2 {
+      transition-delay: .16s;
+    }
+
+    html.reveal-ready .reveal-delay-3 {
+      transition-delay: .24s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html.reveal-ready .reveal-section,
+      html.reveal-ready .reveal-item {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
     .fixed-cta {
       display: none;
     }
@@ -1416,19 +1453,19 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="http://127.0.0.1:8797/index.html?v=footer-address#top" aria-label="Real Make ホーム">
+      <a class="brand" href="http://127.0.0.1:8798/index.html?v=roof-first-fixed#top" aria-label="Real Make ホーム">
         <img src="./index_files/logo.png" alt="Real Make ロゴ">
         <span class="brand-text">Real Make<span>外壁塗装・屋根塗装</span></span>
       </a>
       <nav class="nav" aria-label="主要メニュー">
-        <a href="http://127.0.0.1:8797/index.html?v=footer-address#strength">選ばれる理由</a>
-        <a href="http://127.0.0.1:8797/index.html?v=footer-address#services">対応工事</a>
-        <a href="http://127.0.0.1:8797/index.html?v=footer-address#price">料金目安</a>
-        <a href="http://127.0.0.1:8797/index.html?v=footer-address#works">施工事例</a>
-        <a href="http://127.0.0.1:8797/index.html?v=footer-address#reviews">クチコミ</a>
-        <a href="http://127.0.0.1:8797/index.html?v=footer-address#blog">ブログ</a>
-        <a href="http://127.0.0.1:8797/index.html?v=footer-address#profile">代表挨拶</a>
-        <a href="http://127.0.0.1:8797/index.html?v=footer-address#contact">お問い合わせ</a>
+        <a href="http://127.0.0.1:8798/index.html?v=roof-first-fixed#strength">選ばれる理由</a>
+        <a href="http://127.0.0.1:8798/index.html?v=roof-first-fixed#services">対応工事</a>
+        <a href="http://127.0.0.1:8798/index.html?v=roof-first-fixed#price">料金目安</a>
+        <a href="http://127.0.0.1:8798/index.html?v=roof-first-fixed#works">施工事例</a>
+        <a href="http://127.0.0.1:8798/index.html?v=roof-first-fixed#reviews">クチコミ</a>
+        <a href="http://127.0.0.1:8798/index.html?v=roof-first-fixed#blog">ブログ</a>
+        <a href="http://127.0.0.1:8798/index.html?v=roof-first-fixed#profile">代表挨拶</a>
+        <a href="http://127.0.0.1:8798/index.html?v=roof-first-fixed#contact">お問い合わせ</a>
       </nav>
       <div class="header-actions">
         <a class="button button-dark" href="tel:09014340189" aria-label="Real Makeへ電話する">
@@ -1440,8 +1477,8 @@
   </header>
 
   <main id="top">
-    <section class="hero" aria-label="Real Make ファーストビュー">
-      <div class="container hero-content">
+    <section class="hero reveal-section is-visible" aria-label="Real Make ファーストビュー">
+      <div class="container hero-content reveal-item reveal-delay-0 is-visible">
         <p class="eyebrow">桶川市・北本市中心、埼玉県全域対応</p>
         <h1>住まいの外観を、<br>安心できる品質で整える。</h1>
         <p class="hero-lead">Real Make（リアルメイク）は、外壁塗装・屋根塗装・防水・コーキングまで対応する職人直営の施工店です。家の状態を分かりやすく説明し、必要な工事を丁寧にご提案します。</p>
@@ -1450,7 +1487,7 @@
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.6c0 .7-.5 1.2-1.2 1.2C10.6 21.6 2.4 13.4 2.4 3.4c0-.7.5-1.2 1.2-1.2h3.6c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.8.6 4 .1.4 0 .9-.3 1.2l-2.1 2.2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>
             090-1434-0189
           </a>
-          <a class="button button-light" href="http://127.0.0.1:8797/index.html?v=footer-address#works">
+          <a class="button button-light" href="http://127.0.0.1:8798/index.html?v=roof-first-fixed#works">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16v13H4V7Zm4-3h8l2 3H6l2-3Zm4 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>
             施工事例を見る
           </a>
@@ -1474,17 +1511,17 @@
       </div>
     </div>
 
-    <section class="section section-muted section-photo" style="--section-bg: url(&#39;assets/images/work-roof-finish.jpg&#39;);">
+    <section class="section section-muted section-photo reveal-section" style="--section-bg: url(&#39;assets/images/work-roof-finish.jpg&#39;);">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal-item reveal-delay-1">
           <div>
             <p class="section-label">Approach</p>
             <h2 class="section-title">不安が残らないように、まず状態を一緒に確認します。</h2>
           </div>
           <p class="section-copy">塗装工事は、金額だけでは判断しにくいものです。Real Makeでは、傷みの原因、必要な工事、急がなくてよい内容まで、写真や現地確認をもとに分かりやすくお伝えします。</p>
         </div>
-        <div class="split">
-          <div class="panel">
+        <div class="split reveal-item reveal-delay-2">
+          <div class="panel reveal-item reveal-delay-3">
             <h3>こんな時はご相談ください</h3>
             <ul class="check-list">
               <li>外壁の色あせ、ひび割れ、チョーキングが気になる</li>
@@ -1493,7 +1530,7 @@
               <li>地元で長く付き合える施工店に頼みたい</li>
             </ul>
           </div>
-          <div class="panel">
+          <div class="panel reveal-item reveal-delay-0">
             <h3>Real Makeの進め方</h3>
             <ul class="check-list">
               <li>現地の状態を確認し、必要な工事を整理</li>
@@ -1506,16 +1543,16 @@
       </div>
     </section>
 
-    <section class="section section-photo" id="strength" style="--section-bg: url(&#39;assets/images/work-wall-finish.jpg&#39;);">
+    <section class="section section-photo reveal-section" id="strength" style="--section-bg: url(&#39;assets/images/work-wall-finish.jpg&#39;);">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal-item reveal-delay-1">
           <div>
             <p class="section-label">Strength</p>
             <h2 class="section-title">Real Makeが大切にしていること。</h2>
           </div>
           <p class="section-copy">見た目をきれいにするだけでなく、下地処理、防水性、仕上がりの持ちまで見据えて施工します。地域の住まいを任せてもらえるよう、一件一件を丁寧に進めます。</p>
         </div>
-        <div class="reasons">
+        <div class="reasons reveal-item reveal-delay-2">
           <article class="reason">
             <span class="reason-number">01</span>
             <h3>下地から整える丁寧施工</h3>
@@ -1535,78 +1572,78 @@
       </div>
     </section>
 
-    <section class="section section-muted section-photo" id="services" style="--section-bg: url(&#39;assets/images/work-roof-tile-coating-1.jpg&#39;);">
+    <section class="section section-muted section-photo reveal-section" id="services" style="--section-bg: url(&#39;assets/images/work-roof-tile-coating-1.jpg&#39;);">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal-item reveal-delay-3">
           <div>
             <p class="section-label">Services</p>
             <h2 class="section-title">外装から住まいの小さな困りごとまで。</h2>
           </div>
           <p class="section-copy">外壁・屋根を中心に、防水、コーキング、足場、内装や水回りのご相談にも対応します。どこに頼めばよいか迷う内容も、まずはお声がけください。</p>
         </div>
-        <div class="services">
-          <article class="service"><div><span class="service-mark"></span><h3>外壁塗装</h3></div><p>色あせ、ひび割れ、汚れを確認し、住まいに合う塗装をご提案します。</p></article>
-          <article class="service"><div><span class="service-mark"></span><h3>屋根塗装</h3></div><p>屋根材の状態を見極め、劣化を抑えるための施工を行います。</p></article>
-          <article class="service"><div><span class="service-mark"></span><h3>防水工事</h3></div><p>ベランダやバルコニーの防水層を整え、雨漏りリスクに備えます。</p></article>
-          <article class="service"><div><span class="service-mark"></span><h3>コーキング</h3></div><p>外壁目地やサッシまわりを丁寧に処理し、防水性を高めます。</p></article>
-          <article class="service"><div><span class="service-mark"></span><h3>仮設足場</h3></div><p>安全で作業しやすい環境を整え、品質の安定につなげます。</p></article>
-          <article class="service"><div><span class="service-mark"></span><h3>雨樋工事</h3></div><p>歪み、割れ、詰まりなど、雨水まわりの不具合を確認します。</p></article>
-          <article class="service"><div><span class="service-mark"></span><h3>内装工事</h3></div><p>外装とあわせた住まいのメンテナンスもご相談いただけます。</p></article>
-          <article class="service"><div><span class="service-mark"></span><h3>網戸・水回り</h3></div><p>暮らしの中の小さなお困りごとも、対応可能な範囲でお手伝いします。</p></article>
+        <div class="services reveal-item reveal-delay-0">
+          <article class="service reveal-item reveal-delay-1"><div><span class="service-mark"></span><h3>外壁塗装</h3></div><p>色あせ、ひび割れ、汚れを確認し、住まいに合う塗装をご提案します。</p></article>
+          <article class="service reveal-item reveal-delay-2"><div><span class="service-mark"></span><h3>屋根塗装</h3></div><p>屋根材の状態を見極め、劣化を抑えるための施工を行います。</p></article>
+          <article class="service reveal-item reveal-delay-3"><div><span class="service-mark"></span><h3>防水工事</h3></div><p>ベランダやバルコニーの防水層を整え、雨漏りリスクに備えます。</p></article>
+          <article class="service reveal-item reveal-delay-0"><div><span class="service-mark"></span><h3>コーキング</h3></div><p>外壁目地やサッシまわりを丁寧に処理し、防水性を高めます。</p></article>
+          <article class="service reveal-item reveal-delay-1"><div><span class="service-mark"></span><h3>仮設足場</h3></div><p>安全で作業しやすい環境を整え、品質の安定につなげます。</p></article>
+          <article class="service reveal-item reveal-delay-2"><div><span class="service-mark"></span><h3>雨樋工事</h3></div><p>歪み、割れ、詰まりなど、雨水まわりの不具合を確認します。</p></article>
+          <article class="service reveal-item reveal-delay-3"><div><span class="service-mark"></span><h3>内装工事</h3></div><p>外装とあわせた住まいのメンテナンスもご相談いただけます。</p></article>
+          <article class="service reveal-item reveal-delay-0"><div><span class="service-mark"></span><h3>網戸・水回り</h3></div><p>暮らしの中の小さなお困りごとも、対応可能な範囲でお手伝いします。</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section section-photo" id="price" style="--section-bg: url(&#39;assets/images/work-roof-metal-coating.jpg&#39;);">
+    <section class="section section-photo reveal-section" id="price" style="--section-bg: url(&#39;assets/images/work-roof-metal-coating.jpg&#39;);">
       <div class="container">
-        <div class="section-head section-head-center">
+        <div class="section-head section-head-center reveal-item reveal-delay-1">
           <div>
             <p class="section-label">Price</p>
             <h2 class="section-title">料金の目安</h2>
           </div>
         </div>
-        <p class="price-intro">一般的な戸建て（約30坪）を想定した参考価格です。建物の大きさや劣化状況・塗料グレードにより変動するため、まずは無料診断で正確なお見積りをご提示します。</p>
-        <div class="price-grid">
-          <article class="price-card">
+        <p class="price-intro reveal-item reveal-delay-2">一般的な戸建て（約30坪）を想定した参考価格です。建物の大きさや劣化状況・塗料グレードにより変動するため、まずは無料診断で正確なお見積りをご提示します。</p>
+        <div class="price-grid reveal-item reveal-delay-3">
+          <article class="price-card reveal-item reveal-delay-0">
             <h3>外壁塗装</h3>
             <div class="price-main">80万〜120万円</div>
             <p class="price-sub">一般的な戸建て（約30坪）</p>
             <p class="price-detail">高圧洗浄・下地補修・3回塗りを含む、シリコン塗料での目安です。</p>
           </article>
-          <article class="price-card">
+          <article class="price-card reveal-item reveal-delay-1">
             <h3>屋根塗装</h3>
             <div class="price-main">35万〜60万円</div>
             <p class="price-sub">塗装の場合（足場別）</p>
             <p class="price-detail">遮熱・高耐久塗料など、屋根材に合わせてご提案します。</p>
           </article>
-          <article class="price-card featured">
+          <article class="price-card featured reveal-item reveal-delay-2">
             <span class="price-badge">いちばんお得</span>
             <h3>外壁＋屋根セット</h3>
             <div class="price-main">120万〜160万円</div>
             <p class="price-sub">足場代をまとめて節約</p>
             <p class="price-detail">外壁と屋根を同時施工。足場が1回分で済み、まとめてお得に。</p>
           </article>
-          <article class="price-card">
+          <article class="price-card reveal-item reveal-delay-3">
             <h3>防水・コーキング</h3>
             <div class="price-main">10万〜45万円</div>
             <p class="price-sub">部分施工</p>
             <p class="price-detail">目地のコーキング打ち替え、ベランダ防水など。傷み具合により変動します。</p>
           </article>
         </div>
-        <p class="price-footnote">※上記は一般的な戸建て（約30坪）を想定した目安です。建物の大きさ・劣化状況・塗料グレードによって変動します。正確な金額は、無料の現地調査・お見積りで建物を見てからご提示します。</p>
+        <p class="price-footnote reveal-item reveal-delay-0">※上記は一般的な戸建て（約30坪）を想定した目安です。建物の大きさ・劣化状況・塗料グレードによって変動します。正確な金額は、無料の現地調査・お見積りで建物を見てからご提示します。</p>
       </div>
     </section>
 
-    <section class="section section-muted section-photo" style="--section-bg: url(&#39;assets/images/work-scaffold.jpg&#39;);">
+    <section class="section section-muted section-photo reveal-section" style="--section-bg: url(&#39;assets/images/work-scaffold.jpg&#39;);">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal-item reveal-delay-1">
           <div>
             <p class="section-label">Flow</p>
             <h2 class="section-title">お問い合わせから完了まで。</h2>
           </div>
           <p class="section-copy">はじめての方にも分かりやすいよう、現地確認から見積り、施工、完了確認まで順番に進めます。</p>
         </div>
-        <div class="process">
+        <div class="process reveal-item reveal-delay-2">
           <article class="step"><span class="step-num">Step 01</span><h3>ご相談</h3><p>電話からお気軽にご連絡ください。</p></article>
           <article class="step"><span class="step-num">Step 02</span><h3>現地確認</h3><p>外壁や屋根の状態を確認します。</p></article>
           <article class="step"><span class="step-num">Step 03</span><h3>お見積り</h3><p>工事内容と費用を整理してご案内します。</p></article>
@@ -1616,54 +1653,54 @@
       </div>
     </section>
 
-    <section class="section section-photo" id="works" style="--section-bg: url(&#39;assets/images/work-roof-tile-coating-2.jpg&#39;);">
+    <section class="section section-photo reveal-section" id="works" style="--section-bg: url(&#39;assets/images/work-roof-tile-coating-2.jpg&#39;);">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal-item reveal-delay-3">
           <div>
             <p class="section-label">Works</p>
             <h2 class="section-title">施工の様子が分かる写真。</h2>
           </div>
           <p class="section-copy">工事は完成後だけでなく、途中の工程も大切です。高圧洗浄、下塗り、中塗り、コーキング、防水まで、実際の現場写真を掲載しています。</p>
         </div>
-        <div class="works">
-          <figure class="work-card"><img src="./index_files/work-roof-finish.jpg" alt="屋根塗装の仕上がり"><figcaption>屋根 仕上がり</figcaption></figure>
-          <figure class="work-card"><img src="./index_files/black-exterior-angle.jpg" alt="黒い外壁の施工後外観"><figcaption>外壁 施工後</figcaption></figure>
-          <figure class="work-card"><img src="./index_files/brown-house-wide.jpg" alt="外壁メンテナンス後の住宅外観"><figcaption>外観 施工後</figcaption></figure>
-          <figure class="work-card"><img src="./index_files/white-after-front.jpg" alt="白い外壁の施工後外観"><figcaption>白外壁 施工後</figcaption></figure>
-          <figure class="work-card"><img src="./index_files/work-scaffold.jpg" alt="外壁塗装の足場設置"><figcaption>足場設置</figcaption></figure>
+        <div class="works reveal-item reveal-delay-0">
+          <figure class="work-card reveal-item reveal-delay-1"><img src="./index_files/work-roof-topcoat-20260623.jpg" alt="屋根塗装の仕上がり"><figcaption>屋根 仕上がり</figcaption></figure>
+          <figure class="work-card reveal-item reveal-delay-2"><img src="./index_files/black-exterior-angle.jpg" alt="黒い外壁の施工後外観"><figcaption>外壁 施工後</figcaption></figure>
+          <figure class="work-card reveal-item reveal-delay-3"><img src="./index_files/brown-house-wide.jpg" alt="外壁メンテナンス後の住宅外観"><figcaption>外観 施工後</figcaption></figure>
+          <figure class="work-card reveal-item reveal-delay-0"><img src="./index_files/white-after-front.jpg" alt="白い外壁の施工後外観"><figcaption>白外壁 施工後</figcaption></figure>
+          <figure class="work-card reveal-item reveal-delay-1"><img src="./index_files/work-scaffold.jpg" alt="外壁塗装の足場設置"><figcaption>足場設置</figcaption></figure>
         </div>
-        <details class="works-more">
+        <details class="works-more reveal-item reveal-delay-2">
           <summary>施工写真をもっと見る</summary>
           <div class="works">
-          <figure class="work-card"><img src="./index_files/work-washing.jpg" alt="外壁の高圧洗浄"><figcaption>高圧洗浄</figcaption></figure>
-          <figure class="work-card"><img src="./index_files/work-wall-primer.jpg" alt="11月5日の外壁塗装の下塗り"><figcaption>11/5 外壁 下塗り</figcaption></figure>
-          <figure class="work-card"><img src="./index_files/work-wall-midcoat.jpg" alt="11月6日の外壁塗装の中塗り"><figcaption>11/6 外壁 中塗り</figcaption></figure>
-          <figure class="work-card"><img src="./index_files/work-wall-finish.jpg" alt="外壁塗装の上塗り後"><figcaption>外壁 上塗り後</figcaption></figure>
-          <figure class="work-card"><img src="./index_files/work-roof-primer.jpg" alt="10月13日の屋根塗装の下塗り"><figcaption>10/13 屋根 下塗り</figcaption></figure>
-          <figure class="work-card"><img src="./index_files/work-roof-topcoat.jpg" alt="10月20日の屋根塗装の上塗り"><figcaption>10/20 屋根 上塗り</figcaption></figure>
-          <figure class="work-card"><img src="./index_files/work-balcony-finish.jpg" alt="10月28日の防水塗装完了後"><figcaption>10/28 防水塗装 完了後</figcaption></figure>
-          <figure class="work-card"><img src="./index_files/work-roof-tile-coating-1.jpg" alt="屋根瓦の塗装作業"><figcaption>屋根瓦 塗装作業</figcaption></figure>
-          <figure class="work-card"><img src="./index_files/work-roof-tile-coating-2.jpg" alt="屋根瓦の塗装途中"><figcaption>屋根瓦 塗装途中</figcaption></figure>
-          <figure class="work-card"><img src="./index_files/work-roof-metal-coating.jpg" alt="屋根板金まわりの塗装"><figcaption>屋根板金 塗装</figcaption></figure>
-          <figure class="work-card"><img src="./index_files/work-gutter-coating.jpg" alt="雨樋の塗装作業"><figcaption>雨樋 塗装</figcaption></figure>
-          <figure class="work-card"><img src="./index_files/work-roof-washing-before-after.jpg" alt="屋根の洗浄前と洗浄後の比較"><figcaption>屋根 洗浄前後</figcaption></figure>
+          <figure class="work-card reveal-item reveal-delay-3"><img src="./index_files/work-washing.jpg" alt="外壁の高圧洗浄"><figcaption>高圧洗浄</figcaption></figure>
+          <figure class="work-card reveal-item reveal-delay-0"><img src="./index_files/work-wall-primer.jpg" alt="11月5日の外壁塗装の下塗り"><figcaption>11/5 外壁 下塗り</figcaption></figure>
+          <figure class="work-card reveal-item reveal-delay-1"><img src="./index_files/work-wall-midcoat.jpg" alt="11月6日の外壁塗装の中塗り"><figcaption>11/6 外壁 中塗り</figcaption></figure>
+          <figure class="work-card reveal-item reveal-delay-2"><img src="./index_files/work-wall-finish.jpg" alt="外壁塗装の上塗り後"><figcaption>外壁 上塗り後</figcaption></figure>
+          <figure class="work-card reveal-item reveal-delay-3"><img src="./index_files/work-roof-primer.jpg" alt="10月13日の屋根塗装の下塗り"><figcaption>10/13 屋根 下塗り</figcaption></figure>
+          <figure class="work-card reveal-item reveal-delay-0"><img src="./index_files/work-roof-topcoat-20260623.jpg" alt="10月20日の屋根塗装の上塗り"><figcaption>10/20 屋根 上塗り</figcaption></figure>
+          <figure class="work-card reveal-item reveal-delay-1"><img src="./index_files/work-balcony-finish.jpg" alt="10月28日の防水塗装完了後"><figcaption>10/28 防水塗装 完了後</figcaption></figure>
+          <figure class="work-card reveal-item reveal-delay-2"><img src="./index_files/work-roof-tile-coating-1.jpg" alt="屋根瓦の塗装作業"><figcaption>屋根瓦 塗装作業</figcaption></figure>
+          <figure class="work-card reveal-item reveal-delay-3"><img src="./index_files/work-roof-tile-coating-2.jpg" alt="屋根瓦の塗装途中"><figcaption>屋根瓦 塗装途中</figcaption></figure>
+          <figure class="work-card reveal-item reveal-delay-0"><img src="./index_files/work-roof-metal-coating.jpg" alt="屋根板金まわりの塗装"><figcaption>屋根板金 塗装</figcaption></figure>
+          <figure class="work-card reveal-item reveal-delay-1"><img src="./index_files/work-gutter-coating.jpg" alt="雨樋の塗装作業"><figcaption>雨樋 塗装</figcaption></figure>
+          <figure class="work-card reveal-item reveal-delay-2"><img src="./index_files/work-roof-washing-before-after.jpg" alt="屋根の洗浄前と洗浄後の比較"><figcaption>屋根 洗浄前後</figcaption></figure>
           </div>
         </details>
       </div>
     </section>
 
-    <section class="section section-muted section-photo" id="reviews" style="--section-bg: url(&#39;assets/sections/brown-house-wide.jpg&#39;);">
+    <section class="section section-muted section-photo reveal-section" id="reviews" style="--section-bg: url(&#39;assets/sections/brown-house-wide.jpg&#39;);">
       <div class="container">
-        <div class="section-head section-head-center">
+        <div class="section-head section-head-center reveal-item reveal-delay-3">
           <div>
             <p class="section-label">Voice</p>
             <h2 class="section-title">お客様の声</h2>
           </div>
         </div>
-        <p class="reviews-intro">施工させていただいたお客様から、Googleにお寄せいただいた声の一部です。</p>
-        <div class="review-rating"><span class="review-stars" aria-hidden="true">★★★★★</span><span>5.0</span><span>Googleクチコミ 11件</span></div>
-        <div class="reviews">
-          <article class="review-card">
+        <p class="reviews-intro reveal-item reveal-delay-0">施工させていただいたお客様から、Googleにお寄せいただいた声の一部です。</p>
+        <div class="review-rating reveal-item reveal-delay-1"><span class="review-stars" aria-hidden="true">★★★★★</span><span>5.0</span><span>Googleクチコミ 11件</span></div>
+        <div class="reviews reveal-item reveal-delay-2">
+          <article class="review-card reveal-item reveal-delay-3">
             <div class="review-stars" aria-hidden="true">★★★★★</div>
             <p>リアルメイクさんに頼んで本当に良かったと思っています。</p>
             <p>数年前から壁の塗り替えをしないといけないと思っていましたが、飛び込みで来る他社の営業の方々はあまり信用出来ず、、、。そんな時にリアルメイクさんに出会い、塗り替えに関する知識のない私達の思いを1番聞いてくれ、様々ご提案をいただきました。</p>
@@ -1676,7 +1713,7 @@
             <p>改めて本当にありがとうございました！</p>
             <strong>たくや 様（外壁塗装／桶川市）</strong>
           </article>
-          <article class="review-card">
+          <article class="review-card reveal-item reveal-delay-0">
             <div class="review-stars" aria-hidden="true">★★★★★</div>
             <p>塗り替え工事の際は大変お世話になりました✨</p>
             <p>桶川市内で外壁塗装と屋根塗装をお願いしました。</p>
@@ -1686,7 +1723,7 @@
             <p>また家のことで何か気になることがあったらリアルメイクさんに相談しようと思います。ありがとうございました♪</p>
             <strong>マリ 様（外壁・屋根塗装／桶川市）</strong>
           </article>
-          <article class="review-card">
+          <article class="review-card reveal-item reveal-delay-1">
             <div class="review-stars" aria-hidden="true">★★★★★</div>
             <p>外壁の塗替えは築10年を超えた頃から常に頭の片隅にあったものの、その費用と効果の年数を考えるとなかなか決めきれず4年ほど経過していました。そんな時、親身に相談にのってくれたこちらに決めました。特によかった点は、以下の通りです。</p>
             <p>・見積もりから金額の変更なし<br>・色のイメージを納得いくまで打ち合わせ<br>・途中経過を写真有りでこまめに連絡くれる<br>・作業中発覚した家の不備を共有、改善を提案してくれネットワークを活かして対応してくれる（うちは見積り内でやってくれました！）</p>
@@ -1694,22 +1731,22 @@
             <strong>りょうこ 様（外壁塗装／桶川市）</strong>
           </article>
         </div>
-        <p class="review-ready">出典：Google ビジネスプロフィールのクチコミ（★5.0／11件）。いただいたクチコミ本文を掲載しています。</p>
+        <p class="review-ready reveal-item reveal-delay-2">出典：Google ビジネスプロフィールのクチコミ（★5.0／11件）。いただいたクチコミ本文を掲載しています。</p>
       </div>
     </section>
 
-    <section class="section section-photo" id="blog" style="--section-bg: url(&#39;assets/blog/2026-06-15-undercoat-work-2.jpg&#39;);">
+    <section class="section section-photo reveal-section" id="blog" style="--section-bg: url(&#39;assets/blog/2026-06-15-undercoat-work-2.jpg&#39;);">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal-item reveal-delay-3">
           <div>
             <p class="section-label">Blog</p>
             <h2 class="section-title">おしらせ・現場ブログ</h2>
           </div>
           <p class="section-copy">Googleビジネスプロフィールで更新している日々の現場記録や、住まいのメンテナンスに役立つ内容をこちらにも掲載していきます。</p>
         </div>
-        <div class="blog-list">
+        <div class="blog-list reveal-item reveal-delay-0">
           <!-- BLOG-POSTS START -->
-          <article class="blog-card blog-card-featured">
+          <article class="blog-card blog-card-featured reveal-item reveal-delay-1">
             <img src="./index_files/2026-06-23-topcoat-complete-1.jpg" alt="外壁上塗り作業の様子">
             <div class="blog-body">
               <div class="blog-meta"><time datetime="2026-06-23">2026.06.23</time><span>現場ブログ</span></div>
@@ -1722,7 +1759,7 @@
               <p>本日からは雨樋や雨戸などの塗装を行います🔥</p>
             </div>
           </article>
-          <article class="blog-card">
+          <article class="blog-card reveal-item reveal-delay-2">
             <img src="./index_files/2026-06-22-flyer-posting-1.jpg" alt="Real Makeの塗装工事チラシ">
             <div class="blog-body">
               <div class="blog-meta"><time datetime="2026-06-22">2026.06.22</time><span>おしらせ</span></div>
@@ -1735,7 +1772,7 @@
               <p>ご依頼ありがとうございます！</p>
             </div>
           </article>
-          <article class="blog-card">
+          <article class="blog-card reveal-item reveal-delay-3">
             <img src="./index_files/2026-06-21-benibana-festival-1.jpg" alt="第29回べに花まつりの案内チラシ">
             <div class="blog-body">
               <div class="blog-meta"><time datetime="2026-06-21">2026.06.21</time><span>地域活動</span></div>
@@ -1759,7 +1796,7 @@
                   <span class="blog-archive-meta"><time datetime="2026-06-20">2026.06.20</time><span>現場ブログ</span></span>
                   <strong>蒸し暑い日の上塗り作業</strong>
                 </summary>
-                          <article class="blog-card">
+                          <article class="blog-card reveal-item reveal-delay-0">
                             <img src="./index_files/2026-06-20-topcoat-work-1.jpg" alt="外壁の上塗り作業中の様子">
                             <div class="blog-body">
                               <div class="blog-meta"><time datetime="2026-06-20">2026.06.20</time><span>現場ブログ</span></div>
@@ -1780,7 +1817,7 @@
                   <span class="blog-archive-meta"><time datetime="2026-06-19">2026.06.19</time><span>現場ブログ</span></span>
                   <strong>雨の日の部分洗浄と壁の中塗り作業</strong>
                 </summary>
-                          <article class="blog-card">
+                          <article class="blog-card reveal-item reveal-delay-1">
                             <img src="./index_files/2026-06-19-washing-midcoat-1.jpg" alt="部分塗装前に洗浄するデッキ下の様子">
                             <div class="blog-body">
                               <div class="blog-meta"><time datetime="2026-06-19">2026.06.19</time><span>現場ブログ</span></div>
@@ -1809,7 +1846,7 @@
                   <span class="blog-archive-meta"><time datetime="2026-06-18">2026.06.18</time><span>現場ブログ</span></span>
                   <strong>朝から夕方まで中塗り作業</strong>
                 </summary>
-                          <article class="blog-card">
+                          <article class="blog-card reveal-item reveal-delay-2">
                             <img src="./index_files/2026-06-18-midcoat-work-1.jpg" alt="軒天の中塗り作業中の様子">
                             <div class="blog-body">
                               <div class="blog-meta"><time datetime="2026-06-18">2026.06.18</time><span>現場ブログ</span></div>
@@ -1831,7 +1868,7 @@
                   <span class="blog-archive-meta"><time datetime="2026-06-16">2026.06.16</time><span>おしらせ</span></span>
                   <strong>Real Makeオーナー様サポートを始めます</strong>
                 </summary>
-                          <article class="blog-card">
+                          <article class="blog-card reveal-item reveal-delay-3">
                             <img src="./index_files/2026-06-16-owner-support-1.jpg" alt="Real Makeオーナー様サポートの案内">
                             <div class="blog-body">
                               <div class="blog-meta"><time datetime="2026-06-16">2026.06.16</time><span>おしらせ</span></div>
@@ -1854,7 +1891,7 @@
                   <span class="blog-archive-meta"><time datetime="2026-06-15">2026.06.15</time><span>現場ブログ</span></span>
                   <strong>晴れ間を活かした破風・軒天・壁の下塗り</strong>
                 </summary>
-                          <article class="blog-card">
+                          <article class="blog-card reveal-item reveal-delay-0">
                             <img src="./index_files/2026-06-15-undercoat-work-1.jpg" alt="軒天の下塗り作業中の様子">
                             <div class="blog-body">
                               <div class="blog-meta"><time datetime="2026-06-15">2026.06.15</time><span>現場ブログ</span></div>
@@ -1875,7 +1912,7 @@
                   <span class="blog-archive-meta"><time datetime="2026-06-14">2026.06.14</time><span>現場ブログ</span></span>
                   <strong>暑い日の養生作業と梅雨時期の進め方</strong>
                 </summary>
-                          <article class="blog-card">
+                          <article class="blog-card reveal-item reveal-delay-1">
                             <img src="./index_files/2026-06-14-masking-work-1.jpg" alt="窓の換気を考えながら進めた養生作業の様子1">
                             <div class="blog-body">
                               <div class="blog-meta"><time datetime="2026-06-14">2026.06.14</time><span>現場ブログ</span></div>
@@ -1901,7 +1938,7 @@
                   <span class="blog-archive-meta"><time datetime="2026-06-13">2026.06.13</time><span>施工事例</span></span>
                   <strong>1年前に完工した現場のビフォーアフター</strong>
                 </summary>
-                          <article class="blog-card">
+                          <article class="blog-card reveal-item reveal-delay-2">
                             <img src="./index_files/2026-06-13-before-after-1.jpg" alt="1年前に完工した外壁塗装現場のビフォー写真1">
                             <div class="blog-body">
                               <div class="blog-meta"><time datetime="2026-06-13">2026.06.13</time><span>施工事例</span></div>
@@ -1929,7 +1966,7 @@
                   <span class="blog-archive-meta"><time datetime="2026-06-12">2026.06.12</time><span>DIY塗装</span></span>
                   <strong>初めてのDIY塗装でそろえる道具</strong>
                 </summary>
-                          <article class="blog-card">
+                          <article class="blog-card reveal-item reveal-delay-3">
                             <img src="./index_files/2026-06-12-diy-paint-tools-1.jpg" alt="初めてのDIY塗装でそろえる道具の説明画像">
                             <div class="blog-body">
                               <div class="blog-meta"><time datetime="2026-06-12">2026.06.12</time><span>DIY塗装</span></div>
@@ -1961,7 +1998,7 @@
                   <span class="blog-archive-meta"><time datetime="2026-06-11">2026.06.11</time><span>現場ブログ</span></span>
                   <strong>雨漏り解消後の工事再開</strong>
                 </summary>
-                          <article class="blog-card">
+                          <article class="blog-card reveal-item reveal-delay-0">
                             <div class="blog-body">
                               <div class="blog-meta"><time datetime="2026-06-11">2026.06.11</time><span>現場ブログ</span></div>
                               <h3>雨漏り解消後の工事再開</h3>
@@ -1980,7 +2017,7 @@
                   <span class="blog-archive-meta"><time datetime="2026-06-10">2026.06.10</time><span>現場ブログ</span></span>
                   <strong>梅雨時期の網戸張替え</strong>
                 </summary>
-                          <article class="blog-card">
+                          <article class="blog-card reveal-item reveal-delay-1">
                             <div class="blog-body">
                               <div class="blog-meta"><time datetime="2026-06-10">2026.06.10</time><span>現場ブログ</span></div>
                               <h3>梅雨時期の網戸張替え</h3>
@@ -2003,7 +2040,7 @@
                   <span class="blog-archive-meta"><time datetime="2026-06-09">2026.06.09</time><span>DIY塗装</span></span>
                   <strong>DIY塗装で失敗しやすい3つのこと</strong>
                 </summary>
-                          <article class="blog-card">
+                          <article class="blog-card reveal-item reveal-delay-2">
                             <div class="blog-body">
                               <div class="blog-meta"><time datetime="2026-06-09">2026.06.09</time><span>DIY塗装</span></div>
                               <h3>DIY塗装で失敗しやすい3つのこと</h3>
@@ -2032,7 +2069,7 @@
                   <span class="blog-archive-meta"><time datetime="2026-06-08">2026.06.08</time><span>現場ブログ</span></span>
                   <strong>初めてのポスト交換作業</strong>
                 </summary>
-                          <article class="blog-card">
+                          <article class="blog-card reveal-item reveal-delay-3">
                             <div class="blog-body">
                               <div class="blog-meta"><time datetime="2026-06-08">2026.06.08</time><span>現場ブログ</span></div>
                               <h3>初めてのポスト交換作業</h3>
@@ -2056,7 +2093,7 @@
                   <span class="blog-archive-meta"><time datetime="2026-06-07">2026.06.07</time><span>DIY塗装</span></span>
                   <strong>木を塗る前のペーパーがけが大切な理由</strong>
                 </summary>
-                          <article class="blog-card">
+                          <article class="blog-card reveal-item reveal-delay-0">
                             <img src="./index_files/2026-06-07-wood-sanding-1.jpg" alt="木を塗る前のペーパーがけが大切という説明画像">
                             <div class="blog-body">
                               <div class="blog-meta"><time datetime="2026-06-07">2026.06.07</time><span>DIY塗装</span></div>
@@ -2091,7 +2128,7 @@
                   <span class="blog-archive-meta"><time datetime="2026-06-06">2026.06.06</time><span>DIY塗装</span></span>
                   <strong>初めてのDIYにおすすめな小さな木製品づくり</strong>
                 </summary>
-                          <article class="blog-card">
+                          <article class="blog-card reveal-item reveal-delay-1">
                             <img src="./index_files/2026-06-06-first-diy-1.jpg" alt="初めてのDIYにおすすめの木製踏み台塗装">
                             <div class="blog-body">
                               <div class="blog-meta"><time datetime="2026-06-06">2026.06.06</time><span>DIY塗装</span></div>
@@ -2126,7 +2163,7 @@
                   <span class="blog-archive-meta"><time datetime="2026-06-05">2026.06.05</time><span>注意喚起</span></span>
                   <strong>突然の屋根点検営業への対応方法</strong>
                 </summary>
-                          <article class="blog-card">
+                          <article class="blog-card reveal-item reveal-delay-2">
                             <div class="blog-body">
                               <div class="blog-meta"><time datetime="2026-06-05">2026.06.05</time><span>注意喚起</span></div>
                               <h3>突然の屋根点検営業への対応方法</h3>
@@ -2156,7 +2193,7 @@
                   <span class="blog-archive-meta"><time datetime="2026-06-04">2026.06.04</time><span>注意喚起</span></span>
                   <strong>台風後の屋根点検詐欺に注意</strong>
                 </summary>
-                          <article class="blog-card">
+                          <article class="blog-card reveal-item reveal-delay-3">
                             <div class="blog-body">
                               <div class="blog-meta"><time datetime="2026-06-04">2026.06.04</time><span>注意喚起</span></div>
                               <h3>台風後の屋根点検詐欺に注意</h3>
@@ -2180,7 +2217,7 @@
                   <span class="blog-archive-meta"><time datetime="2026-06-03">2026.06.03</time><span>地域活動</span></span>
                   <strong>第29回べに花まつりへのご協力</strong>
                 </summary>
-                          <article class="blog-card">
+                          <article class="blog-card reveal-item reveal-delay-0">
                             <div class="blog-body">
                               <div class="blog-meta"><time datetime="2026-06-03">2026.06.03</time><span>地域活動</span></div>
                               <h3>第29回べに花まつりへのご協力</h3>
@@ -2204,12 +2241,12 @@
       </div>
     </section>
 
-    <section class="section section-muted section-photo" id="profile" style="--section-bg: url(&#39;assets/images/work-washing.jpg&#39;);">
-      <div class="container profile">
-        <div class="profile-photo">
+    <section class="section section-muted section-photo reveal-section" id="profile" style="--section-bg: url(&#39;assets/images/work-washing.jpg&#39;);">
+      <div class="container profile reveal-item reveal-delay-1">
+        <div class="profile-photo reveal-item reveal-delay-2">
           <img src="./index_files/owner.jpg" alt="Real Make 代表 大川亮太">
         </div>
-        <div class="profile-note">
+        <div class="profile-note reveal-item reveal-delay-3">
           <p class="section-label">Message</p>
           <h2 class="section-title">代表挨拶</h2>
           <h3>塗装工事を、分かりやすく、誠実に。</h3>
@@ -2218,15 +2255,15 @@
           <p class="profile-name">Real Make 代表　大川亮太</p>
         </div>
       </div>
-      <div class="container owner-support">
-        <p class="owner-support-message">弊社で塗り替えをしていただいたお客様限定でサポートをさせていただきます！塗り替え工事後も長いお付き合いを目指しています。</p>
-        <img src="./index_files/owner-support.jpg" alt="Real Makeオーナー様サポートの案内">
+      <div class="container owner-support reveal-item reveal-delay-0">
+        <p class="owner-support-message reveal-item reveal-delay-1">弊社で塗り替えをしていただいたお客様限定でサポートをさせていただきます！塗り替え工事後も長いお付き合いを目指しています。</p>
+        <img src="./index_files/owner-support.jpg" alt="Real Makeオーナー様サポートの案内" class="reveal-item reveal-delay-2">
       </div>
     </section>
 
-    <section class="section section-muted section-photo" id="contact" style="--section-bg: url(&#39;assets/images/work-balcony-finish.jpg&#39;);">
+    <section class="section section-muted section-photo reveal-section" id="contact" style="--section-bg: url(&#39;assets/images/work-balcony-finish.jpg&#39;);">
       <div class="container area-contact">
-        <div class="panel">
+        <div class="panel reveal-item reveal-delay-3">
           <p class="section-label">Area</p>
           <h2 class="section-title">対応エリア</h2>
           <p class="section-copy">桶川市・北本市を中心に、埼玉県内でご相談を承っています。</p>
@@ -2241,7 +2278,7 @@
             <span>埼玉県全域</span>
           </div>
         </div>
-        <div class="contact-panel">
+        <div class="contact-panel reveal-item reveal-delay-0">
           <p class="section-label">Contact</p>
           <h2>外壁・屋根のご相談、無料で承ります。</h2>
           <p>まだ工事するか未定でも大丈夫です。気になる症状や住まいのお困りごとをお聞かせください。</p>
@@ -2277,7 +2314,7 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer reveal-section">
     <div class="container footer-inner">
       <div>
         <div class="footer-brand">
@@ -2296,9 +2333,69 @@
   <div class="fixed-cta" aria-label="固定お問い合わせ">
     <a class="tel" href="tel:09014340189">電話する</a>
     <a class="line" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">LINE相談</a>
-    <a class="contact" href="http://127.0.0.1:8797/index.html?v=footer-address#contact">相談内容を見る</a>
+    <a class="contact" href="http://127.0.0.1:8798/index.html?v=roof-first-fixed#contact">相談内容を見る</a>
   </div>
 
+  <script>
+    (() => {
+      const sectionTargets = Array.from(document.querySelectorAll([
+        '.hero',
+        'main > .section',
+        '.footer'
+      ].join(',')));
+
+      const itemTargets = Array.from(document.querySelectorAll([
+        '.hero-content',
+        '.hero-card',
+        'main > .section > .container > *',
+        '.section .section-head',
+        '.section .panel',
+        '.section .reason-card',
+        '.section .service',
+        '.section .flow-card',
+        '.section .price-card',
+        '.section .work-card',
+        '.section .review-card',
+        '.section .blog-card',
+        '.section .profile',
+        '.section .owner-support',
+        '.section .contact-panel'
+      ].join(','))).filter(target => !target.closest('.fixed-cta'));
+
+      const targets = [...new Set([...sectionTargets, ...itemTargets])];
+
+      if (!targets.length) return;
+
+      document.documentElement.classList.add('reveal-ready');
+
+      sectionTargets.forEach(section => {
+        section.classList.add('reveal-section');
+      });
+
+      itemTargets.forEach((target, index) => {
+        target.classList.add('reveal-item', `reveal-delay-${index % 4}`);
+      });
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        targets.forEach(target => target.classList.add('is-visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -8% 0px'
+      });
+
+      targets.forEach(target => observer.observe(target));
+    })();
+  </script>
 
 
 </body></html>
