@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>外壁・屋根塗装 簡易見積もりシミュレーター｜Real Make</title>
+<style>
+:root {
+  --navy:    #1a2f5e;
+  --navy-l:  #243d7a;
+  --navy-d:  #0f1c3a;
+  --accent:  #f5a623;
+  --accent-l:#ffd07a;
+  --white:   #ffffff;
+  --bg:      #f4f6fa;
+  --border:  #dde3f0;
+  --text:    #1a2036;
+  --muted:   #6b7a99;
+  --g100:    #f4f6fa;
+  --g200:    #e8edf5;
+  --green:   #2ecc71;
+  --line:    #06C755;
+  --c-min:   #2563eb;
+  --c-mid:   #d97706;
+  --c-max:   #dc2626;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Hiragino Kaku Gothic ProN','Noto Sans JP','Meiryo',sans-serif;
+  background: var(--bg); color: var(--text);
+  line-height: 1.6; font-size: 16px; min-height: 100vh;
+}
+
+/* ===== ヘッダー ===== */
+.page-header {
+  background: linear-gradient(135deg, var(--navy-d) 0%, var(--navy) 55%, var(--navy-l) 100%);
+  color: var(--white); padding: 26px 16px 22px; text-align: center;
+}
+.page-header .brand { font-size: 12px; font-weight: 700; letter-spacing: .12em; opacity: .7; margin-bottom: 5px; }
+.page-header h1 { font-size: clamp(18px,5vw,26px); font-weight: 900; line-height: 1.3; margin-bottom: 8px; }
+.page-header .tagline {
+  display: inline-block; font-size: 13px;
+  background: rgba(255,255,255,.14); padding: 4px 16px;
+  border-radius: 20px; font-weight: 600;
+}
+
+/* ===== ステップバー ===== */
+.steps-bar {
+  background: var(--navy); padding: 12px 8px;
+  display: flex; justify-content: center; align-items: center;
+}
+.si { display: flex; align-items: center; gap: 5px; opacity: .4; transition: opacity .3s; }
+.si.active { opacity: 1; }
+.si.done   { opacity: .75; }
+.si .num {
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 2px solid var(--white); color: var(--white);
+  font-size: 11px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.si.active .num { background: var(--accent); border-color: var(--accent); color: var(--navy-d); }
+.si.done   .num { background: var(--green);  border-color: var(--green); }
+.si .slabel { font-size: 11px; color: var(--white); font-weight: 600; white-space: nowrap; }
+.sarrow { color: rgba(255,255,255,.3); font-size: 12px; margin: 0 5px; }
+
+/* ===== コンテナ・カード ===== */
+.container { max-width: 620px; margin: 0 auto; padding: 0 12px 48px; }
+.card {
+  background: var(--white); border-radius: 16px;
+  padding: 26px 22px; margin-top: 16px;
+  box-shadow: 0 2px 16px rgba(26,47,94,.09);
+}
+.card-title {
+  font-size: 18px; font-weight: 800; color: var(--navy);
+  margin-bottom: 22px; padding-bottom: 14px;
+  border-bottom: 2px solid var(--g200);
+  display: flex; align-items: center; gap: 8px;
+}
+.step-badge {
+  background: var(--navy); color: var(--white);
+  font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px;
+}
+
+/* ===== フォーム ===== */
+.fg { margin-bottom: 24px; }
+.fg:last-child { margin-bottom: 0; }
+.fl { display: block; font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+.fl .hint { display: block; font-size: 12px; font-weight: 400; color: var(--muted); margin-top: 3px; }
+
+/* セレクト */
+.sel {
+  width: 100%; padding: 12px 36px 12px 14px;
+  border: 2px solid var(--border); border-radius: 10px;
+  font-size: 15px; font-weight: 600; color: var(--text);
+  background: var(--white); outline: none; cursor: pointer;
+  transition: border-color .18s; -webkit-appearance: none; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7a99' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center;
+}
+.sel:focus { border-color: var(--navy); }
+
+/* ラジオグループ */
+.rg { display: flex; flex-wrap: wrap; gap: 10px; }
+.rg input[type="radio"] { display: none; }
+.rg label {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 11px 18px; border-radius: 9px; border: 2px solid var(--border);
+  background: var(--white); font-size: 14px; font-weight: 700;
+  color: var(--muted); cursor: pointer; transition: all .18s;
+  text-align: center; line-height: 1.35; min-width: 80px;
+}
+.rg label:hover { border-color: var(--navy-l); color: var(--navy); background: #f5f7ff; }
+.rg input[type="radio"]:checked + label { background: var(--navy); border-color: var(--navy); color: var(--white); }
+
+/* チェックボックスリスト */
+.ck-list { display: flex; flex-direction: column; gap: 10px; }
+.ck-item input[type="checkbox"] { display: none; }
+.ck-label {
+  display: flex; align-items: center; gap: 12px; padding: 14px;
+  border: 2px solid var(--border); border-radius: 10px;
+  cursor: pointer; transition: all .18s;
+}
+.ck-label:hover { border-color: var(--navy-l); background: #f5f7ff; }
+.ck-item input[type="checkbox"]:checked + .ck-label { border-color: var(--navy); background: #eef2ff; }
+.ck-box {
+  width: 22px; height: 22px; border-radius: 5px; border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all .18s;
+}
+.ck-item input[type="checkbox"]:checked + .ck-label .ck-box { background: var(--navy); border-color: var(--navy); }
+.ck-box::after {
+  content: ''; width: 11px; height: 7px;
+  border-left: 2.5px solid var(--white); border-bottom: 2.5px solid var(--white);
+  transform: rotate(-45deg) translateY(-1px); opacity: 0; transition: opacity .15s;
+}
+.ck-item input[type="checkbox"]:checked + .ck-label .ck-box::after { opacity: 1; }
+.ck-body { flex: 1; }
+.ck-name { font-size: 14px; font-weight: 700; }
+.ck-sub  { font-size: 12px; color: var(--muted); margin-top: 3px; }
+.ck-est  { font-size: 13px; font-weight: 800; color: var(--navy); white-space: nowrap; }
+
+/* 展開エリア */
+.expand { margin-top: 10px; padding: 14px; background: var(--g100); border-radius: 10px; display: none; }
+.expand.open { display: block; }
+.expand .fl { font-size: 13px; margin-bottom: 8px; }
+
+/* 数値入力 */
+.num-row { display: flex; align-items: center; gap: 10px; }
+.num-in {
+  width: 100px; padding: 11px 12px; border: 2px solid var(--border);
+  border-radius: 9px; font-size: 16px; font-weight: 700;
+  color: var(--text); text-align: right; outline: none;
+  transition: border-color .18s; -webkit-appearance: none; appearance: none;
+}
+.num-in:focus { border-color: var(--navy); }
+.num-unit { font-size: 13px; color: var(--muted); font-weight: 600; }
+
+/* ===== ナビボタン ===== */
+.nav-btns { display: flex; gap: 12px; margin-top: 26px; }
+.btn-back {
+  flex: 0 0 80px; padding: 15px; border: 2px solid var(--navy);
+  border-radius: 10px; background: transparent; color: var(--navy);
+  font-size: 15px; font-weight: 700; cursor: pointer; transition: all .2s;
+}
+.btn-back:hover { background: var(--g100); }
+.btn-next {
+  flex: 1; padding: 16px; border: none; border-radius: 12px;
+  background: linear-gradient(135deg, var(--navy-l), var(--navy-d));
+  color: var(--white); font-size: 16px; font-weight: 900;
+  cursor: pointer; transition: all .2s; letter-spacing: .03em;
+  box-shadow: 0 4px 14px rgba(26,47,94,.25);
+}
+.btn-next:hover { opacity: .9; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(26,47,94,.3); }
+.btn-next:active { transform: translateY(0); }
+
+/* ===== 結果画面 ===== */
+.total-banner {
+  background: linear-gradient(135deg, var(--navy-d), var(--navy));
+  border-radius: 14px; padding: 22px 18px; text-align: center;
+  margin-bottom: 16px; color: var(--white);
+}
+.total-banner h2 { font-size: 13px; opacity: .8; margin-bottom: 8px; font-weight: 600; }
+.total-mid { font-size: clamp(28px,9vw,44px); font-weight: 900; color: var(--accent); line-height: 1; }
+.total-mid span { font-size: 15px; font-weight: 600; color: rgba(255,255,255,.75); }
+.total-range { margin-top: 8px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.6); }
+.total-range b { color: var(--accent-l); }
+
+.range-legend {
+  display: flex; gap: 16px; justify-content: center;
+  margin-bottom: 14px; flex-wrap: wrap;
+}
+.rl { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; color: var(--muted); }
+.rl-dot { width: 9px; height: 9px; border-radius: 50%; }
+
+/* 明細テーブル */
+.dtable { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+.dtable th {
+  font-size: 10px; font-weight: 700; color: var(--muted);
+  padding: 7px 7px; text-align: right; border-bottom: 2px solid var(--g200);
+}
+.dtable th:first-child { text-align: left; }
+.dtable td { font-size: 12px; padding: 10px 7px; border-bottom: 1px solid var(--g200); vertical-align: middle; }
+.dtable td:first-child { font-weight: 700; }
+.dtable td .qty { font-size: 10px; color: var(--muted); font-weight: 400; margin-top: 2px; }
+.dtable td.cv-min { color: var(--c-min); font-weight: 700; text-align: right; white-space: nowrap; }
+.dtable td.cv-mid { color: var(--c-mid); font-weight: 800; text-align: right; white-space: nowrap; }
+.dtable td.cv-max { color: var(--c-max); font-weight: 700; text-align: right; white-space: nowrap; }
+.dtable tr.tr-total td {
+  background: var(--navy); color: var(--white);
+  font-weight: 800; font-size: 13px; border-bottom: none; padding: 12px 7px;
+}
+.dtable tr.tr-total td:first-child { border-radius: 9px 0 0 9px; }
+.dtable tr.tr-total td:last-child  { border-radius: 0 9px 9px 0; }
+.dtable tr.tr-total td.cv-min { color: #93c5fd; }
+.dtable tr.tr-total td.cv-mid { color: var(--accent); font-size: 15px; }
+.dtable tr.tr-total td.cv-max { color: #fca5a5; }
+
+/* 工期バッジ */
+.dur-badge {
+  display: flex; align-items: center; gap: 12px;
+  background: #e8f5e9; border-radius: 10px; padding: 14px; margin-bottom: 16px;
+}
+.dur-text { font-size: 15px; color: #1b5e20; font-weight: 700; }
+
+/* 入力サマリー */
+.input-summary { background: var(--g100); border-radius: 10px; padding: 14px; margin-bottom: 16px; }
+.input-summary h3 { font-size: 11px; color: var(--muted); font-weight: 700; margin-bottom: 8px; letter-spacing: .05em; }
+.stags { display: flex; flex-wrap: wrap; gap: 6px; }
+.stag { background: var(--white); border: 1px solid var(--g200); border-radius: 20px; padding: 4px 12px; font-size: 12px; color: var(--navy); font-weight: 600; }
+
+/* LINEボタン */
+.btn-line {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; padding: 18px;
+  background: var(--line); color: var(--white);
+  font-size: 17px; font-weight: 900; border: none; border-radius: 13px;
+  cursor: pointer; text-decoration: none; transition: all .2s;
+  margin-bottom: 10px; box-shadow: 0 5px 18px rgba(6,199,85,.38);
+  letter-spacing: .02em;
+}
+.btn-line:hover { background: #04a547; transform: translateY(-2px); }
+
+/* 注記 */
+.notice {
+  background: #fffbeb; border-left: 4px solid var(--accent);
+  border-radius: 0 10px 10px 0; padding: 14px 16px;
+  font-size: 12px; color: #92400e; line-height: 1.7; margin-bottom: 20px;
+}
+.notice strong { color: var(--navy); }
+
+/* やり直しボタン */
+.btn-retry {
+  display: block; width: 100%; padding: 14px;
+  background: transparent; border: 2px solid var(--border);
+  border-radius: 10px; color: var(--muted);
+  font-size: 14px; font-weight: 700; cursor: pointer; transition: all .2s; text-align: center;
+}
+.btn-retry:hover { border-color: var(--navy); color: var(--navy); background: var(--g100); }
+
+/* SEO */
+.seo-text {
+  margin-top: 14px; padding: 16px; background: var(--white);
+  border-radius: 10px; font-size: 12px; color: var(--muted);
+  line-height: 1.8; box-shadow: 0 2px 8px rgba(26,47,94,.06);
+}
+
+/* パネル */
+.panel { display: none; }
+.panel.active { display: block; }
+
+@media (max-width: 400px) {
+  .card { padding: 18px 14px; }
+  .dtable th, .dtable td { padding: 8px 5px; font-size: 11px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     ★ 単価設定（ここを変更してください）
+============================================================ -->
+<script>
+const PRICES = {
+  wall: {
+    radical: { min:2500, max:3500, mid:3000, label:'ラジカル制御型シリコン', life:'12〜15年' },
+    fluoro:  { min:3500, max:4800, mid:4160, label:'フッ素',               life:'15〜20年' },
+    mukki:   { min:4500, max:5500, mid:5000, label:'無機',                 life:'20〜25年' },
+  },
+  roof: {
+    silicon: { min:2500, max:3500, mid:3000, label:'シリコン／ラジカル制御型', life:'10〜15年' },
+    heat:    { min:2700, max:3700, mid:3200, label:'遮熱シリコン',             life:'10〜15年' },
+  },
+  scaffold: { min:700, max:1000, mid:850  }, // 円/m²（架面積・坪数テーブル使用）
+  washing:  { min:200, max:300,  mid:250  }, // 円/m²（外壁面積）
+  nokiten:  { min:1000, max:1500, mid:1200 }, // 軒天 円/m²
+  toi:      { min:800, max:1000, mid:900  },  // 雨樋（シリコン） 円/m
+  hafu:     { min:1200, max:1800, mid:1500 }, // 破風・鼻隠し（シリコン） 円/m
+  caulk: {
+    replace: { min:700,  max:1200, mid:900, label:'コーキング打ち替え' },
+    add:     { min:500,  max:1000, mid:700, label:'コーキング増し打ち' },
+  },
+  veranda: {
+    frp:        { min:5000, max:7000, mid:6000, label:'ベランダ防水（FRP）'              },
+    urethane_d: { min:4500, max:6500, mid:5500, label:'ベランダ防水（ウレタン密着）'      },
+    urethane_v: { min:6000, max:9000, mid:7500, label:'ベランダ防水（ウレタン通気緩衝）'  },
+  },
+  taxRate: 0.10,
+};
+
+const TSUBO_TABLE = {
+  20: { wall:80,  roof:45, nokiten:20, toi:35, hafu:30, caulk:100, scaffold:140 },
+  25: { wall:95,  roof:55, nokiten:25, toi:40, hafu:35, caulk:130, scaffold:160 },
+  30: { wall:120, roof:65, nokiten:30, toi:50, hafu:45, caulk:160, scaffold:180 },
+  35: { wall:140, roof:75, nokiten:35, toi:55, hafu:50, caulk:185, scaffold:200 },
+  40: { wall:160, roof:90, nokiten:40, toi:60, hafu:55, caulk:210, scaffold:220 },
+};
+
+const LINE_URL = 'https://lin.ee/XXXXXXX'; // ← ここを書き換えてください
+</script>
+
+<!-- ヘッダー -->
+<header class="page-header">
+  <div class="brand">Real Make リアルメイク｜埼玉県 外壁・屋根塗装</div>
+  <h1>外壁・屋根塗装<br>簡易見積もりシミュレーター</h1>
+  <div class="tagline">30秒で塗装費用の目安がわかります</div>
+</header>
+
+<!-- ステップバー -->
+<div class="steps-bar">
+  <div class="si active" id="si1"><div class="num">1</div><div class="slabel">建物・塗料</div></div>
+  <div class="sarrow">›</div>
+  <div class="si" id="si2"><div class="num">2</div><div class="slabel">屋根・工事</div></div>
+  <div class="sarrow">›</div>
+  <div class="si" id="si3"><div class="num">✓</div><div class="slabel">結果</div></div>
+</div>
+
+<div class="container">
+
+<!-- ============================================================
+     STEP 1：建物・外壁塗料
+============================================================ -->
+<div class="panel active" id="p1">
+  <div class="card">
+    <div class="card-title"><span class="step-badge">STEP 1</span>建物・外壁塗料</div>
+
+    <!-- 坪数 -->
+    <div class="fg">
+      <label class="fl" for="tsubo">建物の坪数</label>
+      <select class="sel" id="tsubo">
+        <option value="20">20坪（外壁約80㎡）</option>
+        <option value="25">25坪（外壁約95㎡）</option>
+        <option value="30" selected>30坪（外壁約120㎡）</option>
+        <option value="35">35坪（外壁約140㎡）</option>
+        <option value="40">40坪（外壁約160㎡）</option>
+      </select>
+    </div>
+
+    <!-- 外壁塗料 -->
+    <div class="fg">
+      <label class="fl">外壁塗料グレード
+        <span class="hint">迷ったらラジカル制御型シリコンがおすすめです</span>
+      </label>
+      <div class="rg">
+        <input type="radio" name="wg" id="w_rad" value="radical" checked>
+        <label for="w_rad">⭐ おすすめ<br>ラジカル制御型（シリコン系）<br><small style="opacity:.7;font-weight:400">耐久10〜15年</small></label>
+
+        <input type="radio" name="wg" id="w_flu" value="fluoro">
+        <label for="w_flu">フッ素<br><small style="opacity:.7;font-weight:400">耐用15〜20年</small></label>
+
+        <input type="radio" name="wg" id="w_muk" value="mukki">
+        <label for="w_muk">無機<br><small style="opacity:.7;font-weight:400">耐用20〜25年</small></label>
+      </div>
+    </div>
+
+    <!-- コーキング -->
+    <div class="fg">
+      <label class="fl">コーキング（シーリング）</label>
+      <div class="rg">
+        <input type="radio" name="caulk" id="c_rep" value="replace" checked>
+        <label for="c_rep">打ち替え<br><small style="opacity:.7;font-weight:400">推奨・耐久◎</small></label>
+
+        <input type="radio" name="caulk" id="c_add" value="add">
+        <label for="c_add">増し打ち<br><small style="opacity:.7;font-weight:400">コスト抑えめ</small></label>
+
+        <input type="radio" name="caulk" id="c_non" value="none">
+        <label for="c_non">なし</label>
+      </div>
+    </div>
+
+    <div class="nav-btns">
+      <button class="btn-next" onclick="goStep(2)">次へ　›</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     STEP 2：屋根・付帯工事
+============================================================ -->
+<div class="panel" id="p2">
+  <div class="card">
+    <div class="card-title"><span class="step-badge">STEP 2</span>屋根・付帯工事</div>
+
+    <!-- 屋根塗装 -->
+    <div class="fg">
+      <label class="fl">屋根塗装</label>
+      <div class="rg" style="margin-bottom:12px">
+        <input type="radio" name="roofYN" id="rf_y" value="yes" checked onchange="toggleExpand('roofExp',true)">
+        <label for="rf_y">する</label>
+        <input type="radio" name="roofYN" id="rf_n" value="no" onchange="toggleExpand('roofExp',false)">
+        <label for="rf_n">しない</label>
+      </div>
+      <div class="expand open" id="roofExp">
+        <label class="fl">屋根塗料の種類</label>
+        <div class="rg">
+          <input type="radio" name="roofG" id="rg_si" value="silicon" checked>
+          <label for="rg_si">シリコン／<br>ラジカル制御型<br><small style="opacity:.7;font-weight:400">耐用10〜15年</small></label>
+          <input type="radio" name="roofG" id="rg_ht" value="heat">
+          <label for="rg_ht">遮熱シリコン<br><small style="opacity:.7;font-weight:400">耐用10〜15年</small></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 付帯工事 -->
+    <div class="fg">
+      <label class="fl">付帯工事
+        <span class="hint">該当するものにチェックしてください</span>
+      </label>
+      <div class="ck-list">
+
+        <div class="ck-item">
+          <input type="checkbox" id="ck_nok">
+          <label class="ck-label" for="ck_nok">
+            <div class="ck-box"></div>
+            <div class="ck-body">
+              <div class="ck-name">軒天（のきてん）塗装</div>
+              <div class="ck-sub" id="sub_nok">－</div>
+            </div>
+            <div class="ck-est" id="est_nok">－</div>
+          </label>
+        </div>
+
+        <div class="ck-item">
+          <input type="checkbox" id="ck_toi">
+          <label class="ck-label" for="ck_toi">
+            <div class="ck-box"></div>
+            <div class="ck-body">
+              <div class="ck-name">雨樋（とい）塗装</div>
+              <div class="ck-sub" id="sub_toi">－</div>
+            </div>
+            <div class="ck-est" id="est_toi">－</div>
+          </label>
+        </div>
+
+        <div class="ck-item">
+          <input type="checkbox" id="ck_hafu">
+          <label class="ck-label" for="ck_hafu">
+            <div class="ck-box"></div>
+            <div class="ck-body">
+              <div class="ck-name">破風・鼻隠し塗装</div>
+              <div class="ck-sub" id="sub_hafu">－</div>
+            </div>
+            <div class="ck-est" id="est_hafu">－</div>
+          </label>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ベランダ防水 -->
+    <div class="fg">
+      <label class="fl">ベランダ・バルコニー防水</label>
+      <div class="rg" style="margin-bottom:12px">
+        <input type="radio" name="verYN" id="vr_n" value="no" checked onchange="toggleExpand('verExp',false)">
+        <label for="vr_n">しない</label>
+        <input type="radio" name="verYN" id="vr_y" value="yes" onchange="toggleExpand('verExp',true)">
+        <label for="vr_y">する</label>
+      </div>
+      <div class="expand" id="verExp">
+        <label class="fl" style="margin-bottom:10px">防水工法を選択</label>
+        <div class="rg" style="margin-bottom:14px">
+          <input type="radio" name="verM" id="vm_frp" value="frp" checked>
+          <label for="vm_frp">FRP防水<br><small style="opacity:.7;font-weight:400">耐用10〜15年</small></label>
+          <input type="radio" name="verM" id="vm_ud" value="urethane_d">
+          <label for="vm_ud">ウレタン密着<br><small style="opacity:.7;font-weight:400">耐用10〜12年</small></label>
+          <input type="radio" name="verM" id="vm_uv" value="urethane_v">
+          <label for="vm_uv">ウレタン通気緩衝<br><small style="opacity:.7;font-weight:400">耐用12〜15年</small></label>
+        </div>
+        <label class="fl" style="margin-bottom:8px">ベランダ面積</label>
+        <div class="num-row">
+          <input type="number" class="num-in" id="verArea" value="10" min="1" max="200">
+          <span class="num-unit">㎡</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-btns">
+      <button class="btn-back" onclick="goStep(1)">‹ 戻る</button>
+      <button class="btn-next" onclick="calcAndShow()">見積もりを見る　›</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     STEP 3：結果
+============================================================ -->
+<div class="panel" id="p3">
+  <div class="card">
+    <div class="card-title"><span class="step-badge">結果</span>概算見積もり</div>
+
+    <!-- 入力サマリー -->
+    <div class="input-summary">
+      <h3>▸ 入力内容</h3>
+      <div class="stags" id="summaryTags"></div>
+    </div>
+
+    <!-- 合計バナー -->
+    <div class="total-banner">
+      <h2>概算合計金額（税込・目安）</h2>
+      <div class="total-mid" id="totalMid">―<span>円</span></div>
+      <div class="total-range" id="totalRange"></div>
+    </div>
+
+    <!-- 凡例 -->
+    <div class="range-legend">
+      <div class="rl"><div class="rl-dot" style="background:var(--c-min)"></div>最安値</div>
+      <div class="rl"><div class="rl-dot" style="background:var(--c-mid)"></div>目安（中央値）</div>
+      <div class="rl"><div class="rl-dot" style="background:var(--c-max)"></div>最高値</div>
+    </div>
+
+    <!-- 内訳テーブル -->
+    <table class="dtable">
+      <thead>
+        <tr><th>工事内容</th><th>最安</th><th>目安</th><th>最高</th></tr>
+      </thead>
+      <tbody id="detailBody"></tbody>
+    </table>
+
+    <!-- 工期 -->
+    <div class="dur-badge">
+      <div style="font-size:22px">📅</div>
+      <div class="dur-text" id="durText">工期の目安：－</div>
+    </div>
+
+    <!-- 注記 -->
+    <div class="notice">
+      <strong>※ あくまで概算です。</strong><br>
+      正確な金額は現地調査・お見積りにてご確認ください。建物形状・劣化状況・下地状態によって実際の費用は変動します。
+    </div>
+
+    <button class="btn-retry" onclick="resetSim()">▸ 最初からやり直す</button>
+  </div>
+
+  <div class="seo-text">
+    埼玉県で外壁塗装・屋根塗装をご検討中の方へ。Real Makeでは職人直営ならではの適正価格と丁寧な施工を提供しています。桶川市を中心に埼玉県全域対応。無料現地調査・無料見積もり受付中です。
+  </div>
+</div>
+
+</div><!-- /.container -->
+
+<script>
+/* ============================================================
+   状態管理
+============================================================ */
+let currentStep = 1;
+
+/* ============================================================
+   ステップ管理
+============================================================ */
+function goStep(n) {
+  currentStep = n;
+  document.querySelectorAll('.panel').forEach((p,i) => p.classList.toggle('active', i+1===n));
+  for (let i=1; i<=3; i++) {
+    const el = document.getElementById('si'+i);
+    el.classList.remove('active','done');
+    if (i===n) el.classList.add('active');
+    else if (i<n) el.classList.add('done');
+  }
+  // STEP2進入時に付帯の目安金額を更新
+  if (n===2) updateAddonHints();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleExpand(id, open) {
+  document.getElementById(id).classList.toggle('open', open);
+}
+
+/* ============================================================
+   付帯工事の目安表示（STEP2進入時）
+============================================================ */
+function updateAddonHints() {
+  const t = TSUBO_TABLE[parseInt(document.getElementById('tsubo').value)];
+  document.getElementById('sub_nok').textContent  = `約${t.nokiten}㎡`;
+  document.getElementById('est_nok').textContent  = `目安 約${f(t.nokiten * PRICES.nokiten.mid)}円`;
+  document.getElementById('sub_toi').textContent  = `約${t.toi}m`;
+  document.getElementById('est_toi').textContent  = `目安 約${f(t.toi * PRICES.toi.mid)}円`;
+  document.getElementById('sub_hafu').textContent = `約${t.hafu}m`;
+  document.getElementById('est_hafu').textContent = `目安 約${f(t.hafu * PRICES.hafu.mid)}円`;
+}
+
+/* ============================================================
+   計算 & 結果表示
+============================================================ */
+function calcAndShow() {
+  const tVal  = parseInt(document.getElementById('tsubo').value);
+  const t     = TSUBO_TABLE[tVal];
+  const wG    = document.querySelector('input[name="wg"]:checked').value;
+  const caulk = document.querySelector('input[name="caulk"]:checked').value;
+  const doRf  = document.getElementById('rf_y').checked;
+  const rfG   = document.querySelector('input[name="roofG"]:checked').value;
+  const doVer = document.getElementById('vr_y').checked;
+  const verM  = document.querySelector('input[name="verM"]:checked').value;
+  const verA  = parseFloat(document.getElementById('verArea').value) || 0;
+  const doNok  = document.getElementById('ck_nok').checked;
+  const doToi  = document.getElementById('ck_toi').checked;
+  const doHafu = document.getElementById('ck_hafu').checked;
+
+  /* --- 計算ヘルパー --- */
+  const cv  = (p, q) => ({ min:Math.round(p.min*q), mid:Math.round(p.mid*q), max:Math.round(p.max*q) });
+  const add = (a, b) => ({ min:a.min+b.min, mid:a.mid+b.mid, max:a.max+b.max });
+  const zero = () => ({ min:0, mid:0, max:0 });
+
+  const rows = [];
+
+  // 外壁塗装
+  rows.push({ label:`外壁塗装（${PRICES.wall[wG].label}）`, qty:`${t.wall}㎡`, c: cv(PRICES.wall[wG], t.wall) });
+
+  // 足場（1回のみ）
+  rows.push({ label:'足場設置・解体', qty:`架面積${t.scaffold}㎡`, c: cv(PRICES.scaffold, t.scaffold) });
+
+  // 高圧洗浄
+  rows.push({ label:'高圧洗浄', qty:`${t.wall}㎡`, c: cv(PRICES.washing, t.wall) });
+
+  // コーキング
+  if (caulk !== 'none') {
+    rows.push({ label: PRICES.caulk[caulk].label, qty:`${t.caulk}m`, c: cv(PRICES.caulk[caulk], t.caulk) });
+  }
+
+  // 屋根塗装
+  if (doRf) {
+    rows.push({ label:`屋根塗装（${PRICES.roof[rfG].label}）`, qty:`${t.roof}㎡`, c: cv(PRICES.roof[rfG], t.roof) });
+  }
+
+  // 軒天
+  if (doNok) {
+    rows.push({ label:'軒天塗装', qty:`${t.nokiten}㎡`, c: cv(PRICES.nokiten, t.nokiten) });
+  }
+
+  // 雨樋
+  if (doToi) {
+    rows.push({ label:'雨樋塗装（シリコン）', qty:`${t.toi}m`, c: cv(PRICES.toi, t.toi) });
+  }
+
+  // 破風・鼻隠し
+  if (doHafu) {
+    rows.push({ label:'破風・鼻隠し塗装（シリコン）', qty:`${t.hafu}m`, c: cv(PRICES.hafu, t.hafu) });
+  }
+
+  // ベランダ防水
+  if (doVer && verA > 0) {
+    rows.push({ label: PRICES.veranda[verM].label, qty:`${verA}㎡`, c: cv(PRICES.veranda[verM], verA) });
+  }
+
+  // 小計・税・合計
+  const sub   = rows.reduce((acc,r) => add(acc,r.c), zero());
+  const tax   = { min:Math.round(sub.min*PRICES.taxRate), mid:Math.round(sub.mid*PRICES.taxRate), max:Math.round(sub.max*PRICES.taxRate) };
+  const total = add(sub, tax);
+
+  // 税行を追加
+  rows.push({ label:'消費税（10%）', qty:'', c: tax });
+
+  // 工期
+  let days = 7;
+  if (t.wall > 130) days += 2;
+  if (doRf) days += 3;
+  const extras = [doNok,doToi,doHafu,doVer].filter(Boolean).length;
+  days += Math.floor(extras / 2);
+
+  /* --- 表示 --- */
+  document.getElementById('totalMid').innerHTML   = `${f(total.mid)}<span>円（目安）</span>`;
+  document.getElementById('totalRange').innerHTML = `<b>${f(total.min)}円</b> 〜 <b>${f(total.max)}円</b> の幅（税込）`;
+
+  document.getElementById('detailBody').innerHTML = rows.map(r =>
+    `<tr>
+      <td>${r.label}${r.qty ? `<div class="qty">${r.qty}</div>` : ''}</td>
+      <td class="cv-min">${f(r.c.min)}</td>
+      <td class="cv-mid">${f(r.c.mid)}</td>
+      <td class="cv-max">${f(r.c.max)}</td>
+    </tr>`
+  ).join('') +
+  `<tr class="tr-total">
+    <td>合計（税込）</td>
+    <td class="cv-min">${f(total.min)}円</td>
+    <td class="cv-mid">${f(total.mid)}円</td>
+    <td class="cv-max">${f(total.max)}円</td>
+  </tr>`;
+
+  document.getElementById('durText').textContent = `工期の目安：約 ${days}〜${days+4} 日間`;
+
+  // サマリータグ
+  const addonMap = { ck_nok:'軒天塗装', ck_toi:'雨樋塗装', ck_hafu:'破風塗装' };
+  const addonTags = Object.entries(addonMap).filter(([id])=>document.getElementById(id).checked).map(([,v])=>v);
+  const tags = [
+    `${tVal}坪（外壁約${t.wall}㎡）`,
+    `外壁：${PRICES.wall[wG].label}`,
+    caulk !== 'none' ? `コーキング${caulk==='replace'?'打ち替え':'増し打ち'}` : null,
+    doRf ? `屋根：${PRICES.roof[rfG].label}` : '屋根塗装なし',
+    ...addonTags,
+    doVer ? 'ベランダ防水' : null,
+  ].filter(Boolean);
+  document.getElementById('summaryTags').innerHTML = tags.map(t=>`<span class="stag">${t}</span>`).join('');
+
+  goStep(3);
+}
+
+/* ============================================================
+   リセット
+============================================================ */
+function resetSim() {
+  document.getElementById('tsubo').value = '30';
+  document.querySelector('input[name="wg"][value="radical"]').checked = true;
+  document.querySelector('input[name="caulk"][value="replace"]').checked = true;
+  document.getElementById('rf_y').checked = true;
+  document.getElementById('roofExp').classList.add('open');
+  document.querySelector('input[name="roofG"][value="silicon"]').checked = true;
+  document.getElementById('vr_n').checked = true;
+  document.getElementById('verExp').classList.remove('open');
+  document.getElementById('verArea').value = '10';
+  ['ck_nok','ck_toi','ck_hafu'].forEach(id => document.getElementById(id).checked = false);
+  currentStep = 0;
+  goStep(1);
+}
+
+function f(n) { return Math.round(n).toLocaleString('ja-JP'); }
+</script>
+</body>
+</html>
