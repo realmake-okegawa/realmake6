@@ -29,7 +29,7 @@ function renderBody(body) {
     .map((paragraph) => paragraph.trim())
     .filter(Boolean)
     .map((paragraph) => `<p>${escapeHtml(paragraph).replaceAll("\n", "<br>")}</p>`)
-    .join("\n              ");
+    .join("\n");
 }
 
 function normalizeImages(post) {
@@ -49,68 +49,71 @@ function postText(body) {
   return (Array.isArray(body) ? body.join("\n\n") : String(body || "")).trim();
 }
 
-function renderTextWithReadMore(post) {
+function indent(text, spaces) {
+  const pad = " ".repeat(spaces);
+  return text
+    .split("\n")
+    .map((line) => (line ? `${pad}${line}` : line))
+    .join("\n");
+}
+
+function renderTextWithReadMore(post, baseIndent) {
   const text = postText(post.body);
   const limit = 180;
-  if (text.length <= limit) return renderBody(post.body);
+  if (text.length <= limit) return indent(renderBody(post.body), baseIndent);
 
   const excerpt = `${text.slice(0, limit).trim()}...`;
-  return `<p>${escapeHtml(excerpt).replaceAll("\n", "<br>")}</p>
-              <details class="blog-more">
-                <summary>続きを読む</summary>
-                ${renderBody(post.body)}
-              </details>`;
+  const details = `<p>${escapeHtml(excerpt).replaceAll("\n", "<br>")}</p>
+<details class="blog-more">
+  <summary>続きを読む</summary>
+${indent(renderBody(post.body), 2)}
+</details>`;
+  return indent(details, baseIndent);
 }
 
-function renderGallery(images) {
+function renderGallery(images, baseIndent) {
   if (images.length <= 1) return "";
-  return `
-              <div class="blog-gallery">
-                ${images
-                  .slice(1)
-                  .map((image) => {
-                    const src = escapeHtml(image.src);
-                    const alt = escapeHtml(image.alt || "ブログ写真");
-                    return `<a href="${src}" target="_blank" rel="noopener" aria-label="${alt}を大きく表示"><img src="${src}" alt="${alt}"></a>`;
-                  })
-                  .join("\n                ")}
-              </div>`;
+  const items = images
+    .slice(1)
+    .map((image) => {
+      const src = escapeHtml(image.src);
+      const alt = escapeHtml(image.alt || "ブログ写真");
+      return `<a href="${src}" target="_blank" rel="noopener" aria-label="${alt}を大きく表示"><img src="${src}" alt="${alt}"></a>`;
+    })
+    .join("\n");
+  return `\n${indent(`<div class="blog-gallery">\n${indent(items, 2)}\n</div>`, baseIndent)}`;
 }
 
-function renderArchiveGallery(images) {
-  if (!images.length) return "";
-  return `
-                    <div class="blog-gallery">
-                      ${images
-                        .map((image) => {
-                          const src = escapeHtml(image.src);
-                          const alt = escapeHtml(image.alt || "ブログ写真");
-                          return `<a href="${src}" target="_blank" rel="noopener" aria-label="${alt}を大きく表示"><img src="${src}" alt="${alt}"></a>`;
-                        })
-                        .join("\n                      ")}
-                    </div>`;
+function renderCard(post, { featured = false, baseIndent = 10 } = {}) {
+  const images = normalizeImages(post);
+  const image = images[0]
+    ? `\n${indent(`<img src="${escapeHtml(images[0].src)}" alt="${escapeHtml(images[0].alt || post.title || "ブログ写真")}">`, 2)}`
+    : "";
+  const article = `<article class="blog-card${featured ? " blog-card-featured" : ""}">${image}
+  <div class="blog-body">
+    <div class="blog-meta"><time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time><span>${escapeHtml(post.category || "おしらせ")}</span></div>
+    <h3>${escapeHtml(post.title)}</h3>
+${renderTextWithReadMore(post, 4)}${renderGallery(images, 4)}
+  </div>
+</article>`;
+  return indent(article, baseIndent);
 }
 
 function renderArchiveItem(post) {
-  const images = normalizeImages(post);
-  return `              <article class="blog-archive-item">
-                <details>
-                  <summary>
-                    <span>${displayDate(post.date)}　${escapeHtml(post.category || "おしらせ")}</span>
-                    <strong>${escapeHtml(post.title)}</strong>
-                  </summary>
-                  <div class="blog-archive-body">
-                    ${renderBody(post.body)}${renderArchiveGallery(images)}
-                  </div>
-                </details>
-              </article>`;
+  return `              <details class="blog-archive-item">
+                <summary>
+                  <span class="blog-archive-meta"><time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time><span>${escapeHtml(post.category || "おしらせ")}</span></span>
+                  <strong>${escapeHtml(post.title)}</strong>
+                </summary>
+${renderCard(post, { baseIndent: 16 })}
+              </details>`;
 }
 
 function renderArchive(items) {
   if (items.length <= 3) return "";
   return `
           <details class="blog-archive">
-            <summary>ブログ記事一覧を見る</summary>
+            <summary>ブログ記事をもっと見る</summary>
             <div class="blog-archive-list">
 ${items.map(renderArchiveItem).join("\n")}
             </div>
@@ -127,23 +130,11 @@ function renderPosts(items) {
 
   const sortedItems = [...items].sort((a, b) => String(b.date).localeCompare(String(a.date)));
   const visibleItems = sortedItems.slice(0, 3);
+  const archiveItems = sortedItems.slice(3);
 
   return visibleItems
-    .map((post, index) => {
-      const featuredClass = index === 0 ? " blog-card-featured" : "";
-      const images = normalizeImages(post);
-      const image = images[0]
-        ? `            <img src="${escapeHtml(images[0].src)}" alt="${escapeHtml(images[0].alt || post.title || "ブログ写真")}">\n`
-        : "";
-      return `          <article class="blog-card${featuredClass}">
-${image}            <div class="blog-body">
-              <div class="blog-meta"><time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time><span>${escapeHtml(post.category || "おしらせ")}</span></div>
-              <h3>${escapeHtml(post.title)}</h3>
-              ${renderTextWithReadMore(post)}${renderGallery(images)}
-            </div>
-          </article>`;
-    })
-    .join("\n") + renderArchive(sortedItems);
+    .map((post, index) => renderCard(post, { featured: index === 0, baseIndent: 10 }))
+    .join("\n") + renderArchive(archiveItems);
 }
 
 const rendered = renderPosts(posts);
