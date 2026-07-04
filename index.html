@@ -2852,11 +2852,7 @@
     <script>
       (() => {
         const priceSection = document.querySelector('#price');
-        const reviewsSection = document.querySelector('#reviews');
         const beforeAfterSection = document.querySelector('#before-after');
-        if (priceSection && reviewsSection && reviewsSection.nextElementSibling !== priceSection) {
-          priceSection.before(reviewsSection);
-        }
         if (priceSection && beforeAfterSection && beforeAfterSection.nextElementSibling !== priceSection) {
           beforeAfterSection.after(priceSection);
         }
