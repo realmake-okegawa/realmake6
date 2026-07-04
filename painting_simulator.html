@@ -227,17 +227,25 @@ body {
 .stags { display: flex; flex-wrap: wrap; gap: 6px; }
 .stag { background: var(--white); border: 1px solid var(--g200); border-radius: 20px; padding: 4px 12px; font-size: 12px; color: var(--navy); font-weight: 600; }
 
-/* LINEボタン */
-.btn-line {
-  display: flex; align-items: center; justify-content: center; gap: 10px;
-  width: 100%; padding: 18px;
-  background: var(--line); color: var(--white);
-  font-size: 17px; font-weight: 900; border: none; border-radius: 13px;
-  cursor: pointer; text-decoration: none; transition: all .2s;
-  margin-bottom: 10px; box-shadow: 0 5px 18px rgba(6,199,85,.38);
-  letter-spacing: .02em;
+/* 問い合わせボタン */
+.contact-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
 }
+.contact-btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; min-height: 54px; padding: 14px 12px;
+  color: var(--white); font-size: 15px; font-weight: 900;
+  border: none; border-radius: 13px;
+  cursor: pointer; text-decoration: none; transition: all .2s;
+  letter-spacing: .02em; text-align: center;
+}
+.btn-line { background: var(--line); box-shadow: 0 5px 18px rgba(6,199,85,.38); }
 .btn-line:hover { background: #04a547; transform: translateY(-2px); }
+.btn-phone { background: var(--navy); box-shadow: 0 5px 18px rgba(26,47,94,.28); }
+.btn-phone:hover { background: var(--navy-d); transform: translateY(-2px); }
 
 /* 注記 */
 .notice {
@@ -269,6 +277,7 @@ body {
 
 @media (max-width: 400px) {
   .card { padding: 18px 14px; }
+  .contact-actions { grid-template-columns: 1fr; }
   .dtable th, .dtable td { padding: 8px 5px; font-size: 11px; }
 }
 </style>
@@ -314,7 +323,8 @@ const TSUBO_TABLE = {
   40: { wall:160, roof:90, nokiten:40, toi:60, hafu:55, caulk:210, scaffold:220 },
 };
 
-const LINE_URL = 'https://lin.ee/XXXXXXX'; // ← ここを書き換えてください
+const LINE_URL = 'https://lin.ee/sEbKJ6O';
+const PHONE_URL = 'tel:09014340189';
 </script>
 
 <!-- ヘッダー -->
@@ -517,6 +527,12 @@ const LINE_URL = 'https://lin.ee/XXXXXXX'; // ← ここを書き換えてくだ
       <h2>概算合計金額（税込・目安）</h2>
       <div class="total-mid" id="totalMid">―<span>円</span></div>
       <div class="total-range" id="totalRange"></div>
+    </div>
+
+    <!-- 問い合わせ -->
+    <div class="contact-actions" aria-label="問い合わせ方法">
+      <a class="contact-btn btn-line" id="lineContact" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">LINEで問い合わせ</a>
+      <a class="contact-btn btn-phone" id="phoneContact" href="tel:09014340189">電話で問い合わせ</a>
     </div>
 
     <!-- 凡例 -->
