@@ -230,22 +230,24 @@ body {
 /* 問い合わせボタン */
 .contact-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin-bottom: 16px;
 }
 .contact-btn {
   display: flex; align-items: center; justify-content: center; gap: 8px;
-  width: 100%; min-height: 54px; padding: 14px 12px;
-  color: var(--white); font-size: 15px; font-weight: 900;
+  width: 100%; min-height: 60px; padding: 13px 10px;
+  color: var(--white); font-size: 14px; font-weight: 900;
   border: none; border-radius: 13px;
   cursor: pointer; text-decoration: none; transition: all .2s;
-  letter-spacing: .02em; text-align: center;
+  letter-spacing: .02em; line-height: 1.35; text-align: center;
 }
-.btn-line { background: var(--line); box-shadow: 0 5px 18px rgba(6,199,85,.38); }
-.btn-line:hover { background: #04a547; transform: translateY(-2px); }
-.btn-phone { background: var(--navy); box-shadow: 0 5px 18px rgba(26,47,94,.28); }
-.btn-phone:hover { background: var(--navy-d); transform: translateY(-2px); }
+.btn-line-consult { background: var(--line); box-shadow: 0 5px 18px rgba(6,199,85,.35); }
+.btn-line-consult:hover { background: #04a547; transform: translateY(-2px); }
+.btn-line-result { background: var(--navy); box-shadow: 0 5px 18px rgba(26,47,94,.28); }
+.btn-line-result:hover { background: var(--navy-d); transform: translateY(-2px); }
+.btn-line-photo { background: var(--accent); color: var(--navy-d); box-shadow: 0 5px 18px rgba(245,166,35,.32); }
+.btn-line-photo:hover { background: #e19214; transform: translateY(-2px); }
 
 /* 注記 */
 .notice {
@@ -275,7 +277,7 @@ body {
 .panel { display: none; }
 .panel.active { display: block; }
 
-@media (max-width: 400px) {
+@media (max-width: 560px) {
   .card { padding: 18px 14px; }
   .contact-actions { grid-template-columns: 1fr; }
   .dtable th, .dtable td { padding: 8px 5px; font-size: 11px; }
@@ -558,8 +560,9 @@ const PHONE_URL = 'tel:09014340189';
 
     <!-- 問い合わせ -->
     <div class="contact-actions" aria-label="問い合わせ方法">
-      <a class="contact-btn btn-line" id="lineContact" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">LINEで問い合わせ</a>
-      <a class="contact-btn btn-phone" id="phoneContact" href="tel:09014340189">電話で問い合わせ</a>
+      <a class="contact-btn btn-line-consult" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">この条件で無料相談する</a>
+      <a class="contact-btn btn-line-result" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">結果をLINEで送って相談する</a>
+      <a class="contact-btn btn-line-photo" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">写真を送って正確な金額を聞く</a>
     </div>
 
     <button class="btn-retry" onclick="resetSim()">▸ 最初からやり直す</button>
