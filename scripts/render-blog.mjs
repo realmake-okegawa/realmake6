@@ -33,14 +33,21 @@ function renderBody(body) {
 }
 
 function normalizeImages(post) {
+  const normalize = (image) => {
+    if (typeof image === "string") return { src: image, alt: post.title || "ブログ写真" };
+    return image;
+  };
+  const keepExisting = (image) => {
+    if (!image?.src) return false;
+    if (/^(https?:)?\/\//.test(image.src)) return true;
+    return fs.existsSync(path.join(root, image.src));
+  };
+
   if (Array.isArray(post.images) && post.images.length) {
-    return post.images.map((image) => {
-      if (typeof image === "string") return { src: image, alt: post.title || "ブログ写真" };
-      return image;
-    });
+    return post.images.map(normalize).filter(keepExisting);
   }
   if (post.image) {
-    return [{ src: post.image, alt: post.imageAlt || post.title || "ブログ写真" }];
+    return [{ src: post.image, alt: post.imageAlt || post.title || "ブログ写真" }].filter(keepExisting);
   }
   return [];
 }
