@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>図面数量拾いツール｜外壁塗装（職人用）</title>
+<style>
+  :root {
+    --navy: #1a2f5e;
+    --navy-light: #243d7a;
+    --navy-dark: #111e3d;
+    --accent: #f5a623;
+    --accent-light: #ffc04d;
+    --white: #ffffff;
+    --gray-100: #f4f6fa;
+    --gray-200: #e8edf5;
+    --gray-400: #9ba8be;
+    --gray-600: #5a6a8a;
+    --text: #1a2036;
+    --success: #2ecc71;
+    --danger: #e74c3c;
+    --wall-blue: #2563eb;
+    --open-red: #e74c3c;
+    --warn-yellow: #f5c518;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+    background: var(--gray-100);
+    color: var(--text);
+    min-height: 100vh;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .app-header {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, var(--navy-light) 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 16px 16px;
+  }
+  .app-header .label {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--navy-dark);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+  .app-header h1 { font-size: clamp(18px, 5vw, 24px); font-weight: 800; line-height: 1.3; }
+  .app-header p { font-size: 12px; opacity: 0.8; margin-top: 4px; }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 0 10px 60px; }
+
+  .card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 18px 14px;
+    margin-top: 14px;
+    box-shadow: 0 2px 12px rgba(26,47,94,0.09);
+  }
+  .card-title {
+    font-size: 15px; font-weight: 800; color: var(--navy);
+    margin-bottom: 12px; padding-bottom: 8px;
+    border-bottom: 2px solid var(--gray-200);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  /* ① 図面登録スロット */
+  .slot-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .slot {
+    border: 2px dashed var(--gray-400);
+    border-radius: 12px;
+    min-height: 110px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    cursor: pointer;
+    font-size: 13px; font-weight: 800; color: var(--gray-600);
+    background: var(--gray-100);
+    overflow: hidden;
+    transition: all 0.15s;
+    text-align: center;
+    padding: 6px;
+  }
+  .slot:hover { border-color: var(--navy); color: var(--navy); }
+  .slot.filled { border-style: solid; border-color: var(--success); background: var(--white); padding: 0; }
+  .slot .thumb { width: 100%; height: 84px; object-fit: cover; display: block; }
+  .slot .slot-label {
+    width: 100%; padding: 4px 2px; font-size: 12px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; gap: 4px;
+  }
+  .slot.filled .slot-label { color: #2e7d32; }
+  .slot .plus { font-size: 22px; display: block; }
+  .upload-hint { font-size: 11px; color: var(--gray-400); margin-top: 10px; line-height: 1.7; }
+
+  /* ② AIボタン */
+  .ai-btn {
+    width: 100%;
+    min-height: 60px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent), #e8940a);
+    color: var(--navy-dark);
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+  }
+  .ai-btn:disabled { opacity: 0.5; cursor: default; }
+  .ai-status { font-size: 12.5px; font-weight: 700; color: var(--gray-600); margin-top: 8px; line-height: 1.7; white-space: pre-line; }
+
+  /* ③ 結果表 */
+  .sum-total {
+    background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+    color: var(--white); border-radius: 12px;
+    padding: 16px; text-align: center; margin-bottom: 12px;
+  }
+  .sum-total h3 { font-size: 13px; font-weight: 700; opacity: 0.85; }
+  .sum-total .num { font-size: clamp(28px, 9vw, 40px); font-weight: 900; color: var(--accent); }
+  .sum-total .num span { font-size: 15px; color: var(--white); opacity: 0.8; font-weight: 600; }
+
+  .res-wrap { overflow-x: auto; }
+  .res-table { width: 100%; border-collapse: collapse; min-width: 480px; }
+  .res-table th {
+    font-size: 11px; font-weight: 800; color: var(--gray-600);
+    padding: 8px 6px; border-bottom: 2px solid var(--gray-200);
+    text-align: right; white-space: nowrap;
+  }
+  .res-table th:first-child { text-align: left; }
+  .res-table td {
+    padding: 10px 6px; font-size: 13px; font-weight: 800;
+    border-bottom: 1px solid var(--gray-200);
+    text-align: right; color: var(--navy); white-space: nowrap;
+  }
+  .res-table td:first-child { text-align: left; color: var(--text); }
+  .res-table tr.total td { background: var(--gray-100); color: var(--navy-dark); font-size: 14px; }
+  .res-table tr.total td:last-child { color: var(--accent); }
+  .res-table .src-badge {
+    display: inline-block; margin-left: 4px; padding: 1px 7px; border-radius: 20px;
+    font-size: 10px; font-weight: 800;
+  }
+  .src-ai { background: #fff3da; color: #b06f00; }
+  .src-manual { background: #e3f0ff; color: var(--wall-blue); }
+  .src-none { background: var(--gray-100); color: var(--gray-400); }
+  .res-table input.fix {
+    width: 74px; padding: 8px 6px; font-size: 14px; font-weight: 800;
+    border: 2px solid var(--gray-200); border-radius: 8px; text-align: right; outline: none;
+  }
+  .res-table input.fix:focus { border-color: var(--navy); }
+
+  .res-notes { margin-top: 10px; }
+  .res-note {
+    font-size: 12px; font-weight: 700; color: #7a5c00;
+    background: #fff8e1; border-radius: 8px; padding: 8px 12px; margin-top: 6px; line-height: 1.6;
+  }
+  .notice-box {
+    background: #fff8e1; border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0; padding: 10px 14px;
+    font-size: 12px; color: #7a5c00; line-height: 1.6; margin-top: 12px;
+  }
+
+  /* ④ 面タブ */
+  .face-tabs {
+    display: flex;
+    gap: 6px;
+    margin-top: 14px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+  .face-tab {
+    flex: 1;
+    min-width: 74px;
+    padding: 12px 4px 10px;
+    border: 2px solid var(--gray-200);
+    border-radius: 12px;
+    background: var(--white);
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--gray-600);
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s;
+  }
+  .face-tab.active { background: var(--navy); border-color: var(--navy); color: var(--white); }
+  .face-tab .dots { display: block; font-size: 10px; font-weight: 600; margin-top: 3px; letter-spacing: 0.02em; }
+  .face-tab .dots .ok { color: var(--success); }
+  .face-tab.active .dots { color: rgba(255,255,255,0.75); }
+  .face-tab.active .dots .ok { color: var(--accent-light); }
+
+  .section-head {
+    margin-top: 22px; font-size: 15px; font-weight: 800; color: var(--navy);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-head .sub { font-size: 11px; font-weight: 600; color: var(--gray-400); }
+
+  /* 画像アップロード（エディタ内） */
+  .upload-zone {
+    border: 3px dashed var(--gray-400);
+    border-radius: 14px;
+    padding: 36px 16px;
+    text-align: center;
+    color: var(--gray-600);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .upload-zone:hover { border-color: var(--navy); color: var(--navy); background: #f0f4ff; }
+  .upload-zone .big { font-size: 34px; display: block; margin-bottom: 8px; }
+
+  /* キャンバス */
+  .canvas-wrap { position: relative; border-radius: 10px; overflow: hidden; background: #dde3ee; }
+  #cv { display: block; width: 100%; height: auto; touch-action: manipulation; cursor: crosshair; }
+  .mode-hint {
+    position: absolute; top: 8px; left: 8px; right: 8px;
+    background: rgba(17,30,61,0.88); color: var(--white);
+    font-size: 12px; font-weight: 700; line-height: 1.5;
+    padding: 8px 12px; border-radius: 8px; pointer-events: none;
+  }
+
+  /* 現在のモード表示（大） */
+  .mode-banner {
+    margin-top: 10px;
+    padding: 13px 14px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 900;
+    text-align: center;
+    color: var(--white);
+    background: var(--navy);
+    letter-spacing: 0.03em;
+  }
+  .mode-banner.mode-wall { background: var(--wall-blue); }
+  .mode-banner.mode-opening { background: var(--open-red); }
+  .mode-banner.mode-length { background: #16a34a; }
+  .mode-banner.mode-calibrate { background: #8e44ad; }
+
+  /* 開口部一覧 */
+  .open-list { margin-top: 10px; }
+  .open-row {
+    display: flex; justify-content: space-between;
+    padding: 8px 10px; font-size: 13px; font-weight: 700;
+    border-bottom: 1px dashed var(--gray-200); color: var(--text);
+  }
+  .open-row .sub { color: var(--gray-400); font-weight: 600; font-size: 11px; }
+  .open-row.total { border-bottom: none; background: #fdecea; border-radius: 8px; color: var(--danger); }
+
+  /* スケール未設定の案内 */
+  .scale-guide {
+    background: #fdecea; border-left: 3px solid var(--danger);
+    border-radius: 0 8px 8px 0; padding: 10px 14px;
+    font-size: 12.5px; font-weight: 700; color: #8a2b22;
+    line-height: 1.7; margin-bottom: 10px;
+  }
+
+  /* 凡例 */
+  .legend { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; font-size: 11px; font-weight: 700; color: var(--gray-600); }
+  .legend span::before { content: ''; display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 4px; vertical-align: -2px; }
+  .legend .lg-wall::before { background: rgba(37,99,235,0.35); border: 2px solid var(--wall-blue); }
+  .legend .lg-open::before { background: rgba(231,76,60,0.35); border: 2px solid var(--open-red); }
+  .legend .lg-warn::before { background: rgba(245,197,24,0.4); border: 2px solid var(--warn-yellow); }
+  .legend .lg-len::before { background: rgba(22,163,74,0.3); border: 2px solid #16a34a; }
+
+  /* ツールバー */
+  .toolbar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 12px; }
+  .tool-btn {
+    padding: 12px 4px;
+    min-height: 56px;
+    border: 2px solid var(--gray-200);
+    border-radius: 12px;
+    background: var(--white);
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: all 0.15s;
+    line-height: 1.3;
+  }
+  .tool-btn .ico { display: block; font-size: 18px; margin-bottom: 2px; }
+  .tool-btn.active { border-color: var(--navy); background: var(--navy); color: var(--white); }
+  .tool-btn.mode-wall.active { background: var(--wall-blue); border-color: var(--wall-blue); }
+  .tool-btn.mode-opening.active { background: var(--open-red); border-color: var(--open-red); }
+  .tool-btn.mode-length.active { background: #16a34a; border-color: #16a34a; }
+
+  .action-row { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .act-btn {
+    flex: 1;
+    min-width: 90px;
+    min-height: 50px;
+    padding: 10px 6px;
+    border-radius: 12px;
+    border: 2px solid var(--gray-200);
+    background: var(--white);
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--navy);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .act-btn:disabled { opacity: 0.35; cursor: default; }
+  .act-btn.primary { background: linear-gradient(135deg, var(--navy-light), var(--navy-dark)); border: none; color: var(--white); }
+  .act-btn.confirm { background: var(--success); border-color: var(--success); color: var(--white); }
+  .act-btn.danger { border-color: var(--danger); color: var(--danger); }
+
+  /* スケール入力 */
+  .scale-box {
+    margin-top: 10px;
+    background: #f0f4ff;
+    border: 2px solid var(--navy-light);
+    border-radius: 12px;
+    padding: 12px;
+  }
+  .scale-box .row { display: flex; gap: 8px; align-items: center; }
+  .scale-box input {
+    flex: 1; padding: 12px; font-size: 16px; font-weight: 700;
+    border: 2px solid var(--gray-200); border-radius: 10px; outline: none; min-width: 0;
+  }
+  .scale-box input:focus { border-color: var(--navy); }
+  .scale-status { font-size: 12px; font-weight: 700; color: var(--gray-600); margin-top: 6px; }
+  .scale-status.ok { color: var(--success); }
+
+  /* 数量テーブル（面ごと） */
+  .qty-table { width: 100%; border-collapse: collapse; margin-top: 4px; }
+  .qty-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--gray-200);
+    font-size: 13px;
+  }
+  .qty-table td:first-child { color: var(--gray-600); font-weight: 700; }
+  .qty-table td:last-child { text-align: right; font-weight: 800; color: var(--navy); font-size: 15px; }
+  .qty-table tr.big td:last-child { color: var(--accent); font-size: 18px; }
+  .conf-badge {
+    display: inline-block; padding: 2px 10px; border-radius: 20px;
+    font-size: 11px; font-weight: 800;
+  }
+  .conf-high { background: #e8f5e9; color: #2e7d32; }
+  .conf-mid { background: #fff8e1; color: #b07b00; }
+  .conf-low { background: #fdecea; color: var(--danger); }
+
+  .open-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .len-chip {
+    font-size: 11px; font-weight: 700;
+    background: #e8f5e9; color: #2e7d32;
+    border: 1px solid #a5d6a7;
+    border-radius: 20px; padding: 3px 10px;
+  }
+
+  textarea.memo {
+    width: 100%; min-height: 64px; margin-top: 6px;
+    border: 2px solid var(--gray-200); border-radius: 10px;
+    padding: 10px; font-size: 14px; font-family: inherit; outline: none;
+  }
+  textarea.memo:focus { border-color: var(--navy); }
+
+  /* 設定 */
+  .settings-toggle { font-size: 12px; font-weight: 700; color: var(--gray-600); cursor: pointer; background: none; border: none; }
+  .setting-row { display: flex; align-items: center; gap: 10px; margin-top: 10px; font-size: 13px; font-weight: 700; color: var(--text); flex-wrap: wrap; }
+  .setting-row input[type="password"], .setting-row input[type="text"] {
+    flex: 1; min-width: 160px; padding: 10px; font-size: 13px;
+    border: 2px solid var(--gray-200); border-radius: 8px; outline: none;
+  }
+  .switch { position: relative; width: 46px; height: 26px; flex-shrink: 0; }
+  .switch input { display: none; }
+  .switch .sl {
+    position: absolute; inset: 0; border-radius: 20px;
+    background: var(--gray-200); cursor: pointer; transition: 0.2s;
+  }
+  .switch .sl::after {
+    content: ''; position: absolute; top: 3px; left: 3px;
+    width: 20px; height: 20px; border-radius: 50%; background: var(--white); transition: 0.2s;
+  }
+  .switch input:checked + .sl { background: var(--success); }
+  .switch input:checked + .sl::after { transform: translateX(20px); }
+
+  .hidden { display: none !important; }
+
+  @media (max-width: 420px) {
+    .toolbar { grid-template-columns: repeat(2, 1fr); }
+    .slot-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="app-header">
+  <div class="label">職人用ツール</div>
+  <h1>図面数量拾いツール</h1>
+  <p>図面をアップ → ボタンひとつで4面の数量を表示 → 気になる所は手動で修正</p>
+</div>
+
+<div class="container">
+
+  <!-- ========== ① 図面を登録 ========== -->
+  <div class="card">
+    <div class="card-title"><span>① 図面を登録（4面）</span></div>
+    <div class="slot-grid" id="slotGrid"></div>
+    <p class="upload-hint">
+      枠をタップして写真を選択。複数枚まとめて選択／コピーした画像の貼り付け（Ctrl+V）／ドラッグ＆ドロップもOK。<br>
+      複数枚は 南面→北面→東面→西面 の順に空いている枠へ自動で入ります。
+    </p>
+    <input type="file" id="fileInput" accept="image/*" multiple class="hidden">
+  </div>
+
+  <!-- ========== ② 数量読み取り ========== -->
+  <div class="card">
+    <div class="card-title"><span>② 数量読み取り</span></div>
+    <button class="ai-btn" id="aiAllBtn" onclick="runAIAll()">🤖 図面から数量を読み取る（登録した面すべて）</button>
+    <div class="ai-status" id="aiAllMsg"></div>
+  </div>
+
+  <!-- ========== ③ 数量結果 ========== -->
+  <div class="card">
+    <div class="card-title"><span>③ 数量結果（4面）</span></div>
+    <div class="sum-total">
+      <h3 id="resTotalLabel">外壁塗装面積 合計</h3>
+      <div class="num" id="resTotal">－<span> ㎡</span></div>
+    </div>
+    <div class="res-wrap">
+      <table class="res-table" id="resTable"></table>
+    </div>
+    <div class="res-notes" id="resNotes"></div>
+    <div class="notice-box" id="resNotice"></div>
+    <label style="font-size:12px;font-weight:700;color:var(--gray-600);display:block;margin-top:12px;">計算メモ</label>
+    <textarea class="memo" id="calcMemo" placeholder="例：奥行は平面図未確認のため要実測"></textarea>
+    <div class="action-row" style="margin-top:14px;">
+      <button class="act-btn primary" onclick="downloadCSV()">⬇ CSVダウンロード</button>
+      <button class="act-btn primary" onclick="copyText()">📋 テキストをコピー</button>
+    </div>
+  </div>
+
+  <!-- ========== ④ 確認・修正 ========== -->
+  <div class="section-head">④ 確認・修正（面ごとの詳細）<span class="sub">読み取り枠の確認、手動での拾い直しはこちら</span></div>
+  <div class="face-tabs" id="faceTabs"></div>
+
+  <div id="facePanel">
+
+    <div class="card">
+      <div class="card-title">
+        <span id="faceTitle">南面</span>
+        <button class="settings-toggle" id="changeImgBtn" onclick="pickImage()">📷 画像を変更</button>
+      </div>
+
+      <!-- 画像なし -->
+      <div class="upload-zone" id="uploadZone" onclick="pickImage()">
+        <span class="big">📐</span>
+        この面の立面図がまだ登録されていません<br>
+        <span style="font-size:11px;font-weight:400;">タップして選択（上の①からも登録できます）</span>
+      </div>
+
+      <!-- キャンバス -->
+      <div class="canvas-wrap hidden" id="canvasWrap">
+        <canvas id="cv"></canvas>
+        <div class="mode-hint" id="modeHint"></div>
+      </div>
+
+      <!-- 現在のモード表示 -->
+      <div class="mode-banner hidden" id="modeBanner">現在のモード：選択</div>
+      <div class="legend hidden" id="legendRow">
+        <span class="lg-wall">外壁範囲（青）</span>
+        <span class="lg-open">開口部（赤）</span>
+        <span class="lg-warn">注意箇所（黄）</span>
+        <span class="lg-len">付帯部の長さ（緑）</span>
+      </div>
+
+      <!-- ツールバー -->
+      <div class="toolbar hidden" id="toolbar">
+        <button class="tool-btn" data-mode="select" onclick="setMode('select')"><span class="ico">👆</span>選択</button>
+        <button class="tool-btn mode-wall" data-mode="wall" onclick="setMode('wall')"><span class="ico">🟦</span>外壁を追加</button>
+        <button class="tool-btn mode-opening" data-mode="opening" onclick="setMode('opening')"><span class="ico">🟥</span>開口部を追加</button>
+        <button class="tool-btn mode-length" data-mode="length" onclick="setMode('length')"><span class="ico">🟩</span>付帯部の長さ</button>
+        <button class="tool-btn" data-mode="calibrate" onclick="setMode('calibrate')"><span class="ico">📏</span>スケール</button>
+      </div>
+
+      <!-- 付帯部の項目選択 -->
+      <div class="scale-box hidden" id="lenBox">
+        <div class="row">
+          <span style="font-size:13px;font-weight:800;flex-shrink:0;">項目</span>
+          <select id="lenLabel" style="flex:1;padding:12px;font-size:15px;font-weight:700;border:2px solid var(--gray-200);border-radius:10px;background:var(--white);">
+            <option>雨樋（軒樋）</option>
+            <option>雨樋（竪樋）</option>
+            <option>破風・鼻隠し</option>
+            <option>軒天（幅は備考に）</option>
+            <option>水切り</option>
+            <option>幕板・帯</option>
+            <option>笠木</option>
+            <option>シーリング</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="scale-status">図面上で部材に沿って2点以上タップ →「この長さを確定」</div>
+      </div>
+
+      <!-- スケール入力 -->
+      <div class="scale-box hidden" id="scaleBox">
+        <div class="row">
+          <input type="number" id="scaleMm" placeholder="実寸を入力（例：9100）" inputmode="decimal">
+          <select id="scaleUnit" style="flex:0 0 76px;padding:12px 6px;font-size:15px;font-weight:800;border:2px solid var(--gray-200);border-radius:10px;background:var(--white);">
+            <option value="mm">mm</option>
+            <option value="m">m</option>
+          </select>
+          <button class="act-btn confirm" style="flex:0 0 90px;" onclick="confirmScale()">決定</button>
+        </div>
+        <div class="scale-status" id="scaleMsg">① 基準になる線（寸法線など）の始点をクリックしてください</div>
+      </div>
+      <div class="scale-status" id="scaleStatus"></div>
+
+      <!-- 操作ボタン -->
+      <div class="action-row hidden" id="drawActions">
+        <button class="act-btn confirm" id="confirmPolyBtn" onclick="confirmPoly()">✓ この開口部を確定</button>
+        <button class="act-btn" onclick="undo()">↩ 1つ前に戻る</button>
+        <button class="act-btn danger" id="deleteBtn" onclick="deleteSelected()" disabled>🗑 選択を削除</button>
+      </div>
+      <div class="action-row hidden" id="resetActions">
+        <button class="act-btn danger" onclick="resetFace()">この面だけリセット</button>
+        <button class="act-btn danger" onclick="resetAll()">全リセット（4面すべて）</button>
+      </div>
+
+      <!-- 面ごとAIボタン -->
+      <button class="ai-btn hidden" id="aiBtn" onclick="runAIFaceBtn()" style="margin-top:12px;min-height:56px;font-size:15px;">🤖 この面だけAIで読み取り直す</button>
+      <div class="scale-status" id="aiMsg"></div>
+    </div>
+
+    <!-- 数量カード（面ごと） -->
+    <div class="card hidden" id="qtyCard">
+      <div class="card-title"><span>この面の数量（手動拾い）</span><button class="act-btn" style="flex:0;min-height:40px;padding:6px 16px;" onclick="recalcAndSave()">🔄 再計算</button></div>
+      <div class="scale-guide hidden" id="scaleGuide">
+        ⚠ 手動で拾う場合はスケール設定が必要です。<br>
+        「📏 スケール」ボタンを押して、図面内の寸法線を2点クリックし、実寸を入力してください。<br>
+        （例：寸法線「9,100」の両端をクリック → 9100mm と入力 → 決定）<br>
+        ※ ②のAI読み取りは図面の寸法値を直接読むため、スケール設定なしで使えます。
+      </div>
+      <table class="qty-table">
+        <tr><td>スケール設定</td><td id="qScale">－</td></tr>
+        <tr><td>外壁総面積</td><td id="qGross">－</td></tr>
+        <tr><td>開口部控除面積</td><td id="qOpen">－</td></tr>
+        <tr class="big"><td>差し引き後の塗装面積</td><td id="qNet">－</td></tr>
+        <tr><td>AI読み取りの信頼度</td><td id="qConf">－</td></tr>
+      </table>
+      <div class="open-list" id="openList"></div>
+      <div class="open-chips" id="openChips"></div>
+      <label style="font-size:12px;font-weight:700;color:var(--gray-600);display:block;margin-top:12px;">備考（この面のメモ）</label>
+      <textarea class="memo" id="faceMemo" placeholder="例：ベランダ内側 +4.5㎡ を手動加算"></textarea>
+    </div>
+  </div>
+
+  <!-- ========== 設定 ========== -->
+  <div class="card">
+    <div class="card-title" style="border:none;padding:0;margin:0;">
+      <span style="font-size:13px;">⚙️ 設定</span>
+      <button class="settings-toggle" onclick="document.getElementById('settingsBody').classList.toggle('hidden')">開く / 閉じる</button>
+    </div>
+    <div id="settingsBody" class="hidden">
+      <div class="setting-row">
+        <span>Claude APIキー（AI読み取り用）</span>
+        <input type="password" id="apiKeyInput" placeholder="sk-ant-...">
+        <button class="act-btn" style="flex:0 0 80px;min-height:44px;" onclick="saveApiKey()">保存</button>
+      </div>
+      <div class="setting-row">
+        <label class="switch"><input type="checkbox" id="deductSmall" checked onchange="toggleDeductSmall()"><span class="sl"></span></label>
+        <span>0.5㎡以下の開口部は控除しない（積算基準）</span>
+      </div>
+      <p id="keySourceInfo" style="font-size:12px;font-weight:700;color:var(--gray-600);margin-top:10px;"></p>
+      <p style="font-size:11px;color:var(--gray-400);margin-top:10px;line-height:1.6;">
+        ※ APIキーはこの端末（ブラウザ）にのみ保存されます。AI読み取り1面あたり数円〜十数円のAPI利用料がかかります。<br>
+        ※ 開発時は config.local.js にキーを書く方法も使えます（Gitにはコミットされません）。<br>
+        ※ AIキーがなくても、④でスケール設定＋手動の範囲指定をすれば同じ結果表に反映されます。
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<!-- 開発用ローカル設定（無ければ404になるだけで問題なし。公開サイトには置かない） -->
+<script src="config.local.js"></script>
+<!-- Claude API呼び出し層（分離モジュール。将来バックエンド経由に差し替え可能） -->
+<script src="takeoff-api.js"></script>
+
+<script>
+/* ====================================================
+   状態管理
+==================================================== */
+const FACES = [
+  { id: 'front', label: '南面' },
+  { id: 'right', label: '北面' },
+  { id: 'left',  label: '東面' },
+  { id: 'back',  label: '西面' },
+];
+const STORAGE_KEY = 'takeoff-v1';
+/* Claude APIの呼び出しは takeoff-api.js（window.TakeoffAPI）に分離。
+   APIキーは config.local.js（開発用・コミット禁止）または画面設定のみ。 */
+
+function blankFace() {
+  return {
+    img: null, w: 0, h: 0,
+    mmPerPx: null, scaleMm: null,
+    regions: [],
+    ai: null,          // {confidence, note}
+    aiArea: null,      // {gross, open, net, basis} … AIが図面寸法から算出した㎡
+    override: null,    // 補正値（㎡）
+    manualEdited: false,
+    memo: '',
+  };
+}
+
+let state = { faces: {}, calcMemo: '', settings: { deductSmall: true } };
+FACES.forEach(f => state.faces[f.id] = blankFace());
+
+let cur = 'front';
+let mode = 'select';
+let drawPts = [];
+let calibPts = [];
+let selectedIdx = -1;
+const imgCache = {};
+
+const cv = document.getElementById('cv');
+const ctx = cv.getContext('2d');
+
+/* ====================================================
+   保存・復元
+==================================================== */
+function save() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  } catch (e) {
+    console.warn('localStorage保存失敗（容量超過の可能性）', e);
+  }
+}
+function load() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return;
+    const s = JSON.parse(raw);
+    if (s && s.faces) {
+      FACES.forEach(f => { if (s.faces[f.id]) state.faces[f.id] = Object.assign(blankFace(), s.faces[f.id]); });
+      state.calcMemo = s.calcMemo || '';
+      state.settings = Object.assign({ deductSmall: true }, s.settings);
+    }
+  } catch (e) { console.warn(e); }
+}
+
+/* ====================================================
+   ① 図面登録スロット
+==================================================== */
+function renderSlots() {
+  const el = document.getElementById('slotGrid');
+  el.innerHTML = FACES.map(f => {
+    const fc = state.faces[f.id];
+    if (fc.img) {
+      return `<div class="slot filled" onclick="slotPick('${f.id}')">
+        <img class="thumb" src="${fc.img}" alt="${f.label}">
+        <div class="slot-label">✓ ${f.label}</div>
+      </div>`;
+    }
+    return `<div class="slot" onclick="slotPick('${f.id}')">
+      <span class="plus">＋</span>${f.label}
+    </div>`;
+  }).join('');
+}
+
+function slotPick(faceId) {
+  commitMemos();
+  cur = faceId;
+  renderTabs(); renderFace();
+  pickImage();
+}
+
+/* ====================================================
+   画像読み込み（縮小して保持）
+==================================================== */
+function pickImage() { document.getElementById('fileInput').click(); }
+
+document.getElementById('fileInput').addEventListener('change', (e) => {
+  loadFilesToFaces(e.target.files);
+  e.target.value = '';
+});
+
+function loadFileToFace(file, faceId, done) {
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    const img = new Image();
+    img.onload = () => {
+      const MAX = 1400;
+      const ratio = Math.min(1, MAX / Math.max(img.width, img.height));
+      const w = Math.round(img.width * ratio), h = Math.round(img.height * ratio);
+      const c = document.createElement('canvas');
+      c.width = w; c.height = h;
+      c.getContext('2d').drawImage(img, 0, 0, w, h);
+      const fc = state.faces[faceId];
+      fc.img = c.toDataURL('image/jpeg', 0.82);
+      fc.w = w; fc.h = h;
+      fc.regions = []; fc.mmPerPx = null; fc.scaleMm = null;
+      fc.ai = null; fc.aiArea = null; fc.override = null; fc.manualEdited = false;
+      delete imgCache[faceId];
+      if (done) done();
+    };
+    img.src = ev.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+/* 複数画像を面に振り分け:
+   1枚目 → 表示中の面、2枚目以降 → 画像のない面へ 南面→北面→東面→西面 の順 */
+function loadFilesToFaces(fileList) {
+  const files = Array.from(fileList || []).filter(f => f && f.type && f.type.startsWith('image/'));
+  if (!files.length) return;
+  const targets = [cur];
+  FACES.forEach(f => {
+    if (!targets.includes(f.id) && !state.faces[f.id].img) targets.push(f.id);
+  });
+  const assigned = [];
+  let overflow = 0;
+  files.forEach((file, i) => {
+    const faceId = targets[i];
+    if (!faceId) { overflow++; return; }
+    assigned.push(faceId);
+    loadFileToFace(file, faceId, () => {
+      save(); renderSlots(); renderTabs(); renderResults(); updateAiAllBtn();
+      if (faceId === cur) renderFace();
+    });
+  });
+  if (assigned.length > 1 || overflow) {
+    const names = assigned.map(id => FACES.find(f => f.id === id).label).join('・');
+    setTimeout(() => alert(`${assigned.length}枚を「${names}」に登録しました。${overflow ? `\n（${overflow}枚は空き面がなく未登録）` : ''}\n\n②の「図面から数量を読み取る」ボタンを押すと4面分の数量が出ます。`), 400);
+  }
+}
+
+/* クリップボード貼り付け（Ctrl+V / ⌘V） */
+document.addEventListener('paste', (e) => {
+  const items = e.clipboardData && e.clipboardData.items;
+  if (!items) return;
+  const files = [];
+  for (const it of items) {
+    if (it.type && it.type.startsWith('image/')) {
+      const f = it.getAsFile();
+      if (f) files.push(f);
+    }
+  }
+  if (files.length) { e.preventDefault(); loadFilesToFaces(files); }
+});
+
+/* ドラッグ＆ドロップ */
+document.addEventListener('dragover', (e) => e.preventDefault());
+document.addEventListener('drop', (e) => {
+  e.preventDefault();
+  if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length) {
+    loadFilesToFaces(e.dataTransfer.files);
+  }
+});
+
+function getImage(faceId, cb) {
+  if (imgCache[faceId]) { cb(imgCache[faceId]); return; }
+  const fc = state.faces[faceId];
+  if (!fc.img) return;
+  const img = new Image();
+  img.onload = () => { imgCache[faceId] = img; cb(img); };
+  img.src = fc.img;
+}
+
+/* ====================================================
+   ② AI読み取り（4面まとめて）
+==================================================== */
+function hasApiKey() { return window.TakeoffAPI && TakeoffAPI.hasKey(); }
+
+function updateAiAllBtn() {
+  const btn = document.getElementById('aiAllBtn');
+  const msg = document.getElementById('aiAllMsg');
+  const imgs = FACES.filter(f => state.faces[f.id].img).length;
+  btn.disabled = false; // 常に押せるようにし、押した時に必要な案内を出す
+  if (!hasApiKey()) {
+    btn.textContent = '🤖 図面から数量を読み取る（要APIキー設定）';
+    msg.textContent = '⚙️ Claude APIキーが未登録です。ボタンを押すと設定欄が開きます。手動で拾う場合は④でスケール設定＋範囲指定してください。';
+  } else if (!imgs) {
+    btn.textContent = '🤖 図面から数量を読み取る';
+    msg.textContent = '先に①で図面を登録してください。';
+  } else {
+    btn.textContent = '🤖 図面から数量を読み取る（登録した面すべて）';
+    msg.textContent = `登録済み ${imgs}面を読み取ります（1面あたり10〜30秒・数円程度）。`;
+  }
+}
+
+let aiRunning = false;
+async function runAIAll() {
+  if (aiRunning) return;
+  const msg = document.getElementById('aiAllMsg');
+  if (!hasApiKey()) {
+    // 設定欄を開いてキー入力へ誘導
+    const body = document.getElementById('settingsBody');
+    body.classList.remove('hidden');
+    msg.textContent = '⚠ Claude APIキーが未登録のため読み取れません。下の⚙️設定にAPIキーを貼り付けて「保存」→ もう一度このボタンを押してください。';
+    body.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => document.getElementById('apiKeyInput').focus(), 400);
+    return;
+  }
+  const targets = FACES.filter(f => state.faces[f.id].img);
+  if (!targets.length) {
+    msg.textContent = '⚠ 図面がまだ登録されていません。先に①の枠に立面図の写真を入れてください。';
+    return;
+  }
+  aiRunning = true;
+  const btn = document.getElementById('aiAllBtn');
+  btn.disabled = true;
+  const results = [];
+  for (let i = 0; i < targets.length; i++) {
+    const f = targets[i];
+    btn.textContent = `🤖 ${f.label}を解析中…（${i + 1}/${targets.length}）`;
+    try {
+      await analyzeFace(f.id);
+      const a = state.faces[f.id].aiArea;
+      results.push(`✅ ${f.label}：塗装面積 ${a && a.net != null ? a.net.toFixed(1) + '㎡' : '算出不可'}`);
+    } catch (err) {
+      results.push(`⚠ ${f.label}：失敗（${err.message.slice(0, 80)}）`);
+    }
+    msg.textContent = results.join('\n');
+    renderResults(); renderTabs(); renderSlots();
+    if (f.id === cur) { redraw(); recalcFace(); }
+  }
+  btn.textContent = '🤖 図面から数量を読み取る（登録した面すべて）';
+  btn.disabled = false;
+  aiRunning = false;
+  msg.textContent = results.join('\n') + '\n\n③の結果表を確認してください。数字が違う面は「補正」欄に入力するか、④で枠を修正できます。';
+}
+
+async function analyzeFace(faceId) {
+  const fc = state.faces[faceId];
+  if (!fc.img || !hasApiKey()) throw new Error('画像またはAPIキーがありません');
+  const base64 = fc.img.split(',')[1];
+  // 通信はTakeoffAPI（takeoff-api.js）に委譲。バックエンド化時もここは変わらない
+  const text = await TakeoffAPI.analyze(base64, AI_PROMPT);
+  applyAIResult(faceId, extractJSON(text));
+}
+
+const AI_PROMPT = `あなたは外壁塗装の積算担当者です。この住宅立面図の画像から、この面の外壁数量を算出してください。
+
+【面積の算出方法】
+- 図面に寸法線・寸法値（mm表記）があれば、必ずそれを使って実寸を確定する（縮尺表記 S:1/100 等も参考にする）。
+- 外壁総面積 = この面の塗装対象の外壁の見付面積（㎡）。屋根・基礎（水切りより下）・地面・図面枠・寸法線・文字は含めない。妻壁（三角部分）は含める。
+- 開口部控除 = 窓・玄関ドア・シャッター・ガレージ開口の合計（㎡）。ただし1箇所0.5㎡以下の小さい開口は控除に含めない（積算基準）。
+- 塗装面積 = 外壁総面積 − 開口部控除。
+- 寸法値が図面に無い場合は、階高（1階分およそ2.9〜3.0m）を基準に比率で推定し、confidenceを0.5以下にして note に「寸法記載なし・要確認」と書く。
+
+【ベランダ・バルコニー（重要・拾い忘れ厳禁）】
+- 手すり壁（腰壁）付きのベランダ・バルコニーがある場合、その内側の立ち上がり壁は立面図に現れないが塗装対象。必ず加算する。
+- 概算式: (手すり壁の幅 + 奥行0.9m×2) × 高さ1.1m。奥行・高さが図面から読めればその値を使う。
+- 加算した面積は balcony_inner_m2 に入れ、gross_m2 と net_m2 にも含める。note に内訳を書く（例：「バルコニー内壁 (2.7+0.9×2)×1.1=5.0㎡ を加算」）。
+- アルミ笠木の天端は含めない。格子手すり（壁でない）の場合は加算せず、noteにその旨を書く。
+- ベランダが無い面は balcony_inner_m2: 0。
+
+【枠の座標】
+regions には読み取った範囲を返す（画像の左上(0,0)〜右下(1000,1000)の正規化座標）。
+- type "wall"：外壁面の輪郭ポリゴン（複数可）
+- type "opening"：開口部を1つずつ四角形で
+- type "exclude"：注意箇所（バルコニー・ビルトイン開口など立面に現れない壁がありそうな場所）
+
+【出力】以下のJSONのみを出力（説明文・コードブロック記号は不要）：
+{"gross_m2": 56.2, "openings_m2": 8.4, "net_m2": 47.8, "balcony_inner_m2": 5.0, "scale_basis": "寸法線6,500・8,162.5を使用", "regions": [{"type":"wall","points":[[x,y],...],"note":""}], "confidence": 0.85, "note": "注意事項を日本語で"}`;
+
+function extractJSON(text) {
+  const s = text.indexOf('{'), e = text.lastIndexOf('}');
+  if (s < 0 || e <= s) throw new Error('AI応答からJSONを取得できませんでした');
+  return JSON.parse(text.slice(s, e + 1));
+}
+
+function applyAIResult(faceId, json) {
+  const fc = state.faces[faceId];
+  const regions = (json.regions || []).filter(r => Array.isArray(r.points) && r.points.length >= 3);
+  const conv = regions.map(r => ({
+    type: ['wall', 'opening', 'exclude'].includes(r.type) ? r.type : 'exclude',
+    points: r.points.map(([x, y]) => [x * fc.w / 1000, y * fc.h / 1000]),
+    src: 'ai',
+    note: r.note || '',
+  }));
+  fc.regions = fc.regions.filter(r => r.src === 'manual').concat(conv);
+  fc.ai = { confidence: typeof json.confidence === 'number' ? json.confidence : null, note: json.note || '' };
+  const num = (v) => (typeof v === 'number' && isFinite(v)) ? v : null;
+  const gross = num(json.gross_m2), open = num(json.openings_m2), net = num(json.net_m2);
+  fc.aiArea = (gross !== null || net !== null) ? {
+    gross, open: open !== null ? open : 0,
+    net: net !== null ? net : (gross !== null ? Math.max(0, gross - (open || 0)) : null),
+    balcony: num(json.balcony_inner_m2) || 0,
+    basis: json.scale_basis || '',
+  } : null;
+  fc.manualEdited = false;
+  save();
+}
+
+/* この面だけ読み取り直す（④内のボタン） */
+async function runAIFaceBtn() {
+  if (!hasApiKey()) {
+    const body = document.getElementById('settingsBody');
+    body.classList.remove('hidden');
+    document.getElementById('aiMsg').textContent = '⚠ Claude APIキーが未登録です。⚙️設定に貼り付けて「保存」してから押してください。';
+    body.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  const btn = document.getElementById('aiBtn');
+  btn.disabled = true; btn.textContent = '🤖 解析中…（10〜30秒）';
+  document.getElementById('aiMsg').textContent = '';
+  try {
+    await analyzeFace(cur);
+    const fc = state.faces[cur];
+    redraw(); recalcFace(); renderTabs(); renderResults(); renderSlots();
+    const notes = [fc.ai && fc.ai.note, ...fc.regions.filter(r => r.src === 'ai' && r.note).map(r => '・' + r.note)].filter(Boolean).join('\n');
+    document.getElementById('aiMsg').textContent =
+      (fc.aiArea && fc.aiArea.net != null ? `🤖 読み取り完了：塗装面積 ${fc.aiArea.net.toFixed(1)}㎡（${fc.aiArea.basis || '根拠不明'}）\n` : '🤖 読み取り完了。\n') +
+      (notes ? 'AIメモ：' + notes : '枠を確認し、間違いは選択→削除、不足は手動追加してください。');
+  } catch (err) {
+    document.getElementById('aiMsg').textContent = '⚠ AI読み取り失敗：' + err.message;
+  } finally {
+    btn.disabled = false; btn.textContent = '🤖 この面だけAIで読み取り直す';
+  }
+}
+
+/* ====================================================
+   ③ 数量結果（4面）
+==================================================== */
+/* 面の採用値: 補正 > 手動拾い(修正済み) > AI算出 > 手動拾い */
+function effectiveFace(faceId) {
+  const fc = state.faces[faceId];
+  const q = faceQty(faceId);
+  const polyOk = q.hasScale && fc.regions.some(r => r.type === 'wall');
+  let gross = null, open = null, net = null, src = 'none';
+  if (polyOk && (fc.manualEdited || !fc.aiArea)) {
+    gross = q.gross; open = q.deduct; net = q.net; src = 'manual';
+  } else if (fc.aiArea) {
+    gross = fc.aiArea.gross; open = fc.aiArea.open; net = fc.aiArea.net; src = 'ai';
+  } else if (polyOk) {
+    gross = q.gross; open = q.deduct; net = q.net; src = 'manual';
+  }
+  const ov = parseFloat(fc.override);
+  if (!isNaN(ov) && ov > 0) { net = ov; src += '+fix'; }
+  return { gross, open, net, src };
+}
+
+function renderResults() {
+  const table = document.getElementById('resTable');
+  const fmt = (v) => v == null ? '－' : v.toFixed(1);
+  let total = 0, totalOpen = 0, anyValue = false;
+  const srcBadge = (src) => {
+    if (src.startsWith('ai')) return '<span class="src-badge src-ai">AI</span>';
+    if (src.startsWith('manual')) return '<span class="src-badge src-manual">手動</span>';
+    return '<span class="src-badge src-none">未</span>';
+  };
+  const rows = FACES.map(f => {
+    const fc = state.faces[f.id];
+    const e = effectiveFace(f.id);
+    if (e.net != null) { total += e.net; anyValue = true; }
+    if (e.open != null) totalOpen += e.open;
+    const fixed = e.src.endsWith('+fix') ? '<span class="src-badge src-manual">補正</span>' : '';
+    const status = fc.img ? srcBadge(e.src) + fixed : '<span class="src-badge src-none">画像なし</span>';
+    return `<tr>
+      <td>${f.label} ${status}</td>
+      <td>${fmt(e.gross)}</td>
+      <td>${e.open == null ? '－' : '−' + e.open.toFixed(1)}</td>
+      <td>${fmt(e.net)}</td>
+      <td><input class="fix" type="number" step="0.1" inputmode="decimal" placeholder="－"
+        value="${fc.override != null && fc.override !== '' ? fc.override : ''}"
+        onchange="setOverride('${f.id}', this.value)"></td>
+    </tr>`;
+  });
+  const header = `<tr><th>面</th><th>総面積㎡</th><th>開口部㎡</th><th>塗装面積㎡</th><th>補正㎡</th></tr>`;
+  const regged = FACES.filter(f => state.faces[f.id].img).length;
+  const calced = FACES.filter(f => effectiveFace(f.id).net != null).length;
+  const totalRow = `<tr class="total"><td>合計（${calced}面分）</td><td></td><td>−${totalOpen.toFixed(1)}</td><td colspan="2">${anyValue ? total.toFixed(1) + ' ㎡' : '－'}</td></tr>`;
+  table.innerHTML = header + rows.join('') + totalRow;
+  document.getElementById('resTotal').innerHTML = (anyValue ? total.toFixed(1) : '－') + '<span> ㎡</span>';
+  document.getElementById('resTotalLabel').textContent =
+    regged === 0 ? '外壁塗装面積 合計（図面未登録）'
+    : `外壁塗装面積 合計（登録${regged}面／算出${calced}面）`;
+
+  // AIメモ・根拠
+  const notes = [];
+  FACES.forEach(f => {
+    const fc = state.faces[f.id];
+    if (fc.aiArea && fc.aiArea.balcony > 0) notes.push(`🏠 ${f.label}：ベランダ内壁 +${fc.aiArea.balcony.toFixed(1)}㎡ を加算済み（立面図に現れない壁）`);
+    if (fc.aiArea && fc.aiArea.basis) notes.push(`📐 ${f.label}：${escapeHtml(fc.aiArea.basis)}`);
+    if (fc.ai && fc.ai.note) notes.push(`🤖 ${f.label}：${escapeHtml(fc.ai.note)}`);
+    if (fc.memo) notes.push(`✏️ ${f.label}：${escapeHtml(fc.memo)}`);
+  });
+  document.getElementById('resNotes').innerHTML = notes.map(n => `<div class="res-note">${n}</div>`).join('');
+
+  // 注意書き
+  const lens = lengthTotals();
+  const lenText = Object.keys(lens).length
+    ? '付帯部（④で拾った分）：' + Object.keys(lens).map(l => `${l} ${lens[l].toFixed(1)}m`).join('／') + '<br>'
+    : '';
+  document.getElementById('resNotice').innerHTML =
+    lenText +
+    `※ 0.5㎡以下の開口部は${state.settings.deductSmall ? '控除していません（積算基準）' : 'すべて控除しています'}。<br>` +
+    `※ ベランダ内側・ビルトインガレージ・玄関ポーチなど立面図に現れない壁は、AIメモを確認のうえ「補正」欄で加算してください。<br>` +
+    `※ 数字が合わない面は④で枠を修正するか、正しい値を「補正」欄に直接入力してください（合計は補正値を優先します）。`;
+}
+
+function setOverride(faceId, value) {
+  const v = parseFloat(value);
+  state.faces[faceId].override = (!isNaN(v) && v > 0) ? v : null;
+  save(); renderResults();
+}
+
+/* ====================================================
+   ④ 面タブ・エディタ
+==================================================== */
+function renderTabs() {
+  const el = document.getElementById('faceTabs');
+  el.innerHTML = FACES.map(f => {
+    const fc = state.faces[f.id];
+    const e = effectiveFace(f.id);
+    const dots =
+      (fc.img ? '<span class="ok">📷</span>' : '📷') +
+      (e.net != null ? `<span class="ok">${e.net.toFixed(1)}㎡</span>` : '未算出');
+    return `<button class="face-tab ${cur === f.id ? 'active' : ''}" onclick="switchFace('${f.id}')">${f.label}<span class="dots">${dots}</span></button>`;
+  }).join('');
+}
+
+function switchFace(id) {
+  commitMemos();
+  cur = id;
+  drawPts = []; calibPts = []; selectedIdx = -1;
+  mode = 'select';
+  renderFace();
+  renderTabs();
+}
+
+function commitMemos() {
+  state.faces[cur].memo = document.getElementById('faceMemo').value;
+  state.calcMemo = document.getElementById('calcMemo').value;
+  save();
+}
+
+function renderFace() {
+  const f = FACES.find(x => x.id === cur);
+  const fc = state.faces[cur];
+  document.getElementById('faceTitle').textContent = f.label + 'の立面図';
+  document.getElementById('faceMemo').value = fc.memo || '';
+
+  const hasImg = !!fc.img;
+  document.getElementById('uploadZone').classList.toggle('hidden', hasImg);
+  document.getElementById('changeImgBtn').classList.toggle('hidden', !hasImg);
+  ['canvasWrap', 'modeBanner', 'legendRow', 'toolbar', 'drawActions', 'resetActions', 'aiBtn', 'qtyCard'].forEach(id =>
+    document.getElementById(id).classList.toggle('hidden', !hasImg));
+  document.getElementById('scaleBox').classList.add('hidden');
+  document.getElementById('lenBox').classList.add('hidden');
+
+  const aiBtn = document.getElementById('aiBtn');
+  aiBtn.disabled = false;
+  aiBtn.textContent = hasApiKey() ? '🤖 この面だけAIで読み取り直す' : '🤖 この面をAIで読み取り（要APIキー設定）';
+  document.getElementById('aiMsg').textContent = hasApiKey() ? '' : '※ 手動での数量拾いはAPIキーなしで全機能使えます。';
+
+  if (hasImg) {
+    cv.width = fc.w; cv.height = fc.h;
+    getImage(cur, () => redraw());
+    updateModeUI();
+    updateScaleStatus();
+    recalcFace();
+  }
+}
+
+function updateScaleStatus() {
+  const fc = state.faces[cur];
+  const el = document.getElementById('scaleStatus');
+  if (fc.mmPerPx) {
+    el.textContent = `📏 スケール設定済み${fc.scaleMm ? '：' + fc.scaleMm.toLocaleString() + 'mm' : ''}（1px = ${fc.mmPerPx.toFixed(1)}mm）`;
+    el.classList.add('ok');
+  } else {
+    el.textContent = '📏 スケール未設定 — 手動で拾う場合は「スケール」→ 寸法線を2点クリック → 実寸を入力';
+    el.classList.remove('ok');
+  }
+}
+
+/* ====================================================
+   モード切替・案内文
+==================================================== */
+function setMode(m) {
+  mode = m;
+  drawPts = []; calibPts = []; selectedIdx = -1;
+  document.getElementById('scaleBox').classList.toggle('hidden', m !== 'calibrate');
+  document.getElementById('lenBox').classList.toggle('hidden', m !== 'length');
+  if (m === 'calibrate') document.getElementById('scaleMsg').textContent = '① 基準になる線（寸法線など）の始点をクリックしてください（例：寸法線「9,100」の端）';
+  updateModeUI(); redraw();
+}
+
+function updateModeUI() {
+  document.querySelectorAll('.tool-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.mode === mode));
+
+  const modeNames = {
+    select: '選択',
+    wall: '外壁範囲を指定中',
+    opening: '開口部を指定中',
+    length: '付帯部の長さを指定中',
+    calibrate: 'スケール設定',
+  };
+  const banner = document.getElementById('modeBanner');
+  banner.textContent = '現在のモード：' + modeNames[mode];
+  banner.className = 'mode-banner mode-' + mode + (state.faces[cur] && state.faces[cur].img ? '' : ' hidden');
+
+  const hint = document.getElementById('modeHint');
+  const confirmBtn = document.getElementById('confirmPolyBtn');
+  const confirmLabels = { wall: '✓ 外壁範囲を確定', opening: '✓ この開口部を確定', length: '✓ この長さを確定' };
+  confirmBtn.textContent = confirmLabels[mode] || '';
+  confirmBtn.style.display = confirmLabels[mode] ? '' : 'none';
+  document.getElementById('deleteBtn').disabled = selectedIdx < 0;
+  const hints = {
+    select: '👆 範囲をタップで選択 → 「選択を削除」で消せます',
+    wall: '🟦 外壁の角を順番にタップ（点は自動で線でつながります）→「外壁範囲を確定」（始点タップでも確定）',
+    opening: '🟥 開口部の角を順番にタップ →「この開口部を確定」→ 続けて次の開口部を追加できます',
+    length: '🟩 部材（雨樋・破風など）に沿って2点以上タップ →「この長さを確定」',
+    calibrate: '📏 ① 始点をクリック → ② 終点をクリック → ③ 実寸を入力して決定',
+  };
+  hint.textContent = hints[mode];
+}
+
+/* ====================================================
+   キャンバス操作
+==================================================== */
+cv.addEventListener('click', (e) => {
+  const fc = state.faces[cur];
+  if (!fc.img) return;
+  const rect = cv.getBoundingClientRect();
+  const x = (e.clientX - rect.left) * cv.width / rect.width;
+  const y = (e.clientY - rect.top) * cv.height / rect.height;
+
+  if (mode === 'calibrate') {
+    if (calibPts.length >= 2) calibPts = [];
+    calibPts.push([x, y]);
+    const msg = document.getElementById('scaleMsg');
+    if (calibPts.length === 1) msg.textContent = '② 終点をクリックしてください';
+    else msg.textContent = '③ この線の実寸を入力して「決定」を押してください（単位はmm/mを選べます）';
+    redraw();
+    return;
+  }
+
+  if (mode === 'wall' || mode === 'opening') {
+    if (drawPts.length >= 3) {
+      const [sx, sy] = drawPts[0];
+      const th = cv.width / 40;
+      if (Math.hypot(x - sx, y - sy) < th) { confirmPoly(); return; }
+    }
+    drawPts.push([x, y]);
+    redraw();
+    return;
+  }
+
+  if (mode === 'length') {
+    drawPts.push([x, y]);
+    redraw();
+    return;
+  }
+
+  // select
+  selectedIdx = -1;
+  const th = cv.width / 50;
+  for (let i = fc.regions.length - 1; i >= 0; i--) {
+    const r = fc.regions[i];
+    const hit = r.type === 'length'
+      ? r.points.some((p, j) => j > 0 && distToSeg([x, y], r.points[j - 1], p) < th)
+      : pointInPoly([x, y], r.points);
+    if (hit) { selectedIdx = i; break; }
+  }
+  updateModeUI(); redraw();
+});
+
+function confirmPoly() {
+  const fc = state.faces[cur];
+  if (mode === 'length') {
+    if (drawPts.length < 2) { alert('2点以上タップしてください'); return; }
+    fc.regions.push({ type: 'length', points: drawPts.slice(), src: 'manual', label: document.getElementById('lenLabel').value, note: '' });
+  } else {
+    if (drawPts.length < 3) { alert('3点以上タップしてください'); return; }
+    fc.regions.push({ type: mode === 'wall' ? 'wall' : 'opening', points: drawPts.slice(), src: 'manual', note: '' });
+  }
+  if (fc.aiArea) fc.manualEdited = true;
+  drawPts = [];
+  save(); redraw(); recalcFace(); renderTabs(); renderResults();
+}
+
+function distToSeg([px, py], [ax, ay], [bx, by]) {
+  const dx = bx - ax, dy = by - ay;
+  const len2 = dx * dx + dy * dy;
+  const t = len2 ? Math.max(0, Math.min(1, ((px - ax) * dx + (py - ay) * dy) / len2)) : 0;
+  return Math.hypot(px - (ax + t * dx), py - (ay + t * dy));
+}
+
+function undo() {
+  const fc = state.faces[cur];
+  if (drawPts.length > 0) { drawPts.pop(); }
+  else if (calibPts.length > 0) { calibPts.pop(); }
+  else if (fc.regions.length > 0) {
+    fc.regions.pop();
+    if (fc.aiArea) fc.manualEdited = true;
+    save(); recalcFace(); renderTabs(); renderResults();
+  }
+  redraw();
+}
+
+function deleteSelected() {
+  const fc = state.faces[cur];
+  if (selectedIdx < 0) return;
+  fc.regions.splice(selectedIdx, 1);
+  if (fc.aiArea) fc.manualEdited = true;
+  selectedIdx = -1;
+  updateModeUI(); save(); redraw(); recalcFace(); renderTabs(); renderResults();
+}
+
+function resetFace() {
+  if (!confirm('この面の外壁・開口部・付帯部の範囲とAI読み取り結果を削除します。よろしいですか？\n（画像とスケールは残ります）')) return;
+  const fc = state.faces[cur];
+  fc.regions = []; fc.ai = null; fc.aiArea = null; fc.override = null; fc.manualEdited = false;
+  drawPts = []; calibPts = []; selectedIdx = -1;
+  save(); redraw(); recalcFace(); renderTabs(); renderResults(); renderSlots();
+}
+
+function resetAll() {
+  if (!confirm('4面すべての画像・スケール・範囲・読み取り結果を削除して、最初からやり直します。\n本当によろしいですか？')) return;
+  FACES.forEach(f => { state.faces[f.id] = blankFace(); delete imgCache[f.id]; });
+  state.calcMemo = '';
+  drawPts = []; calibPts = []; selectedIdx = -1;
+  document.getElementById('calcMemo').value = '';
+  save();
+  renderSlots(); renderResults(); updateAiAllBtn();
+  switchFace('front');
+}
+
+/* ====================================================
+   スケール
+==================================================== */
+function confirmScale() {
+  const fc = state.faces[cur];
+  const raw = parseFloat(document.getElementById('scaleMm').value);
+  const unit = document.getElementById('scaleUnit').value;
+  if (calibPts.length < 2) { alert('先に画像上で基準線の両端（始点→終点）を2点クリックしてください'); return; }
+  if (!raw || raw <= 0) { alert('実寸を入力してください'); return; }
+  const mm = unit === 'm' ? raw * 1000 : raw;
+  const d = Math.hypot(calibPts[1][0] - calibPts[0][0], calibPts[1][1] - calibPts[0][1]);
+  if (d < 5) { alert('2点が近すぎます。もう一度指定してください'); calibPts = []; redraw(); return; }
+  fc.mmPerPx = mm / d;
+  fc.scaleMm = mm;
+  calibPts = [];
+  document.getElementById('scaleMm').value = '';
+  setMode('select');
+  updateScaleStatus();
+  save(); recalcFace(); renderTabs(); renderResults();
+  alert(`スケールを設定しました：${mm.toLocaleString()}mm\nこのまま「外壁を追加」で範囲の指定に進めます。`);
+}
+
+/* ====================================================
+   描画
+==================================================== */
+const STYLE = {
+  wall:    { stroke: '#2563eb', fill: 'rgba(37,99,235,0.18)' },
+  opening: { stroke: '#e74c3c', fill: 'rgba(231,76,60,0.30)' },
+  exclude: { stroke: '#d4a017', fill: 'rgba(245,197,24,0.30)' },
+  length:  { stroke: '#16a34a', fill: 'rgba(22,163,74,0.15)' },
+};
+
+function drawLine(pts, lw, selected) {
+  ctx.strokeStyle = STYLE.length.stroke;
+  ctx.lineWidth = selected ? lw * 2.6 : lw * 1.6;
+  if (selected) ctx.setLineDash([8, 5]);
+  ctx.beginPath();
+  pts.forEach(([x, y], i) => i ? ctx.lineTo(x, y) : ctx.moveTo(x, y));
+  ctx.stroke();
+  ctx.setLineDash([]);
+  pts.forEach(([x, y]) => {
+    ctx.fillStyle = STYLE.length.stroke;
+    ctx.beginPath(); ctx.arc(x, y, lw * 1.8, 0, Math.PI * 2); ctx.fill();
+  });
+}
+
+function redraw() {
+  const fc = state.faces[cur];
+  if (!fc.img) return;
+  getImage(cur, (img) => {
+    ctx.clearRect(0, 0, cv.width, cv.height);
+    ctx.drawImage(img, 0, 0, cv.width, cv.height);
+    const lw = Math.max(2, cv.width / 350);
+
+    fc.regions.forEach((r, i) => {
+      if (r.type === 'length') { drawLine(r.points, lw, i === selectedIdx); return; }
+      const st = STYLE[r.type] || STYLE.exclude;
+      drawPoly(r.points, st.stroke, st.fill, lw, i === selectedIdx);
+    });
+
+    if (drawPts.length) {
+      const st = STYLE[mode === 'length' ? 'length' : (mode === 'wall' ? 'wall' : 'opening')];
+      ctx.strokeStyle = st.stroke; ctx.lineWidth = lw; ctx.setLineDash([6, 5]);
+      ctx.beginPath();
+      drawPts.forEach(([x, y], i) => i ? ctx.lineTo(x, y) : ctx.moveTo(x, y));
+      ctx.stroke(); ctx.setLineDash([]);
+      drawPts.forEach(([x, y], i) => {
+        ctx.fillStyle = i === 0 ? '#2ecc71' : st.stroke;
+        ctx.beginPath(); ctx.arc(x, y, lw * 2.4, 0, Math.PI * 2); ctx.fill();
+      });
+    }
+
+    if (calibPts.length) {
+      ctx.strokeStyle = '#8e44ad'; ctx.lineWidth = lw;
+      if (calibPts.length === 2) {
+        ctx.beginPath(); ctx.moveTo(...calibPts[0]); ctx.lineTo(...calibPts[1]); ctx.stroke();
+      }
+      calibPts.forEach(([x, y]) => {
+        ctx.fillStyle = '#8e44ad';
+        ctx.beginPath(); ctx.arc(x, y, lw * 3, 0, Math.PI * 2); ctx.fill();
+      });
+    }
+  });
+}
+
+function drawPoly(pts, stroke, fill, lw, selected) {
+  ctx.beginPath();
+  pts.forEach(([x, y], i) => i ? ctx.lineTo(x, y) : ctx.moveTo(x, y));
+  ctx.closePath();
+  ctx.fillStyle = fill; ctx.fill();
+  ctx.strokeStyle = stroke;
+  ctx.lineWidth = selected ? lw * 2.2 : lw;
+  if (selected) { ctx.setLineDash([8, 5]); }
+  ctx.stroke();
+  ctx.setLineDash([]);
+}
+
+/* ====================================================
+   面積計算（手動拾い＝ポリゴン×スケール）
+==================================================== */
+function polyAreaPx(pts) {
+  let s = 0;
+  for (let i = 0; i < pts.length; i++) {
+    const [x1, y1] = pts[i], [x2, y2] = pts[(i + 1) % pts.length];
+    s += x1 * y2 - x2 * y1;
+  }
+  return Math.abs(s) / 2;
+}
+
+function pointInPoly([px, py], pts) {
+  let inside = false;
+  for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) {
+    const [xi, yi] = pts[i], [xj, yj] = pts[j];
+    if ((yi > py) !== (yj > py) && px < (xj - xi) * (py - yi) / (yj - yi) + xi) inside = !inside;
+  }
+  return inside;
+}
+
+function faceQty(faceId) {
+  const fc = state.faces[faceId];
+  const k = fc.mmPerPx ? Math.pow(fc.mmPerPx / 1000, 2) : null;
+  let grossPx = 0;
+  const openings = [];
+  fc.regions.forEach(r => {
+    const a = polyAreaPx(r.points);
+    if (r.type === 'wall') grossPx += a;
+    if (r.type === 'opening') openings.push(a);
+  });
+  if (k === null) return { hasScale: false, gross: 0, deduct: 0, net: 0, openings: [] };
+  const gross = grossPx * k;
+  const opsM2 = openings.map(a => a * k);
+  let deduct = 0;
+  const opList = opsM2.map(a => {
+    const skip = state.settings.deductSmall && a <= 0.5;
+    if (!skip) deduct += a;
+    return { a, skip };
+  });
+  return { hasScale: true, gross, deduct, net: Math.max(0, gross - deduct), openings: opList };
+}
+
+function fmtM2(v) { return v.toFixed(1) + ' ㎡'; }
+
+function faceLengths(faceId) {
+  const fc = state.faces[faceId];
+  if (!fc.mmPerPx) return [];
+  const out = [];
+  fc.regions.forEach(r => {
+    if (r.type !== 'length') return;
+    let d = 0;
+    for (let i = 1; i < r.points.length; i++) {
+      d += Math.hypot(r.points[i][0] - r.points[i - 1][0], r.points[i][1] - r.points[i - 1][1]);
+    }
+    out.push({ label: r.label || 'その他', m: d * fc.mmPerPx / 1000 });
+  });
+  return out;
+}
+
+function lengthTotals() {
+  const totals = {};
+  FACES.forEach(f => faceLengths(f.id).forEach(l => {
+    totals[l.label] = (totals[l.label] || 0) + l.m;
+  }));
+  return totals;
+}
+
+function recalcFace() {
+  const fc = state.faces[cur];
+  const q = faceQty(cur);
+  const noScale = !q.hasScale;
+
+  document.getElementById('scaleGuide').classList.toggle('hidden', !noScale);
+  document.getElementById('qScale').innerHTML = noScale
+    ? '<span class="conf-badge conf-low">未設定</span>'
+    : `<span class="conf-badge conf-high">設定済み${fc.scaleMm ? '：' + fc.scaleMm.toLocaleString() + 'mm' : ''}</span>`;
+
+  const val = (v) => noScale ? '－ ㎡' : fmtM2(v);
+  document.getElementById('qGross').textContent = val(q.gross);
+  document.getElementById('qOpen').textContent = noScale ? '－ ㎡' : ('− ' + fmtM2(q.deduct));
+  document.getElementById('qNet').textContent = val(q.net);
+  const confEl = document.getElementById('qConf');
+  if (fc.ai && typeof fc.ai.confidence === 'number') {
+    const p = Math.round(fc.ai.confidence * 100);
+    const cls = p >= 80 ? 'conf-high' : p >= 55 ? 'conf-mid' : 'conf-low';
+    confEl.innerHTML = `<span class="conf-badge ${cls}">${p}%</span>`;
+  } else {
+    confEl.textContent = '－';
+  }
+
+  const listEl = document.getElementById('openList');
+  if (!q.openings.length) {
+    listEl.innerHTML = '';
+  } else if (noScale) {
+    listEl.innerHTML = `<div class="open-row"><span>開口部 ${q.openings.length}件</span><span>スケール設定後に㎡表示</span></div>`;
+  } else {
+    const rows = q.openings.map((o, i) =>
+      `<div class="open-row"><span>開口部${i + 1}${o.skip ? ' <span class="sub">（0.5㎡以下・控除なし）</span>' : ''}</span><span>${o.a.toFixed(2)}㎡</span></div>`);
+    rows.push(`<div class="open-row total"><span>開口部合計（控除対象）</span><span>${q.deduct.toFixed(2)}㎡</span></div>`);
+    listEl.innerHTML = rows.join('');
+  }
+
+  const lenChips = faceLengths(cur).map(l =>
+    `<span class="len-chip">${escapeHtml(l.label)}: ${l.m.toFixed(1)}m</span>`);
+  document.getElementById('openChips').innerHTML = lenChips.join('');
+}
+
+function recalcAndSave() { commitMemos(); recalcFace(); renderTabs(); renderResults(); }
+
+/* ====================================================
+   出力
+==================================================== */
+function downloadCSV() {
+  commitMemos();
+  const lens = lengthTotals();
+  let total = 0, totalOpen = 0;
+  const perRows = FACES.map(f => {
+    const e = effectiveFace(f.id);
+    if (e.net != null) total += e.net;
+    if (e.open != null) totalOpen += e.open;
+    return [f.label + ' 外壁塗装面積', e.net == null ? '' : e.net.toFixed(1), '㎡'];
+  });
+  const anyFix = FACES.some(f => state.faces[f.id].override != null);
+  const anyManual = FACES.some(f => state.faces[f.id].manualEdited);
+  const calced = FACES.filter(f => effectiveFace(f.id).net != null).length;
+  const lines = [
+    ['項目', '数量', '単位'],
+    ['対象面数', String(calced), '面'],
+    ['外壁塗装面積 合計', total.toFixed(1), '㎡'],
+    ['開口部控除 合計', totalOpen.toFixed(1), '㎡'],
+    ...perRows,
+    ...Object.keys(lens).map(label => [label + '（付帯）', lens[label].toFixed(1), 'm']),
+    ['手動補正', (anyFix || anyManual) ? 'あり' : 'なし', ''],
+    ['計算メモ', (state.calcMemo || '').replace(/[\r\n,]/g, ' '), ''],
+  ];
+  const csv = '﻿' + lines.map(r => r.join(',')).join('\r\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+  a.download = `外壁数量_${new Date().toISOString().slice(0, 10)}.csv`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function copyText() {
+  commitMemos();
+  const lens = lengthTotals();
+  let total = 0, totalOpen = 0;
+  const perLines = FACES.map(f => {
+    const e = effectiveFace(f.id);
+    if (e.net != null) total += e.net;
+    if (e.open != null) totalOpen += e.open;
+    return `${f.label}：${e.net == null ? '未計測' : e.net.toFixed(1) + '㎡'}`;
+  });
+  const t = [
+    `外壁塗装面積：${total.toFixed(1)}㎡`,
+    `開口部控除：${totalOpen.toFixed(1)}㎡`,
+    ...perLines,
+    ...Object.keys(lens).map(label => `${label}：${lens[label].toFixed(1)}m`),
+    state.calcMemo ? `メモ：${state.calcMemo}` : '',
+  ].filter(Boolean).join('\n');
+  (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject())
+    .then(() => alert('コピーしました。見積書に貼り付けできます。\n\n' + t))
+    .catch(() => prompt('以下を選択してコピーしてください', t));
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+/* ====================================================
+   設定
+==================================================== */
+function saveApiKey() {
+  const v = document.getElementById('apiKeyInput').value.trim();
+  if (v) { localStorage.setItem('takeoff-apikey', v); alert('APIキーを保存しました（この端末のみ）。②の読み取りボタンが使えるようになります。'); }
+  else { localStorage.removeItem('takeoff-apikey'); alert('APIキーを削除しました。AI読み取りは無効になります（手動機能はそのまま使えます）。'); }
+  updateKeySourceInfo();
+  updateAiAllBtn();
+  renderFace();
+}
+
+function updateKeySourceInfo() {
+  const el = document.getElementById('keySourceInfo');
+  const src = window.TakeoffAPI ? TakeoffAPI.keySource() : null;
+  el.textContent = src ? `🔑 現在のキー取得元：${src}` : '🔑 APIキー未設定（AI読み取りは使えません。手動拾いは可能）';
+  el.style.color = src ? 'var(--success)' : 'var(--danger)';
+}
+function toggleDeductSmall() {
+  state.settings.deductSmall = document.getElementById('deductSmall').checked;
+  save();
+  recalcFace(); renderResults();
+}
+
+/* ====================================================
+   初期化
+==================================================== */
+/* 予期しないJSエラーを画面に表示（原因調査用） */
+window.addEventListener('error', (e) => {
+  const el = document.getElementById('aiAllMsg');
+  if (el) el.textContent = '⚠ アプリ内エラー：' + e.message + '（この表示をそのまま伝えてください）';
+});
+
+load();
+document.getElementById('deductSmall').checked = state.settings.deductSmall;
+document.getElementById('apiKeyInput').value = localStorage.getItem('takeoff-apikey') || '';
+updateKeySourceInfo();
+document.getElementById('calcMemo').value = state.calcMemo || '';
+document.getElementById('faceMemo').addEventListener('change', () => { commitMemos(); renderResults(); });
+document.getElementById('calcMemo').addEventListener('change', commitMemos);
+renderSlots();
+renderResults();
+updateAiAllBtn();
+renderTabs();
+renderFace();
+</script>
+</body>
+</html>
