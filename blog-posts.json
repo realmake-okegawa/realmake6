@@ -1,5 +1,60 @@
 [
   {
+    "date": "2026-07-05",
+    "category": "現場ブログ",
+    "title": "外壁塗装が完了し、住まいに潤いが戻りました",
+    "body": [
+      "おはようございます☀",
+      "昨日で１つ現場が完了いたしました🫡",
+      "カサカサ、パサパサな印象だった壁が、しっとりと潤いを取り戻しました✨",
+      "雨戸と戸袋、鉄部も輝きを取り戻しました💪🏼",
+      "お客様も喜んで頂けて良かったです😊",
+      "桶川市、北本市で外壁塗装・屋根塗装の塗り替え工事をご検討中の方はお気軽にご相談ください✨"
+    ],
+    "images": [
+      {
+        "src": "assets/blog/2026-07-05-completed-wall-refresh-1.jpg",
+        "alt": "外壁塗装前の住宅外壁（施工前）"
+      },
+      {
+        "src": "assets/blog/2026-07-05-completed-wall-refresh-2.jpg",
+        "alt": "外壁塗装後の住宅外壁（施工後）"
+      },
+      {
+        "src": "assets/blog/2026-07-05-completed-wall-refresh-3.jpg",
+        "alt": "雨樋と戸袋まわりの施工前"
+      },
+      {
+        "src": "assets/blog/2026-07-05-completed-wall-refresh-4.jpg",
+        "alt": "雨樋と戸袋まわりの施工後"
+      },
+      {
+        "src": "assets/blog/2026-07-05-completed-wall-refresh-5.jpg",
+        "alt": "住宅側面の施工前"
+      },
+      {
+        "src": "assets/blog/2026-07-05-completed-wall-refresh-6.jpg",
+        "alt": "住宅側面の施工後"
+      },
+      {
+        "src": "assets/blog/2026-07-05-completed-wall-refresh-7.jpg",
+        "alt": "日差しの当たる外壁施工前"
+      },
+      {
+        "src": "assets/blog/2026-07-05-completed-wall-refresh-8.jpg",
+        "alt": "日差しの当たる外壁施工後"
+      },
+      {
+        "src": "assets/blog/2026-07-05-completed-wall-refresh-9.jpg",
+        "alt": "外壁塗装後の住宅全景"
+      },
+      {
+        "src": "assets/blog/2026-07-05-completed-wall-refresh-10.jpg",
+        "alt": "外壁塗装後のベランダまわり"
+      }
+    ]
+  },
+  {
     "date": "2026-07-04",
     "category": "おしらせ",
     "title": "マスコットキャラクター「カメ太郎くん」が誕生しました",
