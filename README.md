@@ -38,3 +38,4 @@ node scripts/check-site.mjs
 ## メモ
 
 `scripts/render-blog.mjs` は、存在する画像だけをHTMLに出します。古い記事の画像が手元にない場合でも、公開ページ側では画像切れを出さず、本文だけ表示します。
+deploy retry 4
