@@ -85,7 +85,7 @@ function renderGallery(images, baseIndent) {
     .map((image) => {
       const src = escapeHtml(image.src);
       const alt = escapeHtml(image.alt || "ブログ写真");
-      return `<a href="${src}" target="_blank" rel="noopener" aria-label="${alt}を大きく表示"><img src="${src}" alt="${alt}"></a>`;
+      return `<a href="${src}" target="_blank" rel="noopener" aria-label="${alt}を大きく表示"><img src="${src}" alt="${alt}" loading="lazy" decoding="async"></a>`;
     })
     .join("\n");
   return `\n${indent(`<div class="blog-gallery">\n${indent(items, 2)}\n</div>`, baseIndent)}`;
@@ -94,7 +94,7 @@ function renderGallery(images, baseIndent) {
 function renderCard(post, { featured = false, baseIndent = 10 } = {}) {
   const images = normalizeImages(post);
   const image = images[0]
-    ? `\n${indent(`<img src="${escapeHtml(images[0].src)}" alt="${escapeHtml(images[0].alt || post.title || "ブログ写真")}">`, 2)}`
+    ? `\n${indent(`<img src="${escapeHtml(images[0].src)}" alt="${escapeHtml(images[0].alt || post.title || "ブログ写真")}" loading="lazy" decoding="async">`, 2)}`
     : "";
   const article = `<article class="blog-card${featured ? " blog-card-featured" : ""}">${image}
   <div class="blog-body">
