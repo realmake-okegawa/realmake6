@@ -98,10 +98,16 @@
       color: var(--navy);
     }
 
-    .brand-text span {
+    .brand-text > span {
       font-size: .72rem;
       font-weight: 700;
       color: var(--sub);
+    }
+
+    .brand-text > .brand-name {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--navy);
     }
 
     .brand-reading {
@@ -375,6 +381,58 @@
 
     .notice strong {
       color: #f4d49f;
+    }
+
+    .representative-intro {
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .representative-intro-inner {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 20px;
+      padding: 26px 0;
+    }
+
+    .representative-intro img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: var(--radius);
+    }
+
+    .representative-intro-label {
+      margin-bottom: 4px;
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .representative-intro h2 {
+      margin-bottom: 6px;
+      color: var(--navy);
+      font-size: 1.08rem;
+      line-height: 1.35;
+    }
+
+    .representative-intro p:last-child {
+      margin-bottom: 0;
+      color: var(--sub);
+      font-size: .94rem;
+      line-height: 1.65;
+    }
+
+    .representative-intro-link {
+      color: var(--navy);
+      font-size: .9rem;
+      font-weight: 900;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      white-space: nowrap;
     }
 
     .section {
@@ -1540,6 +1598,31 @@
         line-height: 1.5;
       }
 
+      .representative-intro-inner {
+        grid-template-columns: 160px minmax(0, 1fr);
+        gap: 14px;
+        padding: 20px 0;
+      }
+
+      .representative-intro img {
+        width: 160px;
+        height: 160px;
+      }
+
+      .representative-intro h2 {
+        font-size: 1rem;
+      }
+
+      .representative-intro p:last-child {
+        font-size: .86rem;
+      }
+
+      .representative-intro-link {
+        grid-column: 2;
+        justify-self: start;
+        font-size: .84rem;
+      }
+
       .section {
         padding: 64px 0;
       }
@@ -1682,7 +1765,7 @@
     <div class="container header-inner">
       <a class="brand" href="https://realmake-okegawa.github.io/realmake6/#top" aria-label="Real Make ホーム">
         <img src="./index_files/logo.webp" alt="Real Make ロゴ" width="42" height="42">
-        <span class="brand-text">Real Make <em class="brand-reading">（リアルメイク）</em><span>外壁塗装・屋根塗装</span></span>
+        <span class="brand-text"><span class="brand-name">Real Make <em class="brand-reading">（リアルメイク）</em></span><span>外壁塗装・屋根塗装</span></span>
       </a>
       <nav class="nav" aria-label="主要メニュー">
         <a href="https://realmake-okegawa.github.io/realmake6/#strength">選ばれる理由</a>
@@ -1743,6 +1826,18 @@
         <span>工事をするか迷っている段階でも大丈夫です。</span>
       </div>
     </div>
+
+    <section class="representative-intro" aria-labelledby="representative-intro-title">
+      <div class="container representative-intro-inner">
+        <img src="./index_files/owner.jpg" alt="Real Make 代表 大川亮太" width="220" height="220" loading="lazy" decoding="async">
+        <div>
+          <p class="representative-intro-label">Representative</p>
+          <h2 id="representative-intro-title">Real Make 代表 大川亮太</h2>
+          <p>見積りから施工後のご相談まで、私が責任を持って対応します。</p>
+        </div>
+        <a class="representative-intro-link" href="https://realmake-okegawa.github.io/realmake6/#profile">代表挨拶を見る</a>
+      </div>
+    </section>
 
     <section class="section section-muted section-photo reveal-section is-visible" style="--section-bg: url(&#39;assets/web/site/black-exterior-angle.webp&#39;);">
       <div class="container">
@@ -3307,6 +3402,7 @@
       targets.forEach(target => observer.observe(target));
     })();
   </script>
+
 
 
 
