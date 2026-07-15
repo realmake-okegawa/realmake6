@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0022)http://127.0.0.1:8013/ -->
+<!-- saved from url=(0056)file:///Users/user/Documents/GitHub/realmake6/index.html -->
 <html lang="ja" class="reveal-ready"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
   <meta property="og:description" content="桶川市・北本市を中心に埼玉県全域対応。外壁塗装、屋根塗装、防水、コーキング工事を職人直営で丁寧に対応します。">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/sections/black-hero.jpg">
-  <link rel="preload" as="image" href="http://127.0.0.1:8013/assets/web/site/black-hero.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="file:///Users/user/Documents/GitHub/realmake6/assets/web/site/black-hero.webp" type="image/webp" fetchpriority="high">
   <style>
     :root {
       --ink: #17212b;
@@ -100,6 +100,13 @@
 
     .brand-text span {
       font-size: .72rem;
+      font-weight: 700;
+      color: var(--sub);
+    }
+
+    .brand-reading {
+      font-size: .72em;
+      font-style: normal;
       font-weight: 700;
       color: var(--sub);
     }
@@ -324,10 +331,13 @@
       color: #f4d49f;
     }
 
-    .hero-review-link {
+    .hero-review {
       display: inline-flex;
       align-items: center;
       margin-bottom: 18px;
+    }
+
+    .hero-review-link {
       color: rgba(255, 255, 255, .82);
       font-size: .82rem;
       font-weight: 800;
@@ -1672,7 +1682,7 @@
     <div class="container header-inner">
       <a class="brand" href="https://realmake-okegawa.github.io/realmake6/#top" aria-label="Real Make ホーム">
         <img src="./index_files/logo.webp" alt="Real Make ロゴ" width="42" height="42">
-        <span class="brand-text">Real Make<span>外壁塗装・屋根塗装</span></span>
+        <span class="brand-text">Real Make <em class="brand-reading">（リアルメイク）</em><span>外壁塗装・屋根塗装</span></span>
       </a>
       <nav class="nav" aria-label="主要メニュー">
         <a href="https://realmake-okegawa.github.io/realmake6/#strength">選ばれる理由</a>
@@ -1723,7 +1733,7 @@
           <span>写真だけでもLINE相談OK</span>
           <span>施工後も相談可能</span>
         </div>
-        <a class="hero-review-link" href="https://share.google/U1dqcpyOBwvAJcPx8" target="_blank" rel="noopener"><span>Googleクチコミを見る</span><span class="hero-review-summary">5.0 クチコミ13件</span></a>
+        <div class="hero-review"><a class="hero-review-link" href="https://share.google/U1dqcpyOBwvAJcPx8" target="_blank" rel="noopener">Googleクチコミを見る</a><span class="hero-review-summary">5.0 クチコミ13件</span></div>
       </div>
     </section>
 
@@ -3297,6 +3307,7 @@
       targets.forEach(target => observer.observe(target));
     })();
   </script>
+
 
 
 
