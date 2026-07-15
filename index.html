@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0022)http://127.0.0.1:8012/ -->
+<!-- saved from url=(0022)http://127.0.0.1:8013/ -->
 <html lang="ja" class="reveal-ready"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
   <meta property="og:description" content="桶川市・北本市を中心に埼玉県全域対応。外壁塗装、屋根塗装、防水、コーキング工事を職人直営で丁寧に対応します。">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/sections/black-hero.jpg">
-  <link rel="preload" as="image" href="http://127.0.0.1:8012/assets/web/site/black-hero.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="http://127.0.0.1:8013/assets/web/site/black-hero.webp" type="image/webp" fetchpriority="high">
   <style>
     :root {
       --ink: #17212b;
@@ -306,34 +306,45 @@
       font-weight: 800;
     }
 
-    .hero-points {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      width: min(760px, 100%);
-      border: 1px solid rgba(255, 255, 255, .22);
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: rgba(255, 255, 255, .18);
-      backdrop-filter: blur(12px);
+    .hero-reassurance {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      width: min(520px, 100%);
+      margin: -10px 0 14px;
+      color: rgba(255, 255, 255, .84);
+      font-size: .82rem;
+      font-weight: 800;
+      line-height: 1.45;
     }
 
-    .hero-point {
-      padding: 16px 18px;
-      background: rgba(10, 20, 29, .32);
+    .hero-reassurance span::before {
+      content: "✓";
+      margin-right: 5px;
+      color: #f4d49f;
     }
 
-    .hero-point strong {
-      display: block;
-      font-size: 1.18rem;
-      line-height: 1.35;
+    .hero-review-link {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 18px;
+      color: rgba(255, 255, 255, .82);
+      font-size: .82rem;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
-    .hero-point span {
-      display: block;
-      color: rgba(255, 255, 255, .74);
-      font-size: .84rem;
-      line-height: 1.6;
+    .hero-review-link::before {
+      content: "★";
+      margin-right: 6px;
+      color: #f4d49f;
+    }
+
+    .hero-review-summary {
+      margin-left: 10px;
+      color: #f4d49f;
+      font-variant-numeric: tabular-nums;
     }
 
     .notice {
@@ -1506,8 +1517,10 @@
         width: auto !important;
       }
 
-      .hero-points {
-        grid-template-columns: 1fr;
+      .hero-reassurance {
+        gap: 7px 12px;
+        margin-top: -8px;
+        font-size: .76rem;
       }
 
       .notice-inner {
@@ -1704,11 +1717,13 @@
             090-1434-0189
           </a>
         </div>
-        <div class="hero-points" aria-label="Real Makeの特徴">
-          <div class="hero-point"><strong>職人直営</strong><span>相談から施工まで責任対応</span></div>
-          <div class="hero-point"><strong>見積り無料</strong><span>内容と費用を明確にご案内</span></div>
-          <div class="hero-point"><strong>地域密着</strong><span>桶川市周辺から埼玉県全域へ</span></div>
+        <div class="hero-reassurance" aria-label="ご相談時の安心材料">
+          <span>職人直営</span>
+          <span>現地調査・見積り無料</span>
+          <span>写真だけでもLINE相談OK</span>
+          <span>施工後も相談可能</span>
         </div>
+        <a class="hero-review-link" href="https://share.google/U1dqcpyOBwvAJcPx8" target="_blank" rel="noopener"><span>Googleクチコミを見る</span><span class="hero-review-summary">5.0 クチコミ13件</span></a>
       </div>
     </section>
 
@@ -3282,6 +3297,7 @@
       targets.forEach(target => observer.observe(target));
     })();
   </script>
+
 
 
 
