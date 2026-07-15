@@ -9,7 +9,7 @@
   <meta property="og:description" content="桶川市・北本市を中心に埼玉県全域対応。外壁塗装、屋根塗装、防水、コーキング工事を職人直営で丁寧に対応します。">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/sections/black-hero.jpg">
-  <link rel="preload" as="image" href="file:///Users/user/Documents/GitHub/realmake6/assets/web/site/black-hero.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="http://127.0.0.1:8012/assets/web/site/black-hero.webp" type="image/webp" fetchpriority="high">
   <style>
     :root {
       --ink: #17212b;
@@ -252,24 +252,58 @@
     }
 
     .hero h1 {
-      margin-bottom: 20px;
-      font-size: 3.9rem;
+      max-width: 660px;
+      margin-bottom: 16px;
+      font-size: 3.55rem;
       line-height: 1.12;
       letter-spacing: 0;
     }
 
     .hero-lead {
-      width: min(650px, 100%);
-      margin-bottom: 28px;
+      width: min(560px, 100%);
+      margin-bottom: 22px;
       color: rgba(255, 255, 255, .88);
-      font-size: 1.08rem;
+      font-size: 1.03rem;
+      line-height: 1.75;
     }
 
     .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 34px;
+      display: grid;
+      grid-template-columns: minmax(0, 390px);
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+
+    .hero-actions .button {
+      width: 100%;
+    }
+
+    .hero-action-main,
+    .hero-action-line {
+      min-height: 54px;
+    }
+
+    .hero-action-main {
+      font-size: 1.04rem;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
+    }
+
+    .hero-action-works {
+      min-height: 42px;
+      background: rgba(255, 255, 255, .08);
+      font-size: .92rem;
+    }
+
+    .hero-action-phone {
+      align-self: start;
+      width: auto !important;
+      min-height: 30px;
+      border-color: transparent;
+      padding: 4px 8px;
+      background: transparent;
+      color: rgba(255, 255, 255, .76);
+      font-size: .82rem;
+      font-weight: 800;
     }
 
     .hero-points {
@@ -1441,24 +1475,35 @@
       }
 
       .hero-content {
-        padding: 70px 0 42px;
+        padding: 58px 0 32px;
       }
 
       .hero h1 {
-        font-size: 2.35rem;
+        margin-bottom: 14px;
+        font-size: 2.2rem;
+        line-height: 1.16;
       }
 
       .hero-lead {
-        font-size: 1rem;
+        margin-bottom: 18px;
+        font-size: .96rem;
+        line-height: 1.65;
       }
 
       .hero-actions {
         display: grid;
         grid-template-columns: 1fr;
+        gap: 9px;
+        margin-bottom: 20px;
       }
 
-      .button {
-        width: 100%;
+      .hero-action-main,
+      .hero-action-line {
+        min-height: 50px;
+      }
+
+      .hero-action-phone {
+        width: auto !important;
       }
 
       .hero-points {
@@ -1639,24 +1684,24 @@
     <section class="hero reveal-section is-visible" aria-label="Real Make ファーストビュー">
       <div class="container hero-content reveal-item reveal-delay-0 is-visible">
         <p class="eyebrow">桶川市・北本市中心、埼玉県全域対応</p>
-        <h1>桶川市周辺で外壁塗装・屋根塗装をご検討中のあなたへ</h1>
-        <p class="hero-lead">Real Make（リアルメイク）は、外壁塗装・屋根塗装・防水・コーキングまで対応する職人直営の施工店です。家の状態を分かりやすく説明し、必要な工事を丁寧にご提案します。</p>
+        <h1>桶川市周辺の<br>外壁塗装・屋根塗装</h1>
+        <p class="hero-lead">職人直営のReal Makeが、状態確認から工事後のサポートまで丁寧に対応します。</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="tel:09014340189">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.6c0 .7-.5 1.2-1.2 1.2C10.6 21.6 2.4 13.4 2.4 3.4c0-.7.5-1.2 1.2-1.2h3.6c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.8.6 4 .1.4 0 .9-.3 1.2l-2.1 2.2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>
-            090-1434-0189
+          <a class="button sim-banner-btn hero-action-main" href="https://realmake-okegawa.github.io/realmake6/painting_simulator.html" style="background:#219ab5;color:#fff;">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7h6M9 11h6M9 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.8"></rect></svg>
+            30秒で概算費用をチェック
           </a>
-          <a class="button button-light" href="https://realmake-okegawa.github.io/realmake6/#works">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16v13H4V7Zm4-3h8l2 3H6l2-3Zm4 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>
-            施工事例を見る
-          </a>
-          <a class="button button-line button-stack" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">
+          <a class="button button-line button-stack hero-action-line" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 5.5h15v9.2h-8.1L7 18.5v-3.8H4.5V5.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>
             <span><strong>LINEで無料相談する</strong><small>写真を送って相談OK</small></span>
           </a>
-          <a class="button sim-banner-btn" href="https://realmake-okegawa.github.io/realmake6/painting_simulator.html" style="background:#219ab5;color:#fff;">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7h6M9 11h6M9 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.8"></rect></svg>
-            30秒で概算費用をチェックする
+          <a class="button button-light hero-action-works" href="https://realmake-okegawa.github.io/realmake6/#works">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16v13H4V7Zm4-3h8l2 3H6l2-3Zm4 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>
+            施工事例を見る
+          </a>
+          <a class="button button-primary hero-action-phone" href="tel:09014340189">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.6c0 .7-.5 1.2-1.2 1.2C10.6 21.6 2.4 13.4 2.4 3.4c0-.7.5-1.2 1.2-1.2h3.6c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.8.6 4 .1.4 0 .9-.3 1.2l-2.1 2.2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>
+            090-1434-0189
           </a>
         </div>
         <div class="hero-points" aria-label="Real Makeの特徴">
@@ -3237,6 +3282,7 @@
       targets.forEach(target => observer.observe(target));
     })();
   </script>
+
 
 
 
