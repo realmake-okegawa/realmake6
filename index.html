@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0056)file:///Users/user/Documents/GitHub/realmake6/index.html -->
+<!-- saved from url=(0022)http://127.0.0.1:8013/ -->
 <html lang="ja" class="reveal-ready"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
   <meta property="og:description" content="桶川市・北本市を中心に埼玉県全域対応。外壁塗装、屋根塗装、防水、コーキング工事を職人直営で丁寧に対応します。">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/sections/black-hero.jpg">
-  <link rel="preload" as="image" href="file:///Users/user/Documents/GitHub/realmake6/assets/web/site/black-hero.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="http://127.0.0.1:8013/assets/web/site/black-hero.webp" type="image/webp" fetchpriority="high">
   <style>
     :root {
       --ink: #17212b;
@@ -241,17 +241,24 @@
     }
 
     .eyebrow {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       gap: 10px;
+      max-width: min(700px, 100%);
       margin: 0 0 18px;
       color: #f4d49f;
-      font-size: .9rem;
+      font-size: 1.08rem;
       font-weight: 800;
+      line-height: 1.45;
+    }
+
+    .eyebrow span {
+      min-width: 0;
     }
 
     .eyebrow::before {
       content: "";
+      flex: 0 0 38px;
       width: 38px;
       height: 1px;
       background: currentColor;
@@ -1563,6 +1570,17 @@
         line-height: 1.16;
       }
 
+      .eyebrow {
+        gap: 8px;
+        margin-bottom: 16px;
+        font-size: .98rem;
+      }
+
+      .eyebrow::before {
+        flex-basis: 28px;
+        width: 28px;
+      }
+
       .hero-lead {
         margin-bottom: 18px;
         font-size: .96rem;
@@ -1789,7 +1807,7 @@
   <main id="top">
     <section class="hero reveal-section is-visible" aria-label="Real Make ファーストビュー">
       <div class="container hero-content reveal-item reveal-delay-0 is-visible">
-        <p class="eyebrow">桶川市・北本市中心、埼玉県全域対応</p>
+        <p class="eyebrow"><span>桶川市・北本市・上尾市の外壁・屋根塗装なら Real Make（リアルメイク）</span></p>
         <h1>桶川市周辺の<br>外壁塗装・屋根塗装</h1>
         <p class="hero-lead">職人直営のReal Makeが、状態確認から工事後のサポートまで丁寧に対応します。</p>
         <div class="hero-actions">
@@ -3402,6 +3420,7 @@
       targets.forEach(target => observer.observe(target));
     })();
   </script>
+
 
 
 
