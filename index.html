@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0022)http://127.0.0.1:8015/ -->
+<!-- saved from url=(0022)http://127.0.0.1:8017/ -->
 <html lang="ja" class="reveal-ready"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
   <meta property="og:description" content="桶川市・北本市を中心に埼玉県全域対応。外壁塗装、屋根塗装、防水、コーキング工事を職人直営で丁寧に対応します。">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/sections/black-hero.jpg">
-  <link rel="preload" as="image" href="http://127.0.0.1:8015/assets/web/site/black-hero.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="http://127.0.0.1:8017/assets/web/site/black-hero.webp" type="image/webp" fetchpriority="high">
   <style>
     :root {
       --ink: #17212b;
@@ -392,20 +392,25 @@
 
     .representative-intro {
       border-bottom: 1px solid var(--line);
-      background: var(--paper);
+      background: var(--soft);
     }
 
     .representative-intro-inner {
       display: grid;
-      grid-template-columns: 220px minmax(0, 1fr) auto;
-      align-items: center;
-      gap: 20px;
-      padding: 26px 0;
+      grid-template-columns: 248px minmax(0, 1fr);
+      align-items: start;
+      gap: 30px;
+      margin: 28px auto;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: 0 10px 26px rgba(18, 50, 75, .06);
     }
 
     .representative-intro img {
-      width: 220px;
-      height: 220px;
+      width: 248px;
+      height: 294px;
       object-fit: cover;
       object-position: center top;
       border-radius: var(--radius);
@@ -420,26 +425,55 @@
     }
 
     .representative-intro h2 {
-      margin-bottom: 6px;
+      margin-bottom: 16px;
       color: var(--navy);
-      font-size: 1.08rem;
-      line-height: 1.35;
+      font-size: 1.5rem;
+      line-height: 1.45;
     }
 
-    .representative-intro p:last-child {
+    .representative-intro-copy {
       margin-bottom: 0;
       color: var(--sub);
-      font-size: .94rem;
-      line-height: 1.65;
+      font-size: .96rem;
+      line-height: 1.85;
     }
 
-    .representative-intro-link {
+    .representative-intro-copy p {
+      margin-bottom: 14px;
+    }
+
+    .representative-intro-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .representative-intro-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .representative-intro-facts li {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 10px;
+      border: 1px solid #d9e5df;
+      border-radius: 999px;
+      background: #f4f8f5;
       color: var(--navy);
-      font-size: .9rem;
+      font-size: .8rem;
       font-weight: 900;
-      text-decoration: underline;
-      text-underline-offset: 4px;
-      white-space: nowrap;
+      line-height: 1.2;
+    }
+
+    .representative-intro-facts svg {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 16px;
+      color: var(--green);
     }
 
     .section {
@@ -1617,28 +1651,40 @@
       }
 
       .representative-intro-inner {
-        grid-template-columns: 160px minmax(0, 1fr);
-        gap: 14px;
-        padding: 20px 0;
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin: 18px auto;
+        padding: 22px;
       }
 
       .representative-intro img {
-        width: 160px;
-        height: 160px;
+        width: 200px;
+        height: 238px;
+        margin: 0 auto;
       }
 
       .representative-intro h2 {
-        font-size: 1rem;
+        margin-bottom: 14px;
+        font-size: 1.3rem;
       }
 
-      .representative-intro p:last-child {
-        font-size: .86rem;
+      .representative-intro-copy {
+        font-size: .92rem;
+        line-height: 1.8;
       }
 
-      .representative-intro-link {
-        grid-column: 2;
-        justify-self: start;
-        font-size: .84rem;
+      .representative-intro-copy p {
+        margin-bottom: 13px;
+      }
+
+      .representative-intro-facts {
+        gap: 7px;
+        margin-top: 18px;
+      }
+
+      .representative-intro-facts li {
+        padding: 8px 9px;
+        font-size: .76rem;
       }
 
       .section {
@@ -1842,13 +1888,24 @@
 
     <section class="representative-intro" aria-labelledby="representative-intro-title">
       <div class="container representative-intro-inner">
-        <img src="./index_files/owner.jpg" alt="Real Make 代表 大川亮太" width="220" height="220" loading="lazy" decoding="async">
+        <img src="./index_files/owner.jpg" alt="Real Make 代表 大川亮太" width="248" height="294" loading="lazy" decoding="async">
         <div>
-          <p class="representative-intro-label">Representative</p>
-          <h2 id="representative-intro-title">Real Make 代表 大川亮太</h2>
-          <p>見積りから施工後のご相談まで、私が責任を持って対応します。</p>
+          <p class="representative-intro-label">Representative Profile</p>
+          <h2 id="representative-intro-title">はじめまして。Real Make代表の大川です。</h2>
+          <div class="representative-intro-copy">
+            <p>こんにちは。<br>Real Make（リアルメイク）代表の大川です。</p>
+            <p>私は17歳で塗装職人の道に入り、足場工としての経験も積みながら、24年以上にわたり建築業に携わってきました。</p>
+            <p>桶川市で生まれ育ち、現在も桶川市で暮らしています。</p>
+            <p>私生活では3人の男の子の父親です。<br>子どもたちはサッカーを頑張っていて、休日は試合の応援に行くのが楽しみの一つです。</p>
+            <p>仕事では、お客様が安心して工事を任せられるよう、分かりやすい説明と丁寧な施工を何より大切にしています。</p>
+            <p>これからも地元の皆さまに、「大川さんに頼んで良かった」と思っていただける仕事を一つひとつ積み重ねていきます。</p>
+          </div>
+          <ul class="representative-intro-facts" aria-label="代表プロフィール">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 7V5.5A1.5 1.5 0 0 1 9.5 4h5A1.5 1.5 0 0 1 16 5.5V7M4.5 7h15A1.5 1.5 0 0 1 21 8.5v10a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5v-10A1.5 1.5 0 0 1 4.5 7Zm-1 5h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>職人歴24年以上</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 10c0 5-8 10-8 10s-8-5-8-10a8 8 0 1 1 16 0Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"></circle></svg>桶川市在住</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 20v-1.5a4.5 4.5 0 0 0-4.5-4.5h-3A4.5 4.5 0 0 0 4 18.5V20m12-6a4 4 0 0 1 4 4v2M10 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm7-3a2.5 2.5 0 1 0 0-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>3児の父</li>
+          </ul>
         </div>
-        <a class="representative-intro-link" href="https://realmake-okegawa.github.io/realmake6/#profile">代表挨拶を見る</a>
       </div>
     </section>
 
@@ -3303,19 +3360,6 @@
     </section>
 
     <section class="section section-muted section-photo reveal-section is-visible" id="profile" style="--section-bg: url(&#39;assets/web/site/brown-house-wide.webp&#39;);">
-      <div class="container profile reveal-item reveal-delay-0 reveal-delay-3 reveal-delay-1 reveal-delay-2 is-visible">
-        <div class="profile-photo reveal-item reveal-delay-1 reveal-delay-0 reveal-delay-2 reveal-delay-3 is-visible">
-          <img src="./index_files/owner.jpg" alt="Real Make 代表 大川亮太">
-        </div>
-        <div class="profile-note reveal-item reveal-delay-2 reveal-delay-1 reveal-delay-3 reveal-delay-0 is-visible">
-          <p class="section-label">Message</p>
-          <h2 class="section-title">代表挨拶</h2>
-          <h3>塗装工事を、分かりやすく、誠実に。</h3>
-          <p>はじめまして。Real Make（リアルメイク）代表の大川です。塗装工事は決して安い買い物ではありません。だからこそ、丁寧施工・適正価格・スピード対応を大切にしています。</p>
-          <p>地域密着の塗装店として、一件一件責任を持って施工いたします。外壁塗装・屋根塗装でお困りの方は、お気軽にご相談ください。</p>
-          <p class="profile-name">Real Make 代表　大川亮太</p>
-        </div>
-      </div>
       <div class="container owner-support reveal-item reveal-delay-3 reveal-delay-2 reveal-delay-0 reveal-delay-1 is-visible">
         <p class="owner-support-message reveal-item reveal-delay-0 reveal-delay-3 reveal-delay-1 reveal-delay-2 is-visible">弊社で塗り替えをしていただいたお客様限定でサポートをさせていただきます！塗り替え工事後も長いお付き合いを目指しています。</p>
         <img src="./index_files/owner-support.webp" alt="Real Makeオーナー様サポートの案内" width="1054" height="1492" loading="lazy" decoding="async" class="reveal-item reveal-delay-1 reveal-delay-0 reveal-delay-2 reveal-delay-3 is-visible">
@@ -3470,6 +3514,7 @@
       targets.forEach(target => observer.observe(target));
     })();
   </script>
+
 
 
 
