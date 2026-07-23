@@ -1185,6 +1185,14 @@
       font-weight: 900;
     }
 
+    .blog-more[open] {
+      margin-top: 0;
+    }
+
+    .blog-more[open] summary {
+      display: none;
+    }
+
     .blog-archive {
       grid-column: 1 / -1;
       margin-top: 4px;
@@ -3603,6 +3611,7 @@
       targets.forEach(target => observer.observe(target));
     })();
   </script>
+
 
 
 
