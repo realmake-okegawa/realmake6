@@ -52,8 +52,9 @@ function normalizeImages(post) {
   return [];
 }
 
-function postText(body) {
-  return (Array.isArray(body) ? body.join("\n\n") : String(body || "")).trim();
+function bodyParagraphs(body) {
+  const paragraphs = Array.isArray(body) ? body : String(body || "").split(/\n{2,}/);
+  return paragraphs.map((paragraph) => String(paragraph).trim()).filter(Boolean);
 }
 
 function indent(text, spaces) {
@@ -65,15 +66,42 @@ function indent(text, spaces) {
 }
 
 function renderTextWithReadMore(post, baseIndent) {
-  const text = postText(post.body);
+  const paragraphs = bodyParagraphs(post.body);
+  const text = paragraphs.join("\n\n");
   const limit = 180;
   if (text.length <= limit) return indent(renderBody(post.body), baseIndent);
 
-  const excerpt = `${text.slice(0, limit).trim()}...`;
-  const details = `<p>${escapeHtml(excerpt).replaceAll("\n", "<br>")}</p>
+  const visible = [];
+  let remaining = [];
+  let visibleLength = 0;
+
+  for (let index = 0; index < paragraphs.length; index += 1) {
+    const paragraph = paragraphs[index];
+    const separatorLength = visible.length ? 2 : 0;
+
+    if (visibleLength + separatorLength + paragraph.length <= limit) {
+      visible.push(paragraph);
+      visibleLength += separatorLength + paragraph.length;
+      continue;
+    }
+
+    if (!visible.length) {
+      const beforeLimit = paragraph.slice(0, limit);
+      const punctuation = [...beforeLimit.matchAll(/[。！？!?]/g)].at(-1);
+      const splitAt = punctuation ? punctuation.index + 1 : limit;
+      visible.push(`${paragraph.slice(0, splitAt).trim()}...`);
+      remaining = [paragraph.slice(splitAt).trim(), ...paragraphs.slice(index + 1)].filter(Boolean);
+    } else {
+      visible[visible.length - 1] = `${visible[visible.length - 1]}...`;
+      remaining = paragraphs.slice(index);
+    }
+    break;
+  }
+
+  const details = `${renderBody(visible)}
 <details class="blog-more">
   <summary>続きを読む</summary>
-${indent(renderBody(post.body), 2)}
+${indent(renderBody(remaining), 2)}
 </details>`;
   return indent(details, baseIndent);
 }
