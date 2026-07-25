@@ -1,7 +1,30 @@
 <!DOCTYPE html>
 <!-- saved from url=(0022)http://127.0.0.1:8023/ -->
 <html lang="ja" class="reveal-ready"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCG1M6JXX0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PCG1M6JXX0');
   
+  /* ボタンのクリック計測 */
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var label = (a.innerText || '').trim().slice(0, 40);
+    if (href.indexOf('tel:') === 0) {
+      gtag('event', 'tap_tel', { link_text: label });
+    } else if (href.indexOf('lin.ee') > -1 || href.indexOf('line.me') > -1) {
+      gtag('event', 'tap_line', { link_text: label });
+    } else if (href.indexOf('painting_simulator') > -1) {
+      gtag('event', 'tap_simulator', { link_text: label });
+    }
+  }, true);
+</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Real Make（リアルメイク）｜桶川市の外壁塗装・屋根塗装</title>
   <meta name="description" content="Real Make（リアルメイク）は桶川市・北本市を中心に埼玉県全域対応の外壁塗装・屋根塗装・防水工事店です。職人直営で丁寧施工、分かりやすい説明、適正価格を大切にしています。">
