@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# AI検索クローラーを拒否しない（引用対象から外れてしまうため）
+User-agent: GPTBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+# ▼ ドメイン取得後に書き換えてください
+Sitemap: https://realmake-okegawa.github.io/realmake6/sitemap.xml

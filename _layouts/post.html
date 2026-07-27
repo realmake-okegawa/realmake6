@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+{% include head.html %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": {{ page.title | jsonify }},
+      "description": {{ page.description | jsonify }},
+      "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+      "dateModified": "{{ page.date | date: '%Y-%m-%d' }}",
+      "url": "{{ page.url | absolute_url }}",
+      {% if page.image %}"image": "{{ page.image | absolute_url }}",{% endif %}
+      "author": { "@type": "Person", "name": "{{ site.company.owner }}", "jobTitle": "塗装職人・Real Make代表" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ site.company.name }}",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "桶川市",
+          "addressRegion": "埼玉県",
+          "addressCountry": "JP"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "{{ '/' | absolute_url }}" },
+        { "@type": "ListItem", "position": 2, "name": "ブログ", "item": "{{ '/blog/' | absolute_url }}" },
+        { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }} }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+{% include header.html %}
+
+<div class="wrap"><div class="crumb">
+  <a href="{{ '/' | relative_url }}">ホーム</a> ＞ <a href="{{ '/blog/' | relative_url }}">ブログ</a> ＞ {{ page.title }}
+</div></div>
+
+<article>
+  <section style="padding-top:34px;padding-bottom:0">
+    <div class="narrow">
+      <div class="label">{{ page.category | default: "現場ブログ" }}　{{ page.date | date: "%Y.%m.%d" }}</div>
+      <h1 style="font-size:clamp(23px,3.6vw,32px);line-height:1.5;margin-bottom:20px">{{ page.title }}</h1>
+      {% if page.summary %}<p class="lead">{{ page.summary }}</p>{% endif %}
+    </div>
+  </section>
+
+  <section style="padding-top:30px">
+    <div class="narrow">
+      {{ content }}
+
+      <p style="margin-top:44px;font-size:13.5px;color:var(--muted)">
+        この記事を書いた人：{{ site.company.owner }}（{{ site.company.name }} 代表／塗装職人歴24年以上・桶川市在住）<br>
+        最終更新：{{ page.date | date: "%Y年%-m月%-d日" }}
+      </p>
+
+      <p style="margin-top:24px">
+        <a href="{{ '/blog/' | relative_url }}">← ブログ一覧に戻る</a>　
+        <a href="{{ '/area/okegawa/' | relative_url }}">桶川市の外壁塗装について →</a>
+      </p>
+    </div>
+  </section>
+</article>
+
+{% include footer.html %}
+</body>
+</html>

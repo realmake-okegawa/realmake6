@@ -1,0 +1,208 @@
+/* ============================================================
+   Real Make 共通スタイル
+   ------------------------------------------------------------
+   既存トップページのデザインに合わせたい場合は、
+   このファイルの色・フォントの指定（:root部分）を書き換えてください。
+   ============================================================ */
+
+:root{
+  --ink:#15181b;      /* 見出し・強い文字 */
+  --body:#3d4348;     /* 本文 */
+  --muted:#6b7076;    /* 補足・ラベル（WCAG AA を満たす濃さ。白地4.99・背景4.75）
+                         これより薄くすると11〜13pxの小さい文字が読めなくなります */
+  --line:#e4e1dc;     /* 罫線 */
+  --bg:#faf9f7;       /* 背景 */
+  --cta:#c1502e;      /* ボタン・アクセント */
+  --cta-d:#a8421f;
+  --line-g:#06c755;   /* LINE緑 */
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--body);
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic Medium","Yu Gothic",sans-serif;
+  font-size:16px;line-height:2;-webkit-font-smoothing:antialiased;padding-bottom:74px;
+}
+img{display:block;max-width:100%}
+a{color:var(--cta)}
+h1,h2,h3,h4{color:var(--ink);font-weight:700;line-height:1.5;letter-spacing:.01em;margin:0}
+p{margin:0 0 20px}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.narrow{max-width:760px;margin:0 auto;padding:0 24px}
+section{padding:80px 0}
+.label{font-size:11px;letter-spacing:.22em;color:var(--muted);margin-bottom:16px}
+h2.t{font-size:clamp(22px,3.4vw,30px);line-height:1.55;margin-bottom:22px}
+.lead{font-size:17px;line-height:2.1}
+
+/* パンくず */
+.crumb{font-size:12.5px;color:var(--muted);padding:16px 0 0;letter-spacing:.04em}
+.crumb a{color:var(--muted);text-decoration:none}
+.crumb a:hover{text-decoration:underline}
+
+/* ヘッダー */
+.sitehead{background:#fff;border-bottom:1px solid var(--line)}
+.sitehead .in{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;
+  align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.sitehead .logo{font-weight:700;color:var(--ink);text-decoration:none;font-size:17px;letter-spacing:.02em}
+.sitehead .logo span{font-size:12px;color:var(--muted);font-weight:400;margin-left:6px}
+.sitehead nav a{color:var(--body);text-decoration:none;font-size:13.5px;margin-left:20px}
+.sitehead nav a:hover{color:var(--cta)}
+
+/* ヒーロー */
+.hero{position:relative;height:74vh;min-height:460px;overflow:hidden;background:#15181b}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:center 42%;opacity:.92}
+.hero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,12,14,.5) 0%,rgba(10,12,14,.12) 42%,rgba(10,12,14,.8) 100%)}
+/* 明るい写真をヒーローに使うとき（白い外壁など）：下部の黒みを強めて文字を読みやすく */
+.hero.light::after{background:linear-gradient(180deg,rgba(10,12,14,.34) 0%,rgba(10,12,14,.06) 32%,rgba(10,12,14,.62) 70%,rgba(10,12,14,.92) 100%)}
+.hero-in{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 44px}
+.hero h1{color:#fff;font-size:clamp(26px,5.2vw,44px);line-height:1.38;text-shadow:0 2px 24px rgba(0,0,0,.45)}
+.hero p.sub{color:#fff;opacity:.9;font-size:15px;margin:16px 0 0;max-width:30em;text-shadow:0 1px 14px rgba(0,0,0,.5)}
+.stats{display:flex;gap:30px;flex-wrap:wrap;margin-top:24px}
+.stats div{color:#fff}
+.stats .k{font-size:11px;letter-spacing:.16em;opacity:.72;display:block;line-height:1.6}
+.stats .v{font-size:22px;font-weight:700;line-height:1.3}
+.stats .v small{font-size:12.5px;font-weight:400;opacity:.8;margin-left:3px}
+
+/* ボタン */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--cta);color:#fff;text-decoration:none;border-radius:2px;
+  padding:16px 30px;font-weight:700;font-size:15px;transition:background .2s}
+.btn:hover{background:var(--cta-d)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid #c8c4bd}
+.btn.ghost:hover{background:#f0eeea}
+.btn.line{background:var(--line-g);color:#fff}
+
+/* データ行 */
+.facts{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts dl{margin:0}
+.facts .row{display:flex;gap:22px;padding:16px 0;border-bottom:1px solid #f0eeea;align-items:baseline}
+.facts .row:last-child{border-bottom:none}
+.facts dt{flex:0 0 132px;font-size:12.5px;letter-spacing:.12em;color:var(--muted);margin:0}
+.facts dd{margin:0;flex:1;color:var(--ink);font-size:16px}
+.facts dd b{font-size:19px}
+.asof{font-size:12px;color:var(--muted);margin-top:16px}
+
+/* 表 */
+table.spec{width:100%;border-collapse:collapse;margin-top:26px;font-size:14.5px}
+table.spec th,table.spec td{border-bottom:1px solid var(--line);padding:13px 0;text-align:left;vertical-align:top}
+table.spec th{width:120px;font-weight:400;color:var(--muted);font-size:12.5px;letter-spacing:.1em;white-space:nowrap;padding-right:16px}
+table.spec td{color:var(--ink)}
+table.data{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:24px;background:#fff}
+table.data th,table.data td{border-bottom:1px solid var(--line);padding:15px 14px 15px 0;text-align:left;vertical-align:top}
+table.data thead th{font-size:11.5px;letter-spacing:.14em;color:var(--muted);font-weight:400;border-bottom:1px solid #cfccc6}
+table.data tbody th{font-weight:700;color:var(--ink);white-space:nowrap}
+
+/* Before/After */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:30px 0 0}
+.ba figure{margin:0}
+.ba img{width:100%;aspect-ratio:3/4;object-fit:cover;background:#eceae6}
+.ba img.land{aspect-ratio:4/3}
+.ba figcaption{font-size:11px;letter-spacing:.18em;color:var(--muted);margin-top:9px}
+.ba .after figcaption{color:var(--cta)}
+
+/* お客様の声 */
+.voice{background:#fff;border-left:2px solid var(--ink);padding:26px 30px;margin-top:32px}
+.voice .vh{font-size:11px;letter-spacing:.2em;color:var(--muted);margin-bottom:12px}
+.voice p{font-size:15.5px;line-height:2.05;margin:0 0 12px}
+.voice p:last-child{margin-bottom:0}
+.voice ul{margin:12px 0;padding-left:20px;font-size:15px}
+.voice li{margin:6px 0}
+
+/* 事例ブロック（エリアページ用・Before/After＋要約） */
+.wcase{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;
+  align-items:start;padding:44px 0;border-top:1px solid var(--line)}
+.wcase:first-of-type{border-top:none;padding-top:8px}
+.wcase .ba{margin:0}
+.wcase-body .cno{font-size:11.5px;letter-spacing:.14em;color:var(--muted)}
+.wcase-body h3{font-size:clamp(19px,2.4vw,23px);margin:10px 0 14px;line-height:1.5}
+.wcase-body p{font-size:15.5px;margin:0 0 18px}
+.wcase-body .wmeta{font-size:13px;color:var(--muted);background:var(--bg);
+  border-left:2px solid #cfccc6;padding:11px 15px;margin-bottom:18px;line-height:1.9}
+/* 事例ブロック内の お客様の声（抜粋） */
+.wcase-body .vq{font-size:14.5px;color:var(--ink);background:var(--bg);
+  border-left:2px solid var(--cta);padding:13px 16px;margin:0 0 18px;line-height:1.95}
+.wcase-body .vq cite{display:block;font-size:12px;color:var(--muted);font-style:normal;
+  letter-spacing:.06em;margin-top:8px}
+@media(max-width:860px){
+  .wcase{grid-template-columns:1fr;gap:24px;padding:34px 0}
+  .wcase-body h3{margin-top:4px}
+}
+
+/* 事例カード（一覧・要約用） */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px;margin-top:30px}
+.card{background:#fff;border:1px solid var(--line);text-decoration:none;display:block;color:var(--body);
+  transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:0 8px 28px rgba(0,0,0,.08);transform:translateY(-2px)}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#eceae6}
+.card .in{padding:18px 20px 22px}
+.card .cno{font-size:11px;letter-spacing:.18em;color:var(--muted)}
+.card h3{font-size:17px;margin:8px 0 6px;line-height:1.5}
+.card .who{font-size:12.5px;color:var(--muted)}
+.card .sum{font-size:14px;margin:12px 0 0;line-height:1.9}
+.card .more{display:inline-block;margin-top:14px;font-size:13px;color:var(--cta);font-weight:700}
+
+/* 見出しつきブロック */
+.reason{border-top:1px solid var(--line);padding:30px 0}
+.reason:last-of-type{border-bottom:1px solid var(--line)}
+.reason .rn{font-size:11px;letter-spacing:.2em;color:var(--muted)}
+.reason h3{font-size:18px;margin:10px 0 12px}
+.reason p{margin:0;font-size:15.5px}
+
+/* FAQ ─ summary は指で押せるよう縦の余白で 44px 以上を確保する */
+details{border-bottom:1px solid var(--line)}
+details summary{cursor:pointer;font-weight:700;color:var(--ink);font-size:16.5px;
+  list-style:none;display:flex;gap:14px;align-items:flex-start;line-height:1.65;
+  padding:18px 0;min-height:44px}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"Q";color:var(--muted);font-size:13px;flex:0 0 auto;padding-top:5px}
+details[open] summary{padding-bottom:10px}
+details .ans{display:flex;gap:14px;font-size:15.5px;padding-bottom:20px}
+details .ans::before{content:"A";color:var(--cta);font-size:13px;flex:0 0 auto;padding-top:4px}
+
+/* エリア一覧 */
+.areas{font-size:14.5px;line-height:2.1}
+.arealist{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.arealist span{background:#fff;border:1px solid var(--line);border-radius:99px;padding:5px 13px;font-size:13px}
+
+/* 最終CTA */
+.finalcta{background:#fff;text-align:center;border-top:1px solid var(--line)}
+.finalcta h2{font-size:clamp(22px,3.6vw,30px);margin-bottom:18px}
+.finalcta p{max-width:34em;margin:0 auto 28px}
+.ctabtns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* フッター */
+.sitefoot{background:#15181b;color:#9aa1a8;font-size:13px;padding:44px 0 34px}
+.sitefoot a{color:#c9cdd2;text-decoration:none;margin-right:18px}
+.sitefoot a:hover{text-decoration:underline}
+.sitefoot .cp{margin-top:20px;font-size:12px;color:#6f757b}
+
+/* 追従バー */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;
+  background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 20px rgba(0,0,0,.06)}
+.sticky a{flex:1;text-align:center;padding:17px 6px;text-decoration:none;font-weight:700;font-size:14px;
+  color:#fff;background:var(--cta)}
+.sticky a.line{background:var(--line-g)}
+.sticky a.tel{background:#fff;color:var(--ink);border-right:1px solid var(--line)}
+
+@media(max-width:760px){
+  body{font-size:15.5px}
+  section{padding:56px 0}
+  .hero{height:70vh}
+  /* スマホでもヘッダーから他ページへ行けるように、横スクロールの1行にする */
+  .sitehead nav{display:flex;order:3;width:100%;overflow-x:auto;scrollbar-width:none;
+    border-top:1px solid var(--line);margin-top:2px}
+  .sitehead nav::-webkit-scrollbar{display:none}
+  .sitehead nav a{display:inline-flex;align-items:center;min-height:44px;
+    margin:0 20px 0 0;white-space:nowrap;font-size:13.5px}
+  .stats{gap:20px}
+  .stats .v{font-size:19px}
+  .facts .row{flex-direction:column;gap:4px}
+  .facts dt{flex:none}
+  .ba{gap:8px}
+  table.spec th{width:92px;font-size:11.5px}
+  .voice{padding:22px 20px}
+  .sticky a{font-size:12.5px;padding:15px 4px}
+}

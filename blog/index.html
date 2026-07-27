@@ -1,0 +1,28 @@
+---
+layout: default
+title: "おしらせ・現場ブログ"
+description: "桶川市の塗装店 Real Make の現場記録と、住まいのメンテナンスに役立つ情報。チョーキング、コーキング、ひび割れなど、外壁の症状の見分け方をまとめています。"
+---
+<div class="wrap"><div class="crumb"><a href="{{ '/' | relative_url }}">ホーム</a> ＞ ブログ</div></div>
+
+<section style="padding-top:36px">
+  <div class="wrap">
+    <div class="label">おしらせ・現場ブログ</div>
+    <h1 class="t" style="font-size:clamp(23px,3.6vw,32px)">現場で見てきたことを、そのまま書いています。</h1>
+    <p class="lead" style="max-width:36em">外壁の症状の見分け方、工事の各工程、訪問営業への注意など。桶川市周辺で塗り替えを検討している方の判断材料になればと思って書いています。</p>
+
+    <div class="cards" style="margin-top:40px">
+      {% for post in site.posts %}
+      <a class="card" href="{{ post.url | relative_url }}">
+        {% if post.image %}<img src="{{ post.image | relative_url }}" alt="{{ post.title }}">{% endif %}
+        <div class="in">
+          <div class="cno">{{ post.date | date: "%Y.%m.%d" }}　{{ post.category | default: "現場ブログ" }}</div>
+          <h3>{{ post.title }}</h3>
+          {% if post.summary %}<p class="sum">{{ post.summary | truncate: 90 }}</p>{% endif %}
+          <span class="more">続きを読む →</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
