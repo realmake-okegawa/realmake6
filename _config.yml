@@ -41,6 +41,8 @@ plugins:
 # Jekyll の処理から除外するもの（既存ファイルを壊さないため）
 exclude:
   - README.md
+  - CLAUDE.md
+  - takeoff.html
   - "*.zip"
 
 defaults:
