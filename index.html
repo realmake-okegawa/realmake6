@@ -1091,6 +1091,47 @@
       line-height: 1.85;
     }
 
+    .before-after-facts {
+      display: grid;
+      gap: 6px;
+      margin: 12px 0 0;
+    }
+
+    .before-after-facts div {
+      display: grid;
+      grid-template-columns: 5.2em minmax(0, 1fr);
+      gap: 8px;
+      align-items: start;
+    }
+
+    .before-after-facts dt {
+      color: #244f68;
+      font-size: .8rem;
+      font-weight: 900;
+      line-height: 1.65;
+    }
+
+    .before-after-facts dd {
+      margin: 0;
+      color: #526371;
+      font-size: .84rem;
+      font-weight: 700;
+      line-height: 1.65;
+    }
+
+    .before-after-link {
+      display: inline-block;
+      margin-top: 14px;
+      color: #006f5b;
+      font-size: .88rem;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .before-after-link:hover {
+      text-decoration: underline;
+    }
+
     .blog-list {
       display: grid;
       grid-template-columns: 1.2fr .9fr .9fr;
@@ -1859,7 +1900,7 @@
         <span class="brand-text"><span class="brand-name">Real Make <em class="brand-reading">（リアルメイク）</em></span><span>外壁塗装・屋根塗装</span></span>
       </a>
       <nav class="nav" aria-label="主要メニュー">
-        <a href="area/okegawa/">桶川市専用ページ</a>
+        <a href="#before-after">施工前・施工後</a>
         <a href="https://realmake-okegawa.github.io/realmake6/#strength">選ばれる理由</a>
         <a href="https://realmake-okegawa.github.io/realmake6/#services">対応工事</a>
         <a href="works/">施工事例</a>
@@ -2125,60 +2166,75 @@
         <div class="section-head reveal-item reveal-delay-1 reveal-delay-0 is-visible">
           <div>
             <p class="section-label">Before / After</p>
-            <h2 class="section-title">施工前と施工後を見比べられます。</h2>
+            <h2 class="section-title">桶川市周辺の施工前・施工後。何を直して、どう変わったか。</h2>
           </div>
-          <p class="section-copy">塗り替えによる印象の変化が伝わるよう、同じ現場の施工前・施工後を並べて掲載しています。色の変化や外観の整い方を確認しやすい事例です。</p>
+          <p class="section-copy">桶川市坂田・鴨川・川田谷で実施した事例を、施工前後の写真とともに掲載しています。劣化の状態、工事内容、費用・工期まで確認できます。</p>
         </div>
         <div class="before-after-grid reveal-item reveal-delay-2 reveal-delay-1 is-visible">
           <figure class="before-after-card reveal-item reveal-delay-3 reveal-delay-2 is-visible">
             <div class="before-after-images">
               <div class="before-after-shot">
-                <img src="./index_files/white-house-before.webp" alt="白系外壁の施工前" loading="lazy" decoding="async">
+                <img src="assets/img/works/okegawa-kamogawa-before-north.jpg" alt="桶川市鴨川 F様邸 外壁塗装の施工前" loading="lazy" decoding="async">
                 <span class="before-after-label">Before</span>
               </div>
               <div class="before-after-shot">
-                <img src="./index_files/white-house-after.webp" alt="白系外壁の施工後" loading="lazy" decoding="async">
+                <img src="assets/img/works/okegawa-kamogawa-after-north.jpg" alt="桶川市鴨川 F様邸 外壁塗装の施工後" loading="lazy" decoding="async">
                 <span class="before-after-label after">After</span>
               </div>
             </div>
             <figcaption>
-              <strong>白×グレーの外壁塗装</strong>
-              <span class="before-after-meta">桶川市鴨川周辺｜外壁塗装・付帯塗装・ベランダ防水</span>
-              <span class="before-after-description">コーキング劣化が目立っていたため補修を行い、お客様のこだわった白×グレーで清潔感のある外観に仕上げました。</span>
+              <strong>色を変えて、印象を一新する</strong>
+              <span class="before-after-meta">桶川市鴨川｜築16年・窯業系サイディング</span>
+              <span class="before-after-description">北面の黒い雨だれと目地の硬化を補修。屋根は和瓦のため塗装せず、外壁をライトブルーグレーとホワイトに塗り分けました。</span>
+              <dl class="before-after-facts">
+                <div><dt>施工内容</dt><dd>外壁・付帯部</dd></div>
+                <div><dt>費用・工期</dt><dd>120〜150万円／約1ヶ月</dd></div>
+              </dl>
+              <a class="before-after-link" href="works/okegawa-kamogawa-bluegray/">施工内容・費用・工期を見る</a>
             </figcaption>
           </figure>
           <figure class="before-after-card reveal-item reveal-delay-0 reveal-delay-3 is-visible">
             <div class="before-after-images">
               <div class="before-after-shot">
-                <img src="./index_files/brown-house-before.webp" alt="タイル調外壁の施工前" loading="lazy" decoding="async">
+                <img src="assets/img/works/okegawa-kawatagaya-before-lookup.jpg" alt="桶川市川田谷 K様邸 外壁塗装の施工前" loading="lazy" decoding="async">
                 <span class="before-after-label">Before</span>
               </div>
               <div class="before-after-shot">
-                <img src="./index_files/brown-house-after.webp" alt="タイル調外壁の施工後" loading="lazy" decoding="async">
+                <img src="assets/img/works/okegawa-kawatagaya-after-lookup.jpg" alt="桶川市川田谷 K様邸 外壁塗装の施工後" loading="lazy" decoding="async">
                 <span class="before-after-label after">After</span>
               </div>
             </div>
             <figcaption>
-              <strong>タイル調外壁のメンテナンス</strong>
-              <span class="before-after-meta">桶川市川田谷周辺｜外壁塗装・付帯塗装</span>
-              <span class="before-after-description">上の壁はピンク系で温かみのある印象に、下のタイル調はクリヤーで新築のように色合いが蘇りました。</span>
+              <strong>レンガの柄を消さずに、色あせだけを回復する</strong>
+              <span class="before-after-meta">桶川市川田谷｜築15年・窯業系サイディング</span>
+              <span class="before-after-description">上壁は塗り替え、下壁のレンガ調はクリヤー塗装。柄を残しながら、色の深みと艶を取り戻しました。</span>
+              <dl class="before-after-facts">
+                <div><dt>施工内容</dt><dd>外壁・付帯部</dd></div>
+                <div><dt>費用・工期</dt><dd>130〜150万円／約1ヶ月</dd></div>
+              </dl>
+              <a class="before-after-link" href="works/okegawa-kawatagaya-clear/">施工内容・費用・工期を見る</a>
             </figcaption>
           </figure>
           <figure class="before-after-card reveal-item reveal-delay-1 reveal-delay-0 is-visible">
             <div class="before-after-images">
               <div class="before-after-shot">
-                <img src="./index_files/black-house-before.webp" alt="ダークカラー外壁の施工前" loading="lazy" decoding="async">
+                <img src="assets/img/works/okegawa-sakata-before-front.jpg" alt="桶川市坂田 K様邸 外壁・屋根塗装の施工前" loading="lazy" decoding="async">
                 <span class="before-after-label">Before</span>
               </div>
               <div class="before-after-shot">
-                <img src="./index_files/black-house-after.webp" alt="ダークカラー外壁の施工後" loading="lazy" decoding="async">
+                <img src="assets/img/works/okegawa-sakata-after-front.jpg" alt="桶川市坂田 K様邸 外壁・屋根塗装の施工後" loading="lazy" decoding="async">
                 <span class="before-after-label after">After</span>
               </div>
             </div>
             <figcaption>
-              <strong>ダークカラーで引き締まる外観</strong>
-              <span class="before-after-meta">桶川市坂田周辺｜外壁塗装・屋根塗装・付帯塗装</span>
-              <span class="before-after-description">お客様のこだわりだったワントーンのブラックハウスに！屋根は遮熱塗料で暑さ対策もバッチリです。</span>
+              <strong>艶を落として、真っ黒に仕上げる</strong>
+              <span class="before-after-meta">桶川市坂田｜築12年・窯業系サイディング</span>
+              <span class="before-after-description">「真っ黒な家にしたい」というご要望から、艶を抑えた黒い外壁に。屋根には遮熱塗料を採用しました。</span>
+              <dl class="before-after-facts">
+                <div><dt>施工内容</dt><dd>外壁・屋根・付帯部・ベランダ防水</dd></div>
+                <div><dt>費用・工期</dt><dd>110〜130万円／約20日</dd></div>
+              </dl>
+              <a class="before-after-link" href="works/okegawa-sakata-black/">施工内容・費用・工期を見る</a>
             </figcaption>
           </figure>
           <figure class="before-after-card reveal-item reveal-delay-2 reveal-delay-1 is-visible">
@@ -2199,6 +2255,7 @@
             </figcaption>
           </figure>
         </div>
+        <p class="section-page-link"><a class="button button-dark" href="works/">施工事例を詳しく見る</a></p>
       </div>
     </section><section class="section section-photo reveal-section is-visible" id="price" style="--section-bg: url(&#39;assets/web/site/work-roof-metal-coating.webp&#39;);">
       <div class="container">
@@ -3544,7 +3601,7 @@
             </div>
           </details>
           <!-- BLOG-POSTS END -->
-          <p class="section-page-link"><a class="button button-dark" href="area/okegawa/">桶川市の外壁塗装について詳しく見る</a></p>
+          <p class="section-page-link"><a class="button button-dark" href="#before-after">施工前・施工後の事例を見る</a></p>
         </div>
       </div>
     </section>
@@ -3621,7 +3678,7 @@
       <div class="footer-contact">
         <strong>電話 090-1434-0189</strong>
         <p>〒363-0020 埼玉県桶川市上日出谷南2-1-19</p>
-        <p><a href="area/okegawa/">桶川市の外壁塗装</a> / <a href="works/">施工事例</a></p>
+        <p><a href="#before-after">施工前・施工後</a> / <a href="works/">施工事例</a></p>
       </div>
     </div>
   </footer>
