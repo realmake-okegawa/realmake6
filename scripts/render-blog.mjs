@@ -8,6 +8,13 @@ const indexPath = path.join(root, "index.html");
 
 const posts = JSON.parse(fs.readFileSync(postsPath, "utf8"));
 const indexHtml = fs.readFileSync(indexPath, "utf8");
+const localUrlPattern = /(?:https?:\/\/)?(?:127\.0\.0\.1|localhost)(?::\d+)?|file:\/\//i;
+
+if (localUrlPattern.test(indexHtml)) {
+  throw new Error(
+    "index.html contains a local-only URL. Remove 127.0.0.1, localhost, or file:// references before rendering."
+  );
+}
 
 function escapeHtml(value = "") {
   return String(value)
