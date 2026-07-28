@@ -6,14 +6,14 @@
    ============================================================ */
 
 :root{
-  --ink:#15181b;      /* 見出し・強い文字 */
+  --ink:#12324a;      /* 見出し・強い文字 */
   --body:#3d4348;     /* 本文 */
   --muted:#6b7076;    /* 補足・ラベル（WCAG AA を満たす濃さ。白地4.99・背景4.75）
                          これより薄くすると11〜13pxの小さい文字が読めなくなります */
   --line:#e4e1dc;     /* 罫線 */
   --bg:#faf9f7;       /* 背景 */
-  --cta:#c1502e;      /* ボタン・アクセント */
-  --cta-d:#a8421f;
+  --cta:#087f63;      /* ボタン・アクセント */
+  --cta-d:#06684f;
   --line-g:#06c755;   /* LINE緑 */
 }
 
@@ -74,6 +74,49 @@ h2.t{font-size:clamp(22px,3.4vw,30px);line-height:1.55;margin-bottom:22px}
 .btn.ghost{background:transparent;color:var(--ink);border:1px solid #c8c4bd}
 .btn.ghost:hover{background:#f0eeea}
 .btn.line{background:var(--line-g);color:#fff}
+
+/* 専用ページ */
+.pagehero{padding:44px 0 52px;background:#fff;border-bottom:1px solid var(--line)}
+.pagehero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.85fr);gap:44px;align-items:center}
+.pagehero h1{font-size:clamp(27px,4.5vw,42px);line-height:1.42;margin:6px 0 18px}
+.pagehero p{max-width:40em;margin:0}
+.pagehero img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.pagehero img.pagehero-poster{height:auto;max-height:620px;aspect-ratio:auto;object-fit:contain;background:#fff}
+.pagehero img.pagehero-landscape{width:100%;height:min(360px,70vw);aspect-ratio:auto;object-fit:cover}
+.page-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.content-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.info-box{background:#fff;border:1px solid var(--line);padding:24px}
+.info-box h3{font-size:18px;margin-bottom:10px}
+.info-box p{font-size:15px;line-height:1.9;margin:0}
+.symptom-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:28px}
+.symptom{background:#fff;border-left:4px solid var(--cta);padding:19px 20px}
+.symptom h3{font-size:17px;margin-bottom:6px}
+.symptom p{font-size:14px;line-height:1.85;margin:0}
+.steps{counter-reset:site-step;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:28px}
+.step{counter-increment:site-step;background:#fff;border:1px solid var(--line);padding:20px}
+.step::before{content:"STEP " counter(site-step);display:block;color:var(--cta);font-weight:700;font-size:11px;letter-spacing:.12em;margin-bottom:8px}
+.step h3{font-size:17px;margin-bottom:8px}
+.step p{font-size:14px;line-height:1.85;margin:0}
+.section-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.section-links a{display:inline-flex;align-items:center;min-height:44px;padding:9px 15px;background:#fff;border:1px solid var(--line);text-decoration:none;font-weight:700;font-size:13.5px}
+.service-menu{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0}
+.service-menu .wrap{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none}
+.service-menu .wrap::-webkit-scrollbar{display:none}
+.service-menu a{white-space:nowrap;color:var(--body);text-decoration:none;font-size:13px;font-weight:700}
+.service-menu a:hover{color:var(--cta)}
+.price-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:30px}
+.price-box{background:#fff;border:1px solid var(--line);padding:24px}
+.price-box h3{font-size:18px}
+.price-box strong{display:block;color:var(--cta);font-size:24px;line-height:1.4;margin:10px 0 5px}
+.price-box p{font-size:14px;line-height:1.85;margin:0}
+.profile-grid{display:grid;grid-template-columns:minmax(240px,.7fr) minmax(0,1.3fr);gap:42px;align-items:start}
+.profile-grid>img{display:block;width:100%;height:auto;max-height:none;aspect-ratio:3/4;object-fit:contain}
+.profile-tags{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}
+.profile-tags span{background:#fff;border:1px solid var(--line);padding:7px 12px;font-size:13px;font-weight:700;color:var(--ink)}
+.support-profile{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(240px,.75fr);gap:42px;align-items:center}
+.support-profile>img{width:100%;max-height:560px;object-fit:contain;background:#fff}
+.notice-box{padding:22px 24px;background:#fff;border:1px solid var(--line);font-size:14.5px}
+.notice-box p:last-child{margin-bottom:0}
 
 /* データ行 */
 .facts{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -144,6 +187,30 @@ table.data tbody th{font-weight:700;color:var(--ink);white-space:nowrap}
 .card .sum{font-size:14px;margin:12px 0 0;line-height:1.9}
 .card .more{display:inline-block;margin-top:14px;font-size:13px;color:var(--cta);font-weight:700}
 
+/* 施工事例一覧の工程写真 */
+.work-process-section{margin-top:64px;padding-top:56px;border-top:1px solid var(--line)}
+.work-process-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:28px}
+.work-process-grid figure{margin:0;background:#fff;border:1px solid var(--line)}
+.work-process-grid img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.work-process-grid figcaption{padding:9px 11px;color:var(--muted);font-size:11.5px;line-height:1.5}
+
+/* アフターサポート */
+.support-examples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px}
+.support-example{padding:21px 22px;background:#fff;border:1px solid var(--line)}
+.support-example h3{font-size:16px;margin-bottom:6px}
+.support-example p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.75}
+.support-case{display:grid;grid-template-columns:1fr;gap:18px;max-width:860px;margin:28px auto 0}
+.support-case figure{margin:0;background:#fff;border:1px solid var(--line)}
+.support-case img{width:100%;height:clamp(260px,44vw,520px);aspect-ratio:auto;object-fit:cover}
+.support-case figcaption{padding:9px 12px;color:var(--muted);font-size:12px}
+
+/* 施工ギャラリー */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px}
+.gallery-grid figure{margin:0;background:#fff;border:1px solid var(--line);overflow:hidden}
+.gallery-grid img{width:100%;height:clamp(220px,24vw,320px);aspect-ratio:auto;object-fit:cover;transition:transform .25s ease}
+.gallery-grid figure:hover img{transform:scale(1.02)}
+.gallery-grid figcaption{padding:10px 12px;color:var(--muted);font-size:12px;line-height:1.55}
+
 /* 見出しつきブロック */
 .reason{border-top:1px solid var(--line);padding:30px 0}
 .reason:last-of-type{border-bottom:1px solid var(--line)}
@@ -205,4 +272,20 @@ details .ans::before{content:"A";color:var(--cta);font-size:13px;flex:0 0 auto;p
   table.spec th{width:92px;font-size:11.5px}
   .voice{padding:22px 20px}
   .sticky a{font-size:12.5px;padding:15px 4px}
+  .pagehero{padding:30px 0 38px}
+  .pagehero-grid,.profile-grid,.support-profile{grid-template-columns:1fr;gap:26px}
+  .pagehero-grid .pagehero-copy{order:1}
+  .pagehero-grid img{order:2}
+  .content-grid,.symptom-list,.price-list{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .page-actions .btn{width:100%}
+  .info-box,.price-box{padding:20px}
+  .work-process-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .support-examples{grid-template-columns:1fr 1fr;gap:9px}
+  .gallery-grid{grid-template-columns:1fr;gap:14px}
+  .support-case img,.gallery-grid img{height:min(300px,72vw)}
+}
+
+@media(max-width:430px){
+  .steps{grid-template-columns:1fr}
 }
