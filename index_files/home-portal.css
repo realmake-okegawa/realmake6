@@ -1,0 +1,398 @@
+.home-portal {
+  padding: 54px 0 62px;
+  background: #fff;
+}
+
+.home-portal-head {
+  display: grid;
+  grid-template-columns: minmax(0, .78fr) minmax(320px, 1.22fr);
+  gap: 42px;
+  align-items: end;
+  margin-bottom: 28px;
+}
+
+.home-portal-head h2 {
+  margin: 6px 0 0;
+  color: #12324a;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.35;
+}
+
+.home-portal-head p:last-child {
+  margin: 0;
+  color: #536575;
+  line-height: 1.9;
+}
+
+.home-portal-group-label {
+  margin: 0 0 10px;
+  color: #087f63;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.home-portal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid #dbe2e8;
+  border-left: 1px solid #dbe2e8;
+}
+
+.home-portal-grid-primary {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.home-portal-card {
+  min-height: 180px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  color: #12324a;
+  background: #fff;
+  border-right: 1px solid #dbe2e8;
+  border-bottom: 1px solid #dbe2e8;
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease;
+}
+
+.home-portal-card:hover {
+  color: #fff;
+  background: #12324a;
+}
+
+.home-portal-card span {
+  color: #087f63;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.home-portal-card:hover span {
+  color: #f2cf79;
+}
+
+.home-portal-card strong {
+  margin-top: 16px;
+  font-size: 21px;
+  line-height: 1.45;
+}
+
+.home-portal-card small {
+  margin-top: 8px;
+  color: #607181;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.home-portal-card:hover small {
+  color: #fff;
+}
+
+.home-portal-card b {
+  margin-top: auto;
+  padding-top: 18px;
+  color: inherit;
+  font-size: 13px;
+}
+
+.home-portal-secondary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 18px;
+  background: #dbe2e8;
+  border: 1px solid #dbe2e8;
+}
+
+.home-portal-secondary a {
+  min-height: 58px;
+  padding: 15px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #12324a;
+  background: #f7f9fa;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: color .2s ease, background .2s ease;
+}
+
+.home-portal-secondary a:hover {
+  color: #fff;
+  background: #12324a;
+}
+
+.home-portal-secondary b {
+  color: #087f63;
+}
+
+.home-portal-secondary a:hover b {
+  color: #f2cf79;
+}
+
+.home-reason-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.home-reason-points span {
+  padding: 10px 14px;
+  color: #12324a;
+  background: rgba(255, 255, 255, .96);
+  border-left: 3px solid #087f63;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.home-reason-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.home-reason-summary article {
+  min-height: 220px;
+  padding: 26px;
+  background: rgba(255, 255, 255, .96);
+  border-top: 4px solid #087f63;
+}
+
+.home-reason-summary span {
+  color: #087f63;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.home-reason-summary h3 {
+  margin: 12px 0 10px;
+  color: #12324a;
+  font-size: 19px;
+}
+
+.home-reason-summary p {
+  margin: 0;
+  color: #536575;
+  line-height: 1.85;
+}
+
+.home-review-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.home-review-summary .review-card {
+  min-height: 240px;
+}
+
+.home-review-summary .review-card p {
+  display: block;
+}
+
+.home-review-summary .review-source {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.home-service-primary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.home-service-primary a {
+  min-height: 250px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+  background-position: center;
+  background-size: cover;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-service-primary a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 27, 42, .08), rgba(8, 27, 42, .9));
+}
+
+.home-service-primary a > * {
+  position: relative;
+}
+
+.home-service-primary h3 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+.home-service-primary p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+.home-service-primary b {
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+.home-service-note {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-top: 18px;
+  padding: 18px 20px;
+  color: #536575;
+  background: rgba(255, 255, 255, .97);
+  border: 1px solid #dbe2e8;
+}
+
+.home-service-note strong {
+  flex: 0 0 auto;
+  color: #12324a;
+  font-size: 14px;
+}
+
+.home-service-note span {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.home-review-single {
+  grid-template-columns: minmax(0, 760px);
+  justify-content: center;
+}
+
+.home-review-single .review-card {
+  min-height: 0;
+}
+
+.home-price-summary {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.home-price-summary .price-card {
+  min-height: 0;
+}
+
+.home-price-summary .price-main {
+  margin-bottom: 8px;
+}
+
+.anchor-target {
+  display: block;
+  height: 0;
+  scroll-margin-top: 92px;
+}
+
+#strength,
+#services,
+#reviews,
+#price,
+#blog {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.blog-list > .blog-card .blog-gallery {
+  display: none;
+}
+
+.blog-list > .blog-card .blog-body:has(.blog-more[open]) .blog-gallery {
+  display: grid;
+}
+
+@media (max-width: 760px) {
+  .home-portal {
+    padding: 40px 0 46px;
+  }
+
+  .home-portal-head {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .home-portal-head h2 {
+    font-size: 28px;
+  }
+
+  .home-portal-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home-portal-secondary {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 14px;
+  }
+
+  .home-portal-secondary a {
+    min-height: 52px;
+    padding: 12px 13px;
+    font-size: 12.5px;
+  }
+
+  .home-portal-card {
+    min-height: 166px;
+    padding: 20px 16px;
+  }
+
+  .home-portal-card strong {
+    font-size: 17px;
+  }
+
+  .home-portal-card small {
+    font-size: 12.5px;
+  }
+
+  .home-reason-summary,
+  .home-review-summary,
+  .home-service-primary,
+  .home-price-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .home-reason-summary article {
+    min-height: 0;
+  }
+
+  .home-reason-points {
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .home-reason-points span {
+    width: 100%;
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  .home-service-primary a {
+    min-height: 230px;
+  }
+
+  .home-service-note {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #strength,
+  #services,
+  #reviews,
+  #price,
+  #blog {
+    padding-top: 54px;
+    padding-bottom: 54px;
+  }
+}
