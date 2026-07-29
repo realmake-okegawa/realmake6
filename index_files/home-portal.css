@@ -31,6 +31,54 @@
   font-weight: 900;
 }
 
+.home-color-simulator {
+  margin: 0 0 24px;
+  padding: 26px 30px;
+  display: grid;
+  grid-template-columns: minmax(210px, .75fr) minmax(0, 1.25fr) auto;
+  gap: 6px 28px;
+  align-items: center;
+  color: #fff;
+  background: #12324a;
+  border-left: 6px solid #20a0ba;
+  text-decoration: none;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.home-color-simulator:hover {
+  background: #087f63;
+  transform: translateY(-2px);
+}
+
+.home-color-simulator-kicker {
+  grid-column: 1;
+  color: #f2cf79;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.home-color-simulator strong {
+  grid-column: 1;
+  font-size: 21px;
+  line-height: 1.45;
+}
+
+.home-color-simulator small {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  color: #e4ebef;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.home-color-simulator b {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  color: #fff;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
 .home-portal-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -325,6 +373,34 @@
 
   .home-portal-head h2 {
     font-size: 28px;
+  }
+
+  .home-color-simulator {
+    margin-bottom: 20px;
+    padding: 22px 20px;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .home-color-simulator-kicker,
+  .home-color-simulator strong,
+  .home-color-simulator small,
+  .home-color-simulator b {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .home-color-simulator strong {
+    font-size: 19px;
+  }
+
+  .home-color-simulator small {
+    font-size: 13px;
+  }
+
+  .home-color-simulator b {
+    padding-top: 6px;
+    white-space: normal;
   }
 
   .home-portal-grid {

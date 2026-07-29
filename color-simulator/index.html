@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#143c37" />
+    <meta name="description" content="ご自宅の写真で外壁の色を試せる、Real Makeの無料カラーシミュレーターです。スマホ対応で、塗装前後の比較や画像保存ができます。" />
+    <meta property="og:title" content="外壁カラーシミュレーター｜Real Make（リアルメイク）" />
+    <meta property="og:description" content="ご自宅の写真を使って、気になる外壁カラーを無料でお試しいただけます。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://realmake-okegawa.github.io/realmake6/color-simulator/" />
+    <meta property="og:image" content="https://realmake-okegawa.github.io/realmake6/assets/img/works/okegawa-kamogawa-after-front.jpg" />
+    <link rel="canonical" href="https://realmake-okegawa.github.io/realmake6/color-simulator/" />
+    <title>外壁カラーシミュレーター｜Real Make（リアルメイク）</title>
+    <link rel="stylesheet" href="style.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PCG1M6JXX0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PCG1M6JXX0');
+    </script>
+  </head>
+  <body>
+    <header class="sim-site-header">
+      <a class="sim-brand" href="../" aria-label="Real Make トップページへ戻る">
+        <img src="../index_files/logo.webp" alt="Real Make（リアルメイク）" width="48" height="48" />
+        <span>
+          <strong>Real Make <small>（リアルメイク）</small></strong>
+          <em>外壁塗装・屋根塗装</em>
+        </span>
+      </a>
+      <a class="sim-home-link" href="../">公式サイトへ戻る</a>
+    </header>
+    <main class="simulator">
+      <header class="page-header">
+        <p class="eyebrow">Real Make</p>
+        <h1>外壁カラーシミュレーター</h1>
+        <p class="intro">外壁をタップして、好きな色を試せます。</p>
+      </header>
+
+      <section class="workspace" aria-labelledby="workspace-title">
+        <div class="workspace-heading editor-only">
+          <h2 id="workspace-title">写真と塗る範囲</h2>
+          <p id="statusText" class="status" aria-live="polite">写真を調整してから、外壁をなぞってください。</p>
+        </div>
+
+        <div class="canvas-shell">
+          <canvas id="editorCanvas" aria-label="住宅写真と外壁を塗る範囲"></canvas>
+          <label id="emptyState" class="empty-state" for="imageInput">
+            <span class="empty-icon" aria-hidden="true">＋</span>
+            <strong>まずはご自宅の写真を選んでください</strong>
+            <span class="choose-photo-button">写真を選ぶ</span>
+            <span class="upload-note">建物全体が正面から写っている写真がおすすめです</span>
+            <input id="imageInput" type="file" accept="image/*" />
+          </label>
+        </div>
+
+        <div id="brushGuide" class="brush-guide editor-only" aria-live="polite">
+          <p>STEP 2</p>
+          <strong>👆 外壁をタップ</strong>
+          <span>足りない所は追加でタップ</span>
+        </div>
+
+        <section class="photo-controls editor-only" aria-labelledby="photo-control-title">
+          <p class="control-label" id="photo-control-title">写真の調整</p>
+          <div class="button-row">
+            <button id="rotateButton" class="button button-secondary" type="button" disabled>90°回転</button>
+            <button id="zoomOutButton" class="button button-secondary icon-button" type="button" disabled aria-label="縮小">−</button>
+            <button id="zoomInButton" class="button button-secondary icon-button" type="button" disabled aria-label="拡大">＋</button>
+            <button id="fitButton" class="button button-secondary" type="button" disabled>全体表示</button>
+          </div>
+        </section>
+
+        <section class="brush-panel editor-only" aria-labelledby="brush-title">
+          <p class="control-label">STEP 3　認識ミスをかんたん修正</p>
+          <h3 id="brush-title">はみ出し・足りない所を直す</h3>
+          <div class="tool-row" role="group" aria-label="写真と範囲の操作">
+            <button id="autoSelectButton" class="button tool-button is-selected" type="button" aria-pressed="true">✨ 自動選択<br /><small>おすすめ</small></button>
+            <button id="paintButton" class="button button-secondary tool-button tool-action" type="button" aria-pressed="false">🖌 足りない所を塗る</button>
+            <button id="eraseButton" class="button button-secondary tool-button tool-action" type="button" aria-pressed="false">🧽 はみ出した所を消す</button>
+            <button id="panButton" class="button button-secondary tool-button tool-pan" type="button" aria-pressed="false">✥ 写真を動かす</button>
+          </div>
+          <p class="quick-fix-guide">足りない所は <strong>「塗る」</strong>、はみ出しは <strong>「消す」</strong> を選んでなぞるだけ。</p>
+          <p id="autoSelectStatus" class="auto-select-status" aria-live="polite">自動選択 0/5</p>
+          <div class="brush-size-row" role="group" aria-label="塗る太さ">
+            <span>塗る太さを選ぶ</span>
+            <button id="brushSmallButton" class="button button-secondary brush-size-button brush-size-small" type="button" aria-pressed="false">小<br /><small>細かい所</small></button>
+            <button id="brushMediumButton" class="button brush-size-button brush-size-medium is-selected" type="button" aria-pressed="true">中<br /><small>ふつう</small></button>
+            <button id="brushLargeButton" class="button button-secondary brush-size-button brush-size-large" type="button" aria-pressed="false">大<br /><small>広い所</small></button>
+          </div>
+          <div class="brush-edit-row">
+            <button id="undoBrushButton" class="button button-secondary" type="button" disabled>↶ 1つ戻る</button>
+            <button id="clearBrushButton" class="button button-danger" type="button" disabled>選択範囲を全部消す</button>
+          </div>
+          <p id="brushHint" class="panel-description">外壁の中央をタップしてください。半透明の緑が、自動で選ばれた色変更範囲です。軒下の影など暗い所は「塗る」で追加できます。</p>
+        </section>
+
+        <section class="color-panel editor-only" aria-labelledby="color-title">
+          <div class="panel-heading">
+            <div>
+              <p class="control-label">STEP 4　カラーを選択</p>
+              <h3 id="color-title">外壁カラー</h3>
+            </div>
+            <span id="colorStatus" class="mode-badge">外壁中央をタップ</span>
+          </div>
+          <p id="colorHint" class="panel-description">自動選択した範囲と、「塗る・消す」で調整した範囲だけにカラーを反映します。</p>
+          <div id="colorPalette" class="color-palette" role="group" aria-label="外壁カラーを選択">
+            <section class="color-group" aria-labelledby="white-group"><button id="white-group" class="color-group-toggle" type="button" aria-expanded="true" aria-controls="white-colors">ホワイト・アイボリー系<span aria-hidden="true">⌄</span></button><div id="white-colors" class="color-grid">
+              <button class="color-choice" type="button" data-color-name="ホワイト" data-color="#f7f5ef" data-tone="1" data-blend="screen" disabled><span class="swatch" style="background:#f7f5ef"></span>ホワイト</button>
+              <button class="color-choice" type="button" data-color-name="オフホワイト" data-color="#ece8de" data-tone="1" data-blend="screen" disabled><span class="swatch" style="background:#ece8de"></span>オフホワイト</button>
+              <button class="color-choice" type="button" data-color-name="アイボリー" data-color="#f0dca4" data-tone="1" data-blend="screen" disabled><span class="swatch" style="background:#f0dca4"></span>アイボリー</button>
+              <button class="color-choice" type="button" data-color-name="クリーム" data-color="#f8e9b4" data-tone="1" data-blend="screen" disabled><span class="swatch" style="background:#f8e9b4"></span>クリーム</button>
+              <button class="color-choice" type="button" data-color-name="パールホワイト" data-color="#e7e7e5" data-tone="1" data-blend="screen" disabled><span class="swatch" style="background:#e7e7e5"></span>パールホワイト</button>
+              <button class="color-choice" type="button" data-color-name="グレージュ" data-color="#ded5c4" data-tone="1" data-blend="screen" disabled><span class="swatch" style="background:#ded5c4"></span>グレージュ</button>
+            </div></section>
+            <section class="color-group" aria-labelledby="brown-group"><button id="brown-group" class="color-group-toggle" type="button" aria-expanded="true" aria-controls="brown-colors">ベージュ・ブラウン系<span aria-hidden="true">⌄</span></button><div id="brown-colors" class="color-grid">
+              <button class="color-choice" type="button" data-color-name="ベージュ" data-color="#d4b37f" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#d4b37f"></span>ベージュ</button>
+              <button class="color-choice" type="button" data-color-name="ライトベージュ" data-color="#e0c48e" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#e0c48e"></span>ライトベージュ</button>
+              <button class="color-choice" type="button" data-color-name="モカベージュ" data-color="#b99a6b" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#b99a6b"></span>モカベージュ</button>
+              <button class="color-choice" type="button" data-color-name="キャメル" data-color="#b77b3b" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#b77b3b"></span>キャメル</button>
+              <button class="color-choice" type="button" data-color-name="ブラウン" data-color="#8b5a35" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#8b5a35"></span>ブラウン</button>
+              <button class="color-choice" type="button" data-color-name="チョコレート" data-color="#593628" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#593628"></span>チョコレート</button>
+              <button class="color-choice" type="button" data-color-name="ダークブラウン" data-color="#3e2418" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#3e2418"></span>ダークブラウン</button>
+            </div></section>
+            <section class="color-group is-collapsed" aria-labelledby="gray-group"><button id="gray-group" class="color-group-toggle" type="button" aria-expanded="false" aria-controls="gray-colors">グレー系<span aria-hidden="true">⌄</span></button><div id="gray-colors" class="color-grid">
+              <button class="color-choice" type="button" data-color-name="ライトグレー" data-color="#d2d3d0" data-tone="0.95" data-blend="saturation" disabled><span class="swatch" style="background:#d2d3d0"></span>ライトグレー</button>
+              <button class="color-choice" type="button" data-color-name="シルバーグレー" data-color="#afb1b1" data-tone="0.92" data-blend="saturation" disabled><span class="swatch" style="background:#afb1b1"></span>シルバーグレー</button>
+              <button class="color-choice" type="button" data-color-name="グレー" data-color="#7a7c7b" data-tone="0.9" data-blend="saturation" disabled><span class="swatch" style="background:#7a7c7b"></span>グレー</button>
+              <button class="color-choice" type="button" data-color-name="ミディアムグレー" data-color="#5d625f" data-tone="0.85" data-blend="saturation" disabled><span class="swatch" style="background:#5d625f"></span>ミディアムグレー</button>
+              <button class="color-choice" type="button" data-color-name="ダークグレー" data-color="#3d4140" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#3d4140"></span>ダークグレー</button>
+              <button class="color-choice" type="button" data-color-name="チャコールグレー" data-color="#272a2b" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#272a2b"></span>チャコールグレー</button>
+            </div></section>
+            <section class="color-group is-collapsed" aria-labelledby="blue-group"><button id="blue-group" class="color-group-toggle" type="button" aria-expanded="false" aria-controls="blue-colors">ネイビー・ブルー系<span aria-hidden="true">⌄</span></button><div id="blue-colors" class="color-grid">
+              <button class="color-choice" type="button" data-color-name="ライトブルーグレー" data-color="#94a8b9" data-tone="0.9" data-blend="color" disabled><span class="swatch" style="background:#94a8b9"></span>ライトブルーグレー</button>
+              <button class="color-choice" type="button" data-color-name="ブルーグレー" data-color="#728599" data-tone="0.9" data-blend="color" disabled><span class="swatch" style="background:#728599"></span>ブルーグレー</button>
+              <button class="color-choice" type="button" data-color-name="ネイビー" data-color="#23385c" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#23385c"></span>ネイビー</button>
+              <button class="color-choice" type="button" data-color-name="ダークネイビー" data-color="#172942" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#172942"></span>ダークネイビー</button>
+              <button class="color-choice" type="button" data-color-name="インディゴブルー" data-color="#1d2b55" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#1d2b55"></span>インディゴブルー</button>
+            </div></section>
+            <section class="color-group is-collapsed" aria-labelledby="green-group"><button id="green-group" class="color-group-toggle" type="button" aria-expanded="false" aria-controls="green-colors">ブラック・グリーン系<span aria-hidden="true">⌄</span></button><div id="green-colors" class="color-grid">
+              <button class="color-choice" type="button" data-color-name="ブラック" data-color="#161817" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#161817"></span>ブラック</button>
+              <button class="color-choice" type="button" data-color-name="ダークグリーン" data-color="#24413d" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#24413d"></span>ダークグリーン</button>
+              <button class="color-choice" type="button" data-color-name="モスグリーン" data-color="#465948" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#465948"></span>モスグリーン</button>
+              <button class="color-choice" type="button" data-color-name="オリーブグリーン" data-color="#5c653e" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#5c653e"></span>オリーブグリーン</button>
+            </div></section>
+            <section class="color-group is-collapsed" aria-labelledby="accent-group"><button id="accent-group" class="color-group-toggle" type="button" aria-expanded="false" aria-controls="accent-colors">アクセント系<span aria-hidden="true">⌄</span></button><div id="accent-colors" class="color-grid">
+              <button class="color-choice" type="button" data-color-name="テラコッタ" data-color="#b94d32" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#b94d32"></span>テラコッタ</button>
+              <button class="color-choice" type="button" data-color-name="レンガ" data-color="#9e4426" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#9e4426"></span>レンガ</button>
+              <button class="color-choice" type="button" data-color-name="ワインレッド" data-color="#5c1729" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#5c1729"></span>ワインレッド</button>
+              <button class="color-choice" type="button" data-color-name="イエロー" data-color="#f0c746" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#f0c746"></span>イエロー</button>
+              <button class="color-choice" type="button" data-color-name="マスタード" data-color="#c8942b" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#c8942b"></span>マスタード</button>
+              <button class="color-choice" type="button" data-color-name="サンドベージュ" data-color="#d1c19c" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#d1c19c"></span>サンドベージュ</button>
+            </div></section>
+          </div>
+          <div class="color-adjustments" aria-label="カラーの調整">
+            <label class="range-control" for="strengthInput"><span>濃さ <output id="strengthValue">100%</output></span><input id="strengthInput" type="range" min="30" max="100" value="100" step="1" disabled /></label>
+            <label class="range-control" for="brightnessInput"><span>明るさ <output id="brightnessValue">0</output></span><input id="brightnessInput" type="range" min="-30" max="30" value="0" step="1" disabled /></label>
+          </div>
+          <details class="color-debug" id="colorDebug">
+            <summary>開発確認：選択中のカラー</summary>
+            <p><span id="debugColorSwatch" aria-hidden="true"></span><strong id="debugColorName">未選択</strong><code id="debugColorHex">--</code></p>
+          </details>
+          <div class="color-reset-row"><button id="resetColorButton" class="button button-danger" type="button" disabled>色をリセット</button><button id="resetAllButton" class="button button-secondary" type="button" disabled>全体リセット</button></div>
+        </section>
+
+        <div class="presentation-actions editor-only" aria-label="完成イメージの確認">
+          <button id="presentationButton" class="button button-presentation" type="button" disabled>完成イメージを見る</button>
+          <button id="editReturnButton" class="button button-primary" type="button" hidden>編集に戻る</button>
+        </div>
+
+        <div class="bottom-actions editor-only" aria-label="比較と保存">
+          <button id="beforeButton" class="button button-secondary preview-button is-selected" type="button" disabled aria-pressed="true">元の色</button>
+          <button id="afterButton" class="button button-secondary preview-button" type="button" disabled aria-pressed="false">塗装後</button>
+          <button id="saveButton" class="button button-save" type="button" disabled>画像を保存</button>
+        </div>
+        <p id="saveHint" class="action-hint editor-only">写真を選択すると、シミュレーション画像を保存できます。</p>
+        <section id="savePreview" class="save-preview editor-only" hidden aria-live="polite">
+          <img id="savePreviewImage" alt="保存用の外壁カラーシミュレーション画像" />
+          <p>画像を長押しして「写真に保存」を選んでください。</p>
+        </section>
+        <details id="saveDebug" class="save-debug editor-only" hidden>
+          <summary>開発確認：保存の動作状況</summary>
+          <dl>
+            <div><dt>セキュア接続</dt><dd id="saveDebugSecure">--</dd></div>
+            <div><dt>接続方式</dt><dd id="saveDebugProtocol">--</dd></div>
+            <div><dt>navigator.share</dt><dd id="saveDebugShare">--</dd></div>
+            <div><dt>navigator.canShare</dt><dd id="saveDebugCanShare">--</dd></div>
+            <div><dt>ファイル共有</dt><dd id="saveDebugFileShare">--</dd></div>
+            <div><dt>エラー</dt><dd id="saveDebugError">なし</dd></div>
+          </dl>
+        </details>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
