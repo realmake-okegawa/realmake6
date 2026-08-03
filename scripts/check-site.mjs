@@ -5,6 +5,20 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const indexPath = path.join(root, "index.html");
 const postsPath = path.join(root, "blog-posts.json");
+const localOnlyUrlPattern = /(?:https?:\/\/)?(?:127\.0\.0\.1|localhost)(?::\d+)?|file:\/\//i;
+
+function findHtmlFiles(directory, files = []) {
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    if (entry.name === ".git" || entry.name === "node_modules") continue;
+    const entryPath = path.join(directory, entry.name);
+    if (entry.isDirectory()) {
+      findHtmlFiles(entryPath, files);
+    } else if (/\.html?$/i.test(entry.name)) {
+      files.push(entryPath);
+    }
+  }
+  return files;
+}
 
 function isLocal(value) {
   return (
@@ -27,6 +41,9 @@ const localRefs = [...html.matchAll(/(?:src|href)="([^"]+)"/g)]
   .filter(isLocal);
 
 const missingHtmlRefs = [...new Set(localRefs.filter((ref) => !existsLocal(ref)))];
+const localOnlyUrls = findHtmlFiles(root)
+  .filter((filePath) => localOnlyUrlPattern.test(fs.readFileSync(filePath, "utf8")))
+  .map((filePath) => path.relative(root, filePath));
 
 const posts = JSON.parse(fs.readFileSync(postsPath, "utf8"));
 const missingPostImages = [];
@@ -40,8 +57,8 @@ for (const post of posts) {
   }
 }
 
-if (!missingHtmlRefs.length && !missingPostImages.length) {
-  console.log("OK: index.html and blog image references are present.");
+if (!missingHtmlRefs.length && !missingPostImages.length && !localOnlyUrls.length) {
+  console.log("OK: index.html and blog image references are present. No public HTML file contains a local-only URL.");
   process.exit(0);
 }
 
@@ -55,4 +72,9 @@ if (missingPostImages.length) {
   for (const ref of missingPostImages) console.log(`- ${ref}`);
 }
 
-process.exit(missingHtmlRefs.length ? 1 : 0);
+if (localOnlyUrls.length) {
+  console.log("Local-only URLs found in public HTML:");
+  for (const filePath of localOnlyUrls) console.log(`- ${filePath}`);
+}
+
+process.exit(missingHtmlRefs.length || localOnlyUrls.length ? 1 : 0);
