@@ -51,3 +51,4 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+# Pages redeploy trigger 2026-08-11
