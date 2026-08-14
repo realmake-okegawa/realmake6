@@ -176,6 +176,18 @@ table.data tbody th{font-weight:700;color:var(--ink);white-space:nowrap}
 .ba img.land{aspect-ratio:4/3}
 .ba figcaption{font-size:11px;letter-spacing:.18em;color:var(--muted);margin-top:9px}
 .ba .after figcaption{color:var(--cta)}
+.ba.ba-portrait-tall{grid-template-columns:minmax(0,4fr) minmax(0,3fr);align-items:start}
+.ba.ba-portrait-tall img{height:auto;aspect-ratio:auto;object-fit:contain}
+.work-after-only{margin-top:36px}
+.work-after-only h3{font-size:18px;margin:0 0 16px}
+.work-after-only-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
+.work-after-only-gallery figure{margin:0}
+.work-after-only-gallery img{display:block;width:100%;height:auto;background:#eceae6}
+.work-after-only-gallery figcaption{font-size:11px;letter-spacing:.18em;color:var(--cta);margin-top:9px}
+@media(max-width:640px){
+  .ba.ba-portrait-tall{grid-template-columns:minmax(0,4fr) minmax(0,3fr);gap:8px}
+  .work-after-only-gallery{gap:8px}
+}
 
 /* お客様の声 */
 .voice{background:#fff;border-left:2px solid var(--ink);padding:26px 30px;margin-top:32px}
