@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import sharp from "sharp";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const siteUrl = "https://realmake-okegawa.github.io/realmake6";
@@ -14,6 +15,7 @@ const legacyRedirects = [
   ["caulking-deterioration", "2026-07-13-caulking-deterioration"],
   ["wall-crack", "2026-07-14-wall-crack-check"],
 ];
+const defaultOgImage = "assets/og/default.webp";
 
 const escapeHtml = (value = "") => String(value)
   .replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
@@ -45,11 +47,35 @@ function excerpt(post, limit = 150) {
   return `${text.slice(0, punctuation ? punctuation.index + 1 : limit).trim()}...`;
 }
 
+function metaDescription(post, limit = 120) {
+  const greeting = /^(?:おはようございます|こんにちは|こんばんは|いつもありがとうございます|本日もありがとうございます)[\s、,。！!]*/;
+  const prelude = /^(?:さて[、,]?\s*|今日は[、,]?\s*|本日は[、,]?\s*)/;
+  const emoji = /[\p{Extended_Pictographic}\p{Emoji_Presentation}\uFE0F\u200D]/gu;
+  const lines = paragraphs(post.body).map((line) => line.replace(emoji, "").replace(/\s+/g, " ").trim())
+    .map((line) => line.replace(greeting, "").replace(prelude, "").trim()).filter(Boolean);
+  const useful = lines.find((line) => !/^(?:梅雨|天気|暑い|寒い|昨日の夜|今日は良い)/.test(line)) || lines[0] || post.title;
+  const text = [useful, ...lines.filter((line) => line !== useful)].join(" ").replace(/\s+/g, " ").trim();
+  if (text.length <= limit) return text;
+  const shortened = text.slice(0, limit);
+  const punctuation = [...shortened.matchAll(/[。！？]/g)].at(-1);
+  return `${shortened.slice(0, punctuation ? punctuation.index + 1 : Math.max(0, limit - 1)).trim()}…`;
+}
+
+async function makeOgImage(input, output) {
+  const inputPath = path.join(root, input);
+  const outputPath = path.join(root, output);
+  if (!fs.existsSync(inputPath)) return false;
+  if (fs.existsSync(outputPath) && fs.statSync(outputPath).mtimeMs >= fs.statSync(inputPath).mtimeMs) return true;
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+  await sharp(inputPath).rotate().resize({ width: 1200, height: 630, fit: "contain", background: "#f7f5f1" }).webp({ quality: 82, effort: 5 }).toFile(outputPath);
+  return true;
+}
+
 function header(relativePath) {
   return `  <header class="sitehead">
     <div class="in">
       <div class="sitehead-row">
-        <a class="logo" href="${relativePath}index.html">Real Make<span>（リアルメイク）</span></a>
+        <a class="logo" href="${relativePath}index.html"><img class="sitehead-logo-mark" src="${relativePath}assets/web/site/logo.webp" alt="" width="38" height="38"><span class="sitehead-logo-name">Real Make<span class="sitehead-logo-kana">（リアルメイク）</span></span></a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-toggle-icon" aria-hidden="true">☰</span><span class="visually-hidden">メニューを開く</span></button>
         <a class="sitehead-phone" href="${phoneUrl}">電話する</a>
       </div>
@@ -64,11 +90,12 @@ function footer(relativePath) {
   return `  <footer class="sitefoot"><div class="wrap"><a href="${relativePath}index.html">ホーム</a><a href="${relativePath}services/exterior-painting/index.html">外壁塗装</a><a href="${relativePath}services/roof-painting/index.html">屋根塗装</a><a href="${relativePath}works/index.html">施工事例</a><a href="${relativePath}company/index.html">代表・会社情報</a><a href="${relativePath}faq/index.html">FAQ</a><a href="${relativePath}area/okegawa/index.html">桶川市</a><div class="cp">Real Make（リアルメイク）／埼玉県桶川市上日出谷南2-1-19／090-1434-0189</div></div></footer>`;
 }
 
-function head({ title, description, canonical, relativePath, data }) {
+function head({ title, description, canonical, relativePath, data, ogImage = defaultOgImage, type = "website" }) {
+  const absoluteOgImage = /^(https?:)?\/\//.test(ogImage) ? ogImage : `${siteUrl}/${ogImage}`;
   return `<head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}">
-  <link rel="canonical" href="${escapeHtml(canonical)}"><link rel="stylesheet" href="${relativePath}assets/css/site.css">
+  <link rel="canonical" href="${escapeHtml(canonical)}"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:image" content="${escapeHtml(absoluteOgImage)}"><meta property="og:url" content="${escapeHtml(canonical)}"><meta property="og:type" content="${type}"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="${relativePath}assets/css/site.css">
   <script src="${relativePath}assets/js/nav.js" defer></script>${data ? `\n  <script type="application/ld+json">${escapeJson(data)}</script>` : ""}
 </head>`;
 }
@@ -101,7 +128,7 @@ function articlePage(post, older, newer) {
   const newerLink = newer ? `<a href="../${escapeHtml(newer.slug)}/index.html" rel="next">次の記事 →<br><strong>${escapeHtml(newer.title)}</strong></a>` : "";
   return `<!doctype html>
 <html lang="ja">
-${head({ title: `${post.title}｜Real Make`, description: excerpt(post, 125).replaceAll("\n", " "), canonical, relativePath, data })}
+${head({ title: `${post.title}｜Real Make`, description: metaDescription(post), canonical, relativePath, data, ogImage: post.ogImage, type: "article" })}
 <body>
 ${header(relativePath)}
   <main>
@@ -162,7 +189,7 @@ function legacyRedirect(newSlug) {
 
 function collectHtml(directory, files = []) {
   for (const item of fs.readdirSync(directory, { withFileTypes: true })) {
-    if ([".git", "node_modules", "scripts", "docs", "_site"].includes(item.name)) continue;
+    if ([".git", "node_modules", "scripts", "docs", "_site", "_includes", "_layouts"].includes(item.name)) continue;
     const itemPath = path.join(directory, item.name);
     if (item.isDirectory()) collectHtml(itemPath, files);
     else if (item.name.endsWith(".html")) files.push(itemPath);
@@ -174,7 +201,7 @@ function sitemap(posts) {
   const postDates = new Map(posts.map((post) => [`blog/${post.slug}/index.html`, post.date]));
   const legacy = new Set(legacyRedirects.map(([oldSlug]) => `blog/${oldSlug}/index.html`));
   const urls = collectHtml(root).map((file) => path.relative(root, file).split(path.sep).join("/"))
-    .filter((file) => !legacy.has(file)).sort();
+    .filter((file) => !legacy.has(file) && file !== "takeoff.html").sort();
   const urlFor = (file) => file === "index.html" ? `${siteUrl}/` : file.endsWith("/index.html") ? `${siteUrl}/${file.slice(0, -"index.html".length)}` : `${siteUrl}/${file}`;
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((file) => `  <url><loc>${escapeHtml(urlFor(file))}</loc>${postDates.has(file) ? `<lastmod>${postDates.get(file)}</lastmod>` : ""}</url>`).join("\n")}\n</urlset>\n`;
 }
@@ -187,6 +214,12 @@ if (new Set(sourcePosts.map((post) => post.slug)).size !== sourcePosts.length) t
 if (sourcePosts.length !== 64) throw new Error(`Expected 64 canonical posts, received ${sourcePosts.length}.`);
 
 const posts = [...sourcePosts].sort((a, b) => String(b.date).localeCompare(String(a.date)));
+await makeOgImage("assets/optimized/page/assets/img/works/okegawa-kamogawa-after-front.webp", defaultOgImage);
+for (const post of posts) {
+  const firstImage = images(post)[0];
+  const output = `assets/og/blog/${post.slug}.webp`;
+  post.ogImage = firstImage && await makeOgImage(firstImage.src, output) ? output : defaultOgImage;
+}
 const homeHtml = fs.readFileSync(homePath, "utf8");
 const nextHomeHtml = homeHtml.replace(/          <!-- BLOG-POSTS START -->[\s\S]*?          <!-- BLOG-POSTS END -->/, `          <!-- BLOG-POSTS START -->\n${posts.slice(0, 3).map((post, index) => indent(homeCard(post, index === 0), 10)).join("\n")}\n          <!-- BLOG-POSTS END -->`);
 if (nextHomeHtml === homeHtml && !homeHtml.includes("BLOG-POSTS START")) throw new Error("BLOG-POSTS markers were not found.");
