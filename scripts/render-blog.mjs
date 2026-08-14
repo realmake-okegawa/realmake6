@@ -45,19 +45,19 @@ function header(relativePath) {
   return `  <header class="sitehead">
     <div class="in">
       <div class="sitehead-row">
-        <a class="logo" href="${relativePath}">Real Make<span>（リアルメイク）</span></a>
+        <a class="logo" href="${relativePath}index.html">Real Make<span>（リアルメイク）</span></a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-toggle-icon" aria-hidden="true">☰</span><span class="visually-hidden">メニューを開く</span></button>
         <a class="sitehead-phone" href="${phoneUrl}">電話する</a>
       </div>
       <nav class="site-nav" id="site-nav" aria-label="主要メニュー">
-        <a href="${relativePath}services/exterior-painting/">外壁塗装</a><a href="${relativePath}services/roof-painting/">屋根塗装</a><a href="${relativePath}works/">施工事例</a><a href="${relativePath}price/">料金</a><a href="${relativePath}reason/">選ばれる理由</a><a href="${relativePath}area/okegawa/">桶川市</a><a href="${relativePath}company/">代表・会社情報</a><a href="${relativePath}faq/">よくある質問</a><a href="${relativePath}#contact">お問い合わせ</a>
+        <a href="${relativePath}services/exterior-painting/index.html">外壁塗装</a><a href="${relativePath}services/roof-painting/index.html">屋根塗装</a><a href="${relativePath}works/index.html">施工事例</a><a href="${relativePath}price/index.html">料金</a><a href="${relativePath}reason/index.html">選ばれる理由</a><a href="${relativePath}area/okegawa/index.html">桶川市</a><a href="${relativePath}company/index.html">代表・会社情報</a><a href="${relativePath}faq/index.html">よくある質問</a><a href="${relativePath}index.html#contact">お問い合わせ</a>
       </nav>
     </div>
   </header>`;
 }
 
 function footer(relativePath) {
-  return `  <footer class="sitefoot"><div class="wrap"><a href="${relativePath}">ホーム</a><a href="${relativePath}services/exterior-painting/">外壁塗装</a><a href="${relativePath}services/roof-painting/">屋根塗装</a><a href="${relativePath}works/">施工事例</a><a href="${relativePath}company/">代表・会社情報</a><a href="${relativePath}faq/">FAQ</a><a href="${relativePath}area/okegawa/">桶川市</a><div class="cp">Real Make（リアルメイク）／埼玉県桶川市上日出谷南2-1-19／090-1434-0189</div></div></footer>`;
+  return `  <footer class="sitefoot"><div class="wrap"><a href="${relativePath}index.html">ホーム</a><a href="${relativePath}services/exterior-painting/index.html">外壁塗装</a><a href="${relativePath}services/roof-painting/index.html">屋根塗装</a><a href="${relativePath}works/index.html">施工事例</a><a href="${relativePath}company/index.html">代表・会社情報</a><a href="${relativePath}faq/index.html">FAQ</a><a href="${relativePath}area/okegawa/index.html">桶川市</a><div class="cp">Real Make（リアルメイク）／埼玉県桶川市上日出谷南2-1-19／090-1434-0189</div></div></footer>`;
 }
 
 function head({ title, description, canonical, relativePath, data }) {
@@ -75,7 +75,7 @@ function homeCard(post, featured) {
   <div class="blog-body">
     <div class="blog-meta"><time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time><span>${escapeHtml(post.category || "おしらせ")}</span></div>
     <h3>${escapeHtml(post.title)}</h3><p>${escapeHtml(excerpt(post)).replaceAll("\n", "<br>")}</p>
-    <a class="blog-read-more" href="blog/${escapeHtml(post.slug)}/">続きを読む</a>
+    <a class="blog-read-more" href="blog/${escapeHtml(post.slug)}/index.html">続きを読む</a>
   </div>
 </article>`;
 }
@@ -93,15 +93,15 @@ function articlePage(post, older, newer) {
     publisher: { "@type": "Organization", name: "Real Make", url: `${siteUrl}/` },
   };
   const gallery = postImages.map((image) => `          <figure class="blog-article-image"><img src="${escapeHtml(sourceImage(relativePath, image.src))}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async"></figure>`).join("\n");
-  const olderLink = older ? `<a href="../${escapeHtml(older.slug)}/" rel="prev">← 前の記事<br><strong>${escapeHtml(older.title)}</strong></a>` : "";
-  const newerLink = newer ? `<a href="../${escapeHtml(newer.slug)}/" rel="next">次の記事 →<br><strong>${escapeHtml(newer.title)}</strong></a>` : "";
+  const olderLink = older ? `<a href="../${escapeHtml(older.slug)}/index.html" rel="prev">← 前の記事<br><strong>${escapeHtml(older.title)}</strong></a>` : "";
+  const newerLink = newer ? `<a href="../${escapeHtml(newer.slug)}/index.html" rel="next">次の記事 →<br><strong>${escapeHtml(newer.title)}</strong></a>` : "";
   return `<!doctype html>
 <html lang="ja">
 ${head({ title: `${post.title}｜Real Make`, description: excerpt(post, 125).replaceAll("\n", " "), canonical, relativePath, data })}
 <body>
 ${header(relativePath)}
   <main>
-    <div class="wrap"><nav class="crumb" aria-label="パンくず"><a href="${relativePath}">ホーム</a> ＞ <a href="../">ブログ</a> ＞ <span aria-current="page">${escapeHtml(post.title)}</span></nav></div>
+    <div class="wrap"><nav class="crumb" aria-label="パンくず"><a href="${relativePath}index.html">ホーム</a> ＞ <a href="../index.html">ブログ</a> ＞ <span aria-current="page">${escapeHtml(post.title)}</span></nav></div>
     <article class="blog-article"><div class="narrow">
       <div class="label">${escapeHtml(post.category || "おしらせ")}</div><time class="blog-article-date" datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time>
       <h1>${escapeHtml(post.title)}</h1>
@@ -121,7 +121,7 @@ ${footer(relativePath)}
 
 function indexCard(post) {
   const image = images(post)[0];
-  return `        <article class="blog-index-card" data-blog-category="${escapeHtml(post.category || "おしらせ")}"><a href="${escapeHtml(post.slug)}/">${image ? `<img src="../${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async">` : ""}<div class="blog-index-card-body"><div class="blog-meta"><time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time><span>${escapeHtml(post.category || "おしらせ")}</span></div><h2>${escapeHtml(post.title)}</h2><p>${escapeHtml(excerpt(post)).replaceAll("\n", "<br>")}</p><span>続きを読む</span></div></a></article>`;
+  return `        <article class="blog-index-card" data-blog-category="${escapeHtml(post.category || "おしらせ")}"><a href="${escapeHtml(post.slug)}/index.html">${image ? `<img src="../${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async">` : ""}<div class="blog-index-card-body"><div class="blog-meta"><time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time><span>${escapeHtml(post.category || "おしらせ")}</span></div><h2>${escapeHtml(post.title)}</h2><p>${escapeHtml(excerpt(post)).replaceAll("\n", "<br>")}</p><span>続きを読む</span></div></a></article>`;
 }
 
 function blogIndex(posts) {
@@ -133,7 +133,7 @@ function blogIndex(posts) {
 ${head({ title: "おしらせ・現場ブログ｜Real Make", description: "桶川市の塗装店 Real Make の現場記録と、住まいのメンテナンスに役立つ情報。", canonical: `${siteUrl}/blog/`, relativePath })}
 <body>
 ${header(relativePath)}
-  <main><div class="wrap"><nav class="crumb" aria-label="パンくず"><a href="${relativePath}">ホーム</a> ＞ <span aria-current="page">ブログ</span></nav></div>
+  <main><div class="wrap"><nav class="crumb" aria-label="パンくず"><a href="${relativePath}index.html">ホーム</a> ＞ <span aria-current="page">ブログ</span></nav></div>
     <section class="blog-index-page"><div class="wrap"><div class="label">Blog</div><h1>おしらせ・現場ブログ</h1><p class="lead">現場で見てきたことと、住まいのメンテナンスに役立つ情報を掲載しています。</p>
       <div class="blog-filter" aria-label="カテゴリで絞り込む">${filters}</div><p class="blog-result-count" aria-live="polite"></p>
       <div class="blog-index-grid">${posts.map(indexCard).join("\n")}</div>
@@ -152,7 +152,7 @@ function legacyRedirect(newSlug) {
   const target = `${siteUrl}/blog/${newSlug}/`;
   return `<!doctype html>
 <html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,follow"><meta http-equiv="refresh" content="0; url=${target}"><link rel="canonical" href="${target}"><title>記事のURLが変わりました｜Real Make</title><link rel="stylesheet" href="${relativePath}assets/css/site.css"><script src="${relativePath}assets/js/nav.js" defer></script></head>
-<body>${header(relativePath)}<main><section><div class="narrow"><h1>記事のURLが変わりました</h1><p>新しいページへ移動します。移動しない場合は、<a href="../${newSlug}/">こちらを選択してください。</a></p></div></section></main>${footer(relativePath)}</body></html>
+<body>${header(relativePath)}<main><section><div class="narrow"><h1>記事のURLが変わりました</h1><p>新しいページへ移動します。移動しない場合は、<a href="../${newSlug}/index.html">こちらを選択してください。</a></p></div></section></main>${footer(relativePath)}</body></html>
 `;
 }
 
