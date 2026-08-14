@@ -30,7 +30,11 @@ function images(post) {
   const candidates = Array.isArray(post.images) && post.images.length ? post.images : post.image ? [{ src: post.image, alt: post.imageAlt }] : [];
   return candidates.map((image) => typeof image === "string" ? { src: image, alt: post.title } : image)
     .filter((image) => image?.src && (/^(https?:)?\/\//.test(image.src) || fs.existsSync(path.join(root, image.src))))
-    .map((image) => ({ src: image.src, alt: image.alt || post.title || "ブログ写真" }));
+    .map((image) => ({
+      src: image.src,
+      thumbnail: image.thumbnail || image.src,
+      alt: image.alt || post.title || "ブログ写真",
+    }));
 }
 
 function excerpt(post, limit = 150) {
@@ -71,7 +75,7 @@ function head({ title, description, canonical, relativePath, data }) {
 
 function homeCard(post, featured) {
   const image = images(post)[0];
-  return `<article class="blog-card${featured ? " blog-card-featured" : ""}">${image ? `\n  <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async">` : ""}
+  return `<article class="blog-card${featured ? " blog-card-featured" : ""}">${image ? `\n  <img src="${escapeHtml(image.thumbnail)}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async">` : ""}
   <div class="blog-body">
     <div class="blog-meta"><time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time><span>${escapeHtml(post.category || "おしらせ")}</span></div>
     <h3>${escapeHtml(post.title)}</h3><p>${escapeHtml(excerpt(post)).replaceAll("\n", "<br>")}</p>
@@ -121,7 +125,7 @@ ${footer(relativePath)}
 
 function indexCard(post) {
   const image = images(post)[0];
-  return `        <article class="blog-index-card" data-blog-category="${escapeHtml(post.category || "おしらせ")}"><a href="${escapeHtml(post.slug)}/index.html">${image ? `<img src="../${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async">` : ""}<div class="blog-index-card-body"><div class="blog-meta"><time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time><span>${escapeHtml(post.category || "おしらせ")}</span></div><h2>${escapeHtml(post.title)}</h2><p>${escapeHtml(excerpt(post)).replaceAll("\n", "<br>")}</p><span>続きを読む</span></div></a></article>`;
+  return `        <article class="blog-index-card" data-blog-category="${escapeHtml(post.category || "おしらせ")}"><a href="${escapeHtml(post.slug)}/index.html">${image ? `<img src="../${escapeHtml(image.thumbnail)}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async">` : ""}<div class="blog-index-card-body"><div class="blog-meta"><time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time><span>${escapeHtml(post.category || "おしらせ")}</span></div><h2>${escapeHtml(post.title)}</h2><p>${escapeHtml(excerpt(post)).replaceAll("\n", "<br>")}</p><span>続きを読む</span></div></a></article>`;
 }
 
 function blogIndex(posts) {

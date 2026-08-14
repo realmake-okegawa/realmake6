@@ -1,0 +1,12 @@
+{
+  "name": "realmake6",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:images": "node scripts/check-site-images.mjs",
+    "optimize:images": "node scripts/optimize-images.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.3"
+  }
+}

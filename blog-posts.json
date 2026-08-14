@@ -13,8 +13,10 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-08-12-typhoon-strong-wind-home-check.jpg",
-        "alt": "台風・強風のあとに確認したいお住まいのチェックポイント"
+        "src": "assets/optimized/blog/full/blog/2026-08-12-typhoon-strong-wind-home-check.webp",
+        "alt": "台風・強風のあとに確認したいお住まいのチェックポイント",
+        "source": "assets/blog/2026-08-12-typhoon-strong-wind-home-check.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-12-typhoon-strong-wind-home-check.webp"
       }
     ],
     "slug": "2026-08-12-typhoon-strong-wind-home-check"
@@ -32,20 +34,28 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-08-10-aftercare-parking-cleaning-01.jpg",
-        "alt": "定期点検で伺ったお宅の清掃前の駐車場床"
+        "src": "assets/optimized/blog/full/blog/2026-08-10-aftercare-parking-cleaning-01.webp",
+        "alt": "定期点検で伺ったお宅の清掃前の駐車場床",
+        "source": "assets/blog/2026-08-10-aftercare-parking-cleaning-01.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-10-aftercare-parking-cleaning-01.webp"
       },
       {
-        "src": "assets/blog/2026-08-10-aftercare-parking-cleaning-02.jpg",
-        "alt": "高圧洗浄で駐車場床の汚れを落とす作業"
+        "src": "assets/optimized/blog/full/blog/2026-08-10-aftercare-parking-cleaning-02.webp",
+        "alt": "高圧洗浄で駐車場床の汚れを落とす作業",
+        "source": "assets/blog/2026-08-10-aftercare-parking-cleaning-02.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-10-aftercare-parking-cleaning-02.webp"
       },
       {
-        "src": "assets/blog/2026-08-10-aftercare-parking-cleaning-03.jpg",
-        "alt": "清掃後の駐車場床と砂利敷きの様子"
+        "src": "assets/optimized/blog/full/blog/2026-08-10-aftercare-parking-cleaning-03.webp",
+        "alt": "清掃後の駐車場床と砂利敷きの様子",
+        "source": "assets/blog/2026-08-10-aftercare-parking-cleaning-03.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-10-aftercare-parking-cleaning-03.webp"
       },
       {
-        "src": "assets/blog/2026-08-10-aftercare-parking-cleaning-04.jpg",
-        "alt": "定期点検後の駐車場床の全体"
+        "src": "assets/optimized/blog/full/blog/2026-08-10-aftercare-parking-cleaning-04.webp",
+        "alt": "定期点検後の駐車場床の全体",
+        "source": "assets/blog/2026-08-10-aftercare-parking-cleaning-04.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-10-aftercare-parking-cleaning-04.webp"
       }
     ],
     "slug": "2026-08-10-aftercare-parking-cleaning-01"
@@ -64,20 +74,28 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-08-09-balcony-handrail-eaves-01.jpg",
-        "alt": "防腐剤を塗る前の木製ベランダ手すり"
+        "src": "assets/optimized/blog/full/blog/2026-08-09-balcony-handrail-eaves-01.webp",
+        "alt": "防腐剤を塗る前の木製ベランダ手すり",
+        "source": "assets/blog/2026-08-09-balcony-handrail-eaves-01.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-09-balcony-handrail-eaves-01.webp"
       },
       {
-        "src": "assets/blog/2026-08-09-balcony-handrail-eaves-02.jpg",
-        "alt": "木製ベランダ手すりに防腐剤を塗る作業"
+        "src": "assets/optimized/blog/full/blog/2026-08-09-balcony-handrail-eaves-02.webp",
+        "alt": "木製ベランダ手すりに防腐剤を塗る作業",
+        "source": "assets/blog/2026-08-09-balcony-handrail-eaves-02.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-09-balcony-handrail-eaves-02.webp"
       },
       {
-        "src": "assets/blog/2026-08-09-balcony-handrail-eaves-03.jpg",
-        "alt": "防腐剤を2回塗りして木目を残した木製ベランダ手すり"
+        "src": "assets/optimized/blog/full/blog/2026-08-09-balcony-handrail-eaves-03.webp",
+        "alt": "防腐剤を2回塗りして木目を残した木製ベランダ手すり",
+        "source": "assets/blog/2026-08-09-balcony-handrail-eaves-03.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-09-balcony-handrail-eaves-03.webp"
       },
       {
-        "src": "assets/blog/2026-08-09-balcony-handrail-eaves-04.jpg",
-        "alt": "塗装を終えた白い軒天"
+        "src": "assets/optimized/blog/full/blog/2026-08-09-balcony-handrail-eaves-04.webp",
+        "alt": "塗装を終えた白い軒天",
+        "source": "assets/blog/2026-08-09-balcony-handrail-eaves-04.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-09-balcony-handrail-eaves-04.webp"
       }
     ],
     "slug": "2026-08-09-balcony-handrail-eaves-01"
@@ -95,8 +113,10 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-08-07-inner-window-installation.jpg",
-        "alt": "内窓取付け工事を行う和室の窓"
+        "src": "assets/optimized/blog/full/blog/2026-08-07-inner-window-installation.webp",
+        "alt": "内窓取付け工事を行う和室の窓",
+        "source": "assets/blog/2026-08-07-inner-window-installation.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-07-inner-window-installation.webp"
       }
     ],
     "slug": "2026-08-07-inner-window-installation"
@@ -119,8 +139,10 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-08-05-obon-free-inspection.jpg",
-        "alt": "お盆休み限定・桶川市の外壁と屋根の無料点検・無料見積り案内"
+        "src": "assets/optimized/blog/full/blog/2026-08-05-obon-free-inspection.webp",
+        "alt": "お盆休み限定・桶川市の外壁と屋根の無料点検・無料見積り案内",
+        "source": "assets/blog/2026-08-05-obon-free-inspection.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-05-obon-free-inspection.webp"
       }
     ],
     "slug": "2026-08-05-obon-free-inspection"
@@ -138,12 +160,16 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-08-04-wooden-balcony-handrail-01.jpg",
-        "alt": "新しく作り直した木製ベランダ手すり"
+        "src": "assets/optimized/blog/full/blog/2026-08-04-wooden-balcony-handrail-01.webp",
+        "alt": "新しく作り直した木製ベランダ手すり",
+        "source": "assets/blog/2026-08-04-wooden-balcony-handrail-01.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-04-wooden-balcony-handrail-01.webp"
       },
       {
-        "src": "assets/blog/2026-08-04-wooden-balcony-handrail-02.jpg",
-        "alt": "木目を残す塗装について打ち合わせを行った木製ベランダ手すり"
+        "src": "assets/optimized/blog/full/blog/2026-08-04-wooden-balcony-handrail-02.webp",
+        "alt": "木目を残す塗装について打ち合わせを行った木製ベランダ手すり",
+        "source": "assets/blog/2026-08-04-wooden-balcony-handrail-02.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-04-wooden-balcony-handrail-02.webp"
       }
     ],
     "slug": "2026-08-04-wooden-balcony-handrail-01"
@@ -166,20 +192,28 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-08-03-l75-40b-textured-siding.jpg",
-        "alt": "L75-40Bの色見本を凹凸のある外壁材に当てた試し塗り"
+        "src": "assets/optimized/blog/full/blog/2026-08-03-l75-40b-textured-siding.webp",
+        "alt": "L75-40Bの色見本を凹凸のある外壁材に当てた試し塗り",
+        "source": "assets/blog/2026-08-03-l75-40b-textured-siding.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-03-l75-40b-textured-siding.webp"
       },
       {
-        "src": "assets/blog/2026-08-03-l75-40b-shutter-surface.jpg",
-        "alt": "L75-40Bの色見本をフラットな雨戸に当てた試し塗り"
+        "src": "assets/optimized/blog/full/blog/2026-08-03-l75-40b-shutter-surface.webp",
+        "alt": "L75-40Bの色見本をフラットな雨戸に当てた試し塗り",
+        "source": "assets/blog/2026-08-03-l75-40b-shutter-surface.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-03-l75-40b-shutter-surface.webp"
       },
       {
-        "src": "assets/blog/2026-08-03-l75-40b-sample-panel.jpg",
-        "alt": "L75-40Bの色見本と実際に塗装した試し板"
+        "src": "assets/optimized/blog/full/blog/2026-08-03-l75-40b-sample-panel.webp",
+        "alt": "L75-40Bの色見本と実際に塗装した試し板",
+        "source": "assets/blog/2026-08-03-l75-40b-sample-panel.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-03-l75-40b-sample-panel.webp"
       },
       {
-        "src": "assets/blog/2026-08-03-l75-40b-exterior-finish.jpg",
-        "alt": "L75-40Bで塗装した外壁の仕上がり"
+        "src": "assets/optimized/blog/full/blog/2026-08-03-l75-40b-exterior-finish.webp",
+        "alt": "L75-40Bで塗装した外壁の仕上がり",
+        "source": "assets/blog/2026-08-03-l75-40b-exterior-finish.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-03-l75-40b-exterior-finish.webp"
       }
     ],
     "slug": "2026-08-03-l75-40b-textured-siding"
@@ -197,32 +231,46 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-08-02-color-simulation-navy.jpg",
-        "alt": "外壁の大部分をネイビーにした塗装後イメージ"
+        "src": "assets/optimized/blog/full/blog/2026-08-02-color-simulation-navy.webp",
+        "alt": "外壁の大部分をネイビーにした塗装後イメージ",
+        "source": "assets/blog/2026-08-02-color-simulation-navy.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-02-color-simulation-navy.webp"
       },
       {
-        "src": "assets/blog/2026-08-02-color-simulation-navy-white.jpg",
-        "alt": "ネイビーとホワイトで外壁を塗り分けた塗装後イメージ"
+        "src": "assets/optimized/blog/full/blog/2026-08-02-color-simulation-navy-white.webp",
+        "alt": "ネイビーとホワイトで外壁を塗り分けた塗装後イメージ",
+        "source": "assets/blog/2026-08-02-color-simulation-navy-white.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-02-color-simulation-navy-white.webp"
       },
       {
-        "src": "assets/blog/2026-08-02-color-simulation-bluegray.jpg",
-        "alt": "外壁の大部分をブルーグレーにした塗装後イメージ"
+        "src": "assets/optimized/blog/full/blog/2026-08-02-color-simulation-bluegray.webp",
+        "alt": "外壁の大部分をブルーグレーにした塗装後イメージ",
+        "source": "assets/blog/2026-08-02-color-simulation-bluegray.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-02-color-simulation-bluegray.webp"
       },
       {
-        "src": "assets/blog/2026-08-02-color-simulation-bluegray-white.jpg",
-        "alt": "ブルーグレーとホワイトで外壁を塗り分けた塗装後イメージ"
+        "src": "assets/optimized/blog/full/blog/2026-08-02-color-simulation-bluegray-white.webp",
+        "alt": "ブルーグレーとホワイトで外壁を塗り分けた塗装後イメージ",
+        "source": "assets/blog/2026-08-02-color-simulation-bluegray-white.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-02-color-simulation-bluegray-white.webp"
       },
       {
-        "src": "assets/blog/2026-08-02-color-simulation-lightblue.jpg",
-        "alt": "外壁の大部分をライトブルーにした塗装後イメージ"
+        "src": "assets/optimized/blog/full/blog/2026-08-02-color-simulation-lightblue.webp",
+        "alt": "外壁の大部分をライトブルーにした塗装後イメージ",
+        "source": "assets/blog/2026-08-02-color-simulation-lightblue.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-02-color-simulation-lightblue.webp"
       },
       {
-        "src": "assets/blog/2026-08-02-color-simulation-lightblue-white.jpg",
-        "alt": "ライトブルーとホワイトで外壁を塗り分けた塗装後イメージ"
+        "src": "assets/optimized/blog/full/blog/2026-08-02-color-simulation-lightblue-white.webp",
+        "alt": "ライトブルーとホワイトで外壁を塗り分けた塗装後イメージ",
+        "source": "assets/blog/2026-08-02-color-simulation-lightblue-white.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-02-color-simulation-lightblue-white.webp"
       },
       {
-        "src": "assets/blog/2026-08-02-color-simulation-charcoal.jpg",
-        "alt": "外壁の大部分をチャコールグレーにした塗装後イメージ"
+        "src": "assets/optimized/blog/full/blog/2026-08-02-color-simulation-charcoal.webp",
+        "alt": "外壁の大部分をチャコールグレーにした塗装後イメージ",
+        "source": "assets/blog/2026-08-02-color-simulation-charcoal.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-02-color-simulation-charcoal.webp"
       }
     ],
     "slug": "2026-08-02-color-simulation-navy"
@@ -239,12 +287,16 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-08-01-exterior-topcoat-1.jpg",
-        "alt": "ローラーでグレーの外壁に上塗りを行う塗装作業"
+        "src": "assets/optimized/blog/full/blog/2026-08-01-exterior-topcoat-1.webp",
+        "alt": "ローラーでグレーの外壁に上塗りを行う塗装作業",
+        "source": "assets/blog/2026-08-01-exterior-topcoat-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-01-exterior-topcoat-1.webp"
       },
       {
-        "src": "assets/blog/2026-08-01-exterior-topcoat-2.jpg",
-        "alt": "グレーの外壁をローラーで上塗りする塗装作業"
+        "src": "assets/optimized/blog/full/blog/2026-08-01-exterior-topcoat-2.webp",
+        "alt": "グレーの外壁をローラーで上塗りする塗装作業",
+        "source": "assets/blog/2026-08-01-exterior-topcoat-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-01-exterior-topcoat-2.webp"
       }
     ],
     "slug": "2026-08-01-exterior-topcoat-1"
@@ -263,12 +315,16 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-07-31-color-selection-support-1.jpg",
-        "alt": "外壁塗装の色選びに使用する標準色の塗料色見本"
+        "src": "assets/optimized/blog/full/blog/2026-07-31-color-selection-support-1.webp",
+        "alt": "外壁塗装の色選びに使用する標準色の塗料色見本",
+        "source": "assets/blog/2026-07-31-color-selection-support-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-31-color-selection-support-1.webp"
       },
       {
-        "src": "assets/blog/2026-07-31-color-selection-support-2.jpg",
-        "alt": "ベージュやグレーなど外壁塗装の色を比較できる標準色見本"
+        "src": "assets/optimized/blog/full/blog/2026-07-31-color-selection-support-2.webp",
+        "alt": "ベージュやグレーなど外壁塗装の色を比較できる標準色見本",
+        "source": "assets/blog/2026-07-31-color-selection-support-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-31-color-selection-support-2.webp"
       }
     ],
     "slug": "2026-07-31-color-selection-support-1"
@@ -286,24 +342,34 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-07-30-color-simulator-guide-1.jpg",
-        "alt": "Real Make公式サイトの外壁カラーシミュレーターへの案内"
+        "src": "assets/optimized/blog/full/blog/2026-07-30-color-simulator-guide-1.webp",
+        "alt": "Real Make公式サイトの外壁カラーシミュレーターへの案内",
+        "source": "assets/blog/2026-07-30-color-simulator-guide-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-30-color-simulator-guide-1.webp"
       },
       {
-        "src": "assets/blog/2026-07-30-color-simulator-guide-2.jpg",
-        "alt": "iPhoneで外壁カラーシミュレーターに写真を選択する画面"
+        "src": "assets/optimized/blog/full/blog/2026-07-30-color-simulator-guide-2.webp",
+        "alt": "iPhoneで外壁カラーシミュレーターに写真を選択する画面",
+        "source": "assets/blog/2026-07-30-color-simulator-guide-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-30-color-simulator-guide-2.webp"
       },
       {
-        "src": "assets/blog/2026-07-30-color-simulator-guide-3.jpg",
-        "alt": "外壁カラーシミュレーターで住宅写真の外壁をタップする画面"
+        "src": "assets/optimized/blog/full/blog/2026-07-30-color-simulator-guide-3.webp",
+        "alt": "外壁カラーシミュレーターで住宅写真の外壁をタップする画面",
+        "source": "assets/blog/2026-07-30-color-simulator-guide-3.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-30-color-simulator-guide-3.webp"
       },
       {
-        "src": "assets/blog/2026-07-30-color-simulator-guide-4.jpg",
-        "alt": "外壁カラーシミュレーターで緑色の塗装後イメージを確認する画面"
+        "src": "assets/optimized/blog/full/blog/2026-07-30-color-simulator-guide-4.webp",
+        "alt": "外壁カラーシミュレーターで緑色の塗装後イメージを確認する画面",
+        "source": "assets/blog/2026-07-30-color-simulator-guide-4.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-30-color-simulator-guide-4.webp"
       },
       {
-        "src": "assets/blog/2026-07-30-color-simulator-guide-5.jpg",
-        "alt": "外壁カラーシミュレーターで濃紺色の塗装後イメージを確認する画面"
+        "src": "assets/optimized/blog/full/blog/2026-07-30-color-simulator-guide-5.webp",
+        "alt": "外壁カラーシミュレーターで濃紺色の塗装後イメージを確認する画面",
+        "source": "assets/blog/2026-07-30-color-simulator-guide-5.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-30-color-simulator-guide-5.webp"
       }
     ],
     "slug": "2026-07-30-color-simulator-guide-1"
@@ -320,8 +386,10 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-07-29-exterior-sealer-primer-1.jpg",
-        "alt": "ローラーで外壁にシーラーを塗布する下塗り作業"
+        "src": "assets/optimized/blog/full/blog/2026-07-29-exterior-sealer-primer-1.webp",
+        "alt": "ローラーで外壁にシーラーを塗布する下塗り作業",
+        "source": "assets/blog/2026-07-29-exterior-sealer-primer-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-29-exterior-sealer-primer-1.webp"
       }
     ],
     "slug": "2026-07-29-exterior-sealer-primer-1"
@@ -338,16 +406,22 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-07-28-masking-complete-1.jpg",
-        "alt": "窓まわりと床面をビニールで養生した外壁塗装現場"
+        "src": "assets/optimized/blog/full/blog/2026-07-28-masking-complete-1.webp",
+        "alt": "窓まわりと床面をビニールで養生した外壁塗装現場",
+        "source": "assets/blog/2026-07-28-masking-complete-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-28-masking-complete-1.webp"
       },
       {
-        "src": "assets/blog/2026-07-28-masking-complete-2.jpg",
-        "alt": "ベランダ屋根まわりを養生した外壁塗装現場"
+        "src": "assets/optimized/blog/full/blog/2026-07-28-masking-complete-2.webp",
+        "alt": "ベランダ屋根まわりを養生した外壁塗装現場",
+        "source": "assets/blog/2026-07-28-masking-complete-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-28-masking-complete-2.webp"
       },
       {
-        "src": "assets/blog/2026-07-28-masking-complete-3.jpg",
-        "alt": "外壁と出窓まわりを養生した足場内の施工現場"
+        "src": "assets/optimized/blog/full/blog/2026-07-28-masking-complete-3.webp",
+        "alt": "外壁と出窓まわりを養生した足場内の施工現場",
+        "source": "assets/blog/2026-07-28-masking-complete-3.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-28-masking-complete-3.webp"
       }
     ],
     "slug": "2026-07-28-masking-complete-1"
@@ -364,12 +438,16 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-07-27-sudden-storm-1.jpg",
-        "alt": "住宅街の西の空に近づく黒い雷雲"
+        "src": "assets/optimized/blog/full/blog/2026-07-27-sudden-storm-1.webp",
+        "alt": "住宅街の西の空に近づく黒い雷雲",
+        "source": "assets/blog/2026-07-27-sudden-storm-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-27-sudden-storm-1.webp"
       },
       {
-        "src": "assets/blog/2026-07-27-sudden-storm-2.jpg",
-        "alt": "ゲリラ雷雨の直前に住宅街へ近づく発達した雷雲"
+        "src": "assets/optimized/blog/full/blog/2026-07-27-sudden-storm-2.webp",
+        "alt": "ゲリラ雷雨の直前に住宅街へ近づく発達した雷雲",
+        "source": "assets/blog/2026-07-27-sudden-storm-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-27-sudden-storm-2.webp"
       }
     ],
     "slug": "2026-07-27-sudden-storm-1"
@@ -386,12 +464,16 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-07-26-sales-warning-1.jpg",
-        "alt": "外壁・屋根点検を装う訪問営業への注意を呼びかけるチラシ"
+        "src": "assets/optimized/blog/full/blog/2026-07-26-sales-warning-1.webp",
+        "alt": "外壁・屋根点検を装う訪問営業への注意を呼びかけるチラシ",
+        "source": "assets/blog/2026-07-26-sales-warning-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-26-sales-warning-1.webp"
       },
       {
-        "src": "assets/blog/2026-07-26-sales-warning-2.jpg",
-        "alt": "本当に点検が必要なポイントと無料診断を案内するチラシ"
+        "src": "assets/optimized/blog/full/blog/2026-07-26-sales-warning-2.webp",
+        "alt": "本当に点検が必要なポイントと無料診断を案内するチラシ",
+        "source": "assets/blog/2026-07-26-sales-warning-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-26-sales-warning-2.webp"
       }
     ],
     "slug": "2026-07-26-sales-warning-1"
@@ -408,8 +490,10 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-07-25-roof-topcoat-1.jpg",
-        "alt": "中塗りと上塗りを完了した屋根"
+        "src": "assets/optimized/blog/full/blog/2026-07-25-roof-topcoat-1.webp",
+        "alt": "中塗りと上塗りを完了した屋根",
+        "source": "assets/blog/2026-07-25-roof-topcoat-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-25-roof-topcoat-1.webp"
       }
     ],
     "slug": "2026-07-25-roof-topcoat-1"
@@ -425,20 +509,28 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-07-24-roof-rustproofing-1.jpg",
-        "alt": "屋根の鉄部に塗った赤さび色のサビ止め塗料"
+        "src": "assets/optimized/blog/full/blog/2026-07-24-roof-rustproofing-1.webp",
+        "alt": "屋根の鉄部に塗った赤さび色のサビ止め塗料",
+        "source": "assets/blog/2026-07-24-roof-rustproofing-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-24-roof-rustproofing-1.webp"
       },
       {
-        "src": "assets/blog/2026-07-24-roof-rustproofing-2.jpg",
-        "alt": "太陽光パネルまわりの屋根鉄部にサビ止めを塗った様子"
+        "src": "assets/optimized/blog/full/blog/2026-07-24-roof-rustproofing-2.webp",
+        "alt": "太陽光パネルまわりの屋根鉄部にサビ止めを塗った様子",
+        "source": "assets/blog/2026-07-24-roof-rustproofing-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-24-roof-rustproofing-2.webp"
       },
       {
-        "src": "assets/blog/2026-07-24-roof-rustproofing-3.jpg",
-        "alt": "刷毛で屋根の鉄部にサビ止めを塗る作業"
+        "src": "assets/optimized/blog/full/blog/2026-07-24-roof-rustproofing-3.webp",
+        "alt": "刷毛で屋根の鉄部にサビ止めを塗る作業",
+        "source": "assets/blog/2026-07-24-roof-rustproofing-3.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-24-roof-rustproofing-3.webp"
       },
       {
-        "src": "assets/blog/2026-07-24-roof-rustproofing-4.jpg",
-        "alt": "サビ止め塗装を終えた屋根の棟板金と鉄部"
+        "src": "assets/optimized/blog/full/blog/2026-07-24-roof-rustproofing-4.webp",
+        "alt": "サビ止め塗装を終えた屋根の棟板金と鉄部",
+        "source": "assets/blog/2026-07-24-roof-rustproofing-4.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-24-roof-rustproofing-4.webp"
       }
     ],
     "slug": "2026-07-24-roof-rustproofing-1"
@@ -454,16 +546,22 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-07-23-roof-primer-1.jpg",
-        "alt": "刷毛で屋根材にプライマーを塗る作業"
+        "src": "assets/optimized/blog/full/blog/2026-07-23-roof-primer-1.webp",
+        "alt": "刷毛で屋根材にプライマーを塗る作業",
+        "source": "assets/blog/2026-07-23-roof-primer-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-23-roof-primer-1.webp"
       },
       {
-        "src": "assets/blog/2026-07-23-roof-primer-2.jpg",
-        "alt": "屋根全体にプライマーを塗る前の様子"
+        "src": "assets/optimized/blog/full/blog/2026-07-23-roof-primer-2.webp",
+        "alt": "屋根全体にプライマーを塗る前の様子",
+        "source": "assets/blog/2026-07-23-roof-primer-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-23-roof-primer-2.webp"
       },
       {
-        "src": "assets/blog/2026-07-23-roof-primer-3.jpg",
-        "alt": "ローラーで屋根材にプライマーを塗る作業"
+        "src": "assets/optimized/blog/full/blog/2026-07-23-roof-primer-3.webp",
+        "alt": "ローラーで屋根材にプライマーを塗る作業",
+        "source": "assets/blog/2026-07-23-roof-primer-3.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-23-roof-primer-3.webp"
       }
     ],
     "slug": "2026-07-23-roof-primer-1"
@@ -479,16 +577,22 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-07-22-caulking-complete-1.jpg",
-        "alt": "外壁と軒天の取り合い部分に施工したコーキング"
+        "src": "assets/optimized/blog/full/blog/2026-07-22-caulking-complete-1.webp",
+        "alt": "外壁と軒天の取り合い部分に施工したコーキング",
+        "source": "assets/blog/2026-07-22-caulking-complete-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-22-caulking-complete-1.webp"
       },
       {
-        "src": "assets/blog/2026-07-22-caulking-complete-2.jpg",
-        "alt": "外壁の縦目地に施工したコーキング"
+        "src": "assets/optimized/blog/full/blog/2026-07-22-caulking-complete-2.webp",
+        "alt": "外壁の縦目地に施工したコーキング",
+        "source": "assets/blog/2026-07-22-caulking-complete-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-22-caulking-complete-2.webp"
       },
       {
-        "src": "assets/blog/2026-07-22-caulking-complete-3.jpg",
-        "alt": "サッシまわりに施工したコーキング"
+        "src": "assets/optimized/blog/full/blog/2026-07-22-caulking-complete-3.webp",
+        "alt": "サッシまわりに施工したコーキング",
+        "source": "assets/blog/2026-07-22-caulking-complete-3.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-22-caulking-complete-3.webp"
       }
     ],
     "slug": "2026-07-22-caulking-complete-1"
@@ -506,16 +610,22 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-07-20-ai-color-proposal-1.jpg",
-        "alt": "AIで作成した外壁と軒天の色提案比較"
+        "src": "assets/optimized/blog/full/blog/2026-07-20-ai-color-proposal-1.webp",
+        "alt": "AIで作成した外壁と軒天の色提案比較",
+        "source": "assets/blog/2026-07-20-ai-color-proposal-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-20-ai-color-proposal-1.webp"
       },
       {
-        "src": "assets/blog/2026-07-20-ai-color-proposal-2.jpg",
-        "alt": "AIで作成したグレー系の外壁と軒天の色提案"
+        "src": "assets/optimized/blog/full/blog/2026-07-20-ai-color-proposal-2.webp",
+        "alt": "AIで作成したグレー系の外壁と軒天の色提案",
+        "source": "assets/blog/2026-07-20-ai-color-proposal-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-20-ai-color-proposal-2.webp"
       },
       {
-        "src": "assets/blog/2026-07-20-ai-color-proposal-3.jpg",
-        "alt": "AIで作成した濃色の外壁と軒天の色提案"
+        "src": "assets/optimized/blog/full/blog/2026-07-20-ai-color-proposal-3.webp",
+        "alt": "AIで作成した濃色の外壁と軒天の色提案",
+        "source": "assets/blog/2026-07-20-ai-color-proposal-3.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-20-ai-color-proposal-3.webp"
       }
     ],
     "slug": "2026-07-20-ai-color-proposal-1"
@@ -533,20 +643,28 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-07-19-caulking-work-1.jpg",
-        "alt": "カッターで古いコーキングに切れ目を入れる作業"
+        "src": "assets/optimized/blog/full/blog/2026-07-19-caulking-work-1.webp",
+        "alt": "カッターで古いコーキングに切れ目を入れる作業",
+        "source": "assets/blog/2026-07-19-caulking-work-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-19-caulking-work-1.webp"
       },
       {
-        "src": "assets/blog/2026-07-19-caulking-work-2.jpg",
-        "alt": "撤去後の縦目地に見える青いバックアップ材"
+        "src": "assets/optimized/blog/full/blog/2026-07-19-caulking-work-2.webp",
+        "alt": "撤去後の縦目地に見える青いバックアップ材",
+        "source": "assets/blog/2026-07-19-caulking-work-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-19-caulking-work-2.webp"
       },
       {
-        "src": "assets/blog/2026-07-19-caulking-work-3.jpg",
-        "alt": "マスキング後の縦目地にプライマーを塗る作業"
+        "src": "assets/optimized/blog/full/blog/2026-07-19-caulking-work-3.webp",
+        "alt": "マスキング後の縦目地にプライマーを塗る作業",
+        "source": "assets/blog/2026-07-19-caulking-work-3.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-19-caulking-work-3.webp"
       },
       {
-        "src": "assets/blog/2026-07-19-caulking-work-4.jpg",
-        "alt": "新しいコーキングを施工した外壁の縦目地"
+        "src": "assets/optimized/blog/full/blog/2026-07-19-caulking-work-4.webp",
+        "alt": "新しいコーキングを施工した外壁の縦目地",
+        "source": "assets/blog/2026-07-19-caulking-work-4.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-19-caulking-work-4.webp"
       }
     ],
     "slug": "2026-07-19-caulking-work-1"
@@ -568,20 +686,28 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-07-17-pressure-washing-1.jpg",
-        "alt": "屋根の高圧洗浄作業"
+        "src": "assets/optimized/blog/full/blog/2026-07-17-pressure-washing-1.webp",
+        "alt": "屋根の高圧洗浄作業",
+        "source": "assets/blog/2026-07-17-pressure-washing-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-17-pressure-washing-1.webp"
       },
       {
-        "src": "assets/blog/2026-07-17-pressure-washing-2.jpg",
-        "alt": "ベランダまわりの高圧洗浄作業"
+        "src": "assets/optimized/blog/full/blog/2026-07-17-pressure-washing-2.webp",
+        "alt": "ベランダまわりの高圧洗浄作業",
+        "source": "assets/blog/2026-07-17-pressure-washing-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-17-pressure-washing-2.webp"
       },
       {
-        "src": "assets/blog/2026-07-17-pressure-washing-3.jpg",
-        "alt": "ベランダ手すりまわりの高圧洗浄作業"
+        "src": "assets/optimized/blog/full/blog/2026-07-17-pressure-washing-3.webp",
+        "alt": "ベランダ手すりまわりの高圧洗浄作業",
+        "source": "assets/blog/2026-07-17-pressure-washing-3.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-17-pressure-washing-3.webp"
       },
       {
-        "src": "assets/blog/2026-07-17-pressure-washing-4.jpg",
-        "alt": "玄関まわりの石材を高圧洗浄する様子"
+        "src": "assets/optimized/blog/full/blog/2026-07-17-pressure-washing-4.webp",
+        "alt": "玄関まわりの石材を高圧洗浄する様子",
+        "source": "assets/blog/2026-07-17-pressure-washing-4.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-17-pressure-washing-4.webp"
       }
     ],
     "slug": "2026-07-17-pressure-washing-1"
@@ -602,8 +728,10 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-07-16-exterior-painting-four-steps.jpg",
-        "alt": "外壁塗装の4つの基本工程を案内する画像"
+        "src": "assets/optimized/blog/full/blog/2026-07-16-exterior-painting-four-steps.webp",
+        "alt": "外壁塗装の4つの基本工程を案内する画像",
+        "source": "assets/blog/2026-07-16-exterior-painting-four-steps.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-16-exterior-painting-four-steps.webp"
       }
     ],
     "slug": "2026-07-16-exterior-painting-four-steps"
@@ -620,8 +748,10 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-07-15-okegawa-gion-festival.jpg",
-        "alt": "桶川祇園祭の案内ポスター"
+        "src": "assets/optimized/blog/full/blog/2026-07-15-okegawa-gion-festival.webp",
+        "alt": "桶川祇園祭の案内ポスター",
+        "source": "assets/blog/2026-07-15-okegawa-gion-festival.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-15-okegawa-gion-festival.webp"
       }
     ],
     "slug": "2026-07-15-okegawa-gion-festival"
@@ -645,8 +775,10 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-07-14-wall-crack-check.jpg",
-        "alt": "外壁のひび割れを確認するポイントの案内"
+        "src": "assets/optimized/blog/full/blog/2026-07-14-wall-crack-check.webp",
+        "alt": "外壁のひび割れを確認するポイントの案内",
+        "source": "assets/blog/2026-07-14-wall-crack-check.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-14-wall-crack-check.webp"
       }
     ],
     "slug": "2026-07-14-wall-crack-check"
@@ -674,8 +806,10 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-07-13-caulking-deterioration.jpg",
-        "alt": "コーキングの劣化症状と点検の案内"
+        "src": "assets/optimized/blog/full/blog/2026-07-13-caulking-deterioration.webp",
+        "alt": "コーキングの劣化症状と点検の案内",
+        "source": "assets/blog/2026-07-13-caulking-deterioration.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-13-caulking-deterioration.webp"
       }
     ],
     "slug": "2026-07-13-caulking-deterioration"
@@ -698,8 +832,10 @@
     ],
     "images": [
       {
-        "src": "assets/blog/2026-07-12-chalking-check.jpg",
-        "alt": "外壁のチョーキング現象の案内"
+        "src": "assets/optimized/blog/full/blog/2026-07-12-chalking-check.webp",
+        "alt": "外壁のチョーキング現象の案内",
+        "source": "assets/blog/2026-07-12-chalking-check.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-07-12-chalking-check.webp"
       }
     ],
     "slug": "2026-07-12-chalking-check"
@@ -718,24 +854,34 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-07-11-after-support-weeding-1.webp",
-        "alt": "アフターサポートの草むしり前の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-11-after-support-weeding-1.webp",
+        "alt": "アフターサポートの草むしり前の様子",
+        "source": "assets/web/blog/2026-07-11-after-support-weeding-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-11-after-support-weeding-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-11-after-support-weeding-2.webp",
-        "alt": "アフターサポートの草むしり後の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-11-after-support-weeding-2.webp",
+        "alt": "アフターサポートの草むしり後の様子",
+        "source": "assets/web/blog/2026-07-11-after-support-weeding-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-11-after-support-weeding-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-11-after-support-weeding-3.webp",
-        "alt": "建物まわりの草むしり前の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-11-after-support-weeding-3.webp",
+        "alt": "建物まわりの草むしり前の様子",
+        "source": "assets/web/blog/2026-07-11-after-support-weeding-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-11-after-support-weeding-3.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-11-after-support-weeding-4.webp",
-        "alt": "建物まわりの草むしり後の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-11-after-support-weeding-4.webp",
+        "alt": "建物まわりの草むしり後の様子",
+        "source": "assets/web/blog/2026-07-11-after-support-weeding-4.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-11-after-support-weeding-4.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-11-after-support-weeding-5.webp",
-        "alt": "除草剤散布後の建物まわり"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-11-after-support-weeding-5.webp",
+        "alt": "除草剤散布後の建物まわり",
+        "source": "assets/web/blog/2026-07-11-after-support-weeding-5.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-11-after-support-weeding-5.webp"
       }
     ],
     "slug": "2026-07-11-after-support-weeding-1"
@@ -755,28 +901,40 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-07-10-cleanout-complete-1.webp",
-        "alt": "残置物処分後の玄関"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-10-cleanout-complete-1.webp",
+        "alt": "残置物処分後の玄関",
+        "source": "assets/web/blog/2026-07-10-cleanout-complete-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-10-cleanout-complete-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-10-cleanout-complete-2.webp",
-        "alt": "残置物処分後の室内"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-10-cleanout-complete-2.webp",
+        "alt": "残置物処分後の室内",
+        "source": "assets/web/blog/2026-07-10-cleanout-complete-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-10-cleanout-complete-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-10-cleanout-complete-3.webp",
-        "alt": "残置物処分後のキッチン"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-10-cleanout-complete-3.webp",
+        "alt": "残置物処分後のキッチン",
+        "source": "assets/web/blog/2026-07-10-cleanout-complete-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-10-cleanout-complete-3.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-10-cleanout-complete-4.webp",
-        "alt": "残置物処分後の和室"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-10-cleanout-complete-4.webp",
+        "alt": "残置物処分後の和室",
+        "source": "assets/web/blog/2026-07-10-cleanout-complete-4.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-10-cleanout-complete-4.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-10-cleanout-complete-5.webp",
-        "alt": "残置物処分後の和室壁面"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-10-cleanout-complete-5.webp",
+        "alt": "残置物処分後の和室壁面",
+        "source": "assets/web/blog/2026-07-10-cleanout-complete-5.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-10-cleanout-complete-5.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-10-cleanout-complete-6.webp",
-        "alt": "残置物処分後の和室全体"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-10-cleanout-complete-6.webp",
+        "alt": "残置物処分後の和室全体",
+        "source": "assets/web/blog/2026-07-10-cleanout-complete-6.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-10-cleanout-complete-6.webp"
       }
     ],
     "slug": "2026-07-10-cleanout-complete-1"
@@ -795,8 +953,10 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-07-09-owner-support-followup-1.webp",
-        "alt": "Real Makeオーナー様サポート案内"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-09-owner-support-followup-1.webp",
+        "alt": "Real Makeオーナー様サポート案内",
+        "source": "assets/web/blog/2026-07-09-owner-support-followup-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-09-owner-support-followup-1.webp"
       }
     ],
     "slug": "2026-07-09-owner-support-followup-1"
@@ -815,8 +975,10 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-07-08-room-cleanout-request-1.webp",
-        "alt": "玄関まわりの荷物処分前の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-08-room-cleanout-request-1.webp",
+        "alt": "玄関まわりの荷物処分前の様子",
+        "source": "assets/web/blog/2026-07-08-room-cleanout-request-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-08-room-cleanout-request-1.webp"
       }
     ],
     "slug": "2026-07-08-room-cleanout-request-1"
@@ -841,16 +1003,22 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-07-06-estimate-simulator-ready-1.webp",
-        "alt": "Real Makeホームページの見積りシミュレーターボタン"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-06-estimate-simulator-ready-1.webp",
+        "alt": "Real Makeホームページの見積りシミュレーターボタン",
+        "source": "assets/web/blog/2026-07-06-estimate-simulator-ready-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-06-estimate-simulator-ready-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-06-estimate-simulator-ready-2.webp",
-        "alt": "外壁・屋根塗装 簡易見積もりシミュレーターの入力画面"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-06-estimate-simulator-ready-2.webp",
+        "alt": "外壁・屋根塗装 簡易見積もりシミュレーターの入力画面",
+        "source": "assets/web/blog/2026-07-06-estimate-simulator-ready-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-06-estimate-simulator-ready-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-06-estimate-simulator-ready-3.webp",
-        "alt": "外壁・屋根塗装 簡易見積もりシミュレーターの結果画面"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-06-estimate-simulator-ready-3.webp",
+        "alt": "外壁・屋根塗装 簡易見積もりシミュレーターの結果画面",
+        "source": "assets/web/blog/2026-07-06-estimate-simulator-ready-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-06-estimate-simulator-ready-3.webp"
       }
     ],
     "slug": "2026-07-06-estimate-simulator-ready-1"
@@ -869,44 +1037,64 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-07-05-completed-wall-refresh-1.webp",
-        "alt": "外壁塗装前の住宅外壁（施工前）"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-05-completed-wall-refresh-1.webp",
+        "alt": "外壁塗装前の住宅外壁（施工前）",
+        "source": "assets/web/blog/2026-07-05-completed-wall-refresh-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-05-completed-wall-refresh-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-05-completed-wall-refresh-2.webp",
-        "alt": "外壁塗装後の住宅外壁（施工後）"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-05-completed-wall-refresh-2.webp",
+        "alt": "外壁塗装後の住宅外壁（施工後）",
+        "source": "assets/web/blog/2026-07-05-completed-wall-refresh-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-05-completed-wall-refresh-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-05-completed-wall-refresh-3.webp",
-        "alt": "雨樋と戸袋まわりの施工前"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-05-completed-wall-refresh-3.webp",
+        "alt": "雨樋と戸袋まわりの施工前",
+        "source": "assets/web/blog/2026-07-05-completed-wall-refresh-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-05-completed-wall-refresh-3.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-05-completed-wall-refresh-4.webp",
-        "alt": "雨樋と戸袋まわりの施工後"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-05-completed-wall-refresh-4.webp",
+        "alt": "雨樋と戸袋まわりの施工後",
+        "source": "assets/web/blog/2026-07-05-completed-wall-refresh-4.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-05-completed-wall-refresh-4.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-05-completed-wall-refresh-5.webp",
-        "alt": "住宅側面の施工前"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-05-completed-wall-refresh-5.webp",
+        "alt": "住宅側面の施工前",
+        "source": "assets/web/blog/2026-07-05-completed-wall-refresh-5.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-05-completed-wall-refresh-5.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-05-completed-wall-refresh-6.webp",
-        "alt": "住宅側面の施工後"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-05-completed-wall-refresh-6.webp",
+        "alt": "住宅側面の施工後",
+        "source": "assets/web/blog/2026-07-05-completed-wall-refresh-6.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-05-completed-wall-refresh-6.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-05-completed-wall-refresh-7.webp",
-        "alt": "日差しの当たる外壁施工前"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-05-completed-wall-refresh-7.webp",
+        "alt": "日差しの当たる外壁施工前",
+        "source": "assets/web/blog/2026-07-05-completed-wall-refresh-7.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-05-completed-wall-refresh-7.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-05-completed-wall-refresh-8.webp",
-        "alt": "日差しの当たる外壁施工後"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-05-completed-wall-refresh-8.webp",
+        "alt": "日差しの当たる外壁施工後",
+        "source": "assets/web/blog/2026-07-05-completed-wall-refresh-8.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-05-completed-wall-refresh-8.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-05-completed-wall-refresh-9.webp",
-        "alt": "外壁塗装後の住宅全景"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-05-completed-wall-refresh-9.webp",
+        "alt": "外壁塗装後の住宅全景",
+        "source": "assets/web/blog/2026-07-05-completed-wall-refresh-9.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-05-completed-wall-refresh-9.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-05-completed-wall-refresh-10.webp",
-        "alt": "外壁塗装後のベランダまわり"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-05-completed-wall-refresh-10.webp",
+        "alt": "外壁塗装後のベランダまわり",
+        "source": "assets/web/blog/2026-07-05-completed-wall-refresh-10.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-05-completed-wall-refresh-10.webp"
       }
     ],
     "slug": "2026-07-05-completed-wall-refresh-1"
@@ -925,16 +1113,22 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-07-04-kametarou-mascot-1.webp",
-        "alt": "Real Makeのマスコットキャラクター・カメ太郎くん（ローラー）"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-04-kametarou-mascot-1.webp",
+        "alt": "Real Makeのマスコットキャラクター・カメ太郎くん（ローラー）",
+        "source": "assets/web/blog/2026-07-04-kametarou-mascot-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-04-kametarou-mascot-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-04-kametarou-mascot-2.webp",
-        "alt": "Real Makeのマスコットキャラクター・カメ太郎くん（刷毛と塗料缶）"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-04-kametarou-mascot-2.webp",
+        "alt": "Real Makeのマスコットキャラクター・カメ太郎くん（刷毛と塗料缶）",
+        "source": "assets/web/blog/2026-07-04-kametarou-mascot-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-04-kametarou-mascot-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-04-kametarou-mascot-3.webp",
-        "alt": "Real Makeのマスコットキャラクター・カメ太郎くん（パソコン）"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-04-kametarou-mascot-3.webp",
+        "alt": "Real Makeのマスコットキャラクター・カメ太郎くん（パソコン）",
+        "source": "assets/web/blog/2026-07-04-kametarou-mascot-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-04-kametarou-mascot-3.webp"
       }
     ],
     "slug": "2026-07-04-kametarou-mascot-1"
@@ -953,8 +1147,10 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-07-03-customer-followup-1.webp",
-        "alt": "Real Makeのチラシ"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-03-customer-followup-1.webp",
+        "alt": "Real Makeのチラシ",
+        "source": "assets/web/blog/2026-07-03-customer-followup-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-03-customer-followup-1.webp"
       }
     ],
     "slug": "2026-07-03-customer-followup-1"
@@ -974,16 +1170,22 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-07-02-cactus-flower-cleanup-1.webp",
-        "alt": "花を咲かせたサボテン"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-02-cactus-flower-cleanup-1.webp",
+        "alt": "花を咲かせたサボテン",
+        "source": "assets/web/blog/2026-07-02-cactus-flower-cleanup-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-02-cactus-flower-cleanup-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-02-cactus-flower-cleanup-2.webp",
-        "alt": "お客様からいただいたサボテン"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-02-cactus-flower-cleanup-2.webp",
+        "alt": "お客様からいただいたサボテン",
+        "source": "assets/web/blog/2026-07-02-cactus-flower-cleanup-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-02-cactus-flower-cleanup-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-02-cactus-flower-cleanup-3.webp",
-        "alt": "サボテンの花のアップ"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-02-cactus-flower-cleanup-3.webp",
+        "alt": "サボテンの花のアップ",
+        "source": "assets/web/blog/2026-07-02-cactus-flower-cleanup-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-02-cactus-flower-cleanup-3.webp"
       }
     ],
     "slug": "2026-07-02-cactus-flower-cleanup-1"
@@ -1003,16 +1205,22 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-07-01-tobukuro-iron-1.webp",
-        "alt": "戸袋の下地処理"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-01-tobukuro-iron-1.webp",
+        "alt": "戸袋の下地処理",
+        "source": "assets/web/blog/2026-07-01-tobukuro-iron-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-01-tobukuro-iron-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-01-tobukuro-iron-2.webp",
-        "alt": "戸袋の塗装後"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-01-tobukuro-iron-2.webp",
+        "alt": "戸袋の塗装後",
+        "source": "assets/web/blog/2026-07-01-tobukuro-iron-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-01-tobukuro-iron-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-07-01-tobukuro-iron-3.webp",
-        "alt": "戸袋と鉄部の仕上がり"
+        "src": "assets/optimized/blog/full/web/blog/2026-07-01-tobukuro-iron-3.webp",
+        "alt": "戸袋と鉄部の仕上がり",
+        "source": "assets/web/blog/2026-07-01-tobukuro-iron-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-07-01-tobukuro-iron-3.webp"
       }
     ],
     "slug": "2026-07-01-tobukuro-iron-1"
@@ -1032,20 +1240,28 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-30-amado-paint-1.webp",
-        "alt": "雨戸塗装の下地処理"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-30-amado-paint-1.webp",
+        "alt": "雨戸塗装の下地処理",
+        "source": "assets/web/blog/2026-06-30-amado-paint-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-30-amado-paint-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-30-amado-paint-2.webp",
-        "alt": "雨戸塗装の仕上がり"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-30-amado-paint-2.webp",
+        "alt": "雨戸塗装の仕上がり",
+        "source": "assets/web/blog/2026-06-30-amado-paint-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-30-amado-paint-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-30-amado-paint-3.webp",
-        "alt": "雨戸と戸袋の塗装後"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-30-amado-paint-3.webp",
+        "alt": "雨戸と戸袋の塗装後",
+        "source": "assets/web/blog/2026-06-30-amado-paint-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-30-amado-paint-3.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-30-amado-paint-4.webp",
-        "alt": "雨戸まわりの塗装"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-30-amado-paint-4.webp",
+        "alt": "雨戸まわりの塗装",
+        "source": "assets/web/blog/2026-06-30-amado-paint-4.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-30-amado-paint-4.webp"
       }
     ],
     "slug": "2026-06-30-amado-paint-1"
@@ -1065,8 +1281,10 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-29-notice-apology-1.webp",
-        "alt": "お知らせとお詫び｜シミュレーター復旧のお知らせ"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-29-notice-apology-1.webp",
+        "alt": "お知らせとお詫び｜シミュレーター復旧のお知らせ",
+        "source": "assets/web/blog/2026-06-29-notice-apology-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-29-notice-apology-1.webp"
       }
     ],
     "slug": "2026-06-29-notice-apology-1"
@@ -1086,16 +1304,22 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-28-simulator-launch-1.webp",
-        "alt": "30秒で概算費用がわかるシミュレーター画面"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-28-simulator-launch-1.webp",
+        "alt": "30秒で概算費用がわかるシミュレーター画面",
+        "source": "assets/web/blog/2026-06-28-simulator-launch-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-28-simulator-launch-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-28-simulator-launch-2.webp",
-        "alt": "シミュレーター操作画面"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-28-simulator-launch-2.webp",
+        "alt": "シミュレーター操作画面",
+        "source": "assets/web/blog/2026-06-28-simulator-launch-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-28-simulator-launch-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-28-simulator-launch-3.webp",
-        "alt": "シミュレーター費用確認画面"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-28-simulator-launch-3.webp",
+        "alt": "シミュレーター費用確認画面",
+        "source": "assets/web/blog/2026-06-28-simulator-launch-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-28-simulator-launch-3.webp"
       }
     ],
     "slug": "2026-06-28-simulator-launch-1"
@@ -1115,12 +1339,16 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-27-typhoon-check-cactus-1.webp",
-        "alt": "サボテンと外壁の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-27-typhoon-check-cactus-1.webp",
+        "alt": "サボテンと外壁の様子",
+        "source": "assets/web/blog/2026-06-27-typhoon-check-cactus-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-27-typhoon-check-cactus-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-27-typhoon-check-cactus-2.webp",
-        "alt": "サボテンと外壁の接写"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-27-typhoon-check-cactus-2.webp",
+        "alt": "サボテンと外壁の接写",
+        "source": "assets/web/blog/2026-06-27-typhoon-check-cactus-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-27-typhoon-check-cactus-2.webp"
       }
     ],
     "slug": "2026-06-27-typhoon-check-cactus-1"
@@ -1140,12 +1368,16 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-26-typhoon-visit-sales-1.webp",
-        "alt": "台風後の点検訪問営業への注意喚起チラシ"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-26-typhoon-visit-sales-1.webp",
+        "alt": "台風後の点検訪問営業への注意喚起チラシ",
+        "source": "assets/web/blog/2026-06-26-typhoon-visit-sales-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-26-typhoon-visit-sales-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-26-typhoon-visit-sales-2.webp",
-        "alt": "本当にチェックが必要なポイントの案内チラシ"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-26-typhoon-visit-sales-2.webp",
+        "alt": "本当にチェックが必要なポイントの案内チラシ",
+        "source": "assets/web/blog/2026-06-26-typhoon-visit-sales-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-26-typhoon-visit-sales-2.webp"
       }
     ],
     "slug": "2026-06-26-typhoon-visit-sales-1"
@@ -1166,20 +1398,28 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-25-gutter-kiriyoke-1.webp",
-        "alt": "雨樋をローラーで塗装している様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-25-gutter-kiriyoke-1.webp",
+        "alt": "雨樋をローラーで塗装している様子",
+        "source": "assets/web/blog/2026-06-25-gutter-kiriyoke-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-25-gutter-kiriyoke-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-25-gutter-kiriyoke-2.webp",
-        "alt": "雨樋塗装後の仕上がり"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-25-gutter-kiriyoke-2.webp",
+        "alt": "雨樋塗装後の仕上がり",
+        "source": "assets/web/blog/2026-06-25-gutter-kiriyoke-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-25-gutter-kiriyoke-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-25-gutter-kiriyoke-3.webp",
-        "alt": "霧除けをローラーで塗装している様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-25-gutter-kiriyoke-3.webp",
+        "alt": "霧除けをローラーで塗装している様子",
+        "source": "assets/web/blog/2026-06-25-gutter-kiriyoke-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-25-gutter-kiriyoke-3.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-25-gutter-kiriyoke-4.webp",
-        "alt": "霧除け塗装後の仕上がり"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-25-gutter-kiriyoke-4.webp",
+        "alt": "霧除け塗装後の仕上がり",
+        "source": "assets/web/blog/2026-06-25-gutter-kiriyoke-4.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-25-gutter-kiriyoke-4.webp"
       }
     ],
     "slug": "2026-06-25-gutter-kiriyoke-1"
@@ -1199,20 +1439,28 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-24-topcoat-finish-gutter-1.webp",
-        "alt": "上塗り後の外壁と軒天の仕上がり"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-24-topcoat-finish-gutter-1.webp",
+        "alt": "上塗り後の外壁と軒天の仕上がり",
+        "source": "assets/web/blog/2026-06-24-topcoat-finish-gutter-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-24-topcoat-finish-gutter-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-24-topcoat-finish-gutter-2.webp",
-        "alt": "上塗り後の外壁と軒天の仕上がり"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-24-topcoat-finish-gutter-2.webp",
+        "alt": "上塗り後の外壁と軒天の仕上がり",
+        "source": "assets/web/blog/2026-06-24-topcoat-finish-gutter-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-24-topcoat-finish-gutter-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-24-topcoat-finish-gutter-3.webp",
-        "alt": "上塗り後の外壁面の仕上がり"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-24-topcoat-finish-gutter-3.webp",
+        "alt": "上塗り後の外壁面の仕上がり",
+        "source": "assets/web/blog/2026-06-24-topcoat-finish-gutter-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-24-topcoat-finish-gutter-3.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-24-topcoat-finish-gutter-4.webp",
-        "alt": "雨樋まわりと外壁の仕上がり"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-24-topcoat-finish-gutter-4.webp",
+        "alt": "雨樋まわりと外壁の仕上がり",
+        "source": "assets/web/blog/2026-06-24-topcoat-finish-gutter-4.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-24-topcoat-finish-gutter-4.webp"
       }
     ],
     "slug": "2026-06-24-topcoat-finish-gutter-1"
@@ -1231,8 +1479,10 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-23-topcoat-complete-1.webp",
-        "alt": "外壁上塗り作業の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-23-topcoat-complete-1.webp",
+        "alt": "外壁上塗り作業の様子",
+        "source": "assets/web/blog/2026-06-23-topcoat-complete-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-23-topcoat-complete-1.webp"
       }
     ],
     "slug": "2026-06-23-topcoat-complete-1"
@@ -1251,8 +1501,10 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-22-flyer-posting-1.webp",
-        "alt": "Real Makeの塗装工事チラシ"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-22-flyer-posting-1.webp",
+        "alt": "Real Makeの塗装工事チラシ",
+        "source": "assets/web/blog/2026-06-22-flyer-posting-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-22-flyer-posting-1.webp"
       }
     ],
     "slug": "2026-06-22-flyer-posting-1"
@@ -1270,16 +1522,22 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-21-benibana-festival-1.webp",
-        "alt": "第29回べに花まつりの案内チラシ"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-21-benibana-festival-1.webp",
+        "alt": "第29回べに花まつりの案内チラシ",
+        "source": "assets/web/blog/2026-06-21-benibana-festival-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-21-benibana-festival-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-21-benibana-festival-2.webp",
-        "alt": "べに花まつり協賛広告に掲載されたReal Makeの案内"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-21-benibana-festival-2.webp",
+        "alt": "べに花まつり協賛広告に掲載されたReal Makeの案内",
+        "source": "assets/web/blog/2026-06-21-benibana-festival-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-21-benibana-festival-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-21-benibana-festival-3.webp",
-        "alt": "新聞に掲載された第29回べに花まつりの記事とReal Makeの協賛広告"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-21-benibana-festival-3.webp",
+        "alt": "新聞に掲載された第29回べに花まつりの記事とReal Makeの協賛広告",
+        "source": "assets/web/blog/2026-06-21-benibana-festival-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-21-benibana-festival-3.webp"
       }
     ],
     "slug": "2026-06-21-benibana-festival-1"
@@ -1297,12 +1555,16 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-20-topcoat-work-1.webp",
-        "alt": "外壁の上塗り作業中の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-20-topcoat-work-1.webp",
+        "alt": "外壁の上塗り作業中の様子",
+        "source": "assets/web/blog/2026-06-20-topcoat-work-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-20-topcoat-work-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-20-topcoat-work-2.webp",
-        "alt": "上塗り後に養生を外した外壁の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-20-topcoat-work-2.webp",
+        "alt": "上塗り後に養生を外した外壁の様子",
+        "source": "assets/web/blog/2026-06-20-topcoat-work-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-20-topcoat-work-2.webp"
       }
     ],
     "slug": "2026-06-20-topcoat-work-1"
@@ -1322,20 +1584,28 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-19-washing-midcoat-1.webp",
-        "alt": "部分塗装前に洗浄するデッキ下の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-19-washing-midcoat-1.webp",
+        "alt": "部分塗装前に洗浄するデッキ下の様子",
+        "source": "assets/web/blog/2026-06-19-washing-midcoat-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-19-washing-midcoat-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-19-washing-midcoat-2.webp",
-        "alt": "洗浄後に水が流れたデッキ下の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-19-washing-midcoat-2.webp",
+        "alt": "洗浄後に水が流れたデッキ下の様子",
+        "source": "assets/web/blog/2026-06-19-washing-midcoat-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-19-washing-midcoat-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-19-washing-midcoat-3.webp",
-        "alt": "長年たまった泥やホコリを洗い流したデッキ下の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-19-washing-midcoat-3.webp",
+        "alt": "長年たまった泥やホコリを洗い流したデッキ下の様子",
+        "source": "assets/web/blog/2026-06-19-washing-midcoat-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-19-washing-midcoat-3.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-19-washing-midcoat-4.webp",
-        "alt": "洗浄後のデッキ下全体の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-19-washing-midcoat-4.webp",
+        "alt": "洗浄後のデッキ下全体の様子",
+        "source": "assets/web/blog/2026-06-19-washing-midcoat-4.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-19-washing-midcoat-4.webp"
       }
     ],
     "slug": "2026-06-19-washing-midcoat-1"
@@ -1353,16 +1623,22 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-18-midcoat-work-1.webp",
-        "alt": "軒天の中塗り作業中の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-18-midcoat-work-1.webp",
+        "alt": "軒天の中塗り作業中の様子",
+        "source": "assets/web/blog/2026-06-18-midcoat-work-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-18-midcoat-work-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-18-midcoat-work-2.webp",
-        "alt": "壁の中塗りを進めた外壁の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-18-midcoat-work-2.webp",
+        "alt": "壁の中塗りを進めた外壁の様子",
+        "source": "assets/web/blog/2026-06-18-midcoat-work-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-18-midcoat-work-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-18-midcoat-work-3.webp",
-        "alt": "足場まわりから見た中塗り後の外壁の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-18-midcoat-work-3.webp",
+        "alt": "足場まわりから見た中塗り後の外壁の様子",
+        "source": "assets/web/blog/2026-06-18-midcoat-work-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-18-midcoat-work-3.webp"
       }
     ],
     "slug": "2026-06-18-midcoat-work-1"
@@ -1381,8 +1657,10 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-16-owner-support-1.webp",
-        "alt": "Real Makeオーナー様サポートの案内"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-16-owner-support-1.webp",
+        "alt": "Real Makeオーナー様サポートの案内",
+        "source": "assets/web/blog/2026-06-16-owner-support-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-16-owner-support-1.webp"
       }
     ],
     "slug": "2026-06-16-owner-support-1"
@@ -1399,16 +1677,22 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-15-undercoat-work-1.webp",
-        "alt": "軒天の下塗り作業中の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-15-undercoat-work-1.webp",
+        "alt": "軒天の下塗り作業中の様子",
+        "source": "assets/web/blog/2026-06-15-undercoat-work-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-15-undercoat-work-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-15-undercoat-work-2.webp",
-        "alt": "壁の下塗りを進めている現場の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-15-undercoat-work-2.webp",
+        "alt": "壁の下塗りを進めている現場の様子",
+        "source": "assets/web/blog/2026-06-15-undercoat-work-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-15-undercoat-work-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-15-undercoat-work-3.webp",
-        "alt": "破風まわりの下塗り後の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-15-undercoat-work-3.webp",
+        "alt": "破風まわりの下塗り後の様子",
+        "source": "assets/web/blog/2026-06-15-undercoat-work-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-15-undercoat-work-3.webp"
       }
     ],
     "slug": "2026-06-15-undercoat-work-1"
@@ -1427,12 +1711,16 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-14-masking-work-1.webp",
-        "alt": "窓の換気を考えながら進めた養生作業の様子1"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-14-masking-work-1.webp",
+        "alt": "窓の換気を考えながら進めた養生作業の様子1",
+        "source": "assets/web/blog/2026-06-14-masking-work-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-14-masking-work-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-14-masking-work-2.webp",
-        "alt": "窓の換気を考えながら進めた養生作業の様子2"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-14-masking-work-2.webp",
+        "alt": "窓の換気を考えながら進めた養生作業の様子2",
+        "source": "assets/web/blog/2026-06-14-masking-work-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-14-masking-work-2.webp"
       }
     ],
     "slug": "2026-06-14-masking-work-1"
@@ -1451,36 +1739,52 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-13-before-after-1.webp",
-        "alt": "1年前に完工した外壁塗装現場のビフォー写真1"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-13-before-after-1.webp",
+        "alt": "1年前に完工した外壁塗装現場のビフォー写真1",
+        "source": "assets/web/blog/2026-06-13-before-after-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-13-before-after-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-13-before-after-2.webp",
-        "alt": "1年前に完工した外壁塗装現場のアフター写真1"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-13-before-after-2.webp",
+        "alt": "1年前に完工した外壁塗装現場のアフター写真1",
+        "source": "assets/web/blog/2026-06-13-before-after-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-13-before-after-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-13-before-after-3.webp",
-        "alt": "1年前に完工した外壁塗装現場のビフォー写真2"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-13-before-after-3.webp",
+        "alt": "1年前に完工した外壁塗装現場のビフォー写真2",
+        "source": "assets/web/blog/2026-06-13-before-after-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-13-before-after-3.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-13-before-after-4.webp",
-        "alt": "1年前に完工した外壁塗装現場のアフター写真2"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-13-before-after-4.webp",
+        "alt": "1年前に完工した外壁塗装現場のアフター写真2",
+        "source": "assets/web/blog/2026-06-13-before-after-4.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-13-before-after-4.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-13-before-after-5.webp",
-        "alt": "1年前に完工した外壁塗装現場のビフォー写真3"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-13-before-after-5.webp",
+        "alt": "1年前に完工した外壁塗装現場のビフォー写真3",
+        "source": "assets/web/blog/2026-06-13-before-after-5.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-13-before-after-5.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-13-before-after-6.webp",
-        "alt": "1年前に完工した外壁塗装現場のアフター写真3"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-13-before-after-6.webp",
+        "alt": "1年前に完工した外壁塗装現場のアフター写真3",
+        "source": "assets/web/blog/2026-06-13-before-after-6.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-13-before-after-6.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-13-before-after-7.webp",
-        "alt": "1年前に完工した外壁塗装現場のビフォー写真4"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-13-before-after-7.webp",
+        "alt": "1年前に完工した外壁塗装現場のビフォー写真4",
+        "source": "assets/web/blog/2026-06-13-before-after-7.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-13-before-after-7.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-13-before-after-8.webp",
-        "alt": "1年前に完工した外壁塗装現場のアフター写真4"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-13-before-after-8.webp",
+        "alt": "1年前に完工した外壁塗装現場のアフター写真4",
+        "source": "assets/web/blog/2026-06-13-before-after-8.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-13-before-after-8.webp"
       }
     ],
     "slug": "2026-06-13-before-after-1"
@@ -1508,8 +1812,10 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-12-diy-paint-tools-1.webp",
-        "alt": "初めてのDIY塗装でそろえる道具の説明画像"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-12-diy-paint-tools-1.webp",
+        "alt": "初めてのDIY塗装でそろえる道具の説明画像",
+        "source": "assets/web/blog/2026-06-12-diy-paint-tools-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-12-diy-paint-tools-1.webp"
       }
     ],
     "slug": "2026-06-12-diy-paint-tools-1"
@@ -1525,16 +1831,22 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-11-leak-repair-resume-1.webp",
-        "alt": "雨漏り解消後に工事を再開する現場のサビ止め作業"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-11-leak-repair-resume-1.webp",
+        "alt": "雨漏り解消後に工事を再開する現場のサビ止め作業",
+        "source": "assets/web/blog/2026-06-11-leak-repair-resume-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-11-leak-repair-resume-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-11-leak-repair-resume-2.webp",
-        "alt": "サビ止め施工後の庇まわり"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-11-leak-repair-resume-2.webp",
+        "alt": "サビ止め施工後の庇まわり",
+        "source": "assets/web/blog/2026-06-11-leak-repair-resume-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-11-leak-repair-resume-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-11-leak-repair-resume-3.webp",
-        "alt": "屋根まわりのサビ止め施工後"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-11-leak-repair-resume-3.webp",
+        "alt": "屋根まわりのサビ止め施工後",
+        "source": "assets/web/blog/2026-06-11-leak-repair-resume-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-11-leak-repair-resume-3.webp"
       }
     ],
     "slug": "2026-06-11-leak-repair-resume-1"
@@ -1554,16 +1866,22 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-10-screen-repair-1.webp",
-        "alt": "網戸の張替え作業中の様子"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-10-screen-repair-1.webp",
+        "alt": "網戸の張替え作業中の様子",
+        "source": "assets/web/blog/2026-06-10-screen-repair-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-10-screen-repair-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-10-screen-repair-2.webp",
-        "alt": "網戸張替え作業中の網戸全体"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-10-screen-repair-2.webp",
+        "alt": "網戸張替え作業中の網戸全体",
+        "source": "assets/web/blog/2026-06-10-screen-repair-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-10-screen-repair-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-10-screen-repair-3.webp",
-        "alt": "張替え後の網戸"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-10-screen-repair-3.webp",
+        "alt": "張替え後の網戸",
+        "source": "assets/web/blog/2026-06-10-screen-repair-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-10-screen-repair-3.webp"
       }
     ],
     "slug": "2026-06-10-screen-repair-1"
@@ -1589,8 +1907,10 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-09-diy-painting-mistakes-1.webp",
-        "alt": "DIY塗装で失敗しやすい3つのこと"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-09-diy-painting-mistakes-1.webp",
+        "alt": "DIY塗装で失敗しやすい3つのこと",
+        "source": "assets/web/blog/2026-06-09-diy-painting-mistakes-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-09-diy-painting-mistakes-1.webp"
       }
     ],
     "slug": "2026-06-09-diy-painting-mistakes-1"
@@ -1611,12 +1931,16 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-08-post-replacement-1.webp",
-        "alt": "ブロック塀に設置した新しいポストの正面"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-08-post-replacement-1.webp",
+        "alt": "ブロック塀に設置した新しいポストの正面",
+        "source": "assets/web/blog/2026-06-08-post-replacement-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-08-post-replacement-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-08-post-replacement-2.webp",
-        "alt": "交換後のポスト全体の仕上がり"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-08-post-replacement-2.webp",
+        "alt": "交換後のポスト全体の仕上がり",
+        "source": "assets/web/blog/2026-06-08-post-replacement-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-08-post-replacement-2.webp"
       }
     ],
     "slug": "2026-06-08-post-replacement-1"
@@ -1644,12 +1968,16 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-07-wood-sanding-1.webp",
-        "alt": "木を塗る前のペーパーがけが大切という説明画像"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-07-wood-sanding-1.webp",
+        "alt": "木を塗る前のペーパーがけが大切という説明画像",
+        "source": "assets/web/blog/2026-06-07-wood-sanding-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-07-wood-sanding-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-07-wood-sanding-2.webp",
-        "alt": "DIYで踏み台を塗る前にペーパーがけをする説明画像"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-07-wood-sanding-2.webp",
+        "alt": "DIYで踏み台を塗る前にペーパーがけをする説明画像",
+        "source": "assets/web/blog/2026-06-07-wood-sanding-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-07-wood-sanding-2.webp"
       }
     ],
     "slug": "2026-06-07-wood-sanding-1"
@@ -1677,12 +2005,16 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-06-first-diy-1.webp",
-        "alt": "初めてのDIYにおすすめの木製踏み台塗装"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-06-first-diy-1.webp",
+        "alt": "初めてのDIYにおすすめの木製踏み台塗装",
+        "source": "assets/web/blog/2026-06-06-first-diy-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-06-first-diy-1.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-06-first-diy-2.webp",
-        "alt": "木製踏み台を使った初めてのDIY手順"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-06-first-diy-2.webp",
+        "alt": "木製踏み台を使った初めてのDIY手順",
+        "source": "assets/web/blog/2026-06-06-first-diy-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-06-first-diy-2.webp"
       }
     ],
     "slug": "2026-06-06-first-diy-1"
@@ -1709,8 +2041,10 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-05-roof-sales-response-1.webp",
-        "alt": "突然の屋根点検訪問営業への対応方法"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-05-roof-sales-response-1.webp",
+        "alt": "突然の屋根点検訪問営業への対応方法",
+        "source": "assets/web/blog/2026-06-05-roof-sales-response-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-05-roof-sales-response-1.webp"
       }
     ],
     "slug": "2026-06-05-roof-sales-response-1"
@@ -1731,8 +2065,10 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-04-roof-inspection-scam-1.webp",
-        "alt": "台風後に増える屋根点検詐欺への注意喚起"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-04-roof-inspection-scam-1.webp",
+        "alt": "台風後に増える屋根点検詐欺への注意喚起",
+        "source": "assets/web/blog/2026-06-04-roof-inspection-scam-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-04-roof-inspection-scam-1.webp"
       }
     ],
     "slug": "2026-06-04-roof-inspection-scam-1"
@@ -1751,16 +2087,22 @@
     ],
     "images": [
       {
-        "src": "assets/web/blog/2026-06-21-benibana-festival-2.webp",
-        "alt": "新聞広告に掲載されたReal Makeの広告"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-21-benibana-festival-2.webp",
+        "alt": "新聞広告に掲載されたReal Makeの広告",
+        "source": "assets/web/blog/2026-06-21-benibana-festival-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-21-benibana-festival-2.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-21-benibana-festival-3.webp",
-        "alt": "第29回べに花まつりの記事と協賛広告"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-21-benibana-festival-3.webp",
+        "alt": "第29回べに花まつりの記事と協賛広告",
+        "source": "assets/web/blog/2026-06-21-benibana-festival-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-21-benibana-festival-3.webp"
       },
       {
-        "src": "assets/web/blog/2026-06-03-benibana-festival-3.webp",
-        "alt": "第29回べに花まつりの新聞紙面全体"
+        "src": "assets/optimized/blog/full/web/blog/2026-06-03-benibana-festival-3.webp",
+        "alt": "第29回べに花まつりの新聞紙面全体",
+        "source": "assets/web/blog/2026-06-03-benibana-festival-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/web/blog/2026-06-03-benibana-festival-3.webp"
       }
     ],
     "slug": "2026-06-21-benibana-festival-2"
