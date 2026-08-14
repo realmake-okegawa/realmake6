@@ -8,6 +8,9 @@
   const workspace = document.querySelector(".workspace");
   const imageInput = document.getElementById("imageInput");
   const emptyState = document.getElementById("emptyState");
+  const samplePhotoButton = document.getElementById("samplePhotoButton");
+  const sampleNotice = document.getElementById("sampleNotice");
+  const switchPhotoButton = document.getElementById("switchPhotoButton");
   const statusText = document.getElementById("statusText");
   const brushHint = document.getElementById("brushHint");
   const colorStatus = document.getElementById("colorStatus");
@@ -47,7 +50,7 @@
     tool: "auto", brushSize: "medium", brushCursor: null,
     mask: null, overlay: null, maskRevision: 0, anchorRevision: 0, selectionExists: false, autoSelectCount: 0, autoNotice: "", history: [], activeStroke: null,
     pointers: new Map(), gesture: null, hasPointerInput: false,
-    selectedColor: null, previewMode: "before", colorStrength: 100, colorBrightness: 0, presentationMode: false, savePreviewUrl: null, saveNotice: "",
+    selectedColor: null, previewMode: "before", colorStrength: 100, colorBrightness: 0, presentationMode: false, savePreviewUrl: null, saveNotice: "", isSample: false,
     renderCache: { originalSignature: "", simulationSignature: "", colorizedSignature: "", original: document.createElement("canvas"), simulation: document.createElement("canvas"), colorized: document.createElement("canvas") },
   };
   const MIN_ZOOM = 0.35;
@@ -59,6 +62,7 @@
   const MAX_AUTO_SELECT = 5;
   // iPhoneでも初期の「中」が指で追いやすい太さにする
   const BRUSH_DIAMETERS = { small: 6, medium: 15, large: 23 };
+  const SAMPLE_IMAGE_URL = "sample-house.jpg";
 
   // Canvasを端末の解像度に合わせる
   function resizeCanvas() {
@@ -476,6 +480,7 @@
   function updateUI() {
     const hasImage = Boolean(state.image), selected = hasSelection();
     workspace.classList.toggle("has-image", hasImage); simulator.classList.toggle("has-image", hasImage); simulator.classList.toggle("is-pan-mode", state.tool === "pan");
+    sampleNotice.hidden = !state.isSample;
     // 自動選択はタップだけで完了するため、写真の上でも縦スワイプでページをスクロールできるようにする（touch-action切替）
     simulator.classList.toggle("is-auto-mode", state.tool === "auto");
     [buttons.rotate, buttons.zoomOut, buttons.zoomIn, buttons.fit].forEach((button) => { button.disabled = !hasImage; });
@@ -504,14 +509,27 @@
     statusText.textContent = !hasImage ? "まずは住宅写真を選択してください。" : state.tool === "pan" ? "写真をドラッグして位置を調整できます。" : state.tool === "auto" ? autoComplete ? "自動選択は完了しました。必要に応じて「塗る」「消す」で調整してください。" : `色を変えたい外壁の中央をタップしてください（自動選択 ${state.autoSelectCount}/${MAX_AUTO_SELECT}）。` : selected ? "「塗る」「消す」で範囲を整えてから、カラーを選んでください。" : "まずは「✨ 自動選択」で外壁の中央をタップしてください。";
   }
 
+  // FileReaderの結果でも、同一サイト内のサンプルURLでも同じ初期化を通す
+  function loadImageFromSource(src, { isSample = false } = {}) {
+    const image = new Image();
+    image.onload = () => {
+      clearSavePreview(); state.image = image; state.imageVersion += 1; state.rotation = 0; state.mask = null; state.overlay = null; state.maskRevision = 0; state.selectionExists = false; state.autoSelectCount = 0; state.autoNotice = ""; state.history = []; state.activeStroke = null;
+      state.tool = "auto"; state.brushSize = "medium"; state.brushCursor = null; state.selectedColor = null; state.previewMode = "before"; state.colorStrength = 100; state.colorBrightness = 0; state.saveNotice = ""; state.isSample = isSample; resetView(); emptyState.hidden = true; updateUI(); requestAnimationFrame(resizeCanvas);
+    };
+    image.onerror = () => {
+      state.saveNotice = "写真を読み込めませんでした。別の写真でお試しください。";
+      updateUI();
+    };
+    image.src = src;
+  }
+
   // 写真の読込時に、古い選択・履歴・比較キャッシュをすべて初期化する
   imageInput.addEventListener("change", (event) => {
     const [file] = event.target.files; if (!file || !file.type.startsWith("image/")) return;
-    const reader = new FileReader(); reader.onload = () => { const image = new Image(); image.onload = () => {
-      clearSavePreview(); state.image = image; state.imageVersion += 1; state.rotation = 0; state.mask = null; state.overlay = null; state.maskRevision = 0; state.selectionExists = false; state.autoSelectCount = 0; state.autoNotice = ""; state.history = []; state.activeStroke = null;
-      state.tool = "auto"; state.brushSize = "medium"; state.brushCursor = null; state.selectedColor = null; state.previewMode = "before"; state.colorStrength = 100; state.colorBrightness = 0; state.saveNotice = ""; resetView(); emptyState.hidden = true; updateUI(); requestAnimationFrame(resizeCanvas);
-    }; image.src = reader.result; }; reader.readAsDataURL(file); imageInput.value = "";
+    const reader = new FileReader(); reader.onload = () => loadImageFromSource(reader.result); reader.readAsDataURL(file); imageInput.value = "";
   });
+  samplePhotoButton.addEventListener("click", () => loadImageFromSource(SAMPLE_IMAGE_URL, { isSample: true }));
+  switchPhotoButton.addEventListener("click", () => imageInput.click());
 
   buttons.rotate.addEventListener("click", () => { state.rotation = (state.rotation + 90) % 360; draw(); });
   buttons.zoomIn.addEventListener("click", () => changeZoom(1.25)); buttons.zoomOut.addEventListener("click", () => changeZoom(.8)); buttons.fit.addEventListener("click", () => { resetView(); draw(); });

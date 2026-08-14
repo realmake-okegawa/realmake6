@@ -47,13 +47,18 @@
 
         <div class="canvas-shell">
           <canvas id="editorCanvas" aria-label="住宅写真と外壁を塗る範囲"></canvas>
-          <label id="emptyState" class="empty-state" for="imageInput">
+          <div id="emptyState" class="empty-state">
             <span class="empty-icon" aria-hidden="true">＋</span>
             <strong>まずはご自宅の写真を選んでください</strong>
-            <span class="choose-photo-button">写真を選ぶ</span>
+            <label class="choose-photo-button" for="imageInput">写真を選ぶ</label>
+            <button id="samplePhotoButton" class="sample-photo-button" type="button">サンプル写真で試す</button>
             <span class="upload-note">建物全体が正面から写っている写真がおすすめです</span>
             <input id="imageInput" type="file" accept="image/*" />
-          </label>
+          </div>
+          <div id="sampleNotice" class="sample-notice" hidden>
+            <span>サンプル写真です。ご自宅の写真に切り替えられます。</span>
+            <button id="switchPhotoButton" type="button">写真を切り替える</button>
+          </div>
         </div>
 
         <div id="brushGuide" class="brush-guide editor-only" aria-live="polite">
