@@ -3,191 +3,201 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const siteUrl = "https://realmake-okegawa.github.io/realmake6";
+const lineUrl = "https://lin.ee/sEbKJ6O";
+const phoneUrl = "tel:09014340189";
 const postsPath = path.join(root, "blog-posts.json");
-const indexPath = path.join(root, "index.html");
+const homePath = path.join(root, "index.html");
+const duplicateReminderSlug = "2026-08-06-obon-inspection-deadline";
+const legacyRedirects = [
+  ["chalking", "2026-07-12-chalking-check"],
+  ["caulking-deterioration", "2026-07-13-caulking-deterioration"],
+  ["wall-crack", "2026-07-14-wall-crack-check"],
+];
 
-const posts = JSON.parse(fs.readFileSync(postsPath, "utf8"));
-const indexHtml = fs.readFileSync(indexPath, "utf8");
-const localUrlPattern = /(?:https?:\/\/)?(?:127\.0\.0\.1|localhost)(?::\d+)?|file:\/\//i;
+const escapeHtml = (value = "") => String(value)
+  .replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
+const escapeJson = (value) => JSON.stringify(value).replaceAll("<", "\\u003c");
+const indent = (value, spaces) => value.split("\n").map((line) => line ? `${" ".repeat(spaces)}${line}` : line).join("\n");
+const displayDate = (date) => String(date).split("-").join(".");
+const paragraphs = (body) => (Array.isArray(body) ? body : String(body || "").split(/\n{2,}/))
+  .map((item) => String(item).trim()).filter(Boolean);
+const renderBody = (body) => paragraphs(body)
+  .map((paragraph) => `<p>${escapeHtml(paragraph).replaceAll("\n", "<br>")}</p>`).join("\n");
+const sourceImage = (relativePath, src) => /^(https?:)?\/\//.test(src) ? src : `${relativePath}${src}`;
 
-if (localUrlPattern.test(indexHtml)) {
-  throw new Error(
-    "index.html contains a local-only URL. Remove 127.0.0.1, localhost, or file:// references before rendering."
-  );
+function images(post) {
+  const candidates = Array.isArray(post.images) && post.images.length ? post.images : post.image ? [{ src: post.image, alt: post.imageAlt }] : [];
+  return candidates.map((image) => typeof image === "string" ? { src: image, alt: post.title } : image)
+    .filter((image) => image?.src && (/^(https?:)?\/\//.test(image.src) || fs.existsSync(path.join(root, image.src))))
+    .map((image) => ({ src: image.src, alt: image.alt || post.title || "ブログ写真" }));
 }
 
-function escapeHtml(value = "") {
-  return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;");
+function excerpt(post, limit = 150) {
+  const text = paragraphs(post.body).join("\n\n");
+  if (text.length <= limit) return text;
+  const head = text.slice(0, limit);
+  const punctuation = [...head.matchAll(/[。！？!?]/g)].at(-1);
+  return `${text.slice(0, punctuation ? punctuation.index + 1 : limit).trim()}...`;
 }
 
-function displayDate(date) {
-  const [year, month, day] = String(date).split("-");
-  if (!year || !month || !day) return escapeHtml(date);
-  return `${year}.${month}.${day}`;
+function header(relativePath) {
+  return `  <header class="sitehead">
+    <div class="in">
+      <div class="sitehead-row">
+        <a class="logo" href="${relativePath}">Real Make<span>（リアルメイク）</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-toggle-icon" aria-hidden="true">☰</span><span class="visually-hidden">メニューを開く</span></button>
+        <a class="sitehead-phone" href="${phoneUrl}">電話する</a>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="主要メニュー">
+        <a href="${relativePath}services/exterior-painting/">外壁塗装</a><a href="${relativePath}services/roof-painting/">屋根塗装</a><a href="${relativePath}works/">施工事例</a><a href="${relativePath}price/">料金</a><a href="${relativePath}reason/">選ばれる理由</a><a href="${relativePath}area/okegawa/">桶川市</a><a href="${relativePath}company/">代表・会社情報</a><a href="${relativePath}faq/">よくある質問</a><a href="${relativePath}#contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>`;
 }
 
-function renderBody(body) {
-  const paragraphs = Array.isArray(body) ? body : String(body || "").split(/\n{2,}/);
-  return paragraphs
-    .map((paragraph) => paragraph.trim())
-    .filter(Boolean)
-    .map((paragraph) => `<p>${escapeHtml(paragraph).replaceAll("\n", "<br>")}</p>`)
-    .join("\n");
+function footer(relativePath) {
+  return `  <footer class="sitefoot"><div class="wrap"><a href="${relativePath}">ホーム</a><a href="${relativePath}services/exterior-painting/">外壁塗装</a><a href="${relativePath}services/roof-painting/">屋根塗装</a><a href="${relativePath}works/">施工事例</a><a href="${relativePath}company/">代表・会社情報</a><a href="${relativePath}faq/">FAQ</a><a href="${relativePath}area/okegawa/">桶川市</a><div class="cp">Real Make（リアルメイク）／埼玉県桶川市上日出谷南2-1-19／090-1434-0189</div></div></footer>`;
 }
 
-function normalizeImages(post) {
-  const normalize = (image) => {
-    if (typeof image === "string") return { src: image, alt: post.title || "ブログ写真" };
-    return image;
-  };
-  const keepExisting = (image) => {
-    if (!image?.src) return false;
-    if (/^(https?:)?\/\//.test(image.src)) return true;
-    return fs.existsSync(path.join(root, image.src));
-  };
-
-  if (Array.isArray(post.images) && post.images.length) {
-    return post.images.map(normalize).filter(keepExisting);
-  }
-  if (post.image) {
-    return [{ src: post.image, alt: post.imageAlt || post.title || "ブログ写真" }].filter(keepExisting);
-  }
-  return [];
+function head({ title, description, canonical, relativePath, data }) {
+  return `<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}">
+  <link rel="canonical" href="${escapeHtml(canonical)}"><link rel="stylesheet" href="${relativePath}assets/css/site.css">
+  <script src="${relativePath}assets/js/nav.js" defer></script>${data ? `\n  <script type="application/ld+json">${escapeJson(data)}</script>` : ""}
+</head>`;
 }
 
-function bodyParagraphs(body) {
-  const paragraphs = Array.isArray(body) ? body : String(body || "").split(/\n{2,}/);
-  return paragraphs.map((paragraph) => String(paragraph).trim()).filter(Boolean);
-}
-
-function indent(text, spaces) {
-  const pad = " ".repeat(spaces);
-  return text
-    .split("\n")
-    .map((line) => (line ? `${pad}${line}` : line))
-    .join("\n");
-}
-
-function renderTextWithReadMore(post, baseIndent) {
-  const paragraphs = bodyParagraphs(post.body);
-  const text = paragraphs.join("\n\n");
-  const limit = 180;
-  if (text.length <= limit) return indent(renderBody(post.body), baseIndent);
-
-  const visible = [];
-  let remaining = [];
-  let visibleLength = 0;
-
-  for (let index = 0; index < paragraphs.length; index += 1) {
-    const paragraph = paragraphs[index];
-    const separatorLength = visible.length ? 2 : 0;
-
-    if (visibleLength + separatorLength + paragraph.length <= limit) {
-      visible.push(paragraph);
-      visibleLength += separatorLength + paragraph.length;
-      continue;
-    }
-
-    if (!visible.length) {
-      const beforeLimit = paragraph.slice(0, limit);
-      const punctuation = [...beforeLimit.matchAll(/[。！？!?]/g)].at(-1);
-      const splitAt = punctuation ? punctuation.index + 1 : limit;
-      visible.push(`${paragraph.slice(0, splitAt).trim()}...`);
-      remaining = [paragraph.slice(splitAt).trim(), ...paragraphs.slice(index + 1)].filter(Boolean);
-    } else {
-      visible[visible.length - 1] = `${visible[visible.length - 1]}...`;
-      remaining = paragraphs.slice(index);
-    }
-    break;
-  }
-
-  const details = `${renderBody(visible)}
-<details class="blog-more">
-  <summary>続きを読む</summary>
-${indent(renderBody(remaining), 2)}
-</details>`;
-  return indent(details, baseIndent);
-}
-
-function renderGallery(images, baseIndent) {
-  if (images.length <= 1) return "";
-  const items = images
-    .slice(1)
-    .map((image) => {
-      const src = escapeHtml(image.src);
-      const alt = escapeHtml(image.alt || "ブログ写真");
-      return `<a href="${src}" target="_blank" rel="noopener" aria-label="${alt}を大きく表示"><img src="${src}" alt="${alt}" loading="lazy" decoding="async"></a>`;
-    })
-    .join("\n");
-  return `\n${indent(`<div class="blog-gallery">\n${indent(items, 2)}\n</div>`, baseIndent)}`;
-}
-
-function renderCard(post, { featured = false, baseIndent = 10 } = {}) {
-  const images = normalizeImages(post);
-  const image = images[0]
-    ? `\n${indent(`<img src="${escapeHtml(images[0].src)}" alt="${escapeHtml(images[0].alt || post.title || "ブログ写真")}" loading="lazy" decoding="async">`, 2)}`
-    : "";
-  const article = `<article class="blog-card${featured ? " blog-card-featured" : ""}">${image}
+function homeCard(post, featured) {
+  const image = images(post)[0];
+  return `<article class="blog-card${featured ? " blog-card-featured" : ""}">${image ? `\n  <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async">` : ""}
   <div class="blog-body">
     <div class="blog-meta"><time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time><span>${escapeHtml(post.category || "おしらせ")}</span></div>
-    <h3>${escapeHtml(post.title)}</h3>
-${renderTextWithReadMore(post, 4)}${renderGallery(images, 4)}
+    <h3>${escapeHtml(post.title)}</h3><p>${escapeHtml(excerpt(post)).replaceAll("\n", "<br>")}</p>
+    <a class="blog-read-more" href="blog/${escapeHtml(post.slug)}/">続きを読む</a>
   </div>
 </article>`;
-  return indent(article, baseIndent);
 }
 
-function renderArchiveItem(post) {
-  return `              <details class="blog-archive-item">
-                <summary>
-                  <span class="blog-archive-meta"><time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time><span>${escapeHtml(post.category || "おしらせ")}</span></span>
-                  <strong>${escapeHtml(post.title)}</strong>
-                </summary>
-${renderCard(post, { baseIndent: 16 })}
-              </details>`;
+function articlePage(post, older, newer) {
+  const relativePath = "../../";
+  const canonical = `${siteUrl}/blog/${post.slug}/`;
+  const postImages = images(post);
+  const data = {
+    "@context": "https://schema.org", "@type": "BlogPosting",
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+    headline: post.title, datePublished: `${post.date}T00:00:00+09:00`,
+    image: postImages.map((image) => `${siteUrl}/${image.src.replace(/^\/+/, "")}`),
+    author: { "@type": "Organization", name: "Real Make" },
+    publisher: { "@type": "Organization", name: "Real Make", url: `${siteUrl}/` },
+  };
+  const gallery = postImages.map((image) => `          <figure class="blog-article-image"><img src="${escapeHtml(sourceImage(relativePath, image.src))}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async"></figure>`).join("\n");
+  const olderLink = older ? `<a href="../${escapeHtml(older.slug)}/" rel="prev">← 前の記事<br><strong>${escapeHtml(older.title)}</strong></a>` : "";
+  const newerLink = newer ? `<a href="../${escapeHtml(newer.slug)}/" rel="next">次の記事 →<br><strong>${escapeHtml(newer.title)}</strong></a>` : "";
+  return `<!doctype html>
+<html lang="ja">
+${head({ title: `${post.title}｜Real Make`, description: excerpt(post, 125).replaceAll("\n", " "), canonical, relativePath, data })}
+<body>
+${header(relativePath)}
+  <main>
+    <div class="wrap"><nav class="crumb" aria-label="パンくず"><a href="${relativePath}">ホーム</a> ＞ <a href="../">ブログ</a> ＞ <span aria-current="page">${escapeHtml(post.title)}</span></nav></div>
+    <article class="blog-article"><div class="narrow">
+      <div class="label">${escapeHtml(post.category || "おしらせ")}</div><time class="blog-article-date" datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time>
+      <h1>${escapeHtml(post.title)}</h1>
+      <div class="blog-article-body">
+${indent(renderBody(post.body), 8)}
+      </div>
+${gallery}
+      <nav class="blog-adjacent" aria-label="前後の記事">${olderLink}${newerLink}</nav>
+    </div></article>
+    <section class="finalcta blog-article-cta"><div class="narrow"><h2>住まいのことで気になることがあれば、ご相談ください。</h2><p>写真を送ってのご相談、電話でのご相談、概算費用の確認に対応しています。</p><div class="ctabtns"><a class="btn line" href="${lineUrl}" target="_blank" rel="noopener">LINEで無料相談</a><a class="btn ghost" href="${phoneUrl}">電話で相談</a><a class="btn" href="${relativePath}painting_simulator.html">無料見積りを確認</a></div></div></section>
+  </main>
+${footer(relativePath)}
+</body>
+</html>
+`;
 }
 
-function renderArchive(items) {
-  if (items.length <= 3) return "";
-  return `
-          <details class="blog-archive">
-            <summary>ブログ記事をもっと見る</summary>
-            <div class="blog-archive-list">
-${items.map(renderArchiveItem).join("\n")}
-            </div>
-          </details>`;
+function indexCard(post) {
+  const image = images(post)[0];
+  return `        <article class="blog-index-card" data-blog-category="${escapeHtml(post.category || "おしらせ")}"><a href="${escapeHtml(post.slug)}/">${image ? `<img src="../${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async">` : ""}<div class="blog-index-card-body"><div class="blog-meta"><time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time><span>${escapeHtml(post.category || "おしらせ")}</span></div><h2>${escapeHtml(post.title)}</h2><p>${escapeHtml(excerpt(post)).replaceAll("\n", "<br>")}</p><span>続きを読む</span></div></a></article>`;
 }
 
-function renderPosts(items) {
-  if (!items.length) {
-    return `          <div class="blog-empty">
-            <strong>記事は準備中です。</strong>
-            <span>Googleビジネスプロフィールの最新情報を、こちらにも掲載していきます。</span>
-          </div>`;
+function blogIndex(posts) {
+  const relativePath = "../";
+  const categories = [...new Set(posts.map((post) => post.category || "おしらせ"))];
+  const filters = ["すべて", ...categories].map((category, index) => `<button type="button" data-blog-filter="${escapeHtml(category === "すべて" ? "all" : category)}" aria-pressed="${index === 0}">${escapeHtml(category)}</button>`).join("");
+  return `<!doctype html>
+<html lang="ja">
+${head({ title: "おしらせ・現場ブログ｜Real Make", description: "桶川市の塗装店 Real Make の現場記録と、住まいのメンテナンスに役立つ情報。", canonical: `${siteUrl}/blog/`, relativePath })}
+<body>
+${header(relativePath)}
+  <main><div class="wrap"><nav class="crumb" aria-label="パンくず"><a href="${relativePath}">ホーム</a> ＞ <span aria-current="page">ブログ</span></nav></div>
+    <section class="blog-index-page"><div class="wrap"><div class="label">Blog</div><h1>おしらせ・現場ブログ</h1><p class="lead">現場で見てきたことと、住まいのメンテナンスに役立つ情報を掲載しています。</p>
+      <div class="blog-filter" aria-label="カテゴリで絞り込む">${filters}</div><p class="blog-result-count" aria-live="polite"></p>
+      <div class="blog-index-grid">${posts.map(indexCard).join("\n")}</div>
+      <nav class="blog-pagination" aria-label="記事一覧のページ送り"><button type="button" data-blog-prev>前へ</button><span data-blog-page></span><button type="button" data-blog-next>次へ</button></nav>
+    </div></section>
+  </main>
+${footer(relativePath)}
+  <script src="${relativePath}assets/js/blog-list.js" defer></script>
+</body>
+</html>
+`;
+}
+
+function legacyRedirect(newSlug) {
+  const relativePath = "../../";
+  const target = `${siteUrl}/blog/${newSlug}/`;
+  return `<!doctype html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,follow"><meta http-equiv="refresh" content="0; url=${target}"><link rel="canonical" href="${target}"><title>記事のURLが変わりました｜Real Make</title><link rel="stylesheet" href="${relativePath}assets/css/site.css"><script src="${relativePath}assets/js/nav.js" defer></script></head>
+<body>${header(relativePath)}<main><section><div class="narrow"><h1>記事のURLが変わりました</h1><p>新しいページへ移動します。移動しない場合は、<a href="../${newSlug}/">こちらを選択してください。</a></p></div></section></main>${footer(relativePath)}</body></html>
+`;
+}
+
+function collectHtml(directory, files = []) {
+  for (const item of fs.readdirSync(directory, { withFileTypes: true })) {
+    if ([".git", "node_modules", "scripts", "docs", "_site"].includes(item.name)) continue;
+    const itemPath = path.join(directory, item.name);
+    if (item.isDirectory()) collectHtml(itemPath, files);
+    else if (item.name.endsWith(".html")) files.push(itemPath);
   }
-
-  const sortedItems = [...items].sort((a, b) => String(b.date).localeCompare(String(a.date)));
-  const visibleItems = sortedItems.slice(0, 3);
-  const archiveItems = sortedItems.slice(3);
-
-  return visibleItems
-    .map((post, index) => renderCard(post, { featured: index === 0, baseIndent: 10 }))
-    .join("\n") + renderArchive(archiveItems);
+  return files;
 }
 
-const rendered = renderPosts(posts);
-const nextHtml = indexHtml.replace(
-  /          <!-- BLOG-POSTS START -->[\s\S]*?          <!-- BLOG-POSTS END -->/,
-  `          <!-- BLOG-POSTS START -->\n${rendered}\n          <!-- BLOG-POSTS END -->`
-);
-
-if (nextHtml === indexHtml && !indexHtml.includes("BLOG-POSTS START")) {
-  throw new Error("BLOG-POSTS markers were not found in index.html");
+function sitemap(posts) {
+  const postDates = new Map(posts.map((post) => [`blog/${post.slug}/index.html`, post.date]));
+  const legacy = new Set(legacyRedirects.map(([oldSlug]) => `blog/${oldSlug}/index.html`));
+  const urls = collectHtml(root).map((file) => path.relative(root, file).split(path.sep).join("/"))
+    .filter((file) => !legacy.has(file)).sort();
+  const urlFor = (file) => file === "index.html" ? `${siteUrl}/` : file.endsWith("/index.html") ? `${siteUrl}/${file.slice(0, -"index.html".length)}` : `${siteUrl}/${file}`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((file) => `  <url><loc>${escapeHtml(urlFor(file))}</loc>${postDates.has(file) ? `<lastmod>${postDates.get(file)}</lastmod>` : ""}</url>`).join("\n")}\n</urlset>\n`;
 }
 
-fs.writeFileSync(indexPath, nextHtml);
-console.log(`Rendered ${posts.length} blog post${posts.length === 1 ? "" : "s"}.`);
+const sourcePosts = JSON.parse(fs.readFileSync(postsPath, "utf8"));
+if (!Array.isArray(sourcePosts)) throw new Error("blog-posts.json must contain an array.");
+if (sourcePosts.some((post) => post.slug === duplicateReminderSlug)) throw new Error("Remove the duplicate reminder article before rendering.");
+if (sourcePosts.some((post) => !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(post.slug || ""))) throw new Error("Every post needs a lowercase ASCII slug.");
+if (new Set(sourcePosts.map((post) => post.slug)).size !== sourcePosts.length) throw new Error("Blog post slugs must be unique.");
+if (sourcePosts.length !== 64) throw new Error(`Expected 64 canonical posts, received ${sourcePosts.length}.`);
+
+const posts = [...sourcePosts].sort((a, b) => String(b.date).localeCompare(String(a.date)));
+const homeHtml = fs.readFileSync(homePath, "utf8");
+const nextHomeHtml = homeHtml.replace(/          <!-- BLOG-POSTS START -->[\s\S]*?          <!-- BLOG-POSTS END -->/, `          <!-- BLOG-POSTS START -->\n${posts.slice(0, 3).map((post, index) => indent(homeCard(post, index === 0), 10)).join("\n")}\n          <!-- BLOG-POSTS END -->`);
+if (nextHomeHtml === homeHtml && !homeHtml.includes("BLOG-POSTS START")) throw new Error("BLOG-POSTS markers were not found.");
+fs.writeFileSync(homePath, nextHomeHtml);
+fs.writeFileSync(path.join(root, "blog", "index.html"), blogIndex(posts));
+for (let index = 0; index < posts.length; index += 1) {
+  const post = posts[index];
+  const output = path.join(root, "blog", post.slug, "index.html");
+  fs.mkdirSync(path.dirname(output), { recursive: true });
+  fs.writeFileSync(output, articlePage(post, posts[index + 1], posts[index - 1]));
+}
+for (const [oldSlug, newSlug] of legacyRedirects) {
+  const output = path.join(root, "blog", oldSlug, "index.html");
+  fs.mkdirSync(path.dirname(output), { recursive: true });
+  fs.writeFileSync(output, legacyRedirect(newSlug));
+}
+fs.writeFileSync(path.join(root, "sitemap.xml"), sitemap(posts));
+console.log(`Rendered ${posts.length} canonical blog posts, 3 legacy redirects, and sitemap.xml.`);

@@ -30,12 +30,8 @@ company:
   line: "https://lin.ee/sEbKJ6O"
   gbp: "https://share.google/U1dqcpyOBwvAJcPx8"
 
-# ブログ記事のURL → /blog/記事名/ の形になります
-permalink: /blog/:slug/
-
 # GitHub Pages で使えるプラグイン
 plugins:
-  - jekyll-sitemap      # sitemap.xml を自動生成
   - jekyll-seo-tag      # title/description/OGPタグを自動生成
 
 # Jekyll の処理から除外するもの（既存ファイルを壊さないため）
@@ -44,6 +40,7 @@ exclude:
   - CLAUDE.md
   - takeoff.html
   - "*.zip"
+  - _posts              # ブログは blog-posts.json と生成スクリプトを正本にする
 
 defaults:
   - scope:
