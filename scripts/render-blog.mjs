@@ -104,7 +104,7 @@ function homeCard(post, featured) {
   const image = images(post)[0];
   return `<article class="blog-card${featured ? " blog-card-featured" : ""}">${image ? `\n  <img src="${escapeHtml(image.thumbnail)}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async">` : ""}
   <div class="blog-body">
-    <div class="blog-meta"><time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time><span>${escapeHtml(post.category || "おしらせ")}</span></div>
+    <div class="blog-meta"><time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time><span>${escapeHtml(post.category || "お知らせ")}</span></div>
     <h3>${escapeHtml(post.title)}</h3><p>${escapeHtml(excerpt(post)).replaceAll("\n", "<br>")}</p>
     <a class="blog-read-more" href="blog/${escapeHtml(post.slug)}/index.html">続きを読む</a>
   </div>
@@ -134,7 +134,7 @@ ${header(relativePath)}
   <main>
     <div class="wrap"><nav class="crumb" aria-label="パンくず"><a href="${relativePath}index.html">ホーム</a> ＞ <a href="../index.html">ブログ</a> ＞ <span aria-current="page">${escapeHtml(post.title)}</span></nav></div>
     <article class="blog-article"><div class="narrow">
-      <div class="label">${escapeHtml(post.category || "おしらせ")}</div><time class="blog-article-date" datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time>
+      <div class="label">${escapeHtml(post.category || "お知らせ")}</div><time class="blog-article-date" datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time>
       <h1>${escapeHtml(post.title)}</h1>
       <div class="blog-article-body">
 ${indent(renderBody(post.body), 8)}
@@ -152,12 +152,12 @@ ${footer(relativePath)}
 
 function indexCard(post) {
   const image = images(post)[0];
-  return `        <article class="blog-index-card" data-blog-category="${escapeHtml(post.category || "おしらせ")}"><a href="${escapeHtml(post.slug)}/index.html">${image ? `<img src="../${escapeHtml(image.thumbnail)}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async">` : ""}<div class="blog-index-card-body"><div class="blog-meta"><time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time><span>${escapeHtml(post.category || "おしらせ")}</span></div><h2>${escapeHtml(post.title)}</h2><p>${escapeHtml(excerpt(post)).replaceAll("\n", "<br>")}</p><span>続きを読む</span></div></a></article>`;
+  return `        <article class="blog-index-card" data-blog-category="${escapeHtml(post.category || "お知らせ")}"><a href="${escapeHtml(post.slug)}/index.html">${image ? `<img src="../${escapeHtml(image.thumbnail)}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async">` : ""}<div class="blog-index-card-body"><div class="blog-meta"><time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time><span>${escapeHtml(post.category || "お知らせ")}</span></div><h2>${escapeHtml(post.title)}</h2><p>${escapeHtml(excerpt(post)).replaceAll("\n", "<br>")}</p><span>続きを読む</span></div></a></article>`;
 }
 
 function blogIndex(posts) {
   const relativePath = "../";
-  const categories = [...new Set(posts.map((post) => post.category || "おしらせ"))];
+  const categories = [...new Set(posts.map((post) => post.category || "お知らせ"))];
   const filters = ["すべて", ...categories].map((category, index) => `<button type="button" data-blog-filter="${escapeHtml(category === "すべて" ? "all" : category)}" aria-pressed="${index === 0}">${escapeHtml(category)}</button>`).join("");
   return `<!doctype html>
 <html lang="ja">
