@@ -277,6 +277,8 @@ body {
 .btn-line-photo:hover { background: #e19214; transform: translateY(-2px); }
 .btn-phone-consult { background: var(--navy); border: none; color: var(--white); box-shadow: 0 5px 18px rgba(26,47,94,.28); }
 .btn-phone-consult:hover { background: var(--navy-d); transform: translateY(-2px); }
+.btn-contact-form { grid-column: 1 / -1; min-height: 52px; color: var(--navy); background: var(--white); border: 2px solid var(--navy); box-shadow: none; }
+.btn-contact-form:hover { color: var(--white); background: var(--navy); transform: translateY(-2px); }
 .result-site-links { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
 .result-site-links a { flex: 1 1 220px; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px 14px; border: 1px solid var(--border); border-radius: 10px; color: var(--navy); background: var(--white); font-size: 14px; font-weight: 800; text-align: center; text-decoration: none; }
 .result-site-links a:hover { border-color: var(--navy); background: var(--g100); }
@@ -628,6 +630,7 @@ const PHONE_URL = 'tel:09014340189';
       <a class="contact-btn btn-line-result" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">結果をLINEで送って相談する</a>
       <a class="contact-btn btn-line-photo" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">写真を送って正確な金額を聞く</a>
       <a class="contact-btn btn-phone-consult" href="tel:09014340189" data-phone-link>電話で直接相談する</a>
+      <a class="contact-btn btn-contact-form" href="contact/">フォームで相談する</a>
     </div>
     <div class="result-site-links" aria-label="関連ページ">
       <a href="price/">料金の詳細を見る</a>
