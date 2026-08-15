@@ -79,5 +79,42 @@
 <footer class="sitefoot"><div class="wrap"><a href="../">ホーム</a><a href="../services/exterior-painting/">外壁塗装</a><a href="../services/roof-painting/">屋根塗装</a><a href="../works/">施工事例</a><a href="../price/">料金</a><a href="../faq/">FAQ</a><a href="../area/okegawa/">桶川市</a><div class="cp">Real Make（リアルメイク）／埼玉県桶川市上日出谷南2-1-19／090-1434-0189</div></div></footer>
 <div class="sticky"><a class="tel" href="tel:09014340189">電話する</a><a class="line" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">LINEで相談</a><a href="../painting_simulator.html">概算費用をチェック</a></div>
 <script async src="https://tally.so/widgets/embed.js"></script>
+<script>
+  (function () {
+    var formFrame = document.querySelector('[data-tally-embed] iframe');
+    var tracked = false;
+
+    function trackFormSubmission(source) {
+      if (tracked || typeof window.gtag !== 'function') return;
+      tracked = true;
+      window.gtag('event', 'contact_form_submit', {
+        event_category: 'contact_form',
+        submission_source: source,
+        form_id: 'EkVejr'
+      });
+    }
+
+    // Tally公式のブラウザイベント。event.detailにはフォームデータが含まれますが、
+    // 個人情報はGAへ送信しないため、ここではイベント発生のみを記録します。
+    window.addEventListener('Tally.FormSubmitted', function () {
+      trackFormSubmission('tally_form_submitted');
+    });
+
+    // 現在Tallyで設定している送信後URLはiframe内で開かれます。iframeが同一サイトの
+    // /contact/thanks/ に遷移したことを確認し、親ページ側でも送信完了を計測します。
+    if (formFrame) {
+      formFrame.addEventListener('load', function () {
+        try {
+          var path = formFrame.contentWindow.location.pathname;
+          if (path.endsWith('/contact/thanks/') || path.endsWith('/contact/thanks/index.html')) {
+            trackFormSubmission('tally_redirect');
+          }
+        } catch (error) {
+          // tally.so表示中はクロスオリジンのため参照できません。送信後の同一サイト遷移時のみ確認します。
+        }
+      });
+    }
+  })();
+</script>
 </body>
 </html>

@@ -212,8 +212,13 @@ function collectHtml(directory, files = []) {
 function sitemap(posts) {
   const postDates = new Map(posts.map((post) => [`blog/${post.slug}/index.html`, post.date]));
   const legacy = new Set(legacyRedirects.map(([oldSlug]) => `blog/${oldSlug}/index.html`));
+  const excluded = new Set([
+    "contact/thanks/index.html",
+    "google324b4de955c06238.html",
+    "okegawa.html",
+  ]);
   const urls = collectHtml(root).map((file) => path.relative(root, file).split(path.sep).join("/"))
-    .filter((file) => !legacy.has(file) && file !== "takeoff.html").sort();
+    .filter((file) => !legacy.has(file) && file !== "takeoff.html" && !excluded.has(file)).sort();
   const urlFor = (file) => file === "index.html" ? `${siteUrl}/` : file.endsWith("/index.html") ? `${siteUrl}/${file.slice(0, -"index.html".length)}` : `${siteUrl}/${file}`;
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((file) => `  <url><loc>${escapeHtml(urlFor(file))}</loc>${postDates.has(file) ? `<lastmod>${postDates.get(file)}</lastmod>` : ""}</url>`).join("\n")}\n</urlset>\n`;
 }

@@ -21,7 +21,10 @@
     }
   });
 
-  if (window.location.pathname.endsWith('/contact/thanks/') || window.location.pathname.endsWith('/contact/thanks/index.html')) {
-    gtag('event', 'generate_lead', {event_category: 'contact_form', event_label: 'tally_form_submitted'});
+  if ((window.location.pathname.endsWith('/contact/thanks/') || window.location.pathname.endsWith('/contact/thanks/index.html')) && window.top === window) {
+    gtag('event', 'contact_form_submit', {
+      event_category: 'contact_form',
+      submission_source: 'direct_thanks_page'
+    });
   }
 })();
