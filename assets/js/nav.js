@@ -3,6 +3,27 @@
 
   document.documentElement.classList.add("js");
 
+  // FinderやブラウザでHTMLを直接開いた場合は、フォルダURLにindex.htmlを補う。
+  // GitHub Pagesなど通常のWeb公開時は、従来どおりのURLをそのまま使用する。
+  if (window.location.protocol === "file:") {
+    document.addEventListener("click", (event) => {
+      const link = event.target.closest("a[href]");
+      if (!link || link.target || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+      let destination;
+      try {
+        destination = new URL(link.getAttribute("href"), window.location.href);
+      } catch (_) {
+        return;
+      }
+
+      if (destination.protocol !== "file:" || !destination.pathname.endsWith("/")) return;
+      event.preventDefault();
+      destination.pathname += "index.html";
+      window.location.href = destination.href;
+    });
+  }
+
   document.querySelectorAll(".sitehead").forEach((header) => {
     const button = header.querySelector(".menu-toggle");
     const nav = header.querySelector(".site-nav");
