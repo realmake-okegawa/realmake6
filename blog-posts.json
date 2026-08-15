@@ -1,5 +1,26 @@
 [
   {
+    "date": "2026-08-16",
+    "category": "DIY塗装",
+    "title": "玄関まわりをデザイン塗装してみます",
+    "body": [
+      "おはようございます☀️",
+      "ふと思いたったので、玄関周りを【デザイン塗装】してみたいと思います💪🏼",
+      "一色での塗りつぶしはイヤだ。\nダブルトーンでも物足りない。\nそんなお客様が以外と多いのではないかと🤔",
+      "全体的にではなく、玄関周りやベランダのみなど、部分的にでもなっていたらオシャレですよね✨\nなので、勉強しつつdiyで自宅の玄関周りをやってみようと思います😊",
+      "桶川市・北本市・上尾市周辺地域で外壁塗装・屋根塗装の塗り替え工事をお考えの方はお気軽にご相談ください✨"
+    ],
+    "images": [
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-16-entrance-design-painting.webp",
+        "alt": "デザイン塗装を予定している玄関まわりの外壁",
+        "source": "assets/blog/2026-08-16-entrance-design-painting.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-16-entrance-design-painting.webp"
+      }
+    ],
+    "slug": "2026-08-16-entrance-design-painting"
+  },
+  {
     "date": "2026-08-15",
     "category": "お知らせ",
     "title": "Real Makeホームページをコツコツ改善しています",
