@@ -7,7 +7,7 @@ export const NAV_ITEMS = [
   { key: "area", label: "桶川市", path: "area/okegawa/" },
   { key: "company", label: "代表・会社情報", path: "company/" },
   { key: "faq", label: "よくある質問", path: "faq/" },
-  { key: "contact", label: "お問い合わせ", path: "#contact" },
+  { key: "contact", label: "お問い合わせ", path: "contact/" },
 ];
 
 export function renderHeader({ root, current }) {
@@ -20,7 +20,7 @@ export function renderHeader({ root, current }) {
   return `<header class="sitehead">
   <div class="in">
     <div class="sitehead-row">
-      <a class="logo" href="${root}"${logoCurrent}>Real Make<span>（リアルメイク）</span></a>
+      <a class="logo" href="${root}"${logoCurrent}><img class="sitehead-logo-mark" src="${root}assets/web/site/logo.webp" alt="" width="38" height="38"><span class="sitehead-logo-name">Real Make<span class="sitehead-logo-kana">（リアルメイク）</span></span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
         <span class="menu-toggle-icon" aria-hidden="true">☰</span><span class="visually-hidden">メニューを開く</span>
       </button>

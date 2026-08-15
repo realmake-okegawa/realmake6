@@ -21,12 +21,15 @@
       gtag('event', 'tap_tel', { link_text: label });
     } else if (href.indexOf('lin.ee') > -1 || href.indexOf('line.me') > -1) {
       gtag('event', 'tap_line', { link_text: label });
+    } else if (href.indexOf('contact/') > -1) {
+      gtag('event', 'contact_form_click', { link_text: label });
     } else if (href.indexOf('painting_simulator') > -1) {
       gtag('event', 'tap_simulator', { link_text: label });
     }
   }, true);
 </script>
 <title>外壁・屋根塗装 簡易見積もりシミュレーター｜Real Make</title>
+<meta name="description" content="外壁・屋根塗装の概算費用を、建物の大きさや工事内容から確認できるReal Makeの無料シミュレーターです。">
 <link rel="stylesheet" href="assets/css/site.css">
 <style>
 :root {
@@ -116,7 +119,7 @@ body {
   width: 100%; padding: 12px 36px 12px 14px;
   border: 2px solid var(--border); border-radius: 10px;
   font-size: 15px; font-weight: 600; color: var(--text);
-  background: var(--white); outline: none; cursor: pointer;
+  background: var(--white); cursor: pointer;
   transition: border-color .18s; -webkit-appearance: none; appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7a99' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right 14px center;
@@ -172,7 +175,7 @@ body {
 .num-in {
   width: 100px; padding: 11px 12px; border: 2px solid var(--border);
   border-radius: 9px; font-size: 16px; font-weight: 700;
-  color: var(--text); text-align: right; outline: none;
+  color: var(--text); text-align: right;
   transition: border-color .18s; -webkit-appearance: none; appearance: none;
 }
 .num-in:focus { border-color: var(--navy); }
@@ -316,10 +319,11 @@ body {
   <link rel="canonical" href="https://realmake-okegawa.github.io/realmake6/painting_simulator.html">
   <meta property="og:title" content="外壁・屋根塗装 簡易見積もりシミュレーター｜Real Make">
   <meta property="og:description" content="桶川市の外壁・屋根塗装ならReal Makeへご相談ください。">
-  <meta property="og:image" content="https://realmake-okegawa.github.io/realmake6/assets/og/default.webp">
+  <meta property="og:image" content="https://realmake-okegawa.github.io/realmake6/assets/optimized/page/assets/og/default.webp">
   <meta property="og:url" content="https://realmake-okegawa.github.io/realmake6/painting_simulator.html">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
+  <script id="breadcrumb-schema" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://realmake-okegawa.github.io/realmake6/"},{"@type":"ListItem","position":2,"name":"概算見積りシミュレーター","item":"https://realmake-okegawa.github.io/realmake6/painting_simulator.html"}]}</script>
 </head>
 <body class="simulator-page">
 
@@ -384,7 +388,7 @@ const PHONE_URL = 'tel:09014340189';
       <a href="./area/okegawa/">桶川市</a>
       <a href="./company/">代表・会社情報</a>
       <a href="./faq/">よくある質問</a>
-      <a href="./#contact">お問い合わせ</a>
+      <a href="./contact/">お問い合わせ</a>
     </nav>
   </div>
 </header>

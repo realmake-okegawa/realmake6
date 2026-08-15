@@ -7,6 +7,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const siteUrl = "https://realmake-okegawa.github.io/realmake6";
 const lineUrl = "https://lin.ee/sEbKJ6O";
 const phoneUrl = "tel:09014340189";
+const contactUrl = "contact/";
 const postsPath = path.join(root, "blog-posts.json");
 const homePath = path.join(root, "index.html");
 const duplicateReminderSlug = "2026-08-06-obon-inspection-deadline";
@@ -80,7 +81,7 @@ function header(relativePath) {
         <a class="sitehead-phone" href="${phoneUrl}">電話する</a>
       </div>
       <nav class="site-nav" id="site-nav" aria-label="主要メニュー">
-        <a href="${relativePath}services/exterior-painting/index.html">外壁塗装</a><a href="${relativePath}services/roof-painting/index.html">屋根塗装</a><a href="${relativePath}works/index.html">施工事例</a><a href="${relativePath}price/index.html">料金</a><a href="${relativePath}reason/index.html">選ばれる理由</a><a href="${relativePath}area/okegawa/index.html">桶川市</a><a href="${relativePath}company/index.html">代表・会社情報</a><a href="${relativePath}faq/index.html">よくある質問</a><a href="${relativePath}index.html#contact">お問い合わせ</a>
+        <a href="${relativePath}services/exterior-painting/index.html">外壁塗装</a><a href="${relativePath}services/roof-painting/index.html">屋根塗装</a><a href="${relativePath}works/index.html">施工事例</a><a href="${relativePath}price/index.html">料金</a><a href="${relativePath}reason/index.html">選ばれる理由</a><a href="${relativePath}area/okegawa/index.html">桶川市</a><a href="${relativePath}company/index.html">代表・会社情報</a><a href="${relativePath}faq/index.html">よくある質問</a><a href="${relativePath}${contactUrl}">お問い合わせ</a>
       </nav>
     </div>
   </header>`;
@@ -96,6 +97,8 @@ function head({ title, description, canonical, relativePath, data, ogImage = def
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="${escapeHtml(canonical)}"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:image" content="${escapeHtml(absoluteOgImage)}"><meta property="og:url" content="${escapeHtml(canonical)}"><meta property="og:type" content="${type}"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="${relativePath}assets/css/site.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PCG1M6JXX0"></script>
+  <script src="${relativePath}assets/js/site-analytics.js"></script>
   <script src="${relativePath}assets/js/nav.js" defer></script>${data ? `\n  <script type="application/ld+json">${escapeJson(data)}</script>` : ""}
 </head>`;
 }
@@ -115,14 +118,22 @@ function articlePage(post, older, newer) {
   const relativePath = "../../";
   const canonical = `${siteUrl}/blog/${post.slug}/`;
   const postImages = images(post);
-  const data = {
-    "@context": "https://schema.org", "@type": "BlogPosting",
+  const blogPosting = {
+    "@type": "BlogPosting",
     mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
     headline: post.title, datePublished: `${post.date}T00:00:00+09:00`,
     image: postImages.map((image) => `${siteUrl}/${image.src.replace(/^\/+/, "")}`),
     author: { "@type": "Organization", name: "Real Make" },
     publisher: { "@type": "Organization", name: "Real Make", url: `${siteUrl}/` },
   };
+  const data = { "@context": "https://schema.org", "@graph": [blogPosting, {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "ホーム", item: `${siteUrl}/` },
+      { "@type": "ListItem", position: 2, name: "ブログ", item: `${siteUrl}/blog/` },
+      { "@type": "ListItem", position: 3, name: post.title, item: canonical },
+    ],
+  }] };
   const gallery = postImages.map((image) => `          <figure class="blog-article-image"><img src="${escapeHtml(sourceImage(relativePath, image.src))}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async"></figure>`).join("\n");
   const olderLink = older ? `<a href="../${escapeHtml(older.slug)}/index.html" rel="prev">← 前の記事<br><strong>${escapeHtml(older.title)}</strong></a>` : "";
   const newerLink = newer ? `<a href="../${escapeHtml(newer.slug)}/index.html" rel="next">次の記事 →<br><strong>${escapeHtml(newer.title)}</strong></a>` : "";
@@ -142,7 +153,7 @@ ${indent(renderBody(post.body), 8)}
 ${gallery}
       <nav class="blog-adjacent" aria-label="前後の記事">${olderLink}${newerLink}</nav>
     </div></article>
-    <section class="finalcta blog-article-cta"><div class="narrow"><h2>住まいのことで気になることがあれば、ご相談ください。</h2><p>写真を送ってのご相談、電話でのご相談、概算費用の確認に対応しています。</p><div class="ctabtns"><a class="btn line" href="${lineUrl}" target="_blank" rel="noopener">LINEで無料相談</a><a class="btn ghost" href="${phoneUrl}">電話で相談</a><a class="btn" href="${relativePath}painting_simulator.html">無料見積りを確認</a></div></div></section>
+    <section class="finalcta blog-article-cta"><div class="narrow"><h2>住まいのことで気になることがあれば、ご相談ください。</h2><p>写真を送ってのご相談、電話でのご相談、概算費用の確認に対応しています。</p><div class="ctabtns"><a class="btn" href="${relativePath}${contactUrl}">フォームで相談する</a><a class="btn line" href="${lineUrl}" target="_blank" rel="noopener">LINEで無料相談</a><a class="btn ghost" href="${phoneUrl}">電話で相談</a><a class="btn ghost" href="${relativePath}painting_simulator.html">無料見積りを確認</a></div></div></section>
   </main>
 ${footer(relativePath)}
 </body>
@@ -157,11 +168,12 @@ function indexCard(post) {
 
 function blogIndex(posts) {
   const relativePath = "../";
+  const canonical = `${siteUrl}/blog/`;
   const categories = [...new Set(posts.map((post) => post.category || "お知らせ"))];
   const filters = ["すべて", ...categories].map((category, index) => `<button type="button" data-blog-filter="${escapeHtml(category === "すべて" ? "all" : category)}" aria-pressed="${index === 0}">${escapeHtml(category)}</button>`).join("");
   return `<!doctype html>
 <html lang="ja">
-${head({ title: "おしらせ・現場ブログ｜Real Make", description: "桶川市の塗装店 Real Make の現場記録と、住まいのメンテナンスに役立つ情報。", canonical: `${siteUrl}/blog/`, relativePath })}
+${head({ title: "おしらせ・現場ブログ｜Real Make", description: "桶川市の塗装店 Real Make の現場記録と、住まいのメンテナンスに役立つ情報。", canonical, relativePath, data: { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "ホーム", item: `${siteUrl}/` }, { "@type": "ListItem", position: 2, name: "ブログ", item: canonical }] } })}
 <body>
 ${header(relativePath)}
   <main><div class="wrap"><nav class="crumb" aria-label="パンくず"><a href="${relativePath}index.html">ホーム</a> ＞ <span aria-current="page">ブログ</span></nav></div>

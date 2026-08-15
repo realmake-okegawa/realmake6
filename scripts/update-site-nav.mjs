@@ -7,6 +7,8 @@ const pages = [
   { file: "area/index.html", root: "../", current: "area" },
   { file: "area/okegawa/index.html", root: "../../", current: "area" },
   { file: "company/index.html", root: "../", current: "company" },
+  { file: "contact/index.html", root: "../", current: "contact" },
+  { file: "contact/thanks/index.html", root: "../../", current: "contact" },
   { file: "faq/index.html", root: "../", current: "faq" },
   { file: "flow/index.html", root: "../", current: "contact" },
   { file: "gallery/index.html", root: "../", current: "works" },

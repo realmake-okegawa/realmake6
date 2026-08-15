@@ -38,8 +38,11 @@ async function createWebp(source, destination, maxSide, quality = 80) {
   if (!fs.existsSync(input)) throw new Error(`Image source not found: ${source}`);
   const outputFresh = fs.existsSync(output) && fs.statSync(output).mtimeMs >= fs.statSync(input).mtimeMs;
   if (outputFresh) {
-    stats.skipped += 1;
-    return;
+    const metadata = await sharp(output).metadata();
+    if (Math.max(metadata.width || 0, metadata.height || 0) <= maxSide) {
+      stats.skipped += 1;
+      return;
+    }
   }
   fs.mkdirSync(path.dirname(output), { recursive: true });
   const inputSize = fs.statSync(input).size;
@@ -154,7 +157,7 @@ for (const filePath of walkSourceFiles(root)) {
 }
 for (const [source, destination] of mapping) {
   if (blogSources.has(source)) continue;
-  await createWebp(source, destination, 1920, 82);
+  await createWebp(source, destination, 1600, 82);
   stats.sources += 1;
 }
 for (const filePath of walkSourceFiles(root)) replaceStaticReferences(filePath, mapping);
