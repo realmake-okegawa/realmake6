@@ -1,5 +1,57 @@
 [
   {
+    "date": "2026-08-17",
+    "category": "DIY塗装",
+    "title": "デザイン塗装の第一弾が完成しました",
+    "body": [
+      "おはようございます☀️",
+      "【デザイン塗装】の第一弾が完成しました✨",
+      "以前は茶色系で落ち着いた雰囲気でしたが、どうしても凹んだ所なので少し暗い印象でした😅\nそこで少し明るめなトーンでまとめて、岩を切り出したようなイメージで塗ってみました💪🏼",
+      "やってみてわかったのは、難しい💦\n水分量で見える表情が変わるし、スポンジでやるのかハケやローラーが良いのかなどと勉強になりました🔥",
+      "第二弾もすでに検討中🤭",
+      "デザイン塗装に興味のある方はお気軽にお問い合わせください✨"
+    ],
+    "images": [
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-17-entrance-design-painting-01.webp",
+        "alt": "デザイン塗装の施工途中の玄関まわり",
+        "source": "assets/blog/2026-08-17-entrance-design-painting-01.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-17-entrance-design-painting-01.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-17-entrance-design-painting-02.webp",
+        "alt": "デザイン塗装前の茶色系の玄関まわり",
+        "source": "assets/blog/2026-08-17-entrance-design-painting-02.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-17-entrance-design-painting-02.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-17-entrance-design-painting-03.webp",
+        "alt": "岩を切り出したような表情に仕上げたデザイン塗装のアップ",
+        "source": "assets/blog/2026-08-17-entrance-design-painting-03.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-17-entrance-design-painting-03.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-17-entrance-design-painting-04.webp",
+        "alt": "デザイン塗装前の玄関まわりの外壁",
+        "source": "assets/blog/2026-08-17-entrance-design-painting-04.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-17-entrance-design-painting-04.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-17-entrance-design-painting-05.webp",
+        "alt": "明るいトーンで仕上げた玄関まわりのデザイン塗装",
+        "source": "assets/blog/2026-08-17-entrance-design-painting-05.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-17-entrance-design-painting-05.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-17-entrance-design-painting-06.webp",
+        "alt": "照明に照らされた完成後の玄関まわりのデザイン塗装",
+        "source": "assets/blog/2026-08-17-entrance-design-painting-06.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-17-entrance-design-painting-06.webp"
+      }
+    ],
+    "slug": "2026-08-17-entrance-design-painting-first-project"
+  },
+  {
     "date": "2026-08-16",
     "category": "DIY塗装",
     "title": "玄関まわりをデザイン塗装してみます",
