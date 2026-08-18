@@ -76,13 +76,21 @@
   </section>
 </main>
 
-<footer class="sitefoot"><div class="wrap"><a href="../">ホーム</a><a href="../services/exterior-painting/">外壁塗装</a><a href="../services/roof-painting/">屋根塗装</a><a href="../works/">施工事例</a><a href="../price/">料金</a><a href="../faq/">FAQ</a><a href="../area/okegawa/">桶川市</a><div class="cp">Real Make（リアルメイク）／埼玉県桶川市上日出谷南2-1-19／090-1434-0189</div></div></footer>
+<footer class="sitefoot"><div class="wrap"><a href="../">ホーム</a><a href="../services/exterior-painting/">外壁塗装</a><a href="../services/roof-painting/">屋根塗装</a><a href="../works/">施工事例</a><a href="../price/">料金</a><a href="../faq/">FAQ</a><a href="../area/okegawa/">桶川市</a><a href="../free-support/">30分無料サポート</a><div class="cp">Real Make（リアルメイク）／埼玉県桶川市上日出谷南2-1-19／090-1434-0189</div></div></footer>
 <div class="sticky"><a class="tel" href="tel:09014340189">電話する</a><a class="line" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">LINEで相談</a><a href="../painting_simulator.html">概算費用をチェック</a></div>
-<script async src="https://tally.so/widgets/embed.js"></script>
 <script>
   (function () {
     var formFrame = document.querySelector('[data-tally-embed] iframe');
     var tracked = false;
+
+    // 無料サポートのページから来た場合だけ、Tallyの隠しフィールド soudan を
+    // フォームURLへ付与します。通常の問い合わせでは初期選択を付けません。
+    var soudan = new URLSearchParams(window.location.search).get('soudan');
+    if (soudan && formFrame) {
+      var embedUrl = new URL(formFrame.getAttribute('data-tally-src'));
+      embedUrl.searchParams.set('soudan', soudan);
+      formFrame.setAttribute('data-tally-src', embedUrl.toString());
+    }
 
     function trackFormSubmission(source) {
       if (tracked || typeof window.gtag !== 'function') return;
@@ -116,5 +124,6 @@
     }
   })();
 </script>
+<script async src="https://tally.so/widgets/embed.js"></script>
 </body>
 </html>

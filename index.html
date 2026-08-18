@@ -13,6 +13,10 @@
       if (!link) return;
       var href = link.getAttribute('href') || '';
       var label = (link.innerText || '').trim().slice(0, 40);
+      var customEvent = link.getAttribute('data-ga-event');
+      if (customEvent) {
+        gtag('event', customEvent, { link_text: label, link_url: href });
+      }
       if (href.indexOf('tel:') === 0) {
         gtag('event', 'tap_tel', { link_text: label });
       } else if (href.indexOf('lin.ee') > -1 || href.indexOf('line.me') > -1) {
@@ -2146,6 +2150,7 @@
           <a href="company/"><span>代表・会社情報</span><b>→</b></a>
           <a href="faq/"><span>よくある質問</span><b>→</b></a>
           <a href="area/okegawa/"><span>桶川市の方へ</span><b>→</b></a>
+          <a href="free-support/"><span>30分無料サポート</span><b>→</b></a>
           <a href="support/"><span>アフターサポート</span><b>→</b></a>
           <a href="gallery/"><span>施工ギャラリー</span><b>→</b></a>
         </nav>

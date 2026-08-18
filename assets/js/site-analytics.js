@@ -10,6 +10,10 @@
     if (!link) return;
 
     var href = link.getAttribute('href') || '';
+    var customEvent = link.getAttribute('data-ga-event');
+    if (customEvent) {
+      gtag('event', customEvent, {link_url: href});
+    }
     if (href.indexOf('tel:') === 0) {
       gtag('event', 'phone_click', {link_url: href});
     } else if (href.indexOf('lin.ee') !== -1) {
