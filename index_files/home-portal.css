@@ -472,3 +472,138 @@
     padding-bottom: 54px;
   }
 }
+
+/* ===== 見積もりの入口 2択（30秒概算 / 写真・図面） ===== */
+.estimate-choice {
+  padding: 54px 0 58px;
+  background: #f7f9fa;
+  border-top: 1px solid #dbe2e8;
+  border-bottom: 1px solid #dbe2e8;
+}
+
+.estimate-choice-head {
+  margin-bottom: 26px;
+}
+
+.estimate-choice-head .section-label {
+  margin: 0;
+}
+
+.estimate-choice-head h2 {
+  margin: 6px 0 10px;
+  color: #12324a;
+  font-size: clamp(26px, 3.6vw, 38px);
+  line-height: 1.35;
+}
+
+.estimate-choice-head p {
+  margin: 0;
+  color: #536575;
+  line-height: 1.9;
+}
+
+.estimate-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.estimate-choice-card {
+  padding: 28px 26px 26px;
+  display: flex;
+  flex-direction: column;
+  color: #12324a;
+  background: #fff;
+  border: 1px solid #dbe2e8;
+  border-top: 4px solid #087f63;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.estimate-choice-card:hover {
+  transform: translateY(-2px);
+  border-color: #087f63;
+  box-shadow: 0 8px 22px rgba(18, 50, 74, .1);
+}
+
+.estimate-choice-card > span {
+  color: #087f63;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.estimate-choice-card strong {
+  margin-top: 12px;
+  font-size: clamp(20px, 2.4vw, 24px);
+  line-height: 1.45;
+}
+
+.estimate-choice-card .estimate-choice-for {
+  margin-top: 14px;
+  padding: 9px 12px;
+  color: #12324a;
+  background: #eef4f2;
+  border-left: 3px solid #087f63;
+  font-size: 13.5px;
+  font-weight: 800;
+  line-height: 1.6;
+}
+
+.estimate-choice-card small {
+  margin-top: 14px;
+  color: #607181;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.estimate-choice-card b {
+  margin-top: auto;
+  padding-top: 20px;
+  color: #087f63;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.estimate-choice-note {
+  margin: 18px 0 0;
+  color: #607181;
+  font-size: 13.5px;
+  line-height: 1.85;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .estimate-choice {
+    padding: 40px 0 44px;
+  }
+
+  .estimate-choice-head {
+    margin-bottom: 20px;
+  }
+
+  .estimate-choice-head h2 {
+    font-size: 26px;
+  }
+
+  .estimate-choice-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .estimate-choice-card {
+    padding: 22px 18px 20px;
+  }
+
+  .estimate-choice-card strong {
+    font-size: 20px;
+  }
+
+  .estimate-choice-card small {
+    font-size: 13.5px;
+  }
+
+  .estimate-choice-note {
+    text-align: left;
+  }
+}

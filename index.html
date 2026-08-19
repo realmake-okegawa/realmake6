@@ -339,8 +339,22 @@
     }
 
     .hero-action-main,
-    .hero-action-line {
+    .hero-action-line,
+    .hero-action-photo {
       min-height: 54px;
+    }
+
+    .hero-action-photo {
+      background: var(--green);
+      color: #fff;
+      border-color: var(--green);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
+      line-height: 1.4;
+    }
+
+    .hero-action-photo:hover {
+      background: #06684f;
+      color: #fff;
     }
 
     .hero-action-main {
@@ -1768,7 +1782,8 @@
       }
 
       .hero-action-main,
-      .hero-action-line {
+      .hero-action-line,
+      .hero-action-photo {
         min-height: 50px;
       }
 
@@ -1961,6 +1976,9 @@
     .sitehead .logo[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--green); text-decoration-thickness: 2px; text-underline-offset: 5px; }
     .sitehead .sitehead-phone { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 13px; border-radius: 999px; background: var(--navy); color: #fff; font-size: .8rem; font-weight: 800; text-decoration: none; white-space: nowrap; }
     .sitehead .sitehead-phone:hover { background: var(--green); }
+    .sitehead-cta { display: flex; align-items: center; gap: 8px; }
+    .sitehead .sitehead-line { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 13px; border-radius: 999px; background: #06c755; color: #fff; font-size: .8rem; font-weight: 800; text-decoration: none; white-space: nowrap; }
+    .sitehead .sitehead-line:hover { background: #05a948; }
     .sitehead .menu-toggle { display: none; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; color: var(--navy); cursor: pointer; }
     .menu-toggle-icon { font-size: 22px; line-height: 1; }
     .visually-hidden { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
@@ -1976,7 +1994,7 @@
       .sitehead .site-nav { grid-column: 2; display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 4px 12px; }
       .sitehead .site-nav a { padding: 4px 2px; }
       .sitehead .site-nav a[aria-current="page"] { padding: 4px 7px; }
-      .sitehead .sitehead-phone { grid-column: 3; }
+      .sitehead .sitehead-cta { grid-column: 3; }
     }
 
     @media (max-width: 980px) {
@@ -1984,6 +2002,7 @@
       .sitehead-row { min-height: 64px; }
       .sitehead .menu-toggle { width: 42px; height: 42px; align-items: center; justify-content: center; }
       .sitehead .sitehead-phone { min-height: 44px; padding: 8px 11px; font-size: .76rem; }
+      .sitehead .sitehead-line { display: none; }
       .sitehead .site-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding: 12px 0 16px; border-top: 1px solid var(--line); }
       .sitehead .site-nav a { justify-content: center; min-height: 48px; padding: 8px 10px; border: 1px solid var(--line); background: #fff; text-align: center; line-height: 1.35; }
       .sitehead .site-nav a[aria-current="page"] { border-color: #b9d8cd; background: #e8f3ef; }
@@ -2063,7 +2082,10 @@
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
         <span class="menu-toggle-icon" aria-hidden="true">☰</span><span class="visually-hidden">メニューを開く</span>
       </button>
-      <a class="sitehead-phone" href="tel:09014340189">電話する</a>
+      <div class="sitehead-cta">
+        <a class="sitehead-line" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">LINEで相談</a>
+        <a class="sitehead-phone" href="tel:09014340189">電話する</a>
+      </div>
     </div>
     <nav class="site-nav" id="site-nav" aria-label="主要メニュー">
       <a href="./services/exterior-painting/">外壁塗装</a>
@@ -2090,9 +2112,9 @@
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7h6M9 11h6M9 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.8"></rect></svg>
             30秒で概算費用をチェック
           </a>
-          <a class="button button-line button-stack hero-action-line" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 5.5h15v9.2h-8.1L7 18.5v-3.8H4.5V5.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>
-            <span><strong>LINEで無料相談する</strong><small>写真を送って相談OK</small></span>
+          <a class="button hero-action-photo" href="photo-estimate/">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"></rect><path d="M8 6l1.4-2h5.2L16 6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path><circle cx="12" cy="13" r="3.4" stroke="currentColor" stroke-width="1.8"></circle></svg>
+            <span>業者を家に呼ばずに<br>写真と図面で概算見積り</span>
           </a>
         </div>
         <div class="hero-reassurance" aria-label="ご相談時の安心材料">
@@ -2100,6 +2122,33 @@
           <a href="https://share.google/U1dqcpyOBwvAJcPx8" target="_blank" rel="noopener">Google評価5.0・口コミ15件</a>
           <span>施工後も相談可能</span>
         </div>
+      </div>
+    </section>
+
+    <section class="estimate-choice" aria-labelledby="estimate-choice-title">
+      <div class="container">
+        <div class="estimate-choice-head">
+          <p class="section-label">Estimate</p>
+          <h2 id="estimate-choice-title">概算費用の調べ方は、2つあります。</h2>
+          <p>どちらからでもご利用いただけます。ご都合のよい方をお選びください。</p>
+        </div>
+        <div class="estimate-choice-grid">
+          <a class="estimate-choice-card" href="https://realmake-okegawa.github.io/realmake6/painting_simulator.html">
+            <span>SIMULATOR</span>
+            <strong>30秒で概算費用をチェック</strong>
+            <p class="estimate-choice-for">まず金額の目安を知りたい方</p>
+            <small>坪数や塗装内容を選ぶだけで、その場で概算費用が分かります。写真や図面のご用意は不要です。</small>
+            <b>30秒概算シミュレーターを開く →</b>
+          </a>
+          <a class="estimate-choice-card" href="photo-estimate/">
+            <span>PHOTO &amp; DRAWING</span>
+            <strong>写真・図面で概算見積もり</strong>
+            <p class="estimate-choice-for">より具体的な概算を知りたい方</p>
+            <small>建物の写真と立面図をLINEで送っていただければ、現地調査前でも、より具体的な概算費用をご案内します。</small>
+            <b>写真・図面で概算見積もりを見る →</b>
+          </a>
+        </div>
+        <p class="estimate-choice-note">まだ業者を家に呼ばなくても大丈夫です。概算金額を確認してから、現地調査を依頼するか決めていただけます。</p>
       </div>
     </section>
 
