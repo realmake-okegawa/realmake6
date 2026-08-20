@@ -88,7 +88,7 @@ function header(relativePath) {
 }
 
 function footer(relativePath) {
-  return `  <footer class="sitefoot"><div class="wrap"><a href="${relativePath}index.html">ホーム</a><a href="${relativePath}services/exterior-painting/index.html">外壁塗装</a><a href="${relativePath}services/roof-painting/index.html">屋根塗装</a><a href="${relativePath}works/index.html">施工事例</a><a href="${relativePath}company/index.html">代表・会社情報</a><a href="${relativePath}faq/index.html">FAQ</a><a href="${relativePath}area/okegawa/index.html">桶川市</a><div class="cp">Real Make（リアルメイク）／埼玉県桶川市上日出谷南2-1-19／090-1434-0189</div></div></footer>`;
+  return `  <footer class="sitefoot"><div class="wrap"><a href="${relativePath}index.html">ホーム</a><a href="${relativePath}services/exterior-painting/index.html">外壁塗装</a><a href="${relativePath}services/roof-painting/index.html">屋根塗装</a><a href="${relativePath}works/index.html">施工事例</a><a href="${relativePath}company/index.html">代表・会社情報</a><a href="${relativePath}faq/index.html">FAQ</a><a href="${relativePath}area/okegawa/index.html">桶川市</a><a href="${relativePath}free-support/">30分無料サポート</a><div class="cp">Real Make（リアルメイク）／埼玉県桶川市上日出谷南2-1-19／090-1434-0189</div></div></footer>`;
 }
 
 function head({ title, description, canonical, relativePath, data, ogImage = defaultOgImage, type = "website" }) {
@@ -228,7 +228,7 @@ if (!Array.isArray(sourcePosts)) throw new Error("blog-posts.json must contain a
 if (sourcePosts.some((post) => post.slug === duplicateReminderSlug)) throw new Error("Remove the duplicate reminder article before rendering.");
 if (sourcePosts.some((post) => !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(post.slug || ""))) throw new Error("Every post needs a lowercase ASCII slug.");
 if (new Set(sourcePosts.map((post) => post.slug)).size !== sourcePosts.length) throw new Error("Blog post slugs must be unique.");
-if (sourcePosts.length !== 68) throw new Error(`Expected 68 canonical posts, received ${sourcePosts.length}.`);
+if (sourcePosts.length !== 70) throw new Error(`Expected 70 canonical posts, received ${sourcePosts.length}.`);
 
 const posts = [...sourcePosts].sort((a, b) => String(b.date).localeCompare(String(a.date)));
 await makeOgImage("assets/optimized/page/assets/img/works/okegawa-kamogawa-after-front.webp", defaultOgImage);
