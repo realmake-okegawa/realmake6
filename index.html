@@ -1,33 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja" class="reveal-ready"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- Google tag (gtag.js) -->
-  <script async="" src="./index_files/js"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PCG1M6JXX0');
-
-    document.addEventListener('click', function (event) {
-      var link = event.target && event.target.closest ? event.target.closest('a') : null;
-      if (!link) return;
-      var href = link.getAttribute('href') || '';
-      var label = (link.innerText || '').trim().slice(0, 40);
-      var customEvent = link.getAttribute('data-ga-event');
-      if (customEvent) {
-        gtag('event', customEvent, { link_text: label, link_url: href });
-      }
-      if (href.indexOf('tel:') === 0) {
-        gtag('event', 'tap_tel', { link_text: label });
-      } else if (href.indexOf('lin.ee') > -1 || href.indexOf('line.me') > -1) {
-        gtag('event', 'tap_line', { link_text: label });
-      } else if (href.indexOf('painting_simulator') > -1) {
-        gtag('event', 'tap_simulator', { link_text: label });
-      } else if (href.indexOf('/contact/') > -1 || href === 'contact/' || href === './contact/') {
-        gtag('event', 'contact_form_click', { link_text: label });
-      }
-    }, true);
-  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PCG1M6JXX0"></script>
+  <script src="./assets/js/site-analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Real Make（リアルメイク）｜桶川市の外壁塗装・屋根塗装</title>
   <meta name="description" content="Real Make（リアルメイク）は桶川市・北本市を中心に埼玉県全域対応の外壁塗装・屋根塗装・防水工事店です。職人直営で丁寧施工、分かりやすい説明、適正価格を大切にしています。">
