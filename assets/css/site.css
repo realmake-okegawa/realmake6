@@ -406,3 +406,7 @@ details .ans::before{content:"A";color:var(--cta);font-size:13px;flex:0 0 auto;p
   .blog-adjacent{grid-template-columns:1fr}
   .blog-adjacent a:last-child{text-align:left}
 }
+
+/* 単独リンク（「〜を見る →」）のタップ領域を確保 */
+.wrap > p > a:only-child,
+.narrow > p > a:only-child { display: inline-block; padding: 6px 0; }
