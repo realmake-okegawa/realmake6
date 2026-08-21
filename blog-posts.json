@@ -1,5 +1,31 @@
 [
   {
+    "date": "2026-08-22",
+    "category": "お知らせ",
+    "title": "掲示板・フェンスにチラシを掲示しました",
+    "body": [
+      "おはようございます☀",
+      "以前、ポスティング用に作ったチラシを拡大して、三男がラミネート加工をしてくれました😊",
+      "オーナー様に許可を頂き、掲示板やフェンスに貼らせて頂きました✨",
+      "点検に伺いつつ許可を頂けるところに貼らせて頂こうと思います😊"
+    ],
+    "images": [
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-22-flyer-display-1.webp",
+        "alt": "オーナー様の許可をいただき掲示板に設置したReal Makeのチラシ",
+        "source": "assets/blog/2026-08-22-flyer-display-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-22-flyer-display-1.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-22-flyer-display-2.webp",
+        "alt": "フェンスに掲示したReal Makeのチラシ",
+        "source": "assets/blog/2026-08-22-flyer-display-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-22-flyer-display-2.webp"
+      }
+    ],
+    "slug": "2026-08-22-flyer-display"
+  },
+  {
     "date": "2026-08-21",
     "category": "お知らせ",
     "title": "外壁塗装の概算見積もりは、電話も訪問も不要です",
