@@ -1,5 +1,37 @@
 [
   {
+    "date": "2026-08-23",
+    "category": "お知らせ",
+    "title": "ガラスの千切りを練習しました",
+    "body": [
+      "おはようございます☀️",
+      "ここ2日のゲリラ豪雨と夜中の地震もありましたが、皆様ご無事でしょうか？😥",
+      "今日は先日、空き時間を使ってガラスの千切りをしました💪🏼\n理由はお客様からガラス交換のお問い合わせがあっても対応できるようにです✨\n網戸の張り替えはもうできますが、ガラス交換は勉強中なのでサイズに合わせてカットして、交換ができるようにと千切りを行いました💪🏼",
+      "Real Makeでは網戸の張り替え、ガラス交換やサッシについてのお問い合わせも対応可能です😊\n桶川市・北本市・上尾市周辺地域で外壁塗装・屋根塗装の塗り替え工事をお考えの方はお気軽にご相談ください✨"
+    ],
+    "images": [
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-23-glass-cutting-practice-1.webp",
+        "alt": "ガラスの千切り作業で使用するガラスと部材",
+        "source": "assets/blog/2026-08-23-glass-cutting-practice-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-23-glass-cutting-practice-1.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-23-glass-cutting-practice-2.webp",
+        "alt": "ガラスカッターで切れ目を入れる作業",
+        "source": "assets/blog/2026-08-23-glass-cutting-practice-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-23-glass-cutting-practice-2.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-23-glass-cutting-practice-3.webp",
+        "alt": "千切り後に並べたガラス片とガラスカッター",
+        "source": "assets/blog/2026-08-23-glass-cutting-practice-3.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-23-glass-cutting-practice-3.webp"
+      }
+    ],
+    "slug": "2026-08-23-glass-cutting-practice"
+  },
+  {
     "date": "2026-08-22",
     "category": "お知らせ",
     "title": "掲示板・フェンスにチラシを掲示しました",
