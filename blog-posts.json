@@ -1,5 +1,30 @@
 [
   {
+    "date": "2026-08-24",
+    "category": "お知らせ",
+    "title": "出窓の防犯対策をご相談いただきました",
+    "body": [
+      "おはようございます☀",
+      "昨日は施工後の定期点検を回らせて頂きました😊\nその中の1件のお客様から、「最近、物騒だから1階裏の出窓に防犯対策を何かしたい」とのご相談を頂きました☝🏼\nお客様が安心して過ごせる環境にできるように品物などを調べて、良いご提供できるようにしたいと思います✨",
+      "Real Makeでは桶川市・北本市・上尾市を中心に外壁塗装・屋根塗装の塗り替え工事をメインに行っております💪🏼\nその他にも網戸の張り替えや内窓取付けなども対応しておりますので、お気軽にご相談ください😊"
+    ],
+    "images": [
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-24-bay-window-security-consultation-1.webp",
+        "alt": "防犯対策のご相談をいただいた1階の出窓",
+        "source": "assets/blog/2026-08-24-bay-window-security-consultation-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-24-bay-window-security-consultation-1.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-24-bay-window-security-consultation-2.webp",
+        "alt": "外から見た1階の出窓",
+        "source": "assets/blog/2026-08-24-bay-window-security-consultation-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-24-bay-window-security-consultation-2.webp"
+      }
+    ],
+    "slug": "2026-08-24-bay-window-security-consultation"
+  },
+  {
     "date": "2026-08-23",
     "category": "お知らせ",
     "title": "ガラスの千切りを練習しました",
