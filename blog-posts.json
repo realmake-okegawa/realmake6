@@ -1,5 +1,49 @@
 [
   {
+    "date": "2026-08-25",
+    "category": "お知らせ",
+    "title": "定期点検で気付いたエコキュート周りの未塗装箇所",
+    "body": [
+      "おはようございます☀",
+      "先日、うちの宣伝ポスターを貼って頂けるということと、定期点検も兼ねて去年塗り替え工事をさせて頂いた桶川市F様邸に伺いました✨",
+      "よく見てみると、エコキュートが新しくなっていました。\n以前のものはもっと大きく、壁にピッタリくっついていたのですが、今回のものは一回り小さくなったので、以前は塗れなかった部分が見えていました。\nこれではみっともないので、近々予定を空けて塗りに伺おうと思います☝🏼\nこんなことも定期的にお伺いしているから気付けることで、お客様に喜んでもらえるポイントだと思います😊",
+      "桶川市・北本市・上尾市周辺地域で外壁塗装・屋根塗装の塗り替え工事をお考えの方はお気軽にご相談ください✨"
+    ],
+    "images": [
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-25-ecocute-wall-touchup-1.webp",
+        "alt": "桶川市F様邸のエコキュートと外壁",
+        "source": "assets/blog/2026-08-25-ecocute-wall-touchup-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-25-ecocute-wall-touchup-1.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-25-ecocute-wall-touchup-2.webp",
+        "alt": "エコキュートの横に見える外壁の未塗装箇所",
+        "source": "assets/blog/2026-08-25-ecocute-wall-touchup-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-25-ecocute-wall-touchup-2.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-25-ecocute-wall-touchup-3.webp",
+        "alt": "エコキュート下部と外壁の未塗装箇所",
+        "source": "assets/blog/2026-08-25-ecocute-wall-touchup-3.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-25-ecocute-wall-touchup-3.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-25-ecocute-wall-touchup-4.webp",
+        "alt": "エコキュート横に残っていた塗装前の外壁",
+        "source": "assets/blog/2026-08-25-ecocute-wall-touchup-4.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-25-ecocute-wall-touchup-4.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-25-ecocute-wall-touchup-5.webp",
+        "alt": "エコキュートと外壁のすき間に見える未塗装部分",
+        "source": "assets/blog/2026-08-25-ecocute-wall-touchup-5.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-25-ecocute-wall-touchup-5.webp"
+      }
+    ],
+    "slug": "2026-08-25-ecocute-wall-touchup"
+  },
+  {
     "date": "2026-08-24",
     "category": "お知らせ",
     "title": "出窓の防犯対策をご相談いただきました",
