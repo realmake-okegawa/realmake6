@@ -2048,8 +2048,45 @@
   </script>
 <script src="./assets/js/nav.js" defer></script>
   <meta name="twitter:card" content="summary_large_image">
+  <style>
+
+/* ============================================================
+   信頼バー（ヘッダー最上部の実績表示）
+   ------------------------------------------------------------
+   数字を書き換えるときは、各HTMLの <div class="trustbar"> の
+   中の文字（Googleクチコミ件数・職人歴）を直してください。
+   700px以下のスマホでは、3つ目以降（is-optional）は非表示です。
+   この帯はヘッダーと一緒に画面上部へ貼り付きます（sticky）。
+   高さを変えるときは --trustbar-h の数字だけを直せば、
+   ヘッダーの固定位置も自動でついてきます。
+   ============================================================ */
+:root{--trustbar-h:28px}
+.trustbar{position:sticky;top:0;z-index:101;background:#12324b;color:#fff}
+.trustbar-in{width:min(1120px,calc(100% - 40px));margin:0 auto;padding:0;display:flex;align-items:center;height:var(--trustbar-h);overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.trustbar-in::-webkit-scrollbar{display:none}
+.trustbar-item{display:inline-flex;align-items:center;gap:6px;padding-right:16px;white-space:nowrap;font-size:12px;font-weight:700;line-height:1;color:#fff;text-decoration:none}
+.trustbar-item+.trustbar-item{padding-left:16px;border-left:1px solid rgba(255,255,255,.24)}
+a.trustbar-item:hover{text-decoration:underline}
+.trustbar-stars{color:#f2b134;letter-spacing:1px}
+.trustbar-score{font-size:13px}
+.sitehead{top:var(--trustbar-h)}
+@media (max-width:700px){
+  :root{--trustbar-h:26px}
+  .trustbar-item{font-size:11.5px;padding-right:12px}
+  .trustbar-item+.trustbar-item{padding-left:12px}
+  .trustbar-item.is-optional{display:none}
+}
+  </style>
 </head>
 <body>
+  <div class="trustbar">
+    <div class="trustbar-in">
+      <a class="trustbar-item" href="https://share.google/U1dqcpyOBwvAJcPx8" target="_blank" rel="noopener"><span class="trustbar-stars" aria-hidden="true">★★★★★</span><span class="trustbar-score">5.0</span><span>Googleクチコミ18件</span></a>
+      <span class="trustbar-item">職人歴24年以上</span>
+      <span class="trustbar-item is-optional">桶川市在住・職人直営</span>
+      <span class="trustbar-item is-optional">現地調査・お見積り無料</span>
+    </div>
+  </div>
   <header class="sitehead">
   <div class="in">
     <div class="sitehead-row">
