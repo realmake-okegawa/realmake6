@@ -1,5 +1,31 @@
 [
   {
+    "date": "2026-08-26",
+    "category": "現場ブログ",
+    "title": "サーモアイSiで屋根を塗装しました",
+    "body": [
+      "おはようございます☀",
+      "ここ数日、さいたま市西区にある有限会社サイワ塗装工業さんのお手伝いをさせて頂いております💪🏼\n澤田社長とは約20年ぶりくらいに一緒に作業をさせて頂きました！",
+      "屋根の塗装作業で日本ペイントのサーモアイSiを塗りました。\n塗装前が約77〜78℃で、塗装後が75.2℃でしたので、遮熱塗料を塗ると2〜3℃下がるようですね🤔\n2枚目の写真はサーモカメラで屋根を写して温度を測っている様子です☝🏼",
+      "しかし、昔と変わらずにパワフルでさすがです🙇🏻‍♂️\nそしてたくさんの刺激とたくさんの勉強をさせて頂きありがとうございます✨\n行き詰まった時、1人で考え込むのではなく行動して情報や考え方をアップデートすることの重要さも教えて頂きました🙇🏻‍♂️\n澤田社長を見習って僕もお客様に喜んでもらえるように、地域貢献できるように頑張ってまいります🔥"
+    ],
+    "images": [
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-26-thermoeye-si-roof-painting-1.webp",
+        "alt": "サーモアイSiで屋根を塗装する作業風景",
+        "source": "assets/blog/2026-08-26-thermoeye-si-roof-painting-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-26-thermoeye-si-roof-painting-1.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-26-thermoeye-si-roof-painting-2.webp",
+        "alt": "サーモカメラで測定した塗装後の屋根表面温度75.2度",
+        "source": "assets/blog/2026-08-26-thermoeye-si-roof-painting-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-26-thermoeye-si-roof-painting-2.webp"
+      }
+    ],
+    "slug": "2026-08-26-thermoeye-si-roof-painting"
+  },
+  {
     "date": "2026-08-25",
     "category": "お知らせ",
     "title": "定期点検で気付いたエコキュート周りの未塗装箇所",
