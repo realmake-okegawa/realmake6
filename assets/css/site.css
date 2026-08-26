@@ -438,3 +438,16 @@ a.trustbar-item:hover{text-decoration:underline}
   .trustbar-item+.trustbar-item{padding-left:12px}
   .trustbar-item.is-optional{display:none}
 }
+
+/* ============================================================
+   施工事例ページのカテゴリ絞り込み
+   ------------------------------------------------------------
+   見た目はブログの絞り込み（.blog-filter）と揃えています。
+   カードの data-works-category と、ボタンの data-works-filter が
+   対応しています。動きは assets/js/works-filter.js です。
+   ============================================================ */
+.works-filter{display:flex;flex-wrap:wrap;gap:8px;margin:34px 0 12px}
+.works-filter button{min-height:42px;padding:8px 14px;border:1px solid var(--line);border-radius:3px;background:#fff;color:var(--ink);font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.works-filter button[aria-pressed="true"]{border-color:var(--cta);background:var(--cta);color:#fff}
+.works-filter button:hover{border-color:var(--cta)}
+.works-result-count{margin:0;color:var(--muted);font-size:13px}

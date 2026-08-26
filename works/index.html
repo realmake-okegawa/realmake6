@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>施工事例｜桶川市の外壁塗装・屋根塗装｜Real Make</title>
-<meta name="description" content="Real Makeが桶川市で施工した外壁塗装・屋根塗装の事例。使用塗料・費用・工期まで公開しています。坂田／鴨川／川田谷の3件を掲載中。">
+<meta name="description" content="Real Makeが桶川市周辺でお引き受けした施工事例。外壁・屋根塗装は使用塗料・費用・工期まで公開。付帯部の塗装、網戸の張り替えや内窓の取り付け、定期点検まで種類ごとに掲載しています。">
 
 <!-- ▼ ドメイン取得後に書き換え -->
 <link rel="canonical" href="https://realmake-okegawa.github.io/realmake6/works/">
@@ -31,7 +31,8 @@
 }
 </script>
 <script src="../assets/js/nav.js" defer></script>
-  <meta property="og:description" content="Real Makeが桶川市で施工した外壁塗装・屋根塗装の事例。使用塗料・費用・工期まで公開しています。坂田／鴨川／川田谷の3件を掲載中。">
+<script src="../assets/js/works-filter.js" defer></script>
+  <meta property="og:description" content="Real Makeが桶川市周辺でお引き受けした施工事例。外壁・屋根塗装は使用塗料・費用・工期まで公開。付帯部の塗装、網戸の張り替えや内窓の取り付け、定期点検まで種類ごとに掲載しています。">
   <meta name="twitter:card" content="summary_large_image">
   <script id="breadcrumb-schema" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://realmake-okegawa.github.io/realmake6/"},{"@type":"ListItem","position":2,"name":"施工事例","item":"https://realmake-okegawa.github.io/realmake6/works/"}]}</script>
 </head>
@@ -75,9 +76,19 @@
     <div class="label">施工事例</div>
     <h1 class="t" style="font-size:clamp(23px,3.6vw,32px)">使用塗料・費用・工期まで、公開しています。</h1>
     <p class="lead" style="max-width:36em">「一式」ではなく、どこに何を使い、いくらかかり、何日かかったのか。判断の材料になるように、実際の数字をそのまま載せています。</p>
+    <p class="lead" style="max-width:36em">外壁・屋根の塗り替えにくわえて、雨戸や木部といった付帯部の塗装、網戸の張り替えや内窓の取り付け、施工後の定期点検まで、これまでにお引き受けした仕事を種類ごとに掲載しています。</p>
 
-    <div class="cards" style="margin-top:40px">
-      <a class="card" href="okegawa-sakata-black/">
+        <div class="works-filter" aria-label="種類で絞り込む">
+      <button type="button" data-works-filter="all" aria-pressed="true">すべて</button>
+      <button type="button" data-works-filter="exterior" aria-pressed="false">外壁・屋根塗装</button>
+      <button type="button" data-works-filter="parts" aria-pressed="false">付帯部・部分塗装</button>
+      <button type="button" data-works-filter="home" aria-pressed="false">住まいのお困りごと</button>
+      <button type="button" data-works-filter="aftercare" aria-pressed="false">点検・アフターサポート</button>
+    </div>
+    <p class="works-result-count" aria-live="polite"></p>
+
+    <div class="cards" data-works-grid style="margin-top:24px">
+      <a class="card" href="okegawa-sakata-black/" data-works-category="exterior">
         <img src="../assets/optimized/page/assets/img/works/okegawa-sakata-after-wide.webp" alt="桶川市坂田 K様邸 外壁塗装 施工後">
         <div class="in">
           <div class="cno">桶川市坂田 ／ 築12年 ／ 2025年10〜11月</div>
@@ -88,7 +99,7 @@
         </div>
       </a>
 
-      <a class="card" href="okegawa-kamogawa-bluegray/">
+      <a class="card" href="okegawa-kamogawa-bluegray/" data-works-category="exterior">
         <img src="../assets/optimized/page/assets/img/works/okegawa-kamogawa-after-front.webp" alt="桶川市鴨川 F様邸 外壁塗装 施工後">
         <div class="in">
           <div class="cno">桶川市鴨川 ／ 築16年 ／ 2025年4〜5月</div>
@@ -99,7 +110,7 @@
         </div>
       </a>
 
-      <a class="card" href="okegawa-kawatagaya-clear/">
+      <a class="card" href="okegawa-kawatagaya-clear/" data-works-category="exterior">
         <img src="../assets/optimized/page/assets/img/works/okegawa-kawatagaya-after-wide.webp" alt="桶川市川田谷 K様邸 外壁塗装 施工後">
         <div class="in">
           <div class="cno">桶川市川田谷 ／ 築15年 ／ 2025年7〜8月</div>
@@ -107,6 +118,160 @@
           <div class="who">外壁・付帯部／130〜150万円（税込）／約1ヶ月</div>
           <p class="sum">上壁は塗り替え、下壁のレンガ調はクリヤー（透明）塗装。柄をそのまま残しながら、色の深みと艶を取り戻しました。</p>
           <span class="more">この事例を詳しく見る →</span>
+        </div>
+      </a>
+
+      <a class="card" href="../blog/2026-06-13-before-after-1/" data-works-category="exterior">
+        <img src="../assets/optimized/blog/thumb/web/blog/2026-06-13-before-after-1.webp" alt="1年前に完工した外壁塗装現場のビフォー写真1" loading="lazy" decoding="async">
+        <div class="in">
+          <div class="cno">2026年6月13日</div>
+          <h3>1年前に完工した現場のビフォーアフター</h3>
+          <div class="who">外壁塗装／白・グレーの2色仕上げ</div>
+          <p class="sum">白とグレーの2色で仕上げたお宅の、完工から1年後の様子です。塗り替えたあとも点検でお伺いしています。</p>
+          <span class="more">現場ブログで詳しく見る →</span>
+        </div>
+      </a>
+
+      <a class="card" href="../blog/2026-08-17-entrance-design-painting-first-project/" data-works-category="parts">
+        <img src="../assets/optimized/blog/thumb/blog/2026-08-17-entrance-design-painting-01.webp" alt="デザイン塗装完成後の玄関まわり全体" loading="lazy" decoding="async">
+        <div class="in">
+          <div class="cno">2026年8月17日</div>
+          <h3>デザイン塗装の第一弾が完成しました</h3>
+          <div class="who">玄関まわり／デザイン塗装</div>
+          <p class="sum">凹んで暗く見えていた玄関まわりを、岩を切り出したようなイメージで塗り分けました。明るめのトーンで印象を変えています。</p>
+          <span class="more">現場ブログで詳しく見る →</span>
+        </div>
+      </a>
+
+      <a class="card" href="../blog/2026-08-09-balcony-handrail-eaves-01/" data-works-category="parts">
+        <img src="../assets/optimized/blog/thumb/blog/2026-08-09-balcony-handrail-eaves-01.webp" alt="防腐剤を塗る前の木製ベランダ手すり" loading="lazy" decoding="async">
+        <div class="in">
+          <div class="cno">2026年8月9日</div>
+          <h3>木製ベランダ手すりと軒天を塗装しました</h3>
+          <div class="who">木製ベランダ手すり・軒天／防腐剤2回塗り</div>
+          <p class="sum">木目を残したまま、防腐剤を2回塗って仕上げました。木部は放置すると腐食が進むため、定期的な塗り直しが必要になります。</p>
+          <span class="more">現場ブログで詳しく見る →</span>
+        </div>
+      </a>
+
+      <a class="card" href="../blog/2026-06-30-amado-paint-1/" data-works-category="parts">
+        <img src="../assets/optimized/blog/thumb/web/blog/2026-06-30-amado-paint-1.webp" alt="雨戸塗装の下地処理" loading="lazy" decoding="async">
+        <div class="in">
+          <div class="cno">2026年6月30日</div>
+          <h3>梅雨の晴れ間に、雨戸の塗装を行いました</h3>
+          <div class="who">雨戸／下地処理から塗装</div>
+          <p class="sum">枚数の多いお宅の雨戸を、下地処理から順に塗装しました。梅雨の晴れ間を狙って進めています。</p>
+          <span class="more">現場ブログで詳しく見る →</span>
+        </div>
+      </a>
+
+      <a class="card" href="../blog/2026-07-01-tobukuro-iron-1/" data-works-category="parts">
+        <img src="../assets/optimized/blog/thumb/web/blog/2026-07-01-tobukuro-iron-1.webp" alt="戸袋の下地処理" loading="lazy" decoding="async">
+        <div class="in">
+          <div class="cno">2026年7月1日</div>
+          <h3>戸袋と鉄部の塗装で仕上げへ</h3>
+          <div class="who">戸袋・鉄部／ケレンから塗装</div>
+          <p class="sum">戸袋を擦ってホコリを落としてから塗装し、続けて鉄部も仕上げました。付帯部も一つずつ手を入れています。</p>
+          <span class="more">現場ブログで詳しく見る →</span>
+        </div>
+      </a>
+
+      <a class="card" href="../blog/2026-06-25-gutter-kiriyoke-1/" data-works-category="parts">
+        <img src="../assets/optimized/blog/thumb/web/blog/2026-06-25-gutter-kiriyoke-1.webp" alt="雨樋をローラーで塗装している様子" loading="lazy" decoding="async">
+        <div class="in">
+          <div class="cno">2026年6月25日</div>
+          <h3>雨樋2回目と霧除け塗装</h3>
+          <div class="who">雨樋・霧除け／2回塗り</div>
+          <p class="sum">雨樋と霧除けの塗装です。「そこも2回塗るんですか？」とよく聞かれますが、付帯部もしっかり2回塗っています。</p>
+          <span class="more">現場ブログで詳しく見る →</span>
+        </div>
+      </a>
+
+      <a class="card" href="../blog/2026-08-07-inner-window-installation/" data-works-category="home">
+        <img src="../assets/optimized/blog/thumb/blog/2026-08-07-inner-window-installation.webp" alt="内窓取付け工事を行う和室の窓" loading="lazy" decoding="async">
+        <div class="in">
+          <div class="cno">2026年8月7日</div>
+          <h3>MADOショップ北本店のお手伝いで内窓を取り付けました</h3>
+          <div class="who">内窓の取り付け</div>
+          <p class="sum">MADOショップ北本店（大川ガラス）さんのお手伝いで内窓を取り付けました。冷暖房の効きが上がり、二重窓になることで防犯にも効果があります。</p>
+          <span class="more">現場ブログで詳しく見る →</span>
+        </div>
+      </a>
+
+      <a class="card" href="../blog/2026-08-24-bay-window-security-consultation/" data-works-category="home">
+        <img src="../assets/optimized/blog/thumb/blog/2026-08-24-bay-window-security-consultation-1.webp" alt="防犯対策のご相談をいただいた1階の出窓" loading="lazy" decoding="async">
+        <div class="in">
+          <div class="cno">2026年8月24日</div>
+          <h3>出窓の防犯対策をご相談いただきました</h3>
+          <div class="who">出窓の防犯対策／ご相談</div>
+          <p class="sum">定期点検で伺った際に「1階裏の出窓に防犯対策をしたい」とご相談いただきました。対応できる品物を調べてご提案する段階の記録です。</p>
+          <span class="more">現場ブログで詳しく見る →</span>
+        </div>
+      </a>
+
+      <a class="card" href="../blog/2026-06-10-screen-repair-1/" data-works-category="home">
+        <img src="../assets/optimized/blog/thumb/web/blog/2026-06-10-screen-repair-1.webp" alt="網戸の張替え作業中の様子" loading="lazy" decoding="async">
+        <div class="in">
+          <div class="cno">2026年6月10日</div>
+          <h3>梅雨時期の網戸張替え</h3>
+          <div class="who">網戸の張り替え</div>
+          <p class="sum">雨で現場に入れない日に、網戸を張り替えました。窓を開ける季節の前に、穴が空いていないか確認することをおすすめしています。</p>
+          <span class="more">現場ブログで詳しく見る →</span>
+        </div>
+      </a>
+
+      <a class="card" href="../blog/2026-06-08-post-replacement-1/" data-works-category="home">
+        <img src="../assets/optimized/blog/thumb/web/blog/2026-06-08-post-replacement-1.webp" alt="ブロック塀に設置した新しいポストの正面" loading="lazy" decoding="async">
+        <div class="in">
+          <div class="cno">2026年6月8日</div>
+          <h3>初めてのポスト交換作業</h3>
+          <div class="who">ポストの交換</div>
+          <p class="sum">翌日が雨予報だったため、日曜に急ぎで対応したポスト交換です。事前に調べたうえで作業し、ブロック塀の補修まで行いました。</p>
+          <span class="more">現場ブログで詳しく見る →</span>
+        </div>
+      </a>
+
+      <a class="card" href="../blog/2026-07-10-cleanout-complete-1/" data-works-category="home">
+        <img src="../assets/optimized/blog/thumb/web/blog/2026-07-10-cleanout-complete-1.webp" alt="残置物処分後の玄関" loading="lazy" decoding="async">
+        <div class="in">
+          <div class="cno">2026年7月10日</div>
+          <h3>残置物の処分作業が完了しました</h3>
+          <div class="who">残置物の処分／3日間</div>
+          <p class="sum">3日かけて残置物の処分を行いました。塗装以外のご依頼にも、できる範囲で対応しています。</p>
+          <span class="more">現場ブログで詳しく見る →</span>
+        </div>
+      </a>
+
+      <a class="card" href="../blog/2026-08-25-ecocute-wall-touchup/" data-works-category="aftercare">
+        <img src="../assets/optimized/blog/thumb/blog/2026-08-25-ecocute-wall-touchup-1.webp" alt="桶川市F様邸のエコキュートと外壁" loading="lazy" decoding="async">
+        <div class="in">
+          <div class="cno">2026年8月25日</div>
+          <h3>定期点検で気付いたエコキュート周りの未塗装箇所</h3>
+          <div class="who">定期点検／未塗装箇所の発見</div>
+          <p class="sum">昨年塗り替えたお宅の定期点検です。エコキュートが小さいものに替わったことで、以前は塗れなかった部分が見えていました。塗りに伺う予定です。</p>
+          <span class="more">現場ブログで詳しく見る →</span>
+        </div>
+      </a>
+
+      <a class="card" href="../blog/2026-08-10-aftercare-parking-cleaning-01/" data-works-category="aftercare">
+        <img src="../assets/optimized/blog/thumb/blog/2026-08-10-aftercare-parking-cleaning-01.webp" alt="定期点検で伺ったお宅の清掃前の駐車場床" loading="lazy" decoding="async">
+        <div class="in">
+          <div class="cno">2026年8月10日</div>
+          <h3>定期点検と駐車場床の清掃に伺いました</h3>
+          <div class="who">定期点検／駐車場床の清掃</div>
+          <p class="sum">以前に工事をさせていただいたお宅へ、定期点検とあわせて伺いました。汚れが気になってきたとのことで、駐車場の床を清掃しています。</p>
+          <span class="more">現場ブログで詳しく見る →</span>
+        </div>
+      </a>
+
+      <a class="card" href="../blog/2026-07-11-after-support-weeding-1/" data-works-category="aftercare">
+        <img src="../assets/optimized/blog/thumb/web/blog/2026-07-11-after-support-weeding-1.webp" alt="アフターサポートの草むしり前の様子" loading="lazy" decoding="async">
+        <div class="in">
+          <div class="cno">2026年7月11日</div>
+          <h3>アフターサポートで草むしりと除草剤散布</h3>
+          <div class="who">アフターサポート／草むしり・除草剤散布</div>
+          <p class="sum">塗り替えをさせていただいたお宅からのご依頼で、約1時間の草むしりと除草剤の散布を行いました。</p>
+          <span class="more">現場ブログで詳しく見る →</span>
         </div>
       </a>
     </div>
