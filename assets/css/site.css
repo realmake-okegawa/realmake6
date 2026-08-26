@@ -451,3 +451,21 @@ a.trustbar-item:hover{text-decoration:underline}
 .works-filter button[aria-pressed="true"]{border-color:var(--cta);background:var(--cta);color:#fff}
 .works-filter button:hover{border-color:var(--cta)}
 .works-result-count{margin:0;color:var(--muted);font-size:13px}
+
+/* ============================================================
+   施工事例ページの「工程の記録」
+   ------------------------------------------------------------
+   工事中に撮った写真を、日付順に並べるためのスタイルです。
+   使い方は works/saitama-kita-mortar/index.html を見てください。
+   ============================================================ */
+.worklog{margin-top:34px;border-top:1px solid var(--line)}
+.worklog-item{padding:30px 0;border-bottom:1px solid var(--line)}
+.worklog-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.worklog-date{font-size:12px;letter-spacing:.16em;color:var(--muted);font-variant-numeric:tabular-nums}
+.worklog-step{font-size:11px;letter-spacing:.14em;color:#fff;background:var(--cta);padding:4px 10px;border-radius:3px}
+.worklog-item h3{font-size:17px;margin:12px 0 0;line-height:1.6}
+.worklog-item p{font-size:14.5px;line-height:1.95;margin:10px 0 0;color:var(--body)}
+.worklog-shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:18px}
+.worklog-shots figure{margin:0}
+.worklog-shots img{width:100%;height:auto;background:#eceae6}
+.worklog-shots figcaption{font-size:11px;color:var(--muted);margin-top:7px;line-height:1.6}
