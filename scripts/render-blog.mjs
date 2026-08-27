@@ -73,7 +73,15 @@ async function makeOgImage(input, output) {
 }
 
 function header(relativePath) {
-  return `  <header class="sitehead">
+  return `  <div class="trustbar">
+    <div class="trustbar-in">
+      <a class="trustbar-item" href="https://share.google/U1dqcpyOBwvAJcPx8" target="_blank" rel="noopener"><span class="trustbar-stars" aria-hidden="true">★★★★★</span><span class="trustbar-score">5.0</span><span>Googleクチコミ18件</span></a>
+      <span class="trustbar-item">職人歴24年以上</span>
+      <span class="trustbar-item is-optional">桶川市在住・職人直営</span>
+      <span class="trustbar-item is-optional">現地調査・お見積り無料</span>
+    </div>
+  </div>
+  <header class="sitehead">
     <div class="in">
       <div class="sitehead-row">
         <a class="logo" href="${relativePath}index.html"><img class="sitehead-logo-mark" src="${relativePath}assets/web/site/logo.webp" alt="" width="38" height="38"><span class="sitehead-logo-name">Real Make<span class="sitehead-logo-kana">（リアルメイク）</span></span></a>
@@ -228,7 +236,7 @@ if (!Array.isArray(sourcePosts)) throw new Error("blog-posts.json must contain a
 if (sourcePosts.some((post) => post.slug === duplicateReminderSlug)) throw new Error("Remove the duplicate reminder article before rendering.");
 if (sourcePosts.some((post) => !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(post.slug || ""))) throw new Error("Every post needs a lowercase ASCII slug.");
 if (new Set(sourcePosts.map((post) => post.slug)).size !== sourcePosts.length) throw new Error("Blog post slugs must be unique.");
-if (sourcePosts.length !== 76) throw new Error(`Expected 76 canonical posts, received ${sourcePosts.length}.`);
+if (sourcePosts.length !== 77) throw new Error(`Expected 77 canonical posts, received ${sourcePosts.length}.`);
 
 const posts = [...sourcePosts].sort((a, b) => String(b.date).localeCompare(String(a.date)));
 await makeOgImage("assets/optimized/page/assets/img/works/okegawa-kamogawa-after-front.webp", defaultOgImage);
