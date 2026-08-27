@@ -1,6 +1,6 @@
 .home-portal {
   padding: 54px 0 62px;
-  background: #fff;
+  background-color: #fff;
 }
 
 .home-portal-head {
@@ -476,7 +476,7 @@
 /* ===== 見積もりの入口 2択（30秒概算 / 写真・図面） ===== */
 .estimate-choice {
   padding: 54px 0 58px;
-  background: #f7f9fa;
+  background-color: #f7f9fa;
   border-top: 1px solid #dbe2e8;
   border-bottom: 1px solid #dbe2e8;
 }
