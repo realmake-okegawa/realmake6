@@ -1,2 +1,5 @@
 config.local.js
 node_modules/
+
+# 公開リポジトリに置かない内部メモ
+NOTES-private.md
