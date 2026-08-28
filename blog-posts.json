@@ -1,5 +1,37 @@
 [
   {
+    "date": "2026-08-29",
+    "category": "お知らせ",
+    "title": "HPをブラッシュアップし、施工事例を追加しました",
+    "body": [
+      "おはようございます✨",
+      "先日、弊社のHPをブラッシュアップしました🔥\nお問い合わせ前にお客様により詳しく情報を知って頂ければと思い、行いました💪🏼\n今まであった桶川市の3件はより詳しく、そしてさいたま市岩槻区の物件とさいたま市北区の物件を追加しました☝🏼",
+      "HPを自分で作り、ブラッシュアップを繰り返していく中で、外壁塗装の見積もりを依頼するお客様の心理的なハードルをどこまで下げられるか、気軽に「ちょっと聞いてみようかな🤔」と思って頂けるようなHPにしようと思い、試行錯誤を繰り返しています😊\n概算費用チェックや外壁カラーシミュレーターなどもぜひ使ってみてください✨",
+      "Real Make（リアルメイク）では、桶川市・北本市・上尾市周辺地域で外壁塗装・屋根塗装の塗り替え工事をメインに行っております💪🏼\n住宅のお困りごとはお気軽にお問い合わせください😊"
+    ],
+    "images": [
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-29-website-case-studies-update-1.webp",
+        "alt": "スマートフォンで表示した桶川市鴨川の外壁塗装施工事例ページ",
+        "source": "assets/blog/2026-08-29-website-case-studies-update-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-29-website-case-studies-update-1.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-29-website-case-studies-update-2.webp",
+        "alt": "スマートフォンで表示した桶川市川田谷の外壁クリヤー塗装施工事例ページ",
+        "source": "assets/blog/2026-08-29-website-case-studies-update-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-29-website-case-studies-update-2.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-29-website-case-studies-update-3.webp",
+        "alt": "スマートフォンで表示した桶川市坂田の外壁・屋根塗装施工事例ページ",
+        "source": "assets/blog/2026-08-29-website-case-studies-update-3.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-29-website-case-studies-update-3.webp"
+      }
+    ],
+    "slug": "2026-08-29-website-case-studies-update"
+  },
+  {
     "date": "2026-08-28",
     "category": "お知らせ",
     "title": "面格子のご提案と概算見積もりについて",
