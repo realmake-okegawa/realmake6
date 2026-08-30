@@ -3,3 +3,6 @@ node_modules/
 
 # 公開リポジトリに置かない内部メモ
 NOTES-private.md
+
+# macOSがフォルダを開くたびに自動生成するファイル（サイトとは無関係）
+.DS_Store
