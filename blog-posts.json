@@ -1,5 +1,31 @@
 [
   {
+    "date": "2026-08-31",
+    "category": "地域活動",
+    "title": "応援のポスターを貼っていただきました",
+    "body": [
+      "おはようございます🌞",
+      "ありがたい事に、SNSを見てくれている方から「うちも宣伝ポスター貼りますよ👍🏼」と、連絡を頂ける事があります🥹\n本当にありがとうございます✨",
+      "大きな事をやるには小さな事の積み重ね。\nコツコツと続けるしかないんだと思います❗️\n諦めたらそこで試合終了。\n何があっても諦めずに、コツコツやっていこうと思います🔥\n応援してくださる方々に感謝申し上げます🙇🏻‍♂️",
+      "Real Make（リアルメイク）では、桶川市・北本市・上尾市周辺地域で外壁塗装・屋根塗装の塗り替え工事をメインに行っております💪🏼\nその他の住宅のお困りごともお気軽にお問い合わせください😊"
+    ],
+    "images": [
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-31-community-poster-support-1.webp",
+        "alt": "フェンスに掲示していただいたReal Makeの宣伝ポスター",
+        "source": "assets/blog/2026-08-31-community-poster-support-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-31-community-poster-support-1.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-08-31-community-poster-support-2.webp",
+        "alt": "地域の住宅前に掲示していただいたReal Makeの宣伝ポスター",
+        "source": "assets/blog/2026-08-31-community-poster-support-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-08-31-community-poster-support-2.webp"
+      }
+    ],
+    "slug": "2026-08-31-community-poster-support"
+  },
+  {
     "date": "2026-08-30",
     "category": "現場ブログ",
     "title": "障子風の内窓を取り付けました",
