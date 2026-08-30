@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://realmake-okegawa.github.io/realmake6/">
   <meta property="og:image" content="https://realmake-okegawa.github.io/realmake6/assets/optimized/page/assets/sections/black-hero.webp">
   <link rel="canonical" href="https://realmake-okegawa.github.io/realmake6/">
-  <link rel="preload" as="image" href="./assets/optimized/page/assets/img/works/okegawa-kamogawa-after-front.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="./assets/optimized/page/assets/web/site/white-house-after.webp" type="image/webp" fetchpriority="high">
   <style>
     :root {
       --ink: #17212b;
@@ -215,9 +215,9 @@
     .hero {
       position: relative;
       isolation: isolate;
-      min-height: clamp(620px, 78svh, 730px);
+      min-height: 575px;
       display: grid;
-      align-items: end;
+      align-items: center;
       overflow: hidden;
       color: #fff;
       background: #101820;
@@ -228,7 +228,7 @@
       position: absolute;
       inset: 0;
       z-index: -2;
-      background: url("./assets/optimized/page/assets/img/works/okegawa-kamogawa-after-front.webp") center 48% / cover no-repeat;
+      background: url("./assets/optimized/page/assets/web/site/white-house-after.webp") center / cover no-repeat;
       transform: scale(1.02);
     }
 
@@ -238,25 +238,26 @@
       inset: 0;
       z-index: -1;
       background:
-        linear-gradient(90deg, rgba(9, 20, 30, .34) 0%, rgba(9, 20, 30, .16) 44%, rgba(9, 20, 30, 0) 100%),
-        linear-gradient(0deg, rgba(9, 20, 30, .16) 0%, rgba(9, 20, 30, 0) 44%);
+        linear-gradient(90deg, rgba(5, 22, 35, .89) 4%, rgba(5, 22, 35, .69) 49%, rgba(5, 22, 35, .20)),
+        linear-gradient(0deg, rgba(5, 22, 35, .24) 0%, rgba(5, 22, 35, 0) 44%);
     }
 
     .hero-content {
-      width: min(760px, 100%);
-      padding: 56px 0 36px;
+      width: min(660px, 100%);
+      padding: 72px 0;
     }
 
     .eyebrow {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       max-width: min(700px, 100%);
-      margin: 0 0 18px;
-      color: #f4d49f;
-      font-size: 1.08rem;
-      font-weight: 800;
-      line-height: 1.45;
+      margin: 0 0 15px;
+      color: #bfe9df;
+      font-size: .875rem;
+      font-weight: 900;
+      letter-spacing: .06em;
+      line-height: 1.4;
     }
 
     .eyebrow span {
@@ -265,10 +266,10 @@
 
     .eyebrow::before {
       content: "";
-      flex: 0 0 38px;
-      width: 38px;
-      height: 1px;
-      background: currentColor;
+      flex: 0 0 24px;
+      width: 24px;
+      height: 2px;
+      background: #45c9af;
     }
 
     h1,
@@ -281,17 +282,20 @@
     .hero h1 {
       max-width: 660px;
       margin-bottom: 16px;
-      font-size: 3.55rem;
-      line-height: 1.12;
-      letter-spacing: 0;
+      font-size: clamp(2.25rem, 4.3vw, 3.55rem);
+      line-height: 1.23;
+      letter-spacing: -.04em;
     }
 
+    .hero h1 span { display: block; }
+
     .hero-lead {
-      width: min(560px, 100%);
-      margin-bottom: 22px;
-      color: rgba(255, 255, 255, .96);
-      font-size: 1.16rem;
-      line-height: 1.75;
+      width: min(535px, 100%);
+      margin-bottom: 25px;
+      color: #edf4f5;
+      font-size: 1.125rem;
+      font-weight: 700;
+      line-height: 1.8;
     }
 
     .eyebrow,
@@ -303,10 +307,9 @@
     }
 
     .hero-actions {
-      display: grid;
-      grid-template-columns: minmax(0, 390px);
-      gap: 10px;
-      margin-bottom: 18px;
+      display: block;
+      margin-top: 24px;
+      margin-bottom: 0;
     }
 
     .hero-actions .button {
@@ -319,22 +322,51 @@
       min-height: 54px;
     }
 
-    .hero-action-photo {
-      background: var(--green);
-      color: #fff;
-      border-color: var(--green);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
-      line-height: 1.4;
-    }
-
-    .hero-action-photo:hover {
-      background: #06684f;
-      color: #fff;
-    }
-
     .hero-action-main {
-      font-size: 1.04rem;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
+      display: inline-flex;
+      width: auto !important;
+      min-width: 333px;
+      justify-content: space-between;
+      gap: 38px;
+      padding: 16px 20px 16px 22px;
+      border-radius: 7px;
+      border-color: #009b78;
+      background: #009b78 !important;
+      font-size: 1.125rem;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, .25);
+    }
+
+    .hero-action-main:hover { background: #007c60 !important; }
+
+    .hero-action-main .hero-cta-copy {
+      display: grid;
+      gap: 2px;
+      text-align: left;
+      line-height: 1.15;
+    }
+
+    .hero-action-main small {
+      display: block;
+      font-size: .6875rem;
+      font-weight: 800;
+      letter-spacing: .07em;
+      opacity: .9;
+    }
+
+    .hero-action-main .hero-cta-arrow {
+      font-size: 1.45rem;
+      line-height: 1;
+    }
+
+    .hero-action-photo {
+      display: inline-block;
+      margin-top: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, .72);
+      color: #fff;
+      font-size: .875rem;
+      font-weight: 800;
+      line-height: 1.55;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, .58);
     }
 
     .hero-action-works {
@@ -358,11 +390,11 @@
     .hero-reassurance {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px 14px;
-      width: min(560px, 100%);
-      margin: 0 0 12px;
+      gap: 8px;
+      width: min(535px, 100%);
+      margin: 0 0 24px;
       color: rgba(255, 255, 255, .96);
-      font-size: .95rem;
+      font-size: .8125rem;
       font-weight: 800;
       line-height: 1.5;
     }
@@ -370,25 +402,28 @@
     .hero-reassurance a {
       display: inline-flex;
       align-items: center;
-      min-height: 44px;
-      padding: 4px 0;
+      min-height: 0;
+      padding: 7px 10px;
+      border: 1px solid rgba(255, 255, 255, .32);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, .15);
       color: inherit;
-      text-decoration: underline;
-      text-underline-offset: 3px;
+      text-decoration: none;
     }
 
     .hero-reassurance span {
       display: inline-flex;
       align-items: center;
-      min-height: 44px;
-      padding: 4px 0;
+      min-height: 0;
+      padding: 7px 10px;
+      border: 1px solid rgba(255, 255, 255, .32);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, .15);
     }
 
     .hero-reassurance span::before,
     .hero-reassurance a::before {
-      content: "✓";
-      margin-right: 5px;
-      color: #f4d49f;
+      display: none;
     }
 
     .hero-review {
@@ -415,6 +450,70 @@
       margin-left: 10px;
       color: #f4d49f;
       font-variant-numeric: tabular-nums;
+    }
+
+    .first-step-guide {
+      position: relative;
+      z-index: 2;
+      margin-top: -44px;
+      padding: 0 0 64px;
+      background: var(--paper);
+    }
+
+    .first-step-panel {
+      display: grid;
+      grid-template-columns: 1.1fr repeat(3, 1fr);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 16px 38px rgba(13, 43, 67, .12);
+    }
+
+    .first-step-lead,
+    .first-step-link { padding: 22px 24px; }
+
+    .first-step-lead { background: #f0f6f5; }
+
+    .first-step-lead span,
+    .first-step-link span {
+      display: block;
+      color: var(--green);
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+    }
+
+    .first-step-lead strong,
+    .first-step-link strong {
+      display: block;
+      margin-top: 3px;
+      color: var(--navy);
+      font-size: 1.04rem;
+      line-height: 1.45;
+    }
+
+    .first-step-lead small {
+      display: block;
+      margin-top: 5px;
+      color: var(--sub);
+      font-size: .82rem;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .first-step-link {
+      border-left: 1px solid var(--line);
+      transition: background .2s ease;
+    }
+
+    .first-step-link:hover { background: #f8fbfb; }
+
+    .first-step-link b {
+      display: block;
+      margin-top: 8px;
+      color: var(--green);
+      font-size: .8rem;
     }
 
     .notice {
@@ -1709,27 +1808,26 @@
       }
 
       .hero {
-        min-height: clamp(570px, 72svh, 620px);
+        min-height: 600px;
       }
 
       .hero::before {
-        background-position: 50% 48%;
+        background-position: 64% center;
       }
 
       .hero::after {
         background:
-          linear-gradient(90deg, rgba(9, 20, 30, .38), rgba(9, 20, 30, .14)),
-          linear-gradient(0deg, rgba(9, 20, 30, .22), rgba(9, 20, 30, .02));
+          linear-gradient(180deg, rgba(5, 22, 35, .77), rgba(5, 22, 35, .62));
       }
 
       .hero-content {
-        padding: 32px 0 22px;
+        padding: 67px 0 40px;
       }
 
       .hero h1 {
         margin-bottom: 14px;
-        font-size: 2.05rem;
-        line-height: 1.16;
+        font-size: 27px;
+        line-height: 1.36;
       }
 
       .eyebrow {
@@ -1750,27 +1848,33 @@
       }
 
       .hero-actions {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 9px;
-        margin-bottom: 14px;
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 0;
       }
 
-      .hero-action-main,
-      .hero-action-line,
-      .hero-action-photo {
+      .hero-action-main {
+        width: 100% !important;
+        min-width: 0;
         min-height: 50px;
       }
 
-      .hero-action-phone {
-        width: auto !important;
-      }
+      .hero-action-photo { min-height: 0; }
 
       .hero-reassurance {
-        gap: 6px 12px;
-        margin: 0 0 8px;
+        gap: 6px;
+        margin: 16px 0 0;
         font-size: .88rem;
       }
+
+      .first-step-guide { margin-top: -20px; padding-bottom: 42px; }
+
+      .first-step-panel { grid-template-columns: 1fr; }
+
+      .first-step-lead,
+      .first-step-link { padding: 18px; }
+
+      .first-step-link { border-top: 1px solid var(--line); border-left: 0; }
 
       .notice-inner {
         flex-direction: column;
@@ -1946,9 +2050,10 @@
 
     .sitehead .in { width: min(1120px, calc(100% - 40px)); margin: 0 auto; padding: 12px 0; }
     .sitehead-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    .sitehead .logo { color: var(--navy); font-size: 1rem; font-weight: 800; letter-spacing: 0; text-decoration: none; white-space: nowrap; }
-    .sitehead .logo span { margin-left: 6px; color: var(--sub); font-size: .72rem; font-weight: 700; }
-    .sitehead .logo[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--green); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+    .sitehead .logo { display: inline-flex; align-items: center; gap: 10px; min-width: 0; color: var(--navy); font-size: 1rem; font-weight: 800; letter-spacing: 0; text-decoration: none; white-space: nowrap; }
+    .sitehead .sitehead-logo-mark { display: block; flex: 0 0 38px; width: 38px; height: 38px; margin: 0; }
+    .sitehead .sitehead-logo-name { min-width: 0; color: var(--navy); font-size: 1rem; font-weight: 800; }
+    .sitehead .sitehead-logo-kana { margin-left: 6px; color: var(--sub); font-size: .72rem; font-weight: 700; }
     .sitehead .sitehead-phone { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 13px; border-radius: 999px; background: var(--navy); color: #fff; font-size: .8rem; font-weight: 800; text-decoration: none; white-space: nowrap; }
     .sitehead .sitehead-phone:hover { background: var(--green); }
     .sitehead-cta { display: flex; align-items: center; gap: 8px; }
@@ -1963,13 +2068,12 @@
     body.nav-open { overflow: hidden; }
 
     @media (min-width: 981px) {
-      .sitehead .in { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 18px; }
+      .sitehead .in { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 18px; }
       .sitehead-row { display: contents; }
       .sitehead .logo { grid-column: 1; }
       .sitehead .site-nav { grid-column: 2; display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 4px 12px; }
       .sitehead .site-nav a { padding: 4px 2px; }
       .sitehead .site-nav a[aria-current="page"] { padding: 4px 7px; }
-      .sitehead .sitehead-cta { grid-column: 3; }
     }
 
     @media (max-width: 980px) {
@@ -1984,6 +2088,10 @@
       html.js .sitehead .menu-toggle { display: inline-flex; }
       html.js .sitehead .site-nav { display: none; }
       html.js .sitehead.is-open .site-nav { display: grid; }
+    }
+
+    @media (max-width: 700px) {
+      .sitehead .sitehead-logo-kana { display: none; }
     }
     :where(a,button,summary,input,select,textarea,[tabindex]):focus-visible {
       outline: 3px solid #fff;
@@ -2084,7 +2192,6 @@ a.trustbar-item:hover{text-decoration:underline}
       <a class="trustbar-item" href="https://share.google/U1dqcpyOBwvAJcPx8" target="_blank" rel="noopener"><span class="trustbar-stars" aria-hidden="true">★★★★★</span><span class="trustbar-score">5.0</span><span>Googleクチコミ18件</span></a>
       <span class="trustbar-item">職人歴24年以上</span>
       <span class="trustbar-item is-optional">桶川市在住・職人直営</span>
-      <span class="trustbar-item is-optional">現地調査・お見積り無料</span>
     </div>
   </div>
   <header class="sitehead">
@@ -2094,10 +2201,6 @@ a.trustbar-item:hover{text-decoration:underline}
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
         <span class="menu-toggle-icon" aria-hidden="true">☰</span><span class="visually-hidden">メニューを開く</span>
       </button>
-      <div class="sitehead-cta">
-        <a class="sitehead-line" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">LINEで相談</a>
-        <a class="sitehead-phone" href="tel:09014340189">電話する</a>
-      </div>
     </div>
     <nav class="site-nav" id="site-nav" aria-label="主要メニュー">
       <a href="./services/exterior-painting/">外壁塗装</a>
@@ -2117,50 +2220,47 @@ a.trustbar-item:hover{text-decoration:underline}
     <section class="hero reveal-section is-visible" aria-label="Real Make ファーストビュー">
       <div class="container hero-content reveal-item reveal-delay-0 is-visible">
         <p class="eyebrow"><span>桶川市・北本市・上尾市対応｜職人直営</span></p>
-        <h1>桶川市周辺の<br>外壁塗装・屋根塗装</h1>
-        <p class="hero-lead">状態確認から施工、工事後のサポートまで、代表の大川が丁寧に対応します。</p>
-        <div class="hero-actions">
-          <a class="button sim-banner-btn hero-action-main" href="https://realmake-okegawa.github.io/realmake6/painting_simulator.html" style="background:#219ab5;color:#fff;">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7h6M9 11h6M9 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.8"></rect></svg>
-            30秒で概算費用をチェック
-          </a>
-          <a class="button hero-action-photo" href="photo-estimate/">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"></rect><path d="M8 6l1.4-2h5.2L16 6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path><circle cx="12" cy="13" r="3.4" stroke="currentColor" stroke-width="1.8"></circle></svg>
-            <span>業者を家に呼ばずに<br>写真と図面で概算見積り</span>
-          </a>
-        </div>
+        <h1>桶川市の外壁塗装、屋根塗装<span>費用を、まず知る。</span></h1>
+        <p class="hero-lead">状態確認から施工後のご相談まで、代表の大川が一貫して対応します。</p>
         <div class="hero-reassurance" aria-label="ご相談時の安心材料">
           <span>現地調査・見積り無料</span>
-          <a href="https://share.google/U1dqcpyOBwvAJcPx8" target="_blank" rel="noopener">Google評価5.0・口コミ18件</a>
-          <span>施工後のアフターフォローも安心</span>
+          <a href="https://share.google/U1dqcpyOBwvAJcPx8" target="_blank" rel="noopener">Google評価 5.0</a>
+          <span>施工後もフォロー</span>
+        </div>
+        <div class="hero-actions">
+          <a class="button hero-action-main" href="https://realmake-okegawa.github.io/realmake6/painting_simulator.html">
+            <span class="hero-cta-copy"><small>SIMULATOR</small>30秒で概算費用をチェック</span>
+            <span class="hero-cta-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="hero-action-photo" href="photo-estimate/">写真・図面で、より具体的な概算を知りたい方はこちら →</a>
         </div>
       </div>
     </section>
 
-    <section class="estimate-choice section-photo" aria-labelledby="estimate-choice-title" style="--section-bg: url('./assets/optimized/page/assets/web/site/work-scaffold.webp');">
+    <section class="first-step-guide" aria-labelledby="first-step-title">
       <div class="container">
-        <div class="estimate-choice-head">
-          <p class="section-label">Estimate</p>
-          <h2 id="estimate-choice-title">概算費用の調べ方は、2つあります。</h2>
-          <p>どちらからでもご利用いただけます。ご都合のよい方をお選びください。</p>
-        </div>
-        <div class="estimate-choice-grid">
-          <a class="estimate-choice-card" href="https://realmake-okegawa.github.io/realmake6/painting_simulator.html">
-            <span>SIMULATOR</span>
-            <strong>30秒で概算費用をチェック</strong>
-            <p class="estimate-choice-for">まず金額の目安を知りたい方</p>
-            <small>坪数や塗装内容を選ぶだけで、その場で概算費用が分かります。写真や図面のご用意は不要です。</small>
-            <b>30秒概算シミュレーターを開く →</b>
+        <div class="first-step-panel">
+          <div class="first-step-lead">
+            <span>FIRST STEP</span>
+            <strong id="first-step-title">工事を決める前に、知りたいことから。</strong>
+            <small>施工内容・料金・色のイメージを、目的別に確認できます。</small>
+          </div>
+          <a class="first-step-link" href="works/">
+            <span>WORKS</span>
+            <strong>施工事例を見る</strong>
+            <b>写真・費用・工期を確認 →</b>
           </a>
-          <a class="estimate-choice-card" href="photo-estimate/">
-            <span>PHOTO &amp; DRAWING</span>
-            <strong>写真・図面で概算見積もり</strong>
-            <p class="estimate-choice-for">より具体的な概算を知りたい方</p>
-            <small>建物の写真と立面図をLINEで送っていただければ、現地調査前でも、より具体的な概算費用をご案内します。</small>
-            <b>写真・図面で概算見積もりを見る →</b>
+          <a class="first-step-link" href="price/">
+            <span>PRICE</span>
+            <strong>料金の目安を見る</strong>
+            <b>金額が変わる理由も確認 →</b>
+          </a>
+          <a class="first-step-link" href="color-simulator/">
+            <span>COLOR</span>
+            <strong>外壁カラーを試す</strong>
+            <b>ご自宅の写真で比較 →</b>
           </a>
         </div>
-        <p class="estimate-choice-note">まだ業者を家に呼ばなくても大丈夫です。概算金額を確認してから、現地調査を依頼するか決めていただけます。</p>
       </div>
     </section>
 
@@ -2169,9 +2269,9 @@ a.trustbar-item:hover{text-decoration:underline}
         <div class="home-portal-head">
           <div>
             <p class="section-label">Site Guide</p>
-            <h2 id="home-portal-title">知りたい内容から、ご覧ください。</h2>
+            <h2 id="home-portal-title">塗装について、もう少し詳しく知りたい方へ。</h2>
           </div>
-          <p>工事内容、実際の仕上がり、費用の目安を、目的別のページでご案内します。</p>
+          <p>症状や施工内容、カラー、料金の目安を目的別のページでご案内します。</p>
         </div>
         <a class="home-color-simulator" href="color-simulator/">
           <span class="home-color-simulator-kicker">COLOR SIMULATOR</span>
