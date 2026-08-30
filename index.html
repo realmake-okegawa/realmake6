@@ -1586,7 +1586,10 @@
     }
 
     .phone {
-      display: block;
+      display: inline-flex;
+      align-items: center;
+      /* 文字は大きいが line-height が詰まっていたため、押せる高さを確保（CLAUDE.md §9） */
+      min-height: 44px;
       margin: 22px 0 6px;
       font-size: 2rem;
       font-weight: 900;
@@ -1705,14 +1708,21 @@
     .footer-contact a {
       display: inline-flex;
       align-items: center;
-      min-height: 24px;
-      padding: 4px 0;
+      /* 指で押せるよう44px以上を確保（CLAUDE.md §9） */
+      min-height: 44px;
+      padding: 0;
     }
 
     .footer-contact strong {
       display: block;
       color: #fff;
       font-size: 1rem;
+    }
+
+    .footer-contact strong a {
+      /* 指で押せるよう44px以上を確保（CLAUDE.md §9） */
+      min-height: 44px;
+      color: inherit;
     }
 
     html.reveal-ready .reveal-section,
@@ -2079,7 +2089,7 @@
     @media (max-width: 980px) {
       .sitehead .in { width: 100%; padding: 0 16px; }
       .sitehead-row { min-height: 64px; }
-      .sitehead .menu-toggle { width: 42px; height: 42px; align-items: center; justify-content: center; }
+      .sitehead .menu-toggle { width: 44px; height: 44px; align-items: center; justify-content: center; }
       .sitehead .sitehead-phone { min-height: 44px; padding: 8px 11px; font-size: .76rem; }
       .sitehead .sitehead-line { display: none; }
       .sitehead .site-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding: 12px 0 16px; border-top: 1px solid var(--line); }
@@ -2591,7 +2601,7 @@ a.trustbar-item:hover{text-decoration:underline}
         <p>埼玉県全域対応 / 外壁塗装・屋根塗装・防水・コーキング工事</p>
       </div>
       <div class="footer-contact">
-        <strong>電話 090-1434-0189</strong>
+        <strong><a href="tel:09014340189">電話 090-1434-0189</a></strong>
         <p>〒363-0020 埼玉県桶川市上日出谷南2-1-19</p>
         <p><a href="services/exterior-painting/">外壁塗装</a> / <a href="services/roof-painting/">屋根塗装</a> / <a href="works/">施工事例</a></p>
         <p><a href="price/">料金</a> / <a href="reason/">選ばれる理由</a> / <a href="flow/">工事の流れ</a> / <a href="reviews/">お客様の声</a></p>
