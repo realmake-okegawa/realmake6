@@ -14,6 +14,47 @@
 <meta property="og:title" content="桶川市坂田 K様邸｜艶を落として真っ黒に仕上げた外壁塗装">
 <meta property="og:image" content="https://realmake-okegawa.github.io/realmake6/assets/optimized/page/assets/img/works/okegawa-sakata-after-front.webp">
 <link rel="stylesheet" href="../../assets/css/site.css">
+<style>
+  /* 坂田 K様邸：最初に判断材料を見せ、詳しい工程は必要な方だけ開ける構成 */
+  .case-overview { margin: 28px 0 0; padding: 24px; background: #f5f8f7; border: 1px solid var(--line); }
+  .case-overview .label { margin-bottom: 8px; }
+  .case-overview h2 { margin: 0; font-size: clamp(21px, 4.5vw, 28px); line-height: 1.45; }
+  .case-overview-intro { margin: 8px 0 0; color: var(--muted); font-size: 15px; }
+  .case-overview-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: 20px; background: var(--line); border: 1px solid var(--line); }
+  .case-overview-item { min-height: 108px; padding: 17px; background: #fff; }
+  .case-overview-item dt { color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+  .case-overview-item dd { margin: 8px 0 0; color: var(--ink); font-size: 15px; font-weight: 700; line-height: 1.6; }
+  .case-overview-item dd strong { font-size: 22px; letter-spacing: -.02em; }
+  .case-overview-details { margin-top: 16px; }
+  .case-overview-details summary { cursor: pointer; color: var(--navy); font-weight: 700; }
+  .case-overview-details .spec { margin-top: 16px; }
+  .case-process-picks { margin-top: 46px; padding-top: 40px; border-top: 1px solid var(--line); }
+  .case-process-picks h2 { margin: 0; }
+  .case-process-picks > p { margin: 8px 0 20px; color: var(--muted); }
+  .case-process-picks-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+  .case-process-pick { margin: 0; background: #fff; border: 1px solid var(--line); }
+  .case-process-pick img { display: block; width: 100%; aspect-ratio: 1 / .82; object-fit: cover; }
+  .case-process-pick figcaption { padding: 11px 10px 12px; font-size: 13px; font-weight: 700; line-height: 1.45; }
+  .case-process-pick small { display: block; margin-bottom: 4px; color: var(--mint-dark, #008c78); font-size: 11px; letter-spacing: .06em; }
+  .case-worklog-details { margin-top: 52px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .case-worklog-details > summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 25px 0; cursor: pointer; list-style: none; }
+  .case-worklog-details > summary::-webkit-details-marker { display: none; }
+  .case-worklog-details > summary::after { content: '＋'; flex: 0 0 auto; color: var(--navy); font-size: 28px; font-weight: 400; line-height: 1; }
+  .case-worklog-details[open] > summary::after { content: '−'; }
+  .case-worklog-details-title { display: block; margin-top: 3px; color: var(--ink); font-size: clamp(19px, 3vw, 25px); font-weight: 800; line-height: 1.45; }
+  .case-worklog-details-copy { margin: 0 0 25px; color: var(--muted); }
+  @media (max-width: 700px) {
+    .case-overview { margin-top: 22px; padding: 20px 16px; }
+    .case-overview-grid { grid-template-columns: 1fr; }
+    .case-overview-item { min-height: auto; padding: 15px; }
+    .case-process-picks { margin-top: 36px; padding-top: 32px; }
+    .case-process-picks-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .case-process-pick:last-child { grid-column: 1 / -1; }
+    .case-process-pick:last-child img { aspect-ratio: 16 / 7; }
+    .case-worklog-details { margin-top: 38px; }
+    .case-worklog-details > summary { padding: 20px 0; }
+  }
+</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PCG1M6JXX0"></script>
 <script src="../../assets/js/site-analytics.js"></script>
 
@@ -87,7 +128,7 @@
     <div class="label">施工事例 ／ 桶川市坂田</div>
     <h1 style="font-size:clamp(23px,3.6vw,32px);line-height:1.5;margin-bottom:8px">桶川市坂田の外壁・屋根塗装施工事例</h1>
     <p style="color:var(--muted);font-size:16px;margin:0 0 10px">艶を落として、真っ黒に仕上げる</p>
-    <p style="color:var(--muted);font-size:14px;margin-bottom:26px">桶川市坂田 K様邸 ／ 築12年・窯業系サイディング ／ 2025年10月〜11月施工</p>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:26px">桶川市坂田 K様邸 ／ 築12年・窯業系サイディング ／ 施工期間：2025年10月15日〜11月19日（実稼働約20日）</p>
     <img src="../../assets/optimized/page/assets/img/works/okegawa-sakata-after-wide.webp" alt="桶川市坂田 K様邸 外壁塗装 施工後 正面全景" style="width:100%;aspect-ratio:16/10;object-fit:cover">
   </div>
 </section>
@@ -96,19 +137,31 @@
   <div class="narrow">
     <p class="lead">「真っ黒な家にしたい」というご要望からのスタートでした。黒は艶を出すとムラや汚れが目立ちやすいため、艶を落とした仕上がりをご提案。光を反射しないマットな質感になり、サイディングの凹凸が陰影として際立ちます。</p>
     <p>雨樋・軒天・破風まで黒で統一し、白いサッシだけをコントラストとして残しました。黒い家は、付帯部を塗り残すとそこだけ浮いて見えて締まりません。屋根は熱を吸収しやすい黒に合わせ、遮熱塗料のパーフェクトクーラーベストを採用しています。</p>
-    <p>お隣との間が非常に狭い立地でしたが、足場を組んで全面を施工。外壁・屋根・付帯部・ベランダ防水まで含めて<b>20日</b>で完了しました。</p>
+    <p>お隣との間が非常に狭い立地でしたが、足場を組んで全面を施工しました。</p>
 
-    <table class="spec">
-      <tr><th>所在地</th><td>埼玉県桶川市坂田</td></tr>
-      <tr><th>築年数</th><td>築12年</td></tr>
-      <tr><th>外壁材</th><td>窯業系サイディング</td></tr>
-      <tr><th>工事内容</th><td>外壁塗装・屋根塗装<br>付帯部塗装（軒天・破風・雨樋・水切り・換気フード・シャッターBOX・鉄部）<br>ベランダ防水トップコート<br>物干しの塗装（今回サービスで施工）</td></tr>
-      <tr><th>使用塗料</th><td>外壁：日本ペイント パーフェクトトップSi（3分艶）<br>屋根：日本ペイント パーフェクトクーラーベスト（遮熱・艶あり）<br>付帯部：日本ペイント ファインSi（3分艶）<br>軒天：日本ペイント 水性ケンエース（つや消し）</td></tr>
-      <tr><th>使用色</th><td>外壁・屋根・付帯部：黒<br>軒天：黒</td></tr>
-      <tr><th>費用</th><td>110〜130万円（税込）</td></tr>
-      <tr><th>工期</th><td>約20日</td></tr>
-      <tr><th>施工時期</th><td>2025年10月 〜 11月</td></tr>
-    </table>
+    <section class="case-overview" aria-labelledby="case-overview-title">
+      <div class="label">工事概要</div>
+      <h2 id="case-overview-title">この工事で分かること</h2>
+      <p class="case-overview-intro">費用・施工期間・工事内容を、先にご確認いただけます。</p>
+      <dl class="case-overview-grid">
+        <div class="case-overview-item"><dt>費用（税込）</dt><dd><strong>110〜130万円</strong></dd></div>
+        <div class="case-overview-item"><dt>施工期間</dt><dd>2025年10月15日〜11月19日<br>（実稼働約20日）</dd></div>
+        <div class="case-overview-item"><dt>工事内容</dt><dd>外壁・屋根・付帯部の塗装<br>ベランダ防水トップコート</dd></div>
+        <div class="case-overview-item"><dt>仕上げのポイント</dt><dd>外壁は3分艶の黒<br>屋根は遮熱塗料を採用</dd></div>
+      </dl>
+      <details class="case-overview-details">
+        <summary>建物・使用塗料などの詳しい仕様を見る</summary>
+        <table class="spec">
+          <tr><th>所在地</th><td>埼玉県桶川市坂田</td></tr>
+          <tr><th>築年数</th><td>築12年</td></tr>
+          <tr><th>外壁材</th><td>窯業系サイディング</td></tr>
+          <tr><th>工事内容</th><td>外壁塗装・屋根塗装<br>付帯部塗装（軒天・破風・雨樋・水切り・換気フード・シャッターBOX・鉄部）<br>ベランダ防水トップコート<br>物干しの塗装（今回サービスで施工）</td></tr>
+          <tr><th>使用塗料</th><td>外壁：日本ペイント パーフェクトトップSi（3分艶）<br>屋根：日本ペイント パーフェクトクーラーベスト（遮熱・艶あり）<br>付帯部：日本ペイント ファインSi（3分艶）<br>軒天：日本ペイント 水性ケンエース（つや消し）</td></tr>
+          <tr><th>使用色</th><td>外壁・屋根・付帯部：黒<br>軒天：黒</td></tr>
+          <tr><th>施工期間</th><td>2025年10月15日 〜 11月19日（実稼働約20日）</td></tr>
+        </table>
+      </details>
+    </section>
   </div>
 </section>
 
@@ -143,17 +196,31 @@
       </div>
       <p style="margin-top:16px;font-size:14.5px;color:var(--muted)">建物角部とシャッターまわりも黒で統一し、白いサッシとのコントラストを残しています。</p>
     </div>
+
+    <section class="case-process-picks" aria-labelledby="case-process-picks-title">
+      <div class="label">代表的な5工程</div>
+      <h2 class="t" id="case-process-picks-title">見えない工程も、確認できるように。</h2>
+      <p>仕上がりを支える工程から、代表的な5つを抜粋しました。</p>
+      <div class="case-process-picks-grid">
+        <figure class="case-process-pick"><img src="../../assets/img/works/sakata-w01-wash-2.webp" alt="桶川市坂田 K様邸 屋根の高圧洗浄" loading="lazy" decoding="async"><figcaption><small>01 / 高圧洗浄</small>汚れとコケを落とす</figcaption></figure>
+        <figure class="case-process-pick"><img src="../../assets/img/works/sakata-w02-seal-5.webp" alt="桶川市坂田 K様邸 シーリング打ち替え完了" loading="lazy" decoding="async"><figcaption><small>02 / シーリング</small>目地を打ち替える</figcaption></figure>
+        <figure class="case-process-pick"><img src="../../assets/img/works/sakata-w08-wall-top-2.webp" alt="桶川市坂田 K様邸 外壁の上塗り後" loading="lazy" decoding="async"><figcaption><small>03 / 外壁塗装</small>3分艶の黒で仕上げる</figcaption></figure>
+        <figure class="case-process-pick"><img src="../../assets/img/works/sakata-w12-roof-top.webp" alt="桶川市坂田 K様邸 屋根の上塗り" loading="lazy" decoding="async"><figcaption><small>04 / 屋根塗装</small>遮熱塗料で仕上げる</figcaption></figure>
+        <figure class="case-process-pick"><img src="../../assets/img/works/sakata-w13-final-1.webp" alt="桶川市坂田 K様邸 完工後の外観" loading="lazy" decoding="async"><figcaption><small>05 / 完工</small>艶を抑えた黒い外観へ</figcaption></figure>
+      </div>
+    </section>
   </div>
 </section>
 
 
 <section>
   <div class="wrap">
-    <div class="label">工程の記録</div>
-    <h2 class="t">この家に、何をしたのか。工程ごとに載せます。</h2>
-    <p class="lead" style="max-width:38em">工事中に撮影した記録写真を、確認できる日付と工程ごとに16項目掲載します。外壁・屋根・付帯部・防水と範囲が広い現場なので、それぞれ何をしたのかが分かるように残しています。</p>
-
-    <div class="worklog">
+    <details class="case-worklog-details">
+      <summary>
+        <span><span class="label">工程の記録 ／ 全16工程</span><span class="case-worklog-details-title">全工程の記録を見る</span></span>
+      </summary>
+      <p class="case-worklog-details-copy">日付と工程ごとに記録した施工写真です。外壁・屋根・付帯部・防水まで、何を行ったかを確認できます。</p>
+      <div class="worklog">
 
       <div class="worklog-item">
         <div class="worklog-head"><span class="worklog-date">2025.09.28</span><span class="worklog-step">現地調査</span></div>
@@ -336,7 +403,8 @@
         </div>
       </div>
 
-    </div>
+      </div>
+    </details>
   </div>
 </section>
 
