@@ -1,5 +1,43 @@
 [
   {
+    "date": "2026-09-01",
+    "category": "現場ブログ",
+    "title": "10ヶ所の窓に内窓を取り付けました",
+    "body": [
+      "おはようございます☀",
+      "昨日も内窓の取付け工事を行いました💪🏼\n昨日のお宅は10ヶ所の窓に内窓を取り付けました☝🏼",
+      "断熱・防音の効果があり、防犯対策にもなるため、問い合わせが増えている感じがしています😊\n補助金も出るので、気になる方はお気軽にお問い合わせください✨",
+      "Real Make（リアルメイク）では、桶川市・北本市・上尾市周辺地域で外壁塗装・屋根塗装の塗り替え工事をメインに行っております💪🏼\nその他の住宅のお困りごともお気軽にお問い合わせください😊"
+    ],
+    "images": [
+      {
+        "src": "assets/optimized/blog/full/blog/2026-09-01-inner-window-installation-ten-windows-1.webp",
+        "alt": "キッチンの窓に取り付けたすりガラスの内窓",
+        "source": "assets/blog/2026-09-01-inner-window-installation-ten-windows-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-09-01-inner-window-installation-ten-windows-1.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-09-01-inner-window-installation-ten-windows-2.webp",
+        "alt": "室内側から見た内窓の取付け後の様子",
+        "source": "assets/blog/2026-09-01-inner-window-installation-ten-windows-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-09-01-inner-window-installation-ten-windows-2.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-09-01-inner-window-installation-ten-windows-3.webp",
+        "alt": "すりガラスの内窓を取り付けた窓",
+        "source": "assets/blog/2026-09-01-inner-window-installation-ten-windows-3.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-09-01-inner-window-installation-ten-windows-3.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-09-01-inner-window-installation-ten-windows-4.webp",
+        "alt": "大きな掃き出し窓に取り付けた内窓",
+        "source": "assets/blog/2026-09-01-inner-window-installation-ten-windows-4.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-09-01-inner-window-installation-ten-windows-4.webp"
+      }
+    ],
+    "slug": "2026-09-01-inner-window-installation-ten-windows"
+  },
+  {
     "date": "2026-08-31",
     "category": "地域活動",
     "title": "応援のポスターを貼っていただきました",

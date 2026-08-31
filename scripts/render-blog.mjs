@@ -236,7 +236,7 @@ if (!Array.isArray(sourcePosts)) throw new Error("blog-posts.json must contain a
 if (sourcePosts.some((post) => post.slug === duplicateReminderSlug)) throw new Error("Remove the duplicate reminder article before rendering.");
 if (sourcePosts.some((post) => !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(post.slug || ""))) throw new Error("Every post needs a lowercase ASCII slug.");
 if (new Set(sourcePosts.map((post) => post.slug)).size !== sourcePosts.length) throw new Error("Blog post slugs must be unique.");
-if (sourcePosts.length !== 80) throw new Error(`Expected 80 canonical posts, received ${sourcePosts.length}.`);
+if (sourcePosts.length !== 81) throw new Error(`Expected 81 canonical posts, received ${sourcePosts.length}.`);
 
 const posts = [...sourcePosts].sort((a, b) => String(b.date).localeCompare(String(a.date)));
 await makeOgImage("assets/optimized/page/assets/img/works/okegawa-kamogawa-after-front.webp", defaultOgImage);
