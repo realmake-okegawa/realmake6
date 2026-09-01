@@ -1,5 +1,37 @@
 [
   {
+    "date": "2026-09-02",
+    "category": "現場ブログ",
+    "title": "川越市で木部塗装を行いました",
+    "body": [
+      "おはようございます☀",
+      "昨日は川越市にて木部塗装を行いました💪🏼\nケレンと言って、木部の前回の塗膜を除去する作業を行ってから下塗りを塗りました✨",
+      "本日、中塗りと上塗りが順調に進めば完了です😊",
+      "Real Make（リアルメイク）では、桶川市・北本市・上尾市周辺地域で外壁塗装・屋根塗装の塗り替え工事をメインにリフォーム工事を行っております💪🏼\nその他の住宅のお困りごともお気軽にお問い合わせください😊"
+    ],
+    "images": [
+      {
+        "src": "assets/optimized/blog/full/blog/2026-09-02-kawagoe-wood-painting-1.webp",
+        "alt": "木部の古い塗膜をケレンで除去している様子",
+        "source": "assets/blog/2026-09-02-kawagoe-wood-painting-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-09-02-kawagoe-wood-painting-1.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-09-02-kawagoe-wood-painting-2.webp",
+        "alt": "木部に下塗りを塗っている様子",
+        "source": "assets/blog/2026-09-02-kawagoe-wood-painting-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-09-02-kawagoe-wood-painting-2.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-09-02-kawagoe-wood-painting-3.webp",
+        "alt": "下塗りを終えた木部",
+        "source": "assets/blog/2026-09-02-kawagoe-wood-painting-3.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-09-02-kawagoe-wood-painting-3.webp"
+      }
+    ],
+    "slug": "2026-09-02-kawagoe-wood-painting"
+  },
+  {
     "date": "2026-09-01",
     "category": "現場ブログ",
     "title": "10ヶ所の窓に内窓を取り付けました",
