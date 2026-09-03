@@ -288,6 +288,7 @@
     }
 
     .hero h1 span { display: block; }
+    .hero-title-break { display: none; }
 
     .hero-lead {
       width: min(535px, 100%);
@@ -2381,6 +2382,13 @@ a.trustbar-item:hover{text-decoration:underline}
 }
 
 @media (max-width: 720px) {
+  /* ファーストビューはスマホで画面端まで詰めず、読みやすい幅を確保する */
+  .hero .container {
+    width: min(100% - 40px, 540px);
+    margin-right: auto;
+    margin-left: 16px;
+  }
+
   .button {
     min-height: 50px;
   }
@@ -2390,13 +2398,25 @@ a.trustbar-item:hover{text-decoration:underline}
   }
 
   .hero-content {
-    padding: 72px 0 56px;
+    padding: 56px 0 48px;
   }
 
   .hero h1 {
     margin-bottom: 16px;
     font-size: 30px;
-    line-height: 1.3;
+    line-height: 1.38;
+    letter-spacing: -.025em;
+  }
+
+  .hero-title-break {
+    display: block;
+  }
+
+  .hero h1 span {
+    margin-top: 10px;
+    font-size: .68em;
+    line-height: 1.38;
+    letter-spacing: -.035em;
   }
 
   .hero-actions {
@@ -2404,22 +2424,39 @@ a.trustbar-item:hover{text-decoration:underline}
   }
 
   .hero-action-main {
+    width: 100% !important;
     min-height: 64px;
     padding: 15px 18px;
-    font-size: 1.05rem;
+    gap: 14px;
+    font-size: 1rem;
+  }
+
+  .hero-action-photo {
+    display: block;
+    max-width: 24em;
+    font-size: .94rem;
+    line-height: 1.7;
   }
 
   .hero-reassurance {
-    margin-top: 26px;
+    gap: 8px;
+    margin-top: 24px;
+    font-size: .82rem;
+  }
+
+  .hero-reassurance span,
+  .hero-reassurance a {
+    padding: 7px 10px;
   }
 
   .hero-reassurance + .hero-lead {
-    margin-top: 24px;
+    max-width: 24em;
+    margin-top: 28px;
   }
 
   .hero-lead {
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: .97rem;
+    line-height: 1.8;
   }
 
   .first-step-guide {
@@ -2547,7 +2584,8 @@ a.trustbar-item:hover{text-decoration:underline}
     <section class="hero reveal-section is-visible" aria-label="Real Make ファーストビュー">
       <div class="container hero-content reveal-item reveal-delay-0 is-visible">
         <p class="eyebrow"><span>桶川市・北本市・上尾市対応｜職人直営</span></p>
-        <h1>桶川市周辺で外壁塗装をお考えの方へ<span>見積もり前に、まず金額をチェック。</span></h1>
+        <h1>桶川市周辺で外壁塗装<br class="hero-title-break">をお考えの方へ<span>見積もり前に、まず金額をチェック。</span></h1>
+        <p class="hero-lead">状態確認から施工後のアフターフォローまで、代表の大川が一貫して対応します。</p>
         <div class="hero-actions">
           <a class="button hero-action-main" href="https://realmake-okegawa.github.io/realmake6/painting_simulator.html">
             <span class="hero-cta-copy"><small>SIMULATOR</small>30秒で概算費用をチェック</span>
@@ -2560,7 +2598,6 @@ a.trustbar-item:hover{text-decoration:underline}
           <a href="https://share.google/U1dqcpyOBwvAJcPx8" target="_blank" rel="noopener">Google評価 5.0</a>
           <span>施工後もフォロー</span>
         </div>
-        <p class="hero-lead">状態確認から施工後のアフターフォローまで、代表の大川が一貫して対応します。</p>
       </div>
     </section>
 
