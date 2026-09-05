@@ -16,36 +16,42 @@
       {
         "src": "assets/optimized/blog/full/blog/2026-09-05-okegawa-balcony-waterproofing-prep-1.webp",
         "alt": "桶川市のベランダ床に貼られていた長尺シート",
+        "loading": "eager",
         "source": "assets/blog/2026-09-05-okegawa-balcony-waterproofing-prep-1.jpg",
         "thumbnail": "assets/optimized/blog/thumb/blog/2026-09-05-okegawa-balcony-waterproofing-prep-1.webp"
       },
       {
         "src": "assets/optimized/blog/full/blog/2026-09-05-okegawa-balcony-waterproofing-prep-2.webp",
         "alt": "ベランダの立ち上がりと長尺シート",
+        "loading": "eager",
         "source": "assets/blog/2026-09-05-okegawa-balcony-waterproofing-prep-2.jpg",
         "thumbnail": "assets/optimized/blog/thumb/blog/2026-09-05-okegawa-balcony-waterproofing-prep-2.webp"
       },
       {
         "src": "assets/optimized/blog/full/blog/2026-09-05-okegawa-balcony-waterproofing-prep-3.webp",
         "alt": "剥がれた塗料と長尺シートの端部",
+        "loading": "eager",
         "source": "assets/blog/2026-09-05-okegawa-balcony-waterproofing-prep-3.jpg",
         "thumbnail": "assets/optimized/blog/thumb/blog/2026-09-05-okegawa-balcony-waterproofing-prep-3.webp"
       },
       {
         "src": "assets/optimized/blog/full/blog/2026-09-05-okegawa-balcony-waterproofing-prep-4.webp",
         "alt": "長尺シートを剥がしてのりを除去しているベランダ床",
+        "loading": "eager",
         "source": "assets/blog/2026-09-05-okegawa-balcony-waterproofing-prep-4.jpg",
         "thumbnail": "assets/optimized/blog/thumb/blog/2026-09-05-okegawa-balcony-waterproofing-prep-4.webp"
       },
       {
         "src": "assets/optimized/blog/full/blog/2026-09-05-okegawa-balcony-waterproofing-prep-5.webp",
         "alt": "長尺シートを剥がした後のベランダ床",
+        "loading": "eager",
         "source": "assets/blog/2026-09-05-okegawa-balcony-waterproofing-prep-5.jpg",
         "thumbnail": "assets/optimized/blog/thumb/blog/2026-09-05-okegawa-balcony-waterproofing-prep-5.webp"
       },
       {
         "src": "assets/optimized/blog/full/blog/2026-09-05-okegawa-balcony-waterproofing-prep-6.webp",
         "alt": "ベランダ床ののりをスクレーパーで除去している様子",
+        "loading": "eager",
         "source": "assets/blog/2026-09-05-okegawa-balcony-waterproofing-prep-6.jpg",
         "thumbnail": "assets/optimized/blog/thumb/blog/2026-09-05-okegawa-balcony-waterproofing-prep-6.webp"
       }

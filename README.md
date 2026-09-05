@@ -30,6 +30,17 @@ node scripts/check-site.mjs
 
 ## 公開前チェック
 
+公開する変更を `git add` した後、コミット前に次も実行します。
+
+```bash
+node scripts/check-publish-assets.mjs
+```
+
+この検査はステージ済みのHTML・CSSを読み、画像やスクリプトが公開対象に含まれるか確認します。
+手元にだけある未追跡画像を誤って参照している場合も検出します。
+トップのブログは `render-blog.mjs` が現在のNotion風カードを生成します。
+概算チェックの計測内容は [docs/analytics-checks.md](docs/analytics-checks.md) を参照してください。
+
 - 電話番号、LINE、Instagram、Facebookのリンクが正しいか
 - 施工写真やブログ画像が表示されるか
 - スマホ幅で文字やボタンがはみ出していないか

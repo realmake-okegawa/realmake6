@@ -11,7 +11,13 @@
 
     var href = link.getAttribute('href') || '';
     var label = (link.innerText || '').trim().slice(0, 40);
-    var params = {link_url: href, link_text: label};
+    var location = link.closest('[data-ga-location]');
+    var linkLocation = location ? location.getAttribute('data-ga-location')
+      : link.closest('.rm-fixed-bar, .sticky') ? 'fixed_bar'
+      : link.closest('header') ? 'header'
+      : link.closest('.rm-hero') ? 'home_hero'
+      : link.closest('footer') ? 'footer' : 'content';
+    var params = {link_url: href, link_text: label, link_location: linkLocation};
 
     var customEvent = link.getAttribute('data-ga-event');
     if (customEvent) {

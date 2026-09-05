@@ -37,6 +37,7 @@ function images(post) {
       src: image.src,
       thumbnail: image.thumbnail || image.src,
       alt: image.alt || post.title || "ブログ写真",
+      loading: image.loading,
     }));
 }
 
@@ -111,15 +112,15 @@ function head({ title, description, canonical, relativePath, data, ogImage = def
 </head>`;
 }
 
-function homeCard(post, featured) {
+function homeCard(post) {
   const image = images(post)[0];
-  return `<article class="blog-card${featured ? " blog-card-featured" : ""}">${image ? `\n  <img src="${escapeHtml(image.thumbnail)}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async">` : ""}
-  <div class="blog-body">
-    <div class="blog-meta"><time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}</time><span>${escapeHtml(post.category || "お知らせ")}</span></div>
-    <h3>${escapeHtml(post.title)}</h3><p>${escapeHtml(excerpt(post)).replaceAll("\n", "<br>")}</p>
-    <a class="blog-read-more" href="blog/${escapeHtml(post.slug)}/index.html">続きを読む</a>
+  return `<a class="rm-blog-card" href="./blog/${escapeHtml(post.slug)}/" data-ga-location="home_blog">${image ? `\n  <img src="./${escapeHtml(image.thumbnail)}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async">` : ""}
+  <div>
+    <time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}｜${escapeHtml(post.category || "お知らせ")}</time>
+    <h3>${escapeHtml(post.title)}</h3>
+    <span class="rm-blog-more">記事を読む →</span>
   </div>
-</article>`;
+</a>`;
 }
 
 function articlePage(post, older, newer) {
@@ -142,7 +143,7 @@ function articlePage(post, older, newer) {
       { "@type": "ListItem", position: 3, name: post.title, item: canonical },
     ],
   }] };
-  const gallery = postImages.map((image) => `          <figure class="blog-article-image"><img src="${escapeHtml(sourceImage(relativePath, image.src))}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async"></figure>`).join("\n");
+  const gallery = postImages.map((image) => `          <figure class="blog-article-image"><img src="${escapeHtml(sourceImage(relativePath, image.src))}" alt="${escapeHtml(image.alt)}" loading="${image.loading === "eager" ? "eager" : "lazy"}" decoding="async"></figure>`).join("\n");
   const olderLink = older ? `<a href="../${escapeHtml(older.slug)}/index.html" rel="prev">← 前の記事<br><strong>${escapeHtml(older.title)}</strong></a>` : "";
   const newerLink = newer ? `<a href="../${escapeHtml(newer.slug)}/index.html" rel="next">次の記事 →<br><strong>${escapeHtml(newer.title)}</strong></a>` : "";
   return `<!doctype html>
