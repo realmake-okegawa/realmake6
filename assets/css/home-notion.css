@@ -155,7 +155,11 @@ body.rm-home {
 .rm-area-inner { display: grid; grid-template-columns: .8fr 1.2fr; gap: 45px; align-items: start; }
 .rm-area-inner p { color: var(--rm-muted); }
 .rm-area-list { display: flex; flex-wrap: wrap; gap: 9px; padding-top: 6px; }
-.rm-area-list span { padding: 8px 13px; border: 1px solid #c9d8d1; border-radius: 999px; background: #fff; color: #344b41; font-size: 15px; font-weight: 700; }
+.rm-area-list span,
+.rm-area-list a { padding: 8px 13px; border: 1px solid #c9d8d1; border-radius: 999px; background: #fff; color: #344b41; font-size: 15px; font-weight: 700; }
+/* 専用ページのある地域はリンクにしている。押せることが分かるよう色と下線を足す */
+.rm-area-list a { display: inline-block; border-color: #9ec9b8; color: #1f6b52; text-decoration: underline; text-underline-offset: 3px; }
+.rm-area-list a:hover { background: #f2f8f5; border-color: #1f6b52; }
 
 .rm-contact { padding: 86px 0; background: var(--rm-navy); color: #fff; }
 .rm-contact-inner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 36px; }
