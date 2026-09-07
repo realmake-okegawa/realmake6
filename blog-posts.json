@@ -1,5 +1,38 @@
 [
   {
+    "date": "2026-09-08",
+    "category": "現場ブログ",
+    "title": "不安定な天気の中、川越市・桶川市で動いた一日",
+    "body": [
+      "おはようございます☔️",
+      "台風と秋雨前線の影響で不安定な天気が続いていますね💦",
+      "昨日は朝から雨だったので、川越市へ打ち合わせに行き、戻ってきて桶川市でお昼まで作業をして、午後は桶川市の某工場のガラス交換へと、天気の様子を見ながらあちこちへと動きました💪🏼",
+      "今週いっぱい不安定な天気が続きそうですので、お気をつけください！",
+      "Real Make(リアルメイク)では、\n桶川市・北本市・上尾市周辺地域で外壁塗装・屋根塗装の塗り替え工事をメインにリフォーム工事を行っております💪🏼\nその他の住宅のお困り事もお気軽にお問い合わせください😊"
+    ],
+    "images": [
+      {
+        "src": "assets/optimized/blog/full/blog/2026-09-08-okegawa-factory-glass-replacement-1.webp",
+        "alt": "桶川市の工場で撮影したガラス交換前のひび割れた窓",
+        "source": "assets/blog/2026-09-08-okegawa-factory-glass-replacement-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-09-08-okegawa-factory-glass-replacement-1.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-09-08-okegawa-factory-glass-replacement-2.webp",
+        "alt": "桶川市の工場でガラス交換を行っている窓まわり",
+        "source": "assets/blog/2026-09-08-okegawa-factory-glass-replacement-2.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-09-08-okegawa-factory-glass-replacement-2.webp"
+      },
+      {
+        "src": "assets/optimized/blog/full/blog/2026-09-08-okegawa-factory-glass-replacement-3.webp",
+        "alt": "雨天時の桶川市の工場の外壁と窓まわり",
+        "source": "assets/blog/2026-09-08-okegawa-factory-glass-replacement-3.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-09-08-okegawa-factory-glass-replacement-3.webp"
+      }
+    ],
+    "slug": "2026-09-08-okegawa-factory-glass-replacement"
+  },
+  {
     "date": "2026-09-07",
     "category": "地域活動",
     "title": "長男の高校サッカー選手権予選を応援しました",
