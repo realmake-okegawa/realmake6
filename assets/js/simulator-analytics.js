@@ -46,6 +46,7 @@
     var href = link.getAttribute('href') || '';
     var method = /^tel:/.test(href) ? 'phone'
       : /https:\/\/(?:lin\.ee|line\.me)\//.test(href) ? 'line'
+      : href.indexOf('photo-estimate/') !== -1 ? 'photo'
       : href.indexOf('contact/') !== -1 ? 'form' : '';
     if (method) track('simulator_contact_click', {contact_method: method, link_location: 'simulator_result'});
   });

@@ -633,14 +633,15 @@ const PHONE_URL = 'tel:09014340189';
     </div>
 
     <section class="rm-consult" id="estimate-consult" aria-labelledby="estimate-consult-title">
-      <p class="rm-consult-label">次は、わが家の条件で相談</p>
-      <h2 id="estimate-consult-title">この概算をもとに、<br>大川に相談できます。</h2>
-      <p>まだ工事を決めていなくても大丈夫です。入力条件と金額をコピーして、LINEのトークに貼り付けてお送りください。</p>
+      <p class="rm-consult-label">次は、より具体的に相談</p>
+      <h2 id="estimate-consult-title">写真・図面があれば、<br>より具体的な目安をご案内します。</h2>
+      <p>まだ工事を決めていなくても大丈夫です。結果と建物の写真・図面を送っていただければ、お住まいの条件に合わせて相談できます。</p>
       <div class="rm-consult-actions">
-        <button class="rm-consult-button" id="estimate-copy" type="button">1．相談文をコピーする</button>
-        <a class="rm-consult-button rm-consult-line" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener" data-ga-location="simulator_result">2．LINEを開いて相談する</a>
+        <a class="rm-consult-button rm-consult-photo" href="photo-estimate/" data-ga-location="simulator_result">写真・図面で、より具体的な概算を相談する<span aria-hidden="true"> →</span></a>
+        <button class="rm-consult-button" id="estimate-copy" type="button">この概算をコピーする</button>
+        <a class="rm-consult-button rm-consult-line" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener" data-ga-location="simulator_result">LINEを開いて相談する</a>
       </div>
-      <p id="estimate-copy-status" class="rm-consult-status" role="status" aria-live="polite">コピーだけでは送信されません。LINEで貼り付け・送信してください。</p>
+      <p id="estimate-copy-status" class="rm-consult-status" role="status" aria-live="polite">写真や図面が手元にない方は、概算をコピーしてLINEで貼り付け・送信してください。</p>
       <details id="estimate-copy-details">
         <summary>送る相談文を確認する・手動でコピーする</summary>
         <label for="estimate-message">入力条件と概算金額（読み取り専用）</label>
@@ -652,7 +653,6 @@ const PHONE_URL = 'tel:09014340189';
 
     <!-- その他の問い合わせ -->
     <div class="contact-actions rm-consult-other" aria-label="その他の問い合わせ方法">
-      <a class="contact-btn btn-line-photo" href="photo-estimate/">写真で、より具体的な概算を相談する</a>
       <a class="contact-btn btn-phone-consult" href="tel:09014340189" data-phone-link>電話で直接相談する</a>
       <a class="contact-btn btn-contact-form" href="contact/index.html">フォームで相談する</a>
     </div>

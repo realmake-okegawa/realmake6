@@ -7,17 +7,18 @@
 | `simulator_click` | サイト内の概算費用チェックへのリンクを押したとき（既存） |
 | `simulator_start` | シミュレーターで入力を変更、または「次へ」を押したとき。やり直しまで1回 |
 | `simulator_result_view` | 計算結果の画面が表示されたとき。表示中の重複送信なし |
-| `simulator_contact_click` | 結果画面の電話・LINE・フォームへのリンクを押したとき |
+| `simulator_result_copy` | 結果画面で、LINEに送る相談文をコピーできたとき |
+| `simulator_contact_click` | 結果画面の写真・図面相談・電話・LINE・フォームへのリンクを押したとき |
 | `simulator_restart` | 結果画面で「最初からやり直す」を押したとき |
 
-`simulator_contact_click` の `contact_method` は `phone`・`line`・`form`。
+`simulator_contact_click` の `contact_method` は `photo`・`phone`・`line`・`form`。写真・図面相談は実際の送信ではなく、より具体的な相談ページへ進む意思表示として記録します。
 共通クリックイベントには `link_location` を追加し、ヘッダー、固定バー、トップの費用相談欄などの入口を区別します。
 入力内容、写真、氏名、住所、算出金額は今回のイベントには送りません。
 
 ## GA4で確認すること
 
-1. リアルタイムまたはDebugViewで、開始→結果表示→相談ボタンの順にイベントが届くか確認する。
-2. データが蓄積したら、探索のファネルで `simulator_start` → `simulator_result_view` → `simulator_contact_click` を順に比較する。
+1. リアルタイムまたはDebugViewで、開始→結果表示→写真・図面相談またはLINE相談の順にイベントが届くか確認する。
+2. データが蓄積したら、探索のファネルで `simulator_start` → `simulator_result_view` → `simulator_contact_click` を順に比較する。`contact_method` で、写真・図面相談とLINE・電話・フォームを分けて確認する。
 3. `link_location` で比較する場合は、GA4管理画面で同名パラメータをイベントスコープのカスタムディメンションとして登録する。サイト実装のみでは管理画面の登録は行われない。
 4. 集計期間・対象ユーザー・端末を揃える。単純なイベント回数の割り算では、やり直しや複数クリックが含まれる。
 
