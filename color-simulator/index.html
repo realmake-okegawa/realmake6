@@ -1,131 +1,59 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#143c37" />
-    <meta name="description" content="ご自宅の写真で外壁の色を試せる、Real Makeの無料カラーシミュレーターです。スマホ対応で、塗装前後の比較や画像保存ができます。" />
-    <meta property="og:title" content="外壁カラーシミュレーター｜Real Make（リアルメイク）" />
-    <meta property="og:description" content="ご自宅の写真を使って、気になる外壁カラーを無料でお試しいただけます。" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://realmake-okegawa.github.io/realmake6/color-simulator/" />
-    <meta property="og:image" content="https://realmake-okegawa.github.io/realmake6/assets/optimized/page/assets/og/default.webp" />
-    <link rel="canonical" href="https://realmake-okegawa.github.io/realmake6/color-simulator/" />
-    <title>外壁カラーシミュレーター｜Real Make（リアルメイク）</title>
-    <link rel="stylesheet" href="../assets/css/site.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../assets/css/simulator-consult.css" />
-    <script src="../assets/js/nav.js" defer></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PCG1M6JXX0"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-PCG1M6JXX0');
-    </script>
-    <script src="../assets/js/site-analytics.js"></script>
-    <meta name="twitter:card" content="summary_large_image">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="ご自宅の写真で外壁の色を試せる、Real Makeの無料カラーシミュレーターです。スマホ対応で、塗装前後の比較や画像保存ができます。">
+<meta property="og:title" content="外壁カラーシミュレーター｜Real Make（リアルメイク）">
+<meta property="og:description" content="ご自宅の写真を使って、気になる外壁カラーを無料でお試しいただけます。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://realmake-okegawa.github.io/realmake6/color-simulator/">
+<meta property="og:image" content="https://realmake-okegawa.github.io/realmake6/assets/optimized/page/assets/og/default.webp">
+<link rel="canonical" href="https://realmake-okegawa.github.io/realmake6/color-simulator/">
+<meta name="twitter:card" content="summary_large_image">
+<title>外壁カラーシミュレーター｜Real Make（リアルメイク）</title>
+<link rel="stylesheet" href="style.css">
 </head>
-  <body>
-    <div class="trustbar">
-      <div class="trustbar-in">
-        <a class="trustbar-item" href="https://share.google/U1dqcpyOBwvAJcPx8" target="_blank" rel="noopener"><span class="trustbar-stars" aria-hidden="true">★★★★★</span><span class="trustbar-score">5.0</span><span>Googleクチコミ19件</span></a>
-        <span class="trustbar-item">職人歴24年以上</span>
-        <span class="trustbar-item is-optional">桶川市在住・職人直営</span>
-        <span class="trustbar-item is-optional">現地調査・お見積り無料</span>
-      </div>
-    </div>
-    <header class="sitehead">
-      <div class="in">
-        <div class="sitehead-row">
-          <a class="logo" href="../"><img class="sitehead-logo-mark" src="../assets/web/site/logo.webp" alt="" width="38" height="38"><span class="sitehead-logo-name">Real Make<span class="sitehead-logo-kana">（リアルメイク）</span></span></a>
-          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-toggle-icon" aria-hidden="true">☰</span><span class="visually-hidden">メニューを開く</span></button>
-          <a class="sitehead-phone" href="tel:09014340189">電話する</a>
-        </div>
-        <nav class="site-nav" id="site-nav" aria-label="主要メニュー">
-          <a href="../services/exterior-painting/">外壁塗装</a><a href="../services/roof-painting/">屋根塗装</a><a href="../works/">施工事例</a><a href="../price/">料金</a><a href="../reason/">選ばれる理由</a><a href="../area/okegawa/">桶川市</a><a href="../company/">代表・会社情報</a><a href="../faq/">よくある質問</a><a href="../contact/">お問い合わせ</a>
-        </nav>
-      </div>
-    </header>
-    <main class="simulator">
-      <header class="page-header">
-        <p class="eyebrow">Real Make</p>
-        <h1>外壁カラーシミュレーター</h1>
-        <p class="intro">外壁をタップして、好きな色を試せます。</p>
-      </header>
-
-      <section class="workspace" aria-labelledby="workspace-title">
-        <div class="workspace-heading editor-only">
-          <h2 id="workspace-title">写真と塗る範囲</h2>
-          <p id="statusText" class="status" aria-live="polite">写真を調整してから、外壁をなぞってください。</p>
-        </div>
-
-        <div class="canvas-shell">
-          <canvas id="editorCanvas" aria-label="住宅写真と外壁を塗る範囲"></canvas>
-          <div id="emptyState" class="empty-state">
-            <span class="empty-icon" aria-hidden="true">＋</span>
-            <strong>まずはご自宅の写真を選んでください</strong>
-            <label class="choose-photo-button" for="imageInput">写真を選ぶ</label>
-            <button id="samplePhotoButton" class="sample-photo-button" type="button">サンプル写真で試す</button>
-            <span class="upload-note">建物全体が正面から写っている写真がおすすめです</span>
-            <input id="imageInput" type="file" accept="image/*" />
-          </div>
-          <div id="sampleNotice" class="sample-notice" hidden>
-            <span>サンプル写真です。ご自宅の写真に切り替えられます。</span>
-            <button id="switchPhotoButton" type="button">写真を切り替える</button>
-          </div>
-        </div>
-
-        <div id="brushGuide" class="brush-guide editor-only" aria-live="polite">
-          <p>STEP 2</p>
-          <strong>👆 外壁をタップ</strong>
-          <span>足りない所は追加でタップ</span>
-        </div>
-
-        <section class="photo-controls editor-only" aria-labelledby="photo-control-title">
-          <p class="control-label" id="photo-control-title">写真の調整</p>
-          <div class="button-row">
-            <button id="rotateButton" class="button button-secondary" type="button" disabled>90°回転</button>
-            <button id="zoomOutButton" class="button button-secondary icon-button" type="button" disabled aria-label="縮小">−</button>
-            <button id="zoomInButton" class="button button-secondary icon-button" type="button" disabled aria-label="拡大">＋</button>
-            <button id="fitButton" class="button button-secondary" type="button" disabled>全体表示</button>
-          </div>
-        </section>
-
-        <section class="brush-panel editor-only" aria-labelledby="brush-title">
-          <p class="control-label">STEP 3　認識ミスをかんたん修正</p>
-          <h3 id="brush-title">はみ出し・足りない所を直す</h3>
-          <div class="tool-row" role="group" aria-label="写真と範囲の操作">
-            <button id="autoSelectButton" class="button tool-button is-selected" type="button" aria-pressed="true">✨ 自動選択<br /><small>おすすめ</small></button>
-            <button id="paintButton" class="button button-secondary tool-button tool-action" type="button" aria-pressed="false">🖌 足りない所を塗る</button>
-            <button id="eraseButton" class="button button-secondary tool-button tool-action" type="button" aria-pressed="false">🧽 はみ出した所を消す</button>
-            <button id="panButton" class="button button-secondary tool-button tool-pan" type="button" aria-pressed="false">✥ 写真を動かす</button>
-          </div>
-          <p class="quick-fix-guide">足りない所は <strong>「塗る」</strong>、はみ出しは <strong>「消す」</strong> を選んでなぞるだけ。</p>
-          <p id="autoSelectStatus" class="auto-select-status" aria-live="polite">自動選択 0/5</p>
-          <div class="brush-size-row" role="group" aria-label="塗る太さ">
-            <span>塗る太さを選ぶ</span>
-            <button id="brushSmallButton" class="button button-secondary brush-size-button brush-size-small" type="button" aria-pressed="false">小<br /><small>細かい所</small></button>
-            <button id="brushMediumButton" class="button brush-size-button brush-size-medium is-selected" type="button" aria-pressed="true">中<br /><small>ふつう</small></button>
-            <button id="brushLargeButton" class="button button-secondary brush-size-button brush-size-large" type="button" aria-pressed="false">大<br /><small>広い所</small></button>
-          </div>
-          <div class="brush-edit-row">
-            <button id="undoBrushButton" class="button button-secondary" type="button" disabled>↶ 1つ戻る</button>
-            <button id="clearBrushButton" class="button button-danger" type="button" disabled>選択範囲を全部消す</button>
-          </div>
-          <p id="brushHint" class="panel-description">外壁の中央をタップしてください。半透明の緑が、自動で選ばれた色変更範囲です。軒下の影など暗い所は「塗る」で追加できます。</p>
-        </section>
-
-        <section class="color-panel editor-only" aria-labelledby="color-title">
-          <div class="panel-heading">
-            <div>
-              <p class="control-label">STEP 4　カラーを選択</p>
-              <h3 id="color-title">外壁カラー</h3>
-            </div>
-            <span id="colorStatus" class="mode-badge">外壁中央をタップ</span>
-          </div>
-          <p id="colorHint" class="panel-description">自動選択した範囲と、「塗る・消す」で調整した範囲だけにカラーを反映します。</p>
-          <div id="colorPalette" class="color-palette" role="group" aria-label="外壁カラーを選択">
+<body>
+<header class="preview-header"><a class="preview-brand" href="../"><img src="../assets/web/site/logo.webp" width="42" height="42" alt=""><strong>Real Make<small>リアルメイク</small></strong></a><a href="../" class="original-link">ホームへ戻る ↗</a></header>
+<main class="simulator">
+<header class="page-header">
+<p class="eyebrow">COLOR SIMULATION <span>無料・登録不要</span></p>
+<h1>外壁の色を、<br class="mobile-break">気軽に試してみませんか。</h1>
+<p class="intro">まずはサンプルで。気に入ったら、ご自宅の写真でも。</p>
+<ol class="simple-steps"><li><span>1</span>写真を選ぶ</li><li><span>2</span>外壁をタップ</li><li><span>3</span>色を試す</li></ol>
+<a class="early-help" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener" data-color-line="intro">操作が難しい方は、写真をLINEで送ってご相談ください ↗</a>
+</header>
+<section class="workspace" aria-labelledby="workspace-title">
+<div class="viewer-panel">
+<div class="photo-toolbar"><div><span class="live-dot"></span><strong id="simplePhotoLabel">サンプルで体験中</strong></div><button type="button" id="chooseOwnPhoto">自宅の写真で試す</button><button type="button" id="sampleAgain" hidden>サンプルに戻す</button></div>
+<div class="workspace-heading visually-hidden"><h2 id="workspace-title">外壁の色を試す</h2><p id="statusText" role="status"></p></div>
+<div class="canvas-shell">
+<canvas id="editorCanvas" aria-label="住宅写真。色を変えたい外壁をタップしてください"></canvas>
+<div id="emptyState" class="empty-state"><strong>写真を準備しています</strong><label class="choose-photo-button" for="imageInput">写真を選ぶ</label><button type="button" id="samplePhotoButton" class="sample-photo-button">サンプル写真で試す</button></div>
+<input id="imageInput" type="file" accept="image/*">
+<div id="sampleNotice" hidden><button id="switchPhotoButton" type="button">写真を切り替える</button></div>
+<span class="stage-label" id="stageLabel">色を変える範囲</span>
+</div>
+<div class="selection-guide"><p id="simpleStatus" role="status">写真を準備しています。</p><button id="quickUndo" type="button" disabled aria-label="範囲の操作をひとつ戻す">↶ 戻す</button></div>
+<div class="bottom-actions editor-only" aria-label="比較と保存">
+<button id="beforeButton" type="button" class="button button-secondary preview-button" aria-pressed="true" disabled>元の写真</button>
+<button id="afterButton" type="button" class="button button-secondary preview-button" aria-pressed="false" disabled>色を変更した写真</button>
+<button id="saveButton" type="button" class="button button-save" disabled>画像を保存 ↓</button>
+</div>
+<p class="photo-footnote">窓や屋根はそのままに、外壁の色を試せます。</p>
+<p id="loadError" class="load-error" role="alert" hidden></p>
+</div>
+<div class="editor-panel">
+<section class="color-panel editor-only" aria-labelledby="color-title">
+<div class="panel-heading"><div><p class="control-label">気になる色を押してみてください</p><h2 id="color-title">どんな雰囲気が、お好みですか？</h2></div></div>
+<p class="selected-line">選択中 <strong id="colorStatus">色を選べます</strong></p>
+<div class="starter-grid" role="group" aria-label="まず試したい外壁カラー"><button type="button" class="color-choice starter-choice" data-starter data-color-name="グレージュ" data-color="#ded5c4" aria-pressed="false"><span class="swatch" style="background:#ded5c4"></span><span>グレージュ</span></button>
+<button type="button" class="color-choice starter-choice" data-starter data-color-name="ベージュ" data-color="#d4b37f" aria-pressed="false"><span class="swatch" style="background:#d4b37f"></span><span>ベージュ</span></button>
+<button type="button" class="color-choice starter-choice" data-starter data-color-name="ホワイト" data-color="#f7f5ef" aria-pressed="false"><span class="swatch" style="background:#f7f5ef"></span><span>ホワイト</span></button>
+<button type="button" class="color-choice starter-choice" data-starter data-color-name="ブルーグレー" data-color="#728599" aria-pressed="false"><span class="swatch" style="background:#728599"></span><span>ブルーグレー</span></button>
+<button type="button" class="color-choice starter-choice" data-starter data-color-name="ネイビー" data-color="#23385c" aria-pressed="false"><span class="swatch" style="background:#23385c"></span><span>ネイビー</span></button>
+<button type="button" class="color-choice starter-choice" data-starter data-color-name="チャコールグレー" data-color="#272a2b" aria-pressed="false"><span class="swatch" style="background:#272a2b"></span><span>チャコールグレー</span></button></div>
+<details class="more-colors"><summary>ほかの色も見てみる <span>＋</span></summary>          <div id="colorPalette" class="color-palette" role="group" aria-label="外壁カラーを選択">
             <section class="color-group" aria-labelledby="white-group"><button id="white-group" class="color-group-toggle" type="button" aria-expanded="true" aria-controls="white-colors">ホワイト・アイボリー系<span aria-hidden="true">⌄</span></button><div id="white-colors" class="color-grid">
               <button class="color-choice" type="button" data-color-name="ホワイト" data-color="#f7f5ef" data-tone="1" data-blend="screen" disabled><span class="swatch" style="background:#f7f5ef"></span>ホワイト</button>
               <button class="color-choice" type="button" data-color-name="オフホワイト" data-color="#ece8de" data-tone="1" data-blend="screen" disabled><span class="swatch" style="background:#ece8de"></span>オフホワイト</button>
@@ -173,44 +101,71 @@
               <button class="color-choice" type="button" data-color-name="サンドベージュ" data-color="#d1c19c" data-tone="1" data-blend="multiply" disabled><span class="swatch" style="background:#d1c19c"></span>サンドベージュ</button>
             </div></section>
           </div>
-          <div class="color-adjustments" aria-label="カラーの調整">
+</details>
+<p id="colorHint" class="panel-description">表示色はイメージです。実際の色は色見本で確認します。</p>
+</section>
+<details class="fine-adjustments editor-only" id="fineAdjustments"><summary><span>範囲・写真・色を細かく調整する<small>はみ出しや塗り残しが気になるときに</small></span><span>＋</span></summary>
+        <section class="photo-controls editor-only" aria-labelledby="photo-control-title">
+          <p class="control-label" id="photo-control-title">写真の調整</p>
+          <div class="button-row">
+            <button id="rotateButton" class="button button-secondary" type="button" disabled>90°回転</button>
+            <button id="zoomOutButton" class="button button-secondary icon-button" type="button" disabled aria-label="縮小">−</button>
+            <button id="zoomInButton" class="button button-secondary icon-button" type="button" disabled aria-label="拡大">＋</button>
+            <button id="fitButton" class="button button-secondary" type="button" disabled>全体表示</button>
+          </div>
+        </section>
+
+        <section class="brush-panel editor-only" aria-labelledby="brush-title">
+          <p class="control-label">必要な部分だけ調整できます</p>
+          <h3 id="brush-title">はみ出し・足りない所を直す</h3>
+          <div class="tool-row" role="group" aria-label="写真と範囲の操作">
+            <button id="autoSelectButton" class="button tool-button is-selected" type="button" aria-pressed="true">✨ 自動選択<br /><small>おすすめ</small></button>
+            <button id="paintButton" class="button button-secondary tool-button tool-action" type="button" aria-pressed="false">🖌 足りない所を塗る</button>
+            <button id="eraseButton" class="button button-secondary tool-button tool-action" type="button" aria-pressed="false">🧽 はみ出した所を消す</button>
+            <button id="panButton" class="button button-secondary tool-button tool-pan" type="button" aria-pressed="false">✥ 写真を動かす</button>
+          </div>
+          <p class="quick-fix-guide">足りない所は <strong>「塗る」</strong>、はみ出しは <strong>「消す」</strong> を選んでなぞるだけ。</p>
+          <p id="autoSelectStatus" class="auto-select-status" aria-live="polite">自動選択 0/5</p>
+          <div class="brush-size-row" role="group" aria-label="塗る太さ">
+            <span>塗る太さを選ぶ</span>
+            <button id="brushSmallButton" class="button button-secondary brush-size-button brush-size-small" type="button" aria-pressed="false">小<br /><small>細かい所</small></button>
+            <button id="brushMediumButton" class="button brush-size-button brush-size-medium is-selected" type="button" aria-pressed="true">中<br /><small>ふつう</small></button>
+            <button id="brushLargeButton" class="button button-secondary brush-size-button brush-size-large" type="button" aria-pressed="false">大<br /><small>広い所</small></button>
+          </div>
+          <div class="brush-edit-row">
+            <button id="undoBrushButton" class="button button-secondary" type="button" disabled>↶ 1つ戻る</button>
+            <button id="clearBrushButton" class="button button-danger" type="button" disabled>選択範囲を全部消す</button>
+          </div>
+          <p id="brushHint" class="panel-description">外壁の中央をタップしてください。半透明の緑が、自動で選ばれた色変更範囲です。軒下の影など暗い所は「塗る」で追加できます。</p>
+        </section>
+
+
+<label class="sensitivity" for="selectionSensitivity">タップで選ぶ広さ<select id="selectionSensitivity"><option value="48">狭め（はみ出しが気になる）</option><option value="74" selected>標準</option><option value="95">広め（影の部分も選びたい）</option></select></label>
+<div class="color-adjustments" aria-label="カラーの調整">
             <label class="range-control" for="strengthInput"><span>濃さ <output id="strengthValue">100%</output></span><input id="strengthInput" type="range" min="30" max="100" value="100" step="1" disabled /></label>
             <label class="range-control" for="brightnessInput"><span>明るさ <output id="brightnessValue">0</output></span><input id="brightnessInput" type="range" min="-30" max="30" value="0" step="1" disabled /></label>
           </div>
-          <details class="color-debug" id="colorDebug">
+          <details hidden class="color-debug" id="colorDebug">
             <summary>開発確認：選択中のカラー</summary>
             <p><span id="debugColorSwatch" aria-hidden="true"></span><strong id="debugColorName">未選択</strong><code id="debugColorHex">--</code></p>
           </details>
           <div class="color-reset-row"><button id="resetColorButton" class="button button-danger" type="button" disabled>色をリセット</button><button id="resetAllButton" class="button button-secondary" type="button" disabled>全体リセット</button></div>
-        </section>
-
-        <div class="presentation-actions editor-only" aria-label="完成イメージの確認">
-          <button id="presentationButton" class="button button-presentation" type="button" disabled>完成イメージを見る</button>
-          <button id="editReturnButton" class="button button-primary" type="button" hidden>編集・保存・相談に戻る</button>
-        </div>
-
-        <div class="bottom-actions editor-only" aria-label="比較と保存">
-          <button id="beforeButton" class="button button-secondary preview-button is-selected" type="button" disabled aria-pressed="true">元の色</button>
-          <button id="afterButton" class="button button-secondary preview-button" type="button" disabled aria-pressed="false">塗装後</button>
-          <button id="saveButton" class="button button-save" type="button" disabled>画像を保存</button>
-        </div>
-        <p id="saveHint" class="action-hint editor-only">写真を選択すると、シミュレーション画像を保存できます。</p>
+</details>
+<p class="privacy-note">写真の色変更はこの端末内で行います。写真は自動送信されません。</p>
+<section class="consult-card" aria-labelledby="help-title"><p class="control-label">一緒に色選びを</p><h2 id="help-title">「うまく塗れない」も、<br>そのままご相談ください。</h2><p>元の写真だけでも大丈夫です。代表の大川が、色選びのご相談に対応します。</p><a href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener" data-color-line="help">写真をLINEで送って相談する ↗</a></section>
+</div>
+</section>
+<section class="result-section editor-only" id="color-consult">
+<div><p class="eyebrow">気になる色が見つかったら</p><h2>この色、わが家に合う？<br>画像を添えて相談できます。</h2><p>まだ決めきれなくても大丈夫です。保存した画像を、ご家族や大川との相談にお使いください。</p></div>
+<div><div class="result-buttons"><button id="consultSaveButton" type="button" disabled>1. 相談用の画像を保存</button><a href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener" data-color-line="result">2. この色をLINEで相談する ↗</a></div><p id="color-consult-status" role="status">画像は自動送信されません。保存した画像をLINEのトークに添付してください。</p><p class="result-note">サンプル画像でのご相談も可能です。画面上の色と実際の塗料の色は異なるため、最終的には色見本で確認します。</p></div>
+</section>
+<p id="saveHint" class="action-hint editor-only"></p>
         <section id="savePreview" class="save-preview editor-only" hidden aria-live="polite">
           <img id="savePreviewImage" alt="保存用の外壁カラーシミュレーション画像" />
           <p>画像を長押しして「写真に保存」を選んでください。</p>
         </section>
-        <section class="rm-consult editor-only" id="color-consult" aria-labelledby="color-consult-title">
-          <p class="rm-consult-label">気になる色が見つかったら</p>
-          <h2 id="color-consult-title">この色、わが家に合う？<br>画像を添えて相談できます。</h2>
-          <p>まだ色を決めていなくても大丈夫です。気になる画像を保存してLINEに添付してください。代表の大川が色選びのご相談に対応します。</p>
-          <div class="rm-consult-actions">
-            <button id="consultSaveButton" class="rm-consult-button" type="button" disabled>1．相談用の画像を保存</button>
-            <a class="rm-consult-button rm-consult-line" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener" data-ga-location="color_simulator_result">2．この色をLINEで相談する</a>
-          </div>
-          <p id="color-consult-status" class="rm-consult-status" role="status" aria-live="polite">画像は自動送信されません。保存した画像をLINEのトークに添付してください。</p>
-          <p class="rm-consult-note">LINEを追加した後、トーク画面を開いて画像を添付してください。サンプル画像でのご相談も可能です。表示色はイメージのため、実際の色は色見本などで確認します。</p>
-        </section>
-        <details id="saveDebug" class="save-debug editor-only" hidden>
+
+<div hidden class="internal-elements"><div id="brushGuide"></div><div class="presentation-actions"><button id="presentationButton" type="button" disabled>完成イメージを見る</button><button id="editReturnButton" type="button" hidden>戻る</button></div>        <details id="saveDebug" class="save-debug editor-only" hidden>
           <summary>開発確認：保存の動作状況</summary>
           <dl>
             <div><dt>セキュア接続</dt><dd id="saveDebugSecure">--</dd></div>
@@ -221,9 +176,10 @@
             <div><dt>エラー</dt><dd id="saveDebugError">なし</dd></div>
           </dl>
         </details>
-      </section>
-    </main>
-    <footer class="sitefoot"><div class="wrap"><a href="../">ホーム</a><a href="../works/">施工事例</a><a href="../services/exterior-painting/">外壁塗装</a><a href="../services/roof-painting/">屋根塗装</a><a href="../price/">料金目安</a><a href="../faq/">FAQ</a><a href="../area/okegawa/">桶川市</a><div class="cp">Real Make（リアルメイク）／埼玉県桶川市上日出谷南2-1-19／090-1434-0189</div></div></footer>
-    <script src="app.js"></script>
-  </body>
-</html>
+</div>
+</main>
+<footer class="preview-footer"><strong>Real Make（リアルメイク）</strong><span>埼玉県桶川市上日出谷南2-1-19</span><a href="tel:09014340189">090-1434-0189</a><a href="../">ホームへ戻る</a></footer>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCG1M6JXX0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-PCG1M6JXX0");</script>
+<script src="app.js"></script>
+</body></html>

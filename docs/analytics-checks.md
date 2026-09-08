@@ -26,6 +26,27 @@
 実際に受けた問い合わせ件数や相談経路と照らし合わせて評価します。
 広告ブロックや通信状態などにより、すべての利用を記録できるとは限りません。
 
+## カラーシミュレーターの計測
+
+2026年9月8日追加。写真・画像データ・ファイル名はGA4へ送信しません。
+
+| イベント | 記録するタイミング |
+| --- | --- |
+| `color_photo_loaded` | サンプルまたは自宅写真を読み込めたとき |
+| `color_photo_error` | 写真を読み込めなかったとき |
+| `color_area_selected` | タップで色を変える範囲を追加できたとき |
+| `color_change` | 色を選んだとき |
+| `color_save_click` | 画像保存を押したとき |
+| `color_image_export` | ダウンロード開始、共有完了、または保存用画像表示時 |
+| `color_save_error` | 画像保存に失敗したとき |
+| `color_share_cancel` | 端末の共有をキャンセルしたとき |
+| `color_line_click` | LINE相談へのリンクを押したとき |
+| `color_adjustment_toggle` | 詳細調整を開閉したとき |
+
+`color_photo_loaded` には `source`（`sample` または `own_photo`）、`color_change` には `color_name`、`color_image_export` には `method` を付けます。`color_line_click` は `placement` で、案内文・調整欄の相談カード・保存後の相談カードを区別します。
+
+写真読込、色変更、保存、LINE相談の順に進んでいるかをGA4の探索で確認します。保存操作やLINEクリックは、写真保存完了や問い合わせ送信の完了を意味しません。実際に受けた相談件数と照らし合わせて判断します。
+
 ## 表示への影響
 
 計測は `assets/js/simulator-analytics.js` に分離しています。費用の計算式や入力値、リンク先は変更しません。

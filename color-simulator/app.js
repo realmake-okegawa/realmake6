@@ -35,7 +35,7 @@
   const debugColorHex = document.getElementById("debugColorHex");
   const debugColorSwatch = document.getElementById("debugColorSwatch");
   const autoSelectStatus = document.getElementById("autoSelectStatus");
-  const colorChoices = [...document.querySelectorAll(".color-choice")];
+  const colorChoices = [...document.querySelectorAll("#colorPalette .color-choice")];
   const colorGroupToggles = [...document.querySelectorAll(".color-group-toggle")];
   const buttons = {
     rotate: document.getElementById("rotateButton"), zoomOut: document.getElementById("zoomOutButton"), zoomIn: document.getElementById("zoomInButton"), fit: document.getElementById("fitButton"),
@@ -61,10 +61,57 @@
   const MASK_MAX_SIDE = 1536;
   const MAX_HISTORY = 8;
   // 外壁が分かれている写真でも補えるよう、自動選択は初回を含め最大5回まで追加できる
-  const MAX_AUTO_SELECT = 5;
+  const MAX_AUTO_SELECT = Infinity;
   // iPhoneでも初期の「中」が指で追いやすい太さにする
   const BRUSH_DIAMETERS = { small: 6, medium: 15, large: 23 };
   const SAMPLE_IMAGE_URL = "sample-house.jpg";
+
+
+  const advanced = document.getElementById("fineAdjustments");
+  const starterChoices = [...document.querySelectorAll("[data-starter]")];
+  const progress = document.getElementById("simpleStatus");
+  const stageLabel = document.getElementById("stageLabel");
+  const loadError = document.getElementById("loadError");
+  const previewEvents = window.rmColorPreviewEvents = [];
+  function track(name, params = {}) {
+    const event = {name, source: state.isSample ? "sample" : "own_photo", ...params};
+    previewEvents.push(event);
+    // Local / proposal previews never send events to the live GA4 property.
+    const preview = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) || location.pathname.includes("/design-proposals/");
+    if (!preview && typeof window.gtag === "function") window.gtag("event", name, event);
+  }
+  function selectColor(choice) {
+    if (!hasSelection()) return;
+    state.selectedColor = { name: choice.dataset.colorName, value: choice.dataset.color, tone: Number(choice.dataset.tone || 1), blend: choice.dataset.blend || "color" };
+    state.previewMode = "after";
+    track("color_change", {color_name:state.selectedColor.name});
+    updateUI(); draw();
+  }
+  starterChoices.forEach(button => button.addEventListener("click", () => selectColor(button)));
+  document.querySelectorAll("[data-color-line]").forEach(link => link.addEventListener("click", () => track("color_line_click", {placement:link.dataset.colorLine})));
+  document.getElementById("quickUndo").addEventListener("click", undoStroke);
+  advanced.addEventListener("toggle", () => { if (!advanced.open) setTool("auto"); track("color_adjustment_toggle", {open:advanced.open}); });
+  let loadVersion = 0;
+  function prepareSampleMask() {
+    ensureMask();
+    // Coordinates trace only the light facade in the supplied 904 x 1200 sample.
+    // The sample is rendered with a 260px crop at the top, not generated or recolored.
+    const ctx = state.mask.getContext("2d");
+    const sx = state.mask.width / 904, sy = state.mask.height / 650;
+    ctx.save(); ctx.scale(sx, sy); ctx.translate(0, -260); ctx.fillStyle = "#fff";
+    ctx.beginPath();
+    [[277,358],[829,393],[853,718],[821,716],[820,828],[276,828]].forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));
+    ctx.closePath(); ctx.fill();
+    ctx.globalCompositeOperation = "destination-out";
+    function cut(points) { ctx.beginPath(); points.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y)); ctx.closePath(); ctx.fill(); }
+    cut([[620,442],[750,442],[755,516],[620,518]]);
+    cut([[417,666],[551,665],[554,746],[415,749]]);
+    // Canopy, pipe and ventilation hood stay in their original colors.
+    cut([[278,724],[299,730],[308,749],[369,750],[459,781],[494,792],[559,763],[663,731],[778,707],[798,709],[792,729],[728,732],[606,768],[534,804],[540,831],[495,831],[490,806],[431,780],[334,758],[278,750]]);
+    ctx.fillRect(351,655,18,173); ctx.fillRect(766,603,24,31);
+    ctx.restore();
+    state.selectionExists = true; state.maskRevision++; state.anchorRevision++; rebuildOverlay();
+  }
 
   // Canvasを端末の解像度に合わせる
   function resizeCanvas() {
@@ -301,19 +348,6 @@
     const seedOffset = seedIndex * 4;
     const seedRed = source.data[seedOffset], seedGreen = source.data[seedOffset + 1], seedBlue = source.data[seedOffset + 2];
     const seedLuma = seedRed * .299 + seedGreen * .587 + seedBlue * .114;
-    // 2・3回目は、すでに選んだ外壁と大きく異なる場所を止める。空・屋根・窓などを広く追加しにくくするための安全判定。
-    if (state.autoSelectCount > 0) {
-      let redTotal = 0, greenTotal = 0, blueTotal = 0, existingPixels = 0;
-      for (let index = 0; index < total; index += 1) if (snapshot.data[index * 4 + 3]) {
-        const offset = index * 4; redTotal += source.data[offset]; greenTotal += source.data[offset + 1]; blueTotal += source.data[offset + 2]; existingPixels += 1;
-      }
-      if (existingPixels) {
-        const referenceRed = redTotal / existingPixels, referenceGreen = greenTotal / existingPixels, referenceBlue = blueTotal / existingPixels;
-        const referenceLuma = referenceRed * .299 + referenceGreen * .587 + referenceBlue * .114;
-        const referenceDifference = Math.hypot(seedRed - referenceRed, seedGreen - referenceGreen, seedBlue - referenceBlue);
-        if (referenceDifference > 125 || Math.abs(seedLuma - referenceLuma) > 88) { state.autoNotice = "外壁らしい場所をタップしてください。窓・空・屋根などは追加しません。"; updateUI(); return; }
-      }
-    }
     const visited = new Uint8Array(total);
     const selected = new Uint8Array(total);
     const queue = new Int32Array(total);
@@ -327,7 +361,8 @@
       const lumaDifference = Math.abs((red * .299 + green * .587 + blue * .114) - seedLuma);
       const colorDifference = Math.hypot(red - seedRed, green - seedGreen, blue - seedBlue);
       // 色と明るさの両方が近い場所だけに限定し、窓など極端に暗い部分へ広がりにくくする
-      if (colorDifference > 74 || lumaDifference > 58) continue;
+      const tolerance = Number(document.getElementById("selectionSensitivity").value);
+      if (colorDifference > tolerance || lumaDifference > tolerance * .78) continue;
       selected[index] = 1;
       const x = index % width;
       if (x > 0 && !visited[index - 1]) { visited[index - 1] = 1; queue[tail++] = index - 1; }
@@ -345,7 +380,7 @@
       if (smoothed[index] && !snapshot.data[offset + 3]) addedPixels += 1;
     }
     // すでに選択済みの場所を押しても、マスクも回数も増やさない。
-    if (!addedPixels) { state.autoNotice = "この場所はすでに選択されています。別の外壁部分をタップしてください。"; updateUI(); return; }
+    if (!addedPixels) { state.autoNotice = hasSelection() ? "範囲は変わりませんでした。別の壁面をタップするか、細かく調整してください。" : "この場所は選べませんでした。壁の中央をタップするか、細かく調整してください。"; updateUI(); return; }
     maskContext.putImageData(result, 0, 0);
     rebuildOverlay();
     pushHistory(snapshot);
@@ -355,6 +390,7 @@
     state.maskRevision += 1;
     state.selectionExists = maskContainsPixels();
     state.brushCursor = null;
+    track("color_area_selected", {method:"tap"});
     updateUI(); draw();
   }
 
@@ -500,37 +536,60 @@
     buttons.editReturn.hidden = !state.presentationMode;
     if (state.selectedColor) { debugColorName.textContent = state.selectedColor.name; debugColorHex.textContent = state.selectedColor.value.toUpperCase(); debugColorSwatch.style.background = state.selectedColor.value; }
     else { debugColorName.textContent = "未選択"; debugColorHex.textContent = "--"; debugColorSwatch.style.background = "transparent"; }
-    const autoComplete = state.autoSelectCount >= MAX_AUTO_SELECT;
-    // 自動選択の回数と残り回数を同じ場所に表示し、次にできる操作を迷わせない
-    if (autoComplete) autoSelectStatus.innerHTML = `<strong>自動選択 ${MAX_AUTO_SELECT}/${MAX_AUTO_SELECT} 完了</strong><span>足りない部分は「塗る」「消す」で調整できます</span>`;
-    else if (state.autoSelectCount > 0) autoSelectStatus.innerHTML = `<strong>自動選択 ${state.autoSelectCount}/${MAX_AUTO_SELECT}</strong><span>あと${MAX_AUTO_SELECT - state.autoSelectCount}回追加できます</span>`;
-    else autoSelectStatus.innerHTML = `<strong>自動選択 0/${MAX_AUTO_SELECT}</strong><span>外壁をタップして始めましょう</span>`;
-    brushHint.textContent = state.tool === "pan" ? "写真をドラッグして位置を調整できます。自動で選ぶときは「✨ 自動選択」に戻してください。" : state.tool === "erase" ? "薄い緑で見える範囲から、はみ出した部分をなぞって消せます。" : state.tool === "paint" ? "薄い緑の範囲に、足りない部分をなぞって追加できます。" : state.autoNotice || (autoComplete ? "自動選択は完了しました。足りない部分は「塗る」で調整できます。" : state.autoSelectCount ? `別の外壁部分をタップして追加できます（あと${MAX_AUTO_SELECT - state.autoSelectCount}回）。軒下の影が残った所は「塗る」でなぞってください。` : "外壁の中央をタップしてください。近い色・明るさの壁面を自動で選びます。軒下の影など暗い所は「塗る」で追加できます。");
-    if (!selected) { colorStatus.textContent = "外壁中央をタップ"; colorHint.textContent = "「✨ 自動選択」で外壁の中央をタップすると、近い壁面を自動で選びます。"; }
-    else if (!state.selectedColor) { colorStatus.textContent = "カラーを選択してください"; colorHint.textContent = "半透明の緑の範囲だけが色変更されます。"; }
-    else { colorStatus.textContent = `${state.selectedColor.name}・${state.previewMode === "after" ? "塗装後" : "元の色"}`; colorHint.textContent = state.previewMode === "after" ? "追加・消去をしても、同じカラーが選択範囲全体へすぐ反映されます。" : "元の色の住宅写真を表示中です。"; }
-    saveHint.textContent = state.saveNotice || (hasImage ? "画像を保存：緑の選択表示を含まない高画質PNGを保存できます。" : "写真を選択すると、シミュレーション画像を保存できます。");
-    statusText.textContent = !hasImage ? "まずは住宅写真を選択してください。" : state.tool === "pan" ? "写真をドラッグして位置を調整できます。" : state.tool === "auto" ? autoComplete ? "自動選択は完了しました。必要に応じて「塗る」「消す」で調整してください。" : `色を変えたい外壁の中央をタップしてください（自動選択 ${state.autoSelectCount}/${MAX_AUTO_SELECT}）。` : selected ? "「塗る」「消す」で範囲を整えてから、カラーを選んでください。" : "まずは「✨ 自動選択」で外壁の中央をタップしてください。";
+
+    const instruction = !hasImage ? "写真を選ぶか、サンプルでお試しください。" : state.autoNotice || (!selected ? "色を変えたい外壁の中央をタップしてください。" : state.selectedColor ? "気になる色を押すと、写真が切り替わります。" : "緑の範囲が選ばれました。下から色を選んでください。");
+    progress.textContent = instruction;
+    statusText.textContent = instruction;
+    autoSelectStatus.textContent = selected ? "範囲を追加するときは、別の壁面をタップできます。" : "外壁の中央をタップすると、近い色の範囲を選びます。";
+    brushHint.textContent = state.tool === "pan" ? "写真をドラッグして動かせます。" : state.tool === "erase" ? "はみ出した部分をなぞって消します。" : state.tool === "paint" ? "足りない部分をなぞって追加します。" : "影や窓の近くは選びきれないことがあります。「塗る・消す」で直せます。";
+    colorStatus.textContent = state.selectedColor ? state.selectedColor.name : selected ? "色を選べます" : "外壁をタップ";
+    stageLabel.textContent = state.selectedColor ? (state.previewMode === "before" ? "元の写真" : state.selectedColor.name + "のイメージ") : selected ? "色を変える範囲" : "外壁をタップ";
+    colorHint.textContent = "表示色はイメージです。実際の色は色見本で確認します。";
+    saveHint.textContent = state.saveNotice || "画像を保存して、ご家族との相談にも使えます。";
+    document.getElementById("quickUndo").disabled = !state.history.length;
+    starterChoices.forEach(choice => {
+      choice.disabled = !selected;
+      const active = state.selectedColor?.name === choice.dataset.colorName;
+      choice.classList.toggle("is-selected", active);
+      choice.setAttribute("aria-pressed", String(active));
+    });
+    document.getElementById("simplePhotoLabel").textContent = state.isSample ? "サンプルで体験中" : "ご自宅の写真";
+    document.getElementById("sampleAgain").hidden = state.isSample;
+    document.getElementById("chooseOwnPhoto").textContent = state.isSample ? "自宅の写真で試す" : "写真を変更する";
+
   }
 
   // FileReaderの結果でも、同一サイト内のサンプルURLでも同じ初期化を通す
+
   function loadImageFromSource(src, { isSample = false } = {}) {
+    const version = ++loadVersion;
+    loadError.hidden = true;
     const image = new Image();
-    image.onload = () => {
-      clearSavePreview(); state.image = image; state.imageVersion += 1; state.rotation = 0; state.mask = null; state.overlay = null; state.maskRevision = 0; state.selectionExists = false; state.autoSelectCount = 0; state.autoNotice = ""; state.history = []; state.activeStroke = null;
-      state.tool = "auto"; state.brushSize = "medium"; state.brushCursor = null; state.selectedColor = null; state.previewMode = "before"; state.colorStrength = 100; state.colorBrightness = 0; state.saveNotice = ""; state.isSample = isSample; resetView(); emptyState.hidden = true; updateUI(); requestAnimationFrame(resizeCanvas);
+    image.onload = async () => {
+      if (version !== loadVersion) return;
+      let prepared = image;
+      if (isSample) {
+        const frame = document.createElement("canvas"); frame.width = 904; frame.height = 650;
+        frame.getContext("2d").drawImage(image, 0,260,904,650,0,0,904,650);
+        prepared = new Image(); prepared.src = frame.toDataURL(); await prepared.decode();
+        if (version !== loadVersion) return;
+      }
+      clearSavePreview(); state.image = prepared; state.imageVersion++; state.rotation = 0; state.mask = null; state.overlay = null; state.maskRevision = 0; state.selectionExists = false; state.autoSelectCount = 0; state.autoNotice = ""; state.history = []; state.activeStroke = null;
+      state.tool = "auto"; state.brushSize = "medium"; state.selectedColor = null; state.previewMode = "before"; state.colorStrength = 100; state.colorBrightness = 0; state.saveNotice = ""; state.isSample = isSample; state.presentationMode = false; simulator.classList.remove("is-presentation"); resetView(); emptyState.hidden = true;
+      if (isSample) prepareSampleMask();
+      track("color_photo_loaded");
+      advanced.open = false; updateUI(); requestAnimationFrame(resizeCanvas);
     };
-    image.onerror = () => {
-      state.saveNotice = "写真を読み込めませんでした。別の写真でお試しください。";
-      updateUI();
-    };
+    image.onerror = () => { if (version !== loadVersion) return; loadError.textContent = "写真を読み込めませんでした。JPEGやPNGの写真でお試しください。"; loadError.hidden = false; track("color_photo_error"); };
     image.src = src;
   }
+  document.getElementById("chooseOwnPhoto").addEventListener("click", () => imageInput.click());
+  document.getElementById("sampleAgain").addEventListener("click", () => loadImageFromSource(SAMPLE_IMAGE_URL, {isSample:true}));
 
   // 写真の読込時に、古い選択・履歴・比較キャッシュをすべて初期化する
   imageInput.addEventListener("change", (event) => {
     const [file] = event.target.files; if (!file || !file.type.startsWith("image/")) return;
-    const reader = new FileReader(); reader.onload = () => loadImageFromSource(reader.result); reader.readAsDataURL(file); imageInput.value = "";
+    const reader = new FileReader(); reader.onload = () => loadImageFromSource(reader.result); reader.onerror = () => {loadError.hidden=false; loadError.textContent="写真を読み込めませんでした。もう一度選んでください。"; track("color_photo_error");}; reader.readAsDataURL(file); imageInput.value = "";
   });
   samplePhotoButton.addEventListener("click", () => loadImageFromSource(SAMPLE_IMAGE_URL, { isSample: true }));
   switchPhotoButton.addEventListener("click", () => imageInput.click());
@@ -547,7 +606,7 @@
     state.mask = null; state.overlay = null; state.maskRevision = 0; state.anchorRevision = 0; state.selectionExists = false; state.autoSelectCount = 0; state.autoNotice = ""; state.history = []; state.selectedColor = null; state.previewMode = "before"; state.colorStrength = 100; state.colorBrightness = 0; state.rotation = 0; state.brushCursor = null; resetView(); updateUI(); draw();
   });
   buttons.resetColor.addEventListener("click", () => { state.selectedColor = null; state.previewMode = "before"; state.colorStrength = 100; state.colorBrightness = 0; updateUI(); draw(); });
-  colorChoices.forEach((choice) => choice.addEventListener("click", () => { if (!hasSelection()) return; state.selectedColor = { name: choice.dataset.colorName, value: choice.dataset.color, tone: Number(choice.dataset.tone), blend: choice.dataset.blend || "color" }; state.previewMode = "after"; updateUI(); draw(); }));
+  colorChoices.forEach((choice) => choice.addEventListener("click", () => selectColor(choice)));
   buttons.before.addEventListener("click", () => { if (!state.selectedColor) return; state.previewMode = "before"; updateUI(); draw(); }); buttons.after.addEventListener("click", () => { if (!state.selectedColor) return; state.previewMode = "after"; updateUI(); draw(); });
   strengthInput.addEventListener("input", () => { state.colorStrength = Number(strengthInput.value); updateUI(); draw(); }); brightnessInput.addEventListener("input", () => { state.colorBrightness = Number(brightnessInput.value); updateUI(); draw(); });
   colorGroupToggles.forEach((toggle) => toggle.addEventListener("click", () => { const group = toggle.closest(".color-group"); const collapsed = group.classList.toggle("is-collapsed"); toggle.setAttribute("aria-expanded", String(!collapsed)); }));
@@ -580,7 +639,7 @@
 
   // 保存時の接続・API対応状況を、必要なときだけ画面内で確認できるようにする
   function updateSaveDebug(capabilities, error = null) {
-    saveDebug.hidden = false;
+    saveDebug.hidden = true;
     saveDebugSecure.textContent = String(capabilities.secureContext);
     saveDebugProtocol.textContent = capabilities.protocol;
     saveDebugShare.textContent = String(capabilities.shareAvailable);
@@ -607,6 +666,8 @@
     state.savePreviewUrl = URL.createObjectURL(blob);
     savePreviewImage.src = state.savePreviewUrl;
     savePreview.hidden = false;
+    track("color_image_export", {method:"preview"});
+    savePreview.scrollIntoView({behavior:"smooth",block:"center"});
   }
   function getShareCapabilities(file = null) {
     const capabilities = {
@@ -634,10 +695,11 @@
     try {
       // 保存ボタンの操作から開始した処理内で共有を呼び、Safariのユーザー操作制限を避ける
       await navigator.share(shareData);
+      track("color_image_export", {method:"share"});
       clearSavePreview();
       setSaveNotice("共有シートを開きました。「写真に保存」「ファイルに保存」やLINE共有を選べます。", capabilities);
     } catch (error) {
-      if (error?.name === "AbortError") { setSaveNotice("共有をキャンセルしました。もう一度「画像を保存」を押すと共有できます。", capabilities); return; }
+      if (error?.name === "AbortError") { track("color_share_cancel"); setSaveNotice("共有をキャンセルしました。もう一度「画像を保存」を押すと共有できます。", capabilities); return; }
       console.error("PNG共有に失敗したため、画面内プレビューを表示します。", error);
       showPngPreview(blob);
       setSaveNotice("画像共有に失敗したため、保存用PNGを表示しました。画像を長押しして「写真に保存」を選んでください。", capabilities, error);
@@ -647,11 +709,11 @@
   consultSaveButton.addEventListener("click", () => buttons.save.click());
   buttons.save.addEventListener("click", async () => {
     if (!state.image) return;
-    // ローカルHTTPではWeb Share APIを使わず、公開後のHTTPS環境で使えることを明確に案内する
+    track("color_save_click");
+    // HTTP preview uses a long-press PNG fallback on iPhone.
     if (isIosDevice() && !isSecureShareContext()) {
       const capabilities = getShareCapabilities();
-      clearSavePreview();
-      setSaveNotice("現在は動作確認用の接続のため、iPhoneの画像保存を利用できません。公開後のHTTPS環境で保存できます。", capabilities);
+      try { showPngPreview(await createPngBlob()); setSaveNotice("下の画像を長押しして、写真に保存してください。", capabilities); } catch {setSaveNotice("画像を作成できませんでした。もう一度お試しください。", capabilities); track("color_save_error");}
       return;
     }
     try {
@@ -660,8 +722,10 @@
       if (isIosDevice()) { await saveForIos(blob); return; }
       // PC・Mac Safariは通常のPNGダウンロードを使う
       const objectUrl = URL.createObjectURL(blob); const link = document.createElement("a"); link.href = objectUrl; link.download = "real-make-exterior-simulation.png"; document.body.append(link); link.click(); link.remove(); window.setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
+      track("color_image_export", {method:"download"});
       state.saveNotice = "画像のダウンロードを開始しました。保存先を確認して、LINEのトークに画像を添付してください。"; saveHint.textContent = state.saveNotice; consultStatus.textContent = state.saveNotice;
     } catch (error) {
+      track("color_save_error");
       console.error("PNG保存に失敗しました。", error);
       const capabilities = getShareCapabilities();
       setSaveNotice("画像を保存できませんでした。もう一度お試しください。", capabilities, error);
@@ -699,5 +763,6 @@
   // Pointer Events非対応の古い環境にも、自動選択と補正ブラシの最低限の操作を残す
   canvas.addEventListener("click", (event) => { if (!state.image || state.presentationMode || state.hasPointerInput || state.tool === "pan") return; const imagePoint = screenToImage(canvasPoint(event)); if (!inImage(imagePoint)) return; if (state.tool === "auto") autoSelectAt(imagePoint); else { paintSegment(imagePoint, imagePoint); finishStroke(); } });
   window.addEventListener("resize", resizeCanvas);
-  updateUI(); resizeCanvas();
+  new ResizeObserver(resizeCanvas).observe(canvas);
+  updateUI(); resizeCanvas(); loadImageFromSource(SAMPLE_IMAGE_URL, {isSample:true});
 })();
