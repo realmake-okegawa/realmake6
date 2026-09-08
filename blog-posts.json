@@ -1,5 +1,27 @@
 [
   {
+    "date": "2026-09-09",
+    "category": "地域活動",
+    "title": "地域のご協力に感謝。宣伝ポスターを掲示していただきました",
+    "body": [
+      "おはようございます☔️",
+      "昨晩からの大雨、みなさん大丈夫でしょうか？\nあちこちで冠水していたようです💦",
+      "さて、先日息子の同級生のお父さんから連絡をいただきました✨\n「うちにも宣伝ポスターを貼らせてください」と🥹\nSNSを見て協力したいと言ってくださいました😭",
+      "さっそく伺って掲示させていただきました🔥\n本当に感謝、感謝です✨🙏🏻",
+      "Real Make(リアルメイク)では、\n桶川市・北本市・上尾市周辺地域で外壁塗装・屋根塗装の塗り替え工事をメインにリフォーム工事を行っております💪🏼\nその他の住宅のお困り事もお気軽にお問い合わせください😊"
+    ],
+    "images": [
+      {
+        "src": "assets/optimized/blog/full/blog/2026-09-09-community-poster-gratitude-1.webp",
+        "alt": "住宅前のフェンスに掲示していただいたReal Makeの宣伝ポスター",
+        "loading": "eager",
+        "source": "assets/blog/2026-09-09-community-poster-gratitude-1.jpg",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-09-09-community-poster-gratitude-1.webp"
+      }
+    ],
+    "slug": "2026-09-09-community-poster-gratitude"
+  },
+  {
     "date": "2026-09-08",
     "category": "現場ブログ",
     "title": "不安定な天気の中、川越市・桶川市で動いた一日",

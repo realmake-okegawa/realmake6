@@ -220,6 +220,11 @@ function collectHtml(directory, files = []) {
 
 function sitemap(posts) {
   const postDates = new Map(posts.map((post) => [`blog/${post.slug}/index.html`, post.date]));
+  const priorSitemap = fs.existsSync(path.join(root, "sitemap.xml"))
+    ? fs.readFileSync(path.join(root, "sitemap.xml"), "utf8")
+    : "";
+  const existingDates = new Map([...priorSitemap.matchAll(/<url><loc>([^<]+)<\/loc><lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod><\/url>/g)]
+    .map(([, url, date]) => [url, date]));
   const legacy = new Set(legacyRedirects.map(([oldSlug]) => `blog/${oldSlug}/index.html`));
   const excluded = new Set([
     "contact/thanks/index.html",
@@ -229,7 +234,11 @@ function sitemap(posts) {
   const urls = collectHtml(root).map((file) => path.relative(root, file).split(path.sep).join("/"))
     .filter((file) => !legacy.has(file) && file !== "takeoff.html" && !excluded.has(file) && !file.startsWith("design-proposals/")).sort();
   const urlFor = (file) => file === "index.html" ? `${siteUrl}/` : file.endsWith("/index.html") ? `${siteUrl}/${file.slice(0, -"index.html".length)}` : `${siteUrl}/${file}`;
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((file) => `  <url><loc>${escapeHtml(urlFor(file))}</loc>${postDates.has(file) ? `<lastmod>${postDates.get(file)}</lastmod>` : ""}</url>`).join("\n")}\n</urlset>\n`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((file) => {
+    const url = urlFor(file);
+    const lastmod = postDates.get(file) || existingDates.get(url);
+    return `  <url><loc>${escapeHtml(url)}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ""}</url>`;
+  }).join("\n")}\n</urlset>\n`;
 }
 
 const sourcePosts = JSON.parse(fs.readFileSync(postsPath, "utf8"));
@@ -237,7 +246,7 @@ if (!Array.isArray(sourcePosts)) throw new Error("blog-posts.json must contain a
 if (sourcePosts.some((post) => post.slug === duplicateReminderSlug)) throw new Error("Remove the duplicate reminder article before rendering.");
 if (sourcePosts.some((post) => !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(post.slug || ""))) throw new Error("Every post needs a lowercase ASCII slug.");
 if (new Set(sourcePosts.map((post) => post.slug)).size !== sourcePosts.length) throw new Error("Blog post slugs must be unique.");
-if (sourcePosts.length !== 88) throw new Error(`Expected 88 canonical posts, received ${sourcePosts.length}.`);
+if (sourcePosts.length !== 89) throw new Error(`Expected 89 canonical posts, received ${sourcePosts.length}.`);
 
 const posts = [...sourcePosts].sort((a, b) => String(b.date).localeCompare(String(a.date)));
 await makeOgImage("assets/optimized/page/assets/img/works/okegawa-kamogawa-after-front.webp", defaultOgImage);
