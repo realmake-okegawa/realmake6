@@ -20,7 +20,7 @@
       return `${cells[0].textContent.trim().replace(/\s+/g, ' ')}：${cells[2].textContent.trim()}円（目安）`;
     });
     message.value = [
-      'Real Make 大川様', 'ホームページの概算費用チェックを利用しました。この条件でわが家の塗装について相談したいです。', '',
+      'Real Make 大川様', 'ホームページの概算費用チェックを利用しました。この金額に含まれる工事と、わが家で追加確認が必要な項目を教えてください。', '',
       '【入力条件】', ...conditions, '', '【概算合計・税込】',
       document.getElementById('totalMid').textContent.trim(),
       document.getElementById('totalRange').textContent.trim(), '',

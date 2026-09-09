@@ -1,5 +1,8 @@
 (function () {
   window.dataLayer = window.dataLayer || [];
+  // Keep local checks out of the live GA4 property.
+  var preview = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname) || window.location.protocol === 'file:';
+  if (preview) window['ga-disable-G-PCG1M6JXX0'] = true;
   function gtag(){dataLayer.push(arguments);}
   window.gtag = window.gtag || gtag;
   gtag('js', new Date());
@@ -31,6 +34,8 @@
       gtag('event', 'contact_form_click', params);
     } else if (href.indexOf('painting_simulator') !== -1) {
       gtag('event', 'simulator_click', params);
+    } else if (href.indexOf('color-simulator/') !== -1) {
+      gtag('event', 'color_simulator_click', params);
     } else if (href.indexOf('photo-estimate/') !== -1) {
       gtag('event', 'photo_estimate_click', params);
     }

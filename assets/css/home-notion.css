@@ -62,7 +62,7 @@ body.rm-home {
 .rm-hero-color-cta { display: flex; align-items: center; justify-content: space-between; max-width: 520px; min-height: 54px; margin-top: 17px; padding: 10px 19px; border: 1px solid rgba(216, 242, 234, .72); border-radius: 10px; background: rgba(255, 255, 255, .06); color: #fff; font-size: 16px; font-weight: 800; text-decoration: none; }
 .rm-hero-color-cta:hover, .rm-hero-color-cta:focus-visible { border-color: #fff; background: rgba(255, 255, 255, .14); }
 .rm-hero-color-cta b { color: #9ee0ce; font-size: 23px; font-weight: 400; }
-.rm-hero .rm-cta-note { margin:16px 0 0; color:#e5f4ee; font-size:14px; line-height:1.8; }
+.rm-hero .rm-cta-note { max-width:520px; margin:10px 0 0; color:#e5f4ee; font-size:14px; line-height:1.7; }
 .rm-cta-note strong { color:#fff; }
 .rm-hero-links { display: flex; flex-wrap: wrap; gap: 14px 22px; margin-top: 24px; }
 .rm-line-link { display: inline-flex; align-items: center; gap: 7px; color: #d8f2ea; font-size: 16px; font-weight: 800; text-decoration-thickness: 1px; text-underline-offset: 6px; }
