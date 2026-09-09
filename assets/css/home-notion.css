@@ -51,12 +51,17 @@ body.rm-home {
 .rm-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .55fr); align-items: end; gap: 60px; }
 .rm-eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 15px; color: #9ee0ce; font-size: 14px; font-weight: 800; letter-spacing: .06em; }
 .rm-eyebrow::before { width: 22px; height: 2px; background: #6fd4bb; content: ""; }
-.rm-hero h1 { max-width: 650px; margin-bottom: 20px; font-size: clamp(34px, 4.1vw, 54px); line-height: 1.22; letter-spacing: -.045em; }
+.rm-hero h1 { max-width: 650px; margin-bottom: 18px; font-size: clamp(34px, 4.1vw, 54px); line-height: 1.22; letter-spacing: -.045em; }
 .rm-hero h1 span { display: block; margin-top: 7px; color: #d8f2ea; font-size: .61em; letter-spacing: -.025em; }
-.rm-hero-copy { max-width: 580px; margin-bottom: 26px; color: #e7eeeb; font-size: 18px; }
+.rm-hero-message { max-width: 640px; margin: 0 0 10px; color: #d8f2ea; font-size: 21px; font-weight: 800; line-height: 1.5; letter-spacing: -.02em; }
+.rm-hero-message span { display: block; }
+.rm-hero-copy { max-width: 580px; margin-bottom: 26px; color: #e7eeeb; font-size: 17px; line-height: 1.65; }
 .rm-primary-cta { display: flex; align-items: center; justify-content: space-between; max-width: 520px; min-height: 78px; padding: 14px 20px 14px 24px; border-radius: 12px; background: var(--rm-green); box-shadow: 0 8px 0 rgba(0, 0, 0, .12); color: #fff; font-size: 21px; font-weight: 800; line-height: 1.35; text-decoration: none; }
 .rm-primary-cta small { display: block; font-size: 12px; letter-spacing: .1em; }
 .rm-primary-cta b { font-size: 35px; font-weight: 400; }
+.rm-hero-color-cta { display: flex; align-items: center; justify-content: space-between; max-width: 520px; min-height: 54px; margin-top: 17px; padding: 10px 19px; border: 1px solid rgba(216, 242, 234, .72); border-radius: 10px; background: rgba(255, 255, 255, .06); color: #fff; font-size: 16px; font-weight: 800; text-decoration: none; }
+.rm-hero-color-cta:hover, .rm-hero-color-cta:focus-visible { border-color: #fff; background: rgba(255, 255, 255, .14); }
+.rm-hero-color-cta b { color: #9ee0ce; font-size: 23px; font-weight: 400; }
 .rm-hero .rm-cta-note { margin:16px 0 0; color:#e5f4ee; font-size:14px; line-height:1.8; }
 .rm-cta-note strong { color:#fff; }
 .rm-hero-links { display: flex; flex-wrap: wrap; gap: 14px 22px; margin-top: 24px; }
@@ -212,7 +217,9 @@ body.rm-home {
   .rm-hero-proof { display: none; }
   .rm-hero h1 { font-size: 32px; }
   .rm-hero-copy { font-size: 16px; }
+  .rm-hero-message { font-size: 19px; line-height: 1.48; }
   .rm-primary-cta { min-height: 70px; font-size: 19px; }
+  .rm-hero-color-cta { min-height: 52px; font-size: 16px; }
   .rm-section { padding: 60px 0; }
   .rm-steps, .rm-guide-grid, .rm-works-grid, .rm-blog-grid { grid-template-columns: 1fr; }
   .rm-voice-grid { grid-template-columns: 1fr; }
