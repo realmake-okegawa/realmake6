@@ -40,11 +40,4 @@
       gtag('event', 'photo_estimate_click', params);
     }
   }, true);
-
-  if ((window.location.pathname.endsWith('/contact/thanks/') || window.location.pathname.endsWith('/contact/thanks/index.html')) && window.top === window) {
-    gtag('event', 'contact_form_submit', {
-      event_category: 'contact_form',
-      submission_source: 'direct_thanks_page'
-    });
-  }
 })();
