@@ -1,0 +1,65 @@
+/* Consultation improvements, shared only by the homepage and new service pages. */
+.rm-home .local-kicker{font-size:17px;letter-spacing:.05em;line-height:1.6}
+.local-kicker span{display:block;font-size:14px;font-weight:600;letter-spacing:.03em}
+.rm-home .hero-content{padding-bottom:56px}
+.rm-home .hero-content>.hero-help{margin-top:14px;font-size:14px;color:#fff}
+.other-work-help{padding-top:16px;border-top:1px solid #ffffff4d;font-size:15px}
+.other-work-help a{color:#fff;text-underline-offset:4px}
+.consultation-entry{min-width:0}
+.message-example{margin-bottom:20px;padding:22px;background:#f6f3ec;border-radius:6px;color:#18374e;line-height:1.8}
+.message-example p,.contact .message-example p{margin:0;color:#18374e;font-size:15px}
+.message-example .example-label,.contact .message-example .example-label{font-weight:800;font-size:14px}
+.message-example .example-message,.contact .message-example .example-message{margin:12px 0;padding:15px;border-left:3px solid #14895f;background:#fff;font-size:18px;font-weight:700}
+.consultation-note,.contact .consultation-note{margin:14px 0 0;color:#e7f0f2;font-size:14px}
+.rm-home section[id],.reform-service section[id]{scroll-margin-top:100px}
+.reform-service .crumb{padding-block:18px;font-size:14px;line-height:1.7}
+.reform-service .crumb a{color:var(--navy);text-underline-offset:4px}
+.service-intro{padding:48px 0 56px;background:var(--cream)}
+.service-intro .two{gap:44px}
+.service-intro h1{margin:0 0 20px;font-size:clamp(32px,3.8vw,48px);line-height:1.4;letter-spacing:-.03em}
+.service-intro .lead{font-size:17px;margin:0 0 22px}
+.service-intro figure{margin:0}
+.service-intro img{display:block;width:100%;height:330px;object-fit:cover;border-radius:6px}
+.service-intro figcaption{margin-top:8px;font-size:13px;color:#4a606e}
+.reform-service .service-intro .kicker{font-size:15px;letter-spacing:.03em}
+.service-jumps{display:flex;flex-wrap:wrap;gap:10px;padding-block:24px}
+.service-jumps a{padding:10px 16px;border:1px solid #bccac6;border-radius:3px;color:var(--navy);text-decoration:none;font-weight:700;min-height:44px}
+.reform-service .service-section{padding:56px 0}
+.reform-service h2{font-size:clamp(27px,3vw,36px)}
+.service-section> .wrap>p{max-width:780px;color:#4a606e}
+.consultation-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:28px}
+.consultation-card{padding:26px;border:1px solid #dce3e0;background:#fff;border-radius:6px}
+.consultation-card h3{margin:0 0 12px;font-size:21px;line-height:1.5}
+.consultation-card p{margin:0;color:#4a606e;font-size:16px}
+.quote-points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:28px 0 0}
+.quote-points>div{padding:22px;border-top:3px solid #14895f;background:#fff}
+.quote-points dt{font-size:18px;font-weight:800}
+.quote-points dd{margin:10px 0 0;font-size:16px;color:#4a606e}
+.service-faq{max-width:850px;margin-top:28px}
+.service-faq details{margin-top:12px;border:1px solid #dce3e0;border-radius:6px;background:#fff}
+.service-faq summary{cursor:pointer;padding:18px 22px;min-height:56px;font-weight:700;font-size:17px}
+.service-faq details p{margin:0;padding:0 22px 22px;color:#4a606e}
+.service-related{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.reform-service .outline{min-height:44px}
+.reform-service .contact .two{align-items:start}
+.reform-service a:focus-visible,.reform-service summary:focus-visible{outline:3px solid #bb7400;outline-offset:4px}
+@media(max-width:700px){
+  .rm-home .hero{min-height:0}
+  .rm-home .hero-content{padding-top:44px;padding-bottom:64px}
+  .rm-home .shade{background:linear-gradient(180deg,#082940b8,#082940e8 68%,#082940fb)}
+  .rm-home .local-kicker{font-size:16px;margin-bottom:20px}
+  .local-kicker span{font-size:14px}
+  .rm-home .hero-content>.hero-help{font-size:14px;line-height:1.8}
+  .message-example{padding:18px}
+  .service-intro{padding:28px 0 36px}
+  .service-intro .two{gap:26px}
+  .service-intro img{height:230px}
+  .service-intro h1{font-size:32px}
+  .reform-service .service-section{padding:42px 0}
+  .consultation-grid,.quote-points{grid-template-columns:1fr;gap:14px}
+  .consultation-card{padding:22px}
+  .service-jumps{gap:8px}
+  .service-jumps a{font-size:14px;padding:10px 12px}
+  .service-faq summary{padding:18px;font-size:16px}
+  .service-related{display:grid}
+}
