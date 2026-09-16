@@ -89,7 +89,9 @@
     .footer-nav a{padding:12px 9px;border-bottom:1px solid #385364;color:#e7eff1;font-size:13px;font-weight:700;text-decoration:none}
     .footer-nav a:hover,.footer-nav a:focus-visible{background:#123852;color:#fff}
     .footer-copy{grid-column:1/-1;padding-top:2px;font-size:11px}
-    @media(max-width:700px){.footer-rich{grid-template-columns:1fr;gap:24px}.footer-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-nav a{padding:13px 8px;font-size:12px}.footer-company p{font-size:12px}.footer-copy{grid-column:auto}}
+    .owner span{right:16px;bottom:16px;left:16px;max-width:max-content;padding:10px 14px;background:rgb(8 41 64 / .9);box-shadow:0 6px 16px rgb(8 41 64 / .24)}
+    .owner b{font-size:21px;text-shadow:none}.owner small{font-size:12px;text-shadow:none}
+    @media(max-width:700px){.footer-rich{grid-template-columns:1fr;gap:24px}.footer-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-nav a{padding:13px 8px;font-size:12px}.footer-company p{font-size:12px}.footer-copy{grid-column:auto}.owner span{right:14px;bottom:14px;left:14px;padding:9px 12px}.owner b{font-size:20px}}
   </style>
   <nav class="fixed"><a href="tel:09014340189"><small>電話で相談</small><b>電話する</b></a><a href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener"><small>写真で相談</small><b>LINEで相談</b></a></nav>
   <script>const b=document.querySelector('.menu'),n=document.querySelector('.mobile-nav');b.onclick=()=>{const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!o);n.classList.toggle('open',!o)};n.querySelectorAll('a').forEach(a=>a.onclick=()=>{b.setAttribute('aria-expanded',false);n.classList.remove('open')});</script>
