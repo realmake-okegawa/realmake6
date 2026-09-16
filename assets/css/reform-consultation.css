@@ -6,6 +6,8 @@
 .other-work-help{padding-top:16px;border-top:1px solid #ffffff4d;font-size:15px}
 .other-work-help a{color:#fff;text-underline-offset:4px}
 .consultation-entry{min-width:0}
+.quick-consultation{padding:34px 0;background:#eaf2ee}
+.quick-consultation .message-example{max-width:900px;margin:0 auto;box-shadow:0 10px 24px #12365412}
 .message-example{margin-bottom:20px;padding:22px;background:#f6f3ec;border-radius:6px;color:#18374e;line-height:1.8}
 .message-example p,.contact .message-example p{margin:0;color:#18374e;font-size:15px}
 .message-example .example-label,.contact .message-example .example-label{font-weight:800;font-size:14px}
@@ -50,6 +52,8 @@
   .rm-home .local-kicker{font-size:16px;margin-bottom:20px}
   .local-kicker span{font-size:14px}
   .rm-home .hero-content>.hero-help{font-size:14px;line-height:1.8}
+  .quick-consultation{padding:20px 0}
+  .quick-consultation .message-example{margin:0}
   .message-example{padding:18px}
   .service-intro{padding:28px 0 36px}
   .service-intro .two{gap:26px}
