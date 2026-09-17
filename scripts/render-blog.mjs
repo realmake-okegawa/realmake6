@@ -114,11 +114,11 @@ function head({ title, description, canonical, relativePath, data, ogImage = def
 
 function homeCard(post) {
   const image = images(post)[0];
-  return `<a class="rm-blog-card" href="./blog/${escapeHtml(post.slug)}/" data-ga-location="home_blog">${image ? `\n  <img src="./${escapeHtml(image.thumbnail)}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async">` : ""}
+  return `<a class="home-blog-card" href="./blog/${escapeHtml(post.slug)}/" data-ga-location="home_blog">${image ? `\n  <img src="./${escapeHtml(image.thumbnail)}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async">` : ""}
   <div>
     <time datetime="${escapeHtml(post.date)}">${displayDate(post.date)}｜${escapeHtml(post.category || "お知らせ")}</time>
     <h3>${escapeHtml(post.title)}</h3>
-    <span class="rm-blog-more">記事を読む →</span>
+    <span class="home-blog-more">記事を読む →</span>
   </div>
 </a>`;
 }

@@ -10,6 +10,15 @@
 .quick-consultation .message-example{max-width:900px;margin:0 auto;box-shadow:0 10px 24px #12365412}
 .quick-consultation-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-top:16px;padding:11px 18px;background:#14895f;color:#fff;font-weight:800;line-height:1.4;text-decoration:none}
 .quick-consultation-button:hover,.quick-consultation-button:focus-visible{background:#0b704b}
+.home-blog{background:#fff}
+.home-blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.home-blog-card{display:flex;min-width:0;flex-direction:column;overflow:hidden;border:1px solid #dce3e0;background:#fff;color:#18374e;text-decoration:none;transition:box-shadow .2s,transform .2s}
+.home-blog-card:hover,.home-blog-card:focus-visible{box-shadow:0 15px 32px #12365418;transform:translateY(-2px)}
+.home-blog-card img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#eceae6}
+.home-blog-card>div{display:flex;flex:1;flex-direction:column;padding:17px 18px}
+.home-blog-card time{display:block;margin-bottom:6px;color:#006d53;font-size:12px;font-weight:800}
+.home-blog-card h3{margin:0;color:#123654;font-size:18px;line-height:1.5}
+.home-blog-more{display:block;margin-top:auto;padding-top:16px;color:#006d53;font-weight:800}
 .message-example{margin-bottom:20px;padding:22px;background:#f6f3ec;border-radius:6px;color:#18374e;line-height:1.8}
 .message-example p,.contact .message-example p{margin:0;color:#18374e;font-size:15px}
 .message-example .example-label,.contact .message-example .example-label{font-weight:800;font-size:14px}
@@ -57,6 +66,8 @@
   .quick-consultation{padding:20px 0}
   .quick-consultation .message-example{margin:0}
   .quick-consultation-button{display:flex;width:100%;margin-top:14px}
+  .home-blog-grid{grid-template-columns:1fr;gap:14px}
+  .home-blog-card>div{padding:15px 16px}
   .message-example{padding:18px}
   .service-intro{padding:28px 0 36px}
   .service-intro .two{gap:26px}
