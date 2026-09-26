@@ -1,6 +1,7 @@
 /* Consultation improvements, shared only by the homepage and new service pages. */
 .rm-home .local-kicker{font-size:17px;letter-spacing:.05em;line-height:1.6}
 .local-kicker span{display:block;font-size:14px;font-weight:600;letter-spacing:.03em}
+.hero h1 .local-kicker{display:block}
 .rm-home .hero-content{padding-bottom:56px}
 .rm-home .hero-content>.hero-help{margin-top:14px;font-size:14px;color:#fff}
 .other-work-help{padding-top:16px;border-top:1px solid #ffffff4d;font-size:15px}

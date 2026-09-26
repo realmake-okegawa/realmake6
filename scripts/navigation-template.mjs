@@ -1,6 +1,5 @@
 export const NAV_ITEMS = [
-  { key: "exterior", label: "外壁塗装", path: "services/exterior-painting/" },
-  { key: "roof", label: "屋根塗装", path: "services/roof-painting/" },
+  { key: "services", label: "できる工事", path: "#services" },
   { key: "works", label: "施工事例", path: "works/" },
   { key: "price", label: "料金", path: "price/" },
   { key: "reason", label: "選ばれる理由", path: "reason/" },

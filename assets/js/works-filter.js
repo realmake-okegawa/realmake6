@@ -26,5 +26,7 @@
     button.addEventListener("click", () => apply(button.dataset.worksFilter));
   });
 
-  apply("all");
+  // トップの「できる工事」から works/?type=windows のように種類を指定して開けるようにしています。
+  const requested = new URLSearchParams(location.search).get("type");
+  apply(buttons.some((b) => b.dataset.worksFilter === requested) ? requested : "all");
 })();

@@ -30,7 +30,7 @@ function isLocal(value) {
 }
 
 function existsLocal(value) {
-  const clean = value.replace(/^\.\/+/, "").split("#")[0];
+  const clean = value.replace(/^\.\/+/, "").split("#")[0].split("?")[0];
   if (!clean || clean.startsWith("http") || clean.startsWith("tel:") || clean.startsWith("mailto:")) return true;
   return fs.existsSync(path.join(root, clean));
 }

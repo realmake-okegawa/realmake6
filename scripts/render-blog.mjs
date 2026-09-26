@@ -90,7 +90,7 @@ function header(relativePath) {
         <a class="sitehead-phone" href="${phoneUrl}">電話する</a>
       </div>
       <nav class="site-nav" id="site-nav" aria-label="主要メニュー">
-        <a href="${relativePath}services/exterior-painting/index.html">外壁塗装</a><a href="${relativePath}services/roof-painting/index.html">屋根塗装</a><a href="${relativePath}works/index.html">施工事例</a><a href="${relativePath}price/index.html">料金</a><a href="${relativePath}reason/index.html">選ばれる理由</a><a href="${relativePath}area/okegawa/index.html">桶川市</a><a href="${relativePath}company/index.html">代表・会社情報</a><a href="${relativePath}faq/index.html">よくある質問</a><a href="${relativePath}${contactUrl}">お問い合わせ</a>
+        <a href="${relativePath}index.html#services">できる工事</a><a href="${relativePath}works/index.html">施工事例</a><a href="${relativePath}price/index.html">料金</a><a href="${relativePath}reason/index.html">選ばれる理由</a><a href="${relativePath}area/okegawa/index.html">桶川市</a><a href="${relativePath}company/index.html">代表・会社情報</a><a href="${relativePath}faq/index.html">よくある質問</a><a href="${relativePath}${contactUrl}">お問い合わせ</a>
       </nav>
     </div>
   </header>`;
