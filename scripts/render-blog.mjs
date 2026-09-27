@@ -18,6 +18,34 @@ const legacyRedirects = [
 ];
 const defaultOgImage = "assets/og/default.webp";
 
+// リフォーム系の記事の末尾に出す関連ページ。記事を増やしたら、ここに slug を足してください。
+const relatedTargets = {
+  kumagaya: ["works/kumagaya-inner-window/", "熊谷市で内窓19ヶ所を取り付けた施工事例"],
+  windows: ["works/?type=windows#works-list", "窓まわり（内窓・網戸・面格子）の施工事例"],
+  faq: ["faq/", "リフォーム・小さな工事のよくある質問"],
+  home: ["works/?type=home#works-list", "小修繕の施工事例"],
+  freeSupport: ["free-support/", "桶川市の30分無料サポート"],
+  toilet: ["services/toilet-reform/", "トイレリフォームについて"],
+  okegawa: ["area/okegawa/", "桶川市のリフォーム・外壁塗装"],
+};
+const relatedGroups = [
+  [["2026-09-04-kumagaya-inner-window-opening"], ["kumagaya"]],
+  [[
+    "2026-06-10-screen-repair-1", "2026-08-07-inner-window-installation", "2026-08-24-bay-window-security-consultation",
+    "2026-08-28-window-grille-research", "2026-08-30-shoji-style-inner-window-installation", "2026-09-01-inner-window-installation-ten-windows",
+    "2026-09-04-kumagaya-inner-window-opening", "2026-09-08-okegawa-factory-glass-replacement", "2026-09-10-rainy-day-window-grille-installation",
+    "2026-09-11-okegawa-inner-window-window-grille-installation", "2026-09-16-shoji-repapering", "2026-09-19-screen-replacement",
+  ], ["windows", "faq"]],
+  [["2026-09-21-toilet-holder-iron-bar"], ["toilet", "home"]],
+  [["2026-06-08-post-replacement-1", "2026-07-08-room-cleanout-request-1", "2026-07-10-cleanout-complete-1"], ["home", "freeSupport"]],
+  [["2026-09-05-okegawa-balcony-waterproofing-prep"], ["faq"]],
+];
+const relatedLinks = (slug) => {
+  const keys = relatedGroups.filter(([slugs]) => slugs.includes(slug)).flatMap(([, targets]) => targets);
+  if (keys.length && slug.includes("okegawa")) keys.push("okegawa");
+  return [...new Set(keys)].slice(0, 3).map((key) => relatedTargets[key]);
+};
+
 const escapeHtml = (value = "") => String(value)
   .replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 const escapeJson = (value) => JSON.stringify(value).replaceAll("<", "\\u003c");
@@ -146,6 +174,8 @@ function articlePage(post, older, newer) {
   const gallery = postImages.map((image) => `          <figure class="blog-article-image"><img src="${escapeHtml(sourceImage(relativePath, image.src))}" alt="${escapeHtml(image.alt)}" loading="${image.loading === "eager" ? "eager" : "lazy"}" decoding="async"></figure>`).join("\n");
   const olderLink = older ? `<a href="../${escapeHtml(older.slug)}/index.html" rel="prev">← 前の記事<br><strong>${escapeHtml(older.title)}</strong></a>` : "";
   const newerLink = newer ? `<a href="../${escapeHtml(newer.slug)}/index.html" rel="next">次の記事 →<br><strong>${escapeHtml(newer.title)}</strong></a>` : "";
+  const related = relatedLinks(post.slug);
+  const relatedNav = related.length ? `      <nav class="blog-related" aria-label="関連するページ" style="margin-top:36px"><p class="label">関連するページ</p><div class="section-links">${related.map(([href, label]) => `<a href="${relativePath}${escapeHtml(href)}">${escapeHtml(label)} →</a>`).join("")}</div></nav>\n` : "";
   return `<!doctype html>
 <html lang="ja">
 ${head({ title: `${post.title}｜Real Make`, description: metaDescription(post), canonical, relativePath, data, ogImage: post.ogImage, type: "article" })}
@@ -160,7 +190,7 @@ ${header(relativePath)}
 ${indent(renderBody(post.body), 8)}
       </div>
 ${gallery}
-      <nav class="blog-adjacent" aria-label="前後の記事">${olderLink}${newerLink}</nav>
+${relatedNav}      <nav class="blog-adjacent" aria-label="前後の記事">${olderLink}${newerLink}</nav>
     </div></article>
     <section class="finalcta blog-article-cta"><div class="narrow"><h2>住まいのことで気になることがあれば、ご相談ください。</h2><p>写真を送ってのご相談、電話でのご相談、概算費用の確認に対応しています。</p><div class="ctabtns"><a class="btn" href="${relativePath}${contactUrl}">フォームで相談する</a><a class="btn line" href="${lineUrl}" target="_blank" rel="noopener">LINEで無料相談</a><a class="btn ghost" href="${phoneUrl}">電話で相談</a><a class="btn ghost" href="${relativePath}painting_simulator.html">無料見積りを確認</a></div></div></section>
   </main>
@@ -232,7 +262,8 @@ function sitemap(posts) {
     "okegawa.html",
   ]);
   const urls = collectHtml(root).map((file) => path.relative(root, file).split(path.sep).join("/"))
-    .filter((file) => !legacy.has(file) && file !== "takeoff.html" && !excluded.has(file) && !file.startsWith("design-proposals/")).sort();
+    .filter((file) => !legacy.has(file) && file !== "takeoff.html" && !excluded.has(file) && !file.startsWith("design-proposals/"))
+    .filter((file) => !/<meta name="robots" content="noindex/.test(fs.readFileSync(path.join(root, file), "utf8"))).sort();
   const urlFor = (file) => file === "index.html" ? `${siteUrl}/` : file.endsWith("/index.html") ? `${siteUrl}/${file.slice(0, -"index.html".length)}` : `${siteUrl}/${file}`;
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((file) => {
     const url = urlFor(file);
