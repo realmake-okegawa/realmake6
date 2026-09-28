@@ -30,7 +30,10 @@
     kumagaya: { href: './works/kumagaya-inner-window/', title: '内窓19ヶ所の施工事例', text: '工事費約200万円のうち、約70万円に補助金を活用した例です。' },
     worksHome: { href: './works/?type=home#works-list', title: '小さな修理の施工事例', text: '障子の張り替え、ポスト交換、トイレの小物の取付けなど。' },
     freeSupport: { href: './free-support/', title: '30分無料サポート', text: '桶川市にお住まいで、初めてご利用の方向け（月3組まで）。電球交換や家具の移動などをお手伝いします。' },
-    services: { href: '#services', title: 'Real Makeにできる工事', text: '外壁・屋根から水まわり、小さな修繕まで。' }
+    services: { href: '#services', title: 'Real Makeにできる工事', text: '外壁・屋根から水まわり、小さな修繕まで。' },
+    budgetInterior: { href: './budget/#budget-interior', title: '工事ごとの予算の目安（内装・窓まわり）', text: 'クロスの張り替え、網戸、面格子などのだいたいの金額（税込）です。' },
+    budgetWater: { href: './budget/#budget-water', title: '工事ごとの予算の目安（水まわり）', text: 'トイレ・キッチン・お風呂・洗面台などのだいたいの金額（税込）です。' },
+    budget: { href: './budget/', title: '工事ごとの予算の目安', text: '外壁塗装から網戸1枚まで、工事ごとのだいたいの金額（税込）です。' }
   };
 
   var EXAMPLES = {
@@ -58,29 +61,29 @@
       }[q3];
     } else if (q1 === 'interior') {
       cards = {
-        cost: ['interiorCost', 'faq'],
+        cost: ['budgetInterior', 'interior', 'faq'],
         vendor: ['interior', 'reviews', 'company'],
         nosales: ['interior', 'reason']
       }[q3] || ['interior', 'faq'];
     } else if (q1 === 'kitchen') {
       cards = {
-        cost: ['kitchenCost', 'toiletCost'],
+        cost: ['budgetWater', 'kitchen', 'toilet'],
         vendor: ['kitchen', 'toilet', 'reviews'],
         nosales: ['kitchen', 'toilet', 'reason']
       }[q3] || ['kitchen', 'toilet', 'faq'];
     } else if (q1 === 'windows') {
       cards = {
-        cost: ['kumagaya', 'worksWindows', 'faq'],
+        cost: ['budgetInterior', 'kumagaya', 'worksWindows'],
         vendor: ['worksWindows', 'reviews', 'company']
       }[q3] || ['worksWindows', 'kumagaya', 'faq'];
       contact = 'primary';
     } else if (q1 === 'small') {
       messages.push('小さなことでも大丈夫です。まずは困っていることを教えてください。');
-      cards = q3 === 'vendor' ? ['worksHome', 'reviews', 'company'] : ['worksHome', 'freeSupport'];
+      cards = q3 === 'vendor' ? ['worksHome', 'reviews', 'company'] : q3 === 'cost' ? ['budget', 'worksHome', 'freeSupport'] : ['worksHome', 'freeSupport'];
       contact = 'primary';
     } else {
       messages.push('工事内容が分からなくても大丈夫です。気になっていることを、そのまま教えてください。');
-      cards = q3 === 'vendor' ? ['reviews', 'company', 'faq'] : ['services', 'faq'];
+      cards = q3 === 'vendor' ? ['reviews', 'company', 'faq'] : q3 === 'cost' ? ['budget', 'services', 'faq'] : ['services', 'faq'];
       contact = 'primary';
     }
 
