@@ -1,7 +1,7 @@
 export const NAV_ITEMS = [
   { key: "services", label: "できる工事", path: "#services" },
   { key: "works", label: "施工事例", path: "works/" },
-  { key: "price", label: "料金", path: "price/" },
+  { key: "price", label: "料金", path: "budget/" },
   { key: "reason", label: "選ばれる理由", path: "reason/" },
   { key: "area", label: "桶川市", path: "area/okegawa/" },
   { key: "company", label: "代表・会社情報", path: "company/" },
