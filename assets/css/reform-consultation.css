@@ -145,3 +145,6 @@ body.rm-home{background:#fff}
 .service-intro .service-price b{color:#123654;font-size:22px}
 .service-intro .service-price small{color:#4a606e;font-size:14px}
 .service-intro .service-price a{margin-top:4px;color:#0b704b;font-size:15px;font-weight:800}
+.rm-home .hero h1 .hero-name{color:#bcebd8}
+.rm-home .hero-lead span{display:inline-block}
+.rm-home .local-kicker .kicker-free{display:inline-block;margin-left:.7em;padding:1px 11px;background:#14895f;border-radius:999px;color:#fff;font-size:13px;font-weight:800;letter-spacing:.04em;line-height:1.7;vertical-align:1px}
