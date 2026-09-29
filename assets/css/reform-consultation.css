@@ -148,3 +148,14 @@ body.rm-home{background:#fff}
 .rm-home .hero h1 .hero-name{color:#bcebd8}
 .rm-home .hero-lead span{display:inline-block}
 .rm-home .local-kicker .kicker-free{display:inline-block;margin-left:.7em;padding:1px 11px;background:#14895f;border-radius:999px;color:#fff;font-size:13px;font-weight:800;letter-spacing:.04em;line-height:1.7;vertical-align:1px}
+/* 2026-09-29 相談したあとの流れ（トップ下部） */
+.rm-home .contact .consult-steps{margin-top:16px;padding:18px;background:#ffffff14;border:1px solid #ffffff33;border-radius:8px}
+.rm-home .contact .consult-steps-title{margin:0 0 10px;color:#fff!important;font-size:17px;font-weight:800}
+.rm-home .contact .consult-steps ol{margin:0;padding:0;list-style:none;counter-reset:cs}
+.rm-home .contact .consult-steps li{position:relative;padding:8px 0 8px 40px;counter-increment:cs;border-top:1px solid #ffffff22}
+.rm-home .contact .consult-steps li:first-child{border-top:0}
+.rm-home .contact .consult-steps li:before{content:counter(cs);position:absolute;left:0;top:9px;width:28px;height:28px;border-radius:50%;background:#14895f;color:#fff;font-weight:800;text-align:center;line-height:28px}
+.rm-home .contact .consult-steps b{display:block;color:#fff;font-size:16px}
+.rm-home .contact .consult-steps span{display:block;color:#d3e1e6;font-size:15px;line-height:1.7}
+.rm-home .contact .phone em{font-size:13px}
+.rm-home .hero-help span{display:inline-block}

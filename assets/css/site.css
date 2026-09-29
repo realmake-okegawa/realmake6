@@ -469,3 +469,12 @@ a.trustbar-item:hover{text-decoration:underline}
 .worklog-shots figure{margin:0}
 .worklog-shots img{width:100%;height:auto;background:#eceae6}
 .worklog-shots figcaption{font-size:11px;color:var(--muted);margin-top:7px;line-height:1.6}
+/* 2026-09-29 相談したあとの流れ（お問い合わせページ） */
+.consult-steps{margin:18px 0 26px;padding:18px;background:#fff;border:1px solid var(--line);border-radius:8px}
+.consult-steps-title{margin:0 0 10px;color:var(--ink);font-size:17px;font-weight:800}
+.consult-steps ol{margin:0;padding:0;list-style:none;counter-reset:cs}
+.consult-steps li{position:relative;padding:9px 0 9px 40px;counter-increment:cs;border-top:1px solid var(--line)}
+.consult-steps li:first-child{border-top:0}
+.consult-steps li:before{content:counter(cs);position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;background:#14895f;color:#fff;font-weight:800;text-align:center;line-height:28px}
+.consult-steps b{display:block;font-size:16px;color:var(--ink)}
+.consult-steps span{display:block;font-size:15px;line-height:1.7;color:var(--ink)}

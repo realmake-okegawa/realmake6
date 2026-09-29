@@ -58,3 +58,4 @@
 }
 .home-guide .visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .home-guide [hidden]{display:none!important}
+.home-guide .guide-reply{margin:0 0 4px;color:#0b704b;font-size:15px;font-weight:800;line-height:1.7}

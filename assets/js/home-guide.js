@@ -144,6 +144,7 @@
     if (p.showExample && p.example) {
       html += '<p class="guide-example">' + p.example + '</p><p class="guide-example-note">こんな一言だけでも大丈夫です。写真はあればで構いません。</p>';
     }
+    html += '<p class="guide-reply">LINEはその日のうちにお返事します。お電話は代表の大川が出ます。</p>';
     if (p.phoneFirst) html += '<p class="guide-asap">お急ぎの場合は、お電話でもご相談いただけます。</p>';
     html += '<div class="guide-contact-buttons">' + (p.phoneFirst ? phone + line : line + phone) + '</div></div>';
     return html;
