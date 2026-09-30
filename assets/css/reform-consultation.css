@@ -1,6 +1,7 @@
 /* Consultation improvements, shared only by the homepage and new service pages. */
 .rm-home .local-kicker{font-size:17px;letter-spacing:.05em;line-height:1.6}
 .local-kicker span{display:block;font-size:14px;font-weight:600;letter-spacing:.03em}
+.hero h1 .local-kicker{display:block}
 .rm-home .hero-content{padding-bottom:56px}
 .rm-home .hero-content>.hero-help{margin-top:14px;font-size:14px;color:#fff}
 .other-work-help{padding-top:16px;border-top:1px solid #ffffff4d;font-size:15px}
@@ -81,3 +82,80 @@
   .service-faq summary{padding:18px;font-size:16px}
   .service-related{display:grid}
 }
+
+/* 2026-09-28 見やすさの改善：トップの工事カードは写真の下に文字を置き、年配の方でも読める大きさにする */
+.rm-home .service{display:flex;flex-direction:column;min-height:0;background:#fff;border:1px solid #dce3e0;color:#18374e}
+.rm-home .service:after{display:none}
+.rm-home .service img{position:static;display:block;width:100%;height:180px}
+.rm-home .service i{top:10px;left:12px;padding:2px 8px;background:#082940cc;border-radius:4px;color:#fff}
+.rm-home .service div{position:static;flex:1;display:flex;flex-direction:column;padding:16px}
+.rm-home .service h3{color:#123654;font-size:19px}
+.rm-home .service p{min-height:0;flex:1;margin:6px 0 10px;color:#18374e;font-size:15px;line-height:1.7}
+.rm-home .service b{color:#0b704b;font-size:15px}
+.rm-home .pills span{font-size:14px}
+.rm-home .image-note{font-size:12px}
+.rm-home .kicker:not(.local-kicker){font-size:14px;letter-spacing:.06em}
+@media(max-width:700px){
+  .rm-home .service{min-height:0}
+  .rm-home .service img{height:118px}
+  .rm-home .service i{top:6px;left:6px;font-size:13px}
+  .rm-home .service div{padding:12px}
+  .rm-home .service h3{font-size:16.5px}
+  .rm-home .service p{min-height:0;font-size:15px;line-height:1.6}
+  .rm-home .service b{font-size:14px}
+  .rm-home .pills span{font-size:13px}
+  .rm-home .home-blog-card:nth-child(n+2){display:none}
+  .rm-home .work-grid .work:nth-child(n+3){display:none}
+  .rm-home .section{padding:48px 0}
+  /* 画面下のボタンを「電話・LINE・フォーム」の3つにそろえる */
+  .fixed{grid-template-columns:1fr 1fr 1fr}
+  .fixed a{padding:0 10px}
+  .fixed a:nth-child(2){background:var(--green)}
+  .fixed a:nth-child(3){background:#123654}
+  .fixed small{font-size:11px}
+}
+/* メニューを8項目にしたので、パソコン幅で折り返さないようにする */
+.nav a,.head-contact a{white-space:nowrap}
+@media(max-width:1240px) and (min-width:1001px){.header{gap:16px}.nav{gap:12px}.nav a{font-size:13px}}
+@media(max-width:1180px) and (min-width:1001px){.nav a:nth-child(3),.nav a:nth-child(4){display:none}}
+/* 2026-09-28 クチコミを早い位置で見せる */
+.rm-home .trust .trust-rating{color:#fff;font-weight:800;text-decoration:none}
+.rm-home .trust .trust-rating span{color:#f3c24b}
+.rm-home .hero-rating{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:9px 14px;background:#ffffff1f;border:1px solid #ffffff59;border-radius:999px;color:#fff;font-size:15px;font-weight:700;text-decoration:none}
+.rm-home .hero-rating-stars{color:#f3c24b;letter-spacing:.08em}
+.rm-home .hero-rating b{font-size:17px}
+.rm-home .hero-rating:hover,.rm-home .hero-rating:focus-visible{background:#ffffff33}
+.rm-home .reviews .review-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:8px 0 26px}
+.rm-home .reviews .review-card{display:flex;flex-direction:column;justify-content:space-between;margin:0;padding:22px;background:#fff;border:1px solid #dce3e0;border-radius:8px;box-shadow:none}
+.rm-home .reviews .review-card p{margin:0;color:#18374e;font-size:16px;font-weight:600;line-height:1.85}
+.rm-home .reviews .review-card footer{margin-top:14px;color:#123654;font-size:14px;font-weight:700}
+.rm-home .reviews .review-card footer small{display:block;margin-top:2px;color:#5b6d78;font-size:13px;font-weight:400}
+@media(max-width:700px){
+  .rm-home .trust .wrap{font-size:12px;line-height:1.6}
+  .rm-home .trust .trust-extra{display:none}
+  .rm-home .hero-rating{font-size:14px}
+  .rm-home .reviews .review-list{grid-template-columns:1fr;gap:12px}
+  .rm-home .reviews .review-card{padding:18px}
+}
+body.rm-home{background:#fff}
+.rm-home .budget-entry{margin:26px 0 0}
+/* 2026-09-28 内装・キッチン・トイレのページに予算の目安を表示 */
+.service-intro .service-price{display:grid;gap:2px;margin:0 0 22px;padding:14px 16px;background:#fff;border-left:4px solid #14895f;border-radius:6px;color:#18374e;line-height:1.6}
+.service-intro .service-price span{color:#0b704b;font-size:14px;font-weight:800}
+.service-intro .service-price b{color:#123654;font-size:22px}
+.service-intro .service-price small{color:#4a606e;font-size:14px}
+.service-intro .service-price a{margin-top:4px;color:#0b704b;font-size:15px;font-weight:800}
+.rm-home .hero h1 .hero-name{color:#bcebd8}
+.rm-home .hero-lead span{display:inline-block}
+.rm-home .local-kicker .kicker-free{display:inline-block;margin-left:.7em;padding:1px 11px;background:#14895f;border-radius:999px;color:#fff;font-size:13px;font-weight:800;letter-spacing:.04em;line-height:1.7;vertical-align:1px}
+/* 2026-09-29 相談したあとの流れ（トップ下部） */
+.rm-home .contact .consult-steps{margin-top:16px;padding:18px;background:#ffffff14;border:1px solid #ffffff33;border-radius:8px}
+.rm-home .contact .consult-steps-title{margin:0 0 10px;color:#fff!important;font-size:17px;font-weight:800}
+.rm-home .contact .consult-steps ol{margin:0;padding:0;list-style:none;counter-reset:cs}
+.rm-home .contact .consult-steps li{position:relative;padding:8px 0 8px 40px;counter-increment:cs;border-top:1px solid #ffffff22}
+.rm-home .contact .consult-steps li:first-child{border-top:0}
+.rm-home .contact .consult-steps li:before{content:counter(cs);position:absolute;left:0;top:9px;width:28px;height:28px;border-radius:50%;background:#14895f;color:#fff;font-weight:800;text-align:center;line-height:28px}
+.rm-home .contact .consult-steps b{display:block;color:#fff;font-size:16px}
+.rm-home .contact .consult-steps span{display:block;color:#d3e1e6;font-size:15px;line-height:1.7}
+.rm-home .contact .phone em{font-size:13px}
+.rm-home .hero-help span{display:inline-block}
