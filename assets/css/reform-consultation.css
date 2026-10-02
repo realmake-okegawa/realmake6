@@ -107,12 +107,11 @@
   .rm-home .home-blog-card:nth-child(n+2){display:none}
   .rm-home .work-grid .work:nth-child(n+3){display:none}
   .rm-home .section{padding:48px 0}
-  /* 画面下のボタンを「電話・LINE・フォーム」の3つにそろえる */
-  .fixed{grid-template-columns:1fr 1fr 1fr}
-  .fixed a{padding:0 10px}
-  .fixed a:nth-child(2){background:var(--green)}
-  .fixed a:nth-child(3){background:#123654}
-  .fixed small{font-size:11px}
+  /* 画面下のボタンは「電話で相談・LINEで相談」の2つ（2026-10-02） */
+  .fixed{grid-template-columns:1fr 1fr}
+  .fixed a{padding:0 16px}
+  .fixed small{font-size:12px}
+  .fixed b{font-size:16px}
 }
 /* メニューを8項目にしたので、パソコン幅で折り返さないようにする */
 .nav a,.head-contact a{white-space:nowrap}
@@ -159,3 +158,43 @@ body.rm-home{background:#fff}
 .rm-home .contact .consult-steps span{display:block;color:#d3e1e6;font-size:15px;line-height:1.7}
 .rm-home .contact .phone em{font-size:13px}
 .rm-home .hero-help span{display:inline-block}
+
+/* 2026-10-02 色の役割を統一：ネイビー＝信頼・情報／グリーン（#0B704B）＝行動。補足文字は#4A606Eまで濃く */
+.rm-home,.reform-service{--green:#0b704b;--muted:#4a606e}
+.rm-home .line:hover,.reform-service .line:hover{background:#095a3c}
+.rm-home .local-kicker .kicker-free{background:#0b704b}
+.rm-home .contact .consult-steps li:before{background:#0b704b}
+.rm-home .hero-line{flex-direction:column;gap:2px;padding:12px 28px}
+.rm-home .hero-line small{font-size:13px;font-weight:700}
+.rm-home .hero-line b{font-size:17px}
+@media(max-width:700px){
+  .rm-home .hero-content>p:not(.kicker){font-size:16px}
+  .rm-home .hero-line small{font-size:14px}
+  .rm-home .hero-line b{font-size:18px}
+  .rm-home .section-head>p:last-child{font-size:16px}
+  .rm-home .intro .two>div:last-child p,.rm-home .reason p:not(.kicker){font-size:16px}
+  .rm-home .reason li{font-size:16px}
+  .rm-home .flow li small{font-size:15px}
+  .rm-home .work dt,.rm-home .work dl+small{font-size:14px}
+  .rm-home .contact-buttons small{font-size:14px}
+  .rm-home .owner small{font-size:13px}
+  .rm-home .check-buttons small,.rm-home .work p{font-size:14px}
+}
+.rm-home .contact .consult-steps b i{display:inline-block;font-style:normal}
+/* 2026-10-02 スマホのヒーロー：見出しを少し小さくし、LINEボタンが最初の画面に入るよう余白を調整 */
+@media(max-width:700px){
+  .rm-home .hero-content{padding-top:28px}
+  .rm-home .local-kicker{margin-bottom:12px}
+  .rm-home .hero h1{font-size:34px;line-height:1.22;letter-spacing:-.03em}
+  .rm-home .hero-content>p.hero-lead{margin-top:12px}
+  .rm-home .hero-rating{margin-top:12px}
+  .rm-home .hero-buttons{margin-top:12px}
+  .rm-home .hero-line{padding-top:10px;padding-bottom:10px}
+}
+/* 2026-10-02 PCヘッダー：LINE＝主要、電話＝次点、「相談する」＝通常のメニュー */
+@media(min-width:1001px){
+  .rm-home .head-contact,.reform-service .head-contact{gap:16px;padding-left:18px;border-left:1px solid #dce3e0}
+  .rm-home .head-contact>a:first-child small,.reform-service .head-contact>a:first-child small{font-size:11px;color:#4a606e}
+  .rm-home .head-contact>a:first-child b,.reform-service .head-contact>a:first-child b{font-size:17px;color:#123654}
+  .rm-home .head-contact .line.mini,.reform-service .head-contact .line.mini{padding:12px 20px;font-size:15px;box-shadow:0 4px 12px #0b704b33}
+}
