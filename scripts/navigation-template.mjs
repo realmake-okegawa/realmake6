@@ -6,7 +6,7 @@ export const NAV_ITEMS = [
   { key: "area", label: "桶川市", path: "area/okegawa/" },
   { key: "company", label: "代表・会社情報", path: "company/" },
   { key: "faq", label: "よくある質問", path: "faq/" },
-  { key: "contact", label: "お問い合わせ", path: "contact/" },
+  { key: "contact", label: "相談する", path: "contact/" },
 ];
 
 export function renderHeader({ root, current }) {
