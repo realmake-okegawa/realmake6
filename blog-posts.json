@@ -1,5 +1,48 @@
 [
   {
+    "date": "2026-10-03",
+    "category": "現場ブログ",
+    "title": "東松山市で内窓4セット、北本市で波板交換とガラスフィルム貼り",
+    "body": [
+      "おはようございます☀",
+      "昨日は午前中東松山市で内窓を4セット取付けして、午後は北本市で波板交換してその後にガラスのフィルム貼りをしました💪🏼\nハードな1日でしたが、お客様に喜んでもらえて気持ちの良い1日になりました😊"
+    ],
+    "images": [
+      {
+        "source": "assets/blog/2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film-1.jpg",
+        "alt": "北本市で波板交換を行う作業中の様子",
+        "loading": "eager",
+        "src": "assets/optimized/blog/full/blog/2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film-1.webp"
+      },
+      {
+        "source": "assets/blog/2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film-2.jpg",
+        "alt": "交換後の波板",
+        "src": "assets/optimized/blog/full/blog/2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film-2.webp"
+      },
+      {
+        "source": "assets/blog/2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film-3.jpg",
+        "alt": "東松山市で取り付けた内窓",
+        "src": "assets/optimized/blog/full/blog/2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film-3.webp"
+      },
+      {
+        "source": "assets/blog/2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film-4.jpg",
+        "alt": "内窓を取り付けた室内の窓",
+        "src": "assets/optimized/blog/full/blog/2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film-4.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film-4.webp"
+      },
+      {
+        "source": "assets/blog/2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film-5.jpg",
+        "alt": "ガラスフィルム貼り作業の様子",
+        "src": "assets/optimized/blog/full/blog/2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film-5.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film-5.webp"
+      }
+    ],
+    "slug": "2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film"
+  },
+  {
     "date": "2026-10-01",
     "category": "日々のこと",
     "title": "長雨の時期は見えにくい場所のカビに注意。収納の湿気対策",
