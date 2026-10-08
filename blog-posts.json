@@ -1,5 +1,62 @@
 [
   {
+    "date": "2026-10-09",
+    "category": "現場ブログ",
+    "title": "北本市で新築住宅の2階の窓にシャッターボックスを4箇所取付けました",
+    "body": [
+      "おはようございます☀",
+      "何だか急に朝が寒いですね。\n日中との温度差があるので体調に気をつけてくださいね😅",
+      "さて、昨日は北本市で新築物件の2階の窓にシャッターボックスの取付け工事を行いました💪🏼\n購入されたお客様が防犯対策として設置してほしいとのご依頼でした！",
+      "丸一日かかりましたが、4箇所全て設置できて無事に終わることができました✨\nこれでお客様も安心してお引越しができるでしょう😊"
+    ],
+    "images": [
+      {
+        "source": "assets/blog/2026-10-09-kitamoto-window-shutter-box-2.jpg",
+        "alt": "北本市の新築住宅でシャッターボックスを取り付けた2階の窓",
+        "loading": "eager",
+        "src": "assets/optimized/blog/full/blog/2026-10-09-kitamoto-window-shutter-box-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-09-kitamoto-window-shutter-box-2.webp"
+      },
+      {
+        "source": "assets/blog/2026-10-09-kitamoto-window-shutter-box-1.jpg",
+        "alt": "シャッターボックス取付け前の2階の窓",
+        "src": "assets/optimized/blog/full/blog/2026-10-09-kitamoto-window-shutter-box-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-09-kitamoto-window-shutter-box-1.webp"
+      },
+      {
+        "source": "assets/blog/2026-10-09-kitamoto-window-shutter-box-3.jpg",
+        "alt": "取付け前の窓と外壁を横から見た様子",
+        "src": "assets/optimized/blog/full/blog/2026-10-09-kitamoto-window-shutter-box-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-09-kitamoto-window-shutter-box-3.webp"
+      },
+      {
+        "source": "assets/blog/2026-10-09-kitamoto-window-shutter-box-4.jpg",
+        "alt": "取付け後のシャッターを閉じた様子",
+        "src": "assets/optimized/blog/full/blog/2026-10-09-kitamoto-window-shutter-box-4.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-09-kitamoto-window-shutter-box-4.webp"
+      },
+      {
+        "source": "assets/blog/2026-10-09-kitamoto-window-shutter-box-5.jpg",
+        "alt": "シャッターボックス取付け前の窓まわり",
+        "src": "assets/optimized/blog/full/blog/2026-10-09-kitamoto-window-shutter-box-5.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-09-kitamoto-window-shutter-box-5.webp"
+      },
+      {
+        "source": "assets/blog/2026-10-09-kitamoto-window-shutter-box-6.jpg",
+        "alt": "窓の上部に取り付けたシャッターボックス",
+        "src": "assets/optimized/blog/full/blog/2026-10-09-kitamoto-window-shutter-box-6.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-09-kitamoto-window-shutter-box-6.webp"
+      },
+      {
+        "source": "assets/blog/2026-10-09-kitamoto-window-shutter-box-7.jpg",
+        "alt": "取付けが完了したシャッターボックスと窓まわり",
+        "src": "assets/optimized/blog/full/blog/2026-10-09-kitamoto-window-shutter-box-7.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-09-kitamoto-window-shutter-box-7.webp"
+      }
+    ],
+    "slug": "2026-10-09-kitamoto-window-shutter-box"
+  },
+  {
     "date": "2026-10-03",
     "category": "現場ブログ",
     "title": "東松山市で内窓4セット、北本市で波板交換とガラスフィルム貼り",
