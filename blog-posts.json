@@ -1,5 +1,30 @@
 [
   {
+    "date": "2026-10-10",
+    "category": "お知らせ",
+    "title": "Real Makeの新しいチラシができました",
+    "body": [
+      "秋晴れが続いていて気持ちが良いですね😊",
+      "本日はReal Make(リアルメイク)の新しいチラシができたご報告です！\n桶川市で生まれ育った僕が、桶川市周辺の住宅のお悩みを持つ方の力になりたいと思って作りました✨\nお気軽にお問い合わせください😊"
+    ],
+    "images": [
+      {
+        "source": "assets/blog/2026-10-10-new-realmake-flyer-1.jpg",
+        "alt": "Real Makeの新しいチラシの表面。対応する住まいの工事とお問い合わせ先",
+        "loading": "eager",
+        "src": "assets/optimized/blog/full/blog/2026-10-10-new-realmake-flyer-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-10-new-realmake-flyer-1.webp"
+      },
+      {
+        "source": "assets/blog/2026-10-10-new-realmake-flyer-2.jpg",
+        "alt": "Real Makeの新しいチラシの裏面。選ばれる理由、ご相談の流れ、代表からのご挨拶",
+        "src": "assets/optimized/blog/full/blog/2026-10-10-new-realmake-flyer-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-10-new-realmake-flyer-2.webp"
+      }
+    ],
+    "slug": "2026-10-10-new-realmake-flyer"
+  },
+  {
     "date": "2026-10-09",
     "category": "現場ブログ",
     "title": "北本市で新築住宅の2階の窓にシャッターボックスを4箇所取付けました",
