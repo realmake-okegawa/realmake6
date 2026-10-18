@@ -1,5 +1,27 @@
 [
   {
+    "date": "2026-10-19",
+    "category": "現場ブログ",
+    "title": "お客様・元請けさんと現場の最終確認を行いました",
+    "body": [
+      "おはようございます☀",
+      "昨日は日曜日でしたが、お客様と元請けさん立ち会いで現場の最終確認を行いました✨",
+      "足場がかかってすぐに台風が来て、そこからずっと雨が降っていて全く進められなくて先月は本当にまいりました💦\nしかし、お客様に満足して頂ける仕上げができて良かったです😊",
+      "元請けさんの物件なので写真は掲載できませんが、見違えるほどキレイになりました✨",
+      "そして写真の橋をしばらく渡らなくて良いかな？と思って写真を撮ってみました笑\n部分的なお仕事ですが、上尾や桶川が少し続くので頑張っていきたいと思います💪🏼"
+    ],
+    "images": [
+      {
+        "source": "assets/blog/2026-10-19-final-site-inspection-bridge-1.jpg",
+        "alt": "青空の下、橋から見える河川敷の風景",
+        "loading": "eager",
+        "src": "assets/optimized/blog/full/blog/2026-10-19-final-site-inspection-bridge-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-19-final-site-inspection-bridge-1.webp"
+      }
+    ],
+    "slug": "2026-10-19-final-site-inspection-bridge"
+  },
+  {
     "date": "2026-10-10",
     "category": "お知らせ",
     "title": "Real Makeの新しいチラシができました",
