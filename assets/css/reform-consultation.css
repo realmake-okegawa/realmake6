@@ -104,7 +104,6 @@
   .rm-home .service p{min-height:0;font-size:15px;line-height:1.6}
   .rm-home .service b{font-size:14px}
   .rm-home .pills span{font-size:13px}
-  .rm-home .home-blog-card:nth-child(n+2){display:none}
   .rm-home .work-grid .work:nth-child(n+3){display:none}
   .rm-home .section{padding:48px 0}
   /* 画面下のボタンは「電話で相談・LINEで相談」の2つ（2026-10-02） */
