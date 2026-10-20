@@ -27,6 +27,7 @@ const relatedTargets = {
   freeSupport: ["free-support/", "桶川市の30分無料サポート"],
   toilet: ["services/toilet-reform/", "トイレリフォームについて"],
   okegawa: ["area/okegawa/", "桶川市のリフォーム・外壁塗装"],
+  budgetInterior: ["budget/#budget-interior", "工事ごとの予算の目安（内装・窓まわり）"],
 };
 const relatedGroups = [
   [["2026-09-04-kumagaya-inner-window-opening"], ["kumagaya"]],
@@ -39,6 +40,8 @@ const relatedGroups = [
   [["2026-09-21-toilet-holder-iron-bar"], ["toilet", "home"]],
   [["2026-06-08-post-replacement-1", "2026-07-08-room-cleanout-request-1", "2026-07-10-cleanout-complete-1"], ["home", "freeSupport"]],
   [["2026-09-05-okegawa-balcony-waterproofing-prep"], ["faq"]],
+  [["2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film"], ["windows", "budgetInterior", "faq"]],
+  [["2026-10-09-kitamoto-window-shutter-box"], ["windows", "faq"]],
 ];
 const relatedLinks = (slug) => {
   const keys = relatedGroups.filter(([slugs]) => slugs.includes(slug)).flatMap(([, targets]) => targets);
