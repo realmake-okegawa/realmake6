@@ -1,5 +1,38 @@
 [
   {
+    "date": "2026-10-21",
+    "category": "現場ブログ",
+    "title": "3現場分・合計27枚の網戸を張り替えました",
+    "body": [
+      "おはようございます☀",
+      "昨日は朝現場へ行くとまた濡れていたので急遽予定を変更！\n網戸張替え依頼３現場分、合計27枚の網戸の張替えをしました😅",
+      "なかなかのボリュームでしたが無事に完了💪🏼\nそれから部分塗装の現場へ行ってシート張りをして次の日の準備をしました！",
+      "朝の10時頃から☔️となっていたのに降ってきたのは夕方でした💦\nそれなら現場できたなー😥とも思いつつ溜まっていた網戸の張替えもできたので良かったかな🤔と思える1日でした！"
+    ],
+    "images": [
+      {
+        "source": "assets/blog/2026-10-21-screen-replacement-27-1.jpg",
+        "alt": "張替えのために集めた複数の網戸を車に積んだ様子",
+        "loading": "eager",
+        "src": "assets/optimized/blog/full/blog/2026-10-21-screen-replacement-27-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-21-screen-replacement-27-1.webp"
+      },
+      {
+        "source": "assets/blog/2026-10-21-screen-replacement-27-2.jpg",
+        "alt": "作業台の上で網戸の網を張り替える様子",
+        "src": "assets/optimized/blog/full/blog/2026-10-21-screen-replacement-27-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-21-screen-replacement-27-2.webp"
+      },
+      {
+        "source": "assets/blog/2026-10-21-screen-replacement-27-3.jpg",
+        "alt": "網戸の枠に網を固定する作業中の手元",
+        "src": "assets/optimized/blog/full/blog/2026-10-21-screen-replacement-27-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-21-screen-replacement-27-3.webp"
+      }
+    ],
+    "slug": "2026-10-21-screen-replacement-27"
+  },
+  {
     "date": "2026-10-19",
     "category": "現場ブログ",
     "title": "お客様・元請けさんと現場の最終確認を行いました",
