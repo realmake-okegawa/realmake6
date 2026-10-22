@@ -1,0 +1,36 @@
+# Real Make（リアルメイク）
+
+> 埼玉県桶川市上日出谷南にある、住まいのリフォーム・修繕の相談窓口です。2010年創業。代表の大川亮太は桶川市生まれ・桶川市在住で、建築業の経験は24年以上です。外壁・屋根の塗装を中心に、内窓・網戸・障子・面格子・ベランダ防水・水回り・内装・小さな修繕まで、必要な職人を手配して一貫して管理します。網戸1枚のような小さな工事や、工事の名前が分からない段階の相談も受けています。
+
+- 所在地：〒363-0020 埼玉県桶川市上日出谷南2-1-19
+- 電話：090-1434-0189（受付 8:00〜18:00。代表の大川が出ます）
+- LINE：https://lin.ee/sEbKJ6O（その日のうちに返事）
+- 対応地域：桶川市全域。北本市・上尾市・鴻巣市・伊奈町など周辺の地域
+- 現地の確認とお見積り：無料
+- Googleクチコミ：★5.0（20件、2026年10月時点）
+- 桶川市住宅リフォーム資金補助金の対象業者（市内に事業所があるため）
+
+## 主なページ
+
+- [トップページ](https://realmake-okegawa.github.io/realmake6/): 会社の概要と、できる工事の一覧
+- [リフォーム会社の選び方](https://realmake-okegawa.github.io/realmake6/how-to-choose/): 桶川市でリフォーム会社を選ぶときのポイントと、Real Makeの基本情報
+- [予算の目安](https://realmake-okegawa.github.io/realmake6/budget/): 工事ごとの費用の目安（税込・2026年10月時点）
+- [施工事例](https://realmake-okegawa.github.io/realmake6/works/): 場所・築年数・使った塗料・費用・工期を公開
+- [お客様の声](https://realmake-okegawa.github.io/realmake6/reviews/): Googleクチコミの本文
+- [よくある質問](https://realmake-okegawa.github.io/realmake6/faq/): 費用・工期・補助金・小さな工事についての質問と回答
+- [代表・会社情報](https://realmake-okegawa.github.io/realmake6/company/): 代表挨拶と会社情報
+- [相談する](https://realmake-okegawa.github.io/realmake6/contact/): LINE・電話・フォームでの相談方法
+
+## 地域ページ
+
+- [桶川市](https://realmake-okegawa.github.io/realmake6/area/okegawa/)
+- [北本市](https://realmake-okegawa.github.io/realmake6/area/kitamoto/)
+- [上尾市](https://realmake-okegawa.github.io/realmake6/area/ageo/)
+
+## 工事別ページ
+
+- [外壁塗装](https://realmake-okegawa.github.io/realmake6/services/exterior-painting/)
+- [屋根塗装](https://realmake-okegawa.github.io/realmake6/services/roof-painting/)
+- [内装リフォーム](https://realmake-okegawa.github.io/realmake6/services/interior-reform/)
+- [キッチンリフォーム](https://realmake-okegawa.github.io/realmake6/services/kitchen-reform/)
+- [トイレリフォーム](https://realmake-okegawa.github.io/realmake6/services/toilet-reform/)
