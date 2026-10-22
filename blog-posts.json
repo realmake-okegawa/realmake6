@@ -1,5 +1,33 @@
 [
   {
+    "date": "2026-10-23",
+    "category": "現場ブログ",
+    "title": "桶川市内でベランダのトップコートと店舗の部分塗装",
+    "body": [
+      "おはようございます☀",
+      "昨日は忙しい1日になりました！\nベランダのトップコートの現場と元請け会社様の店舗の部分塗装を行ったり来たり💪🏼",
+      "乾き待ちの時間を有効活用しました✨\n２つとも桶川市内だったので良かったです😊",
+      "今日は今日で店舗の残りと上尾の現場を行き来する予定です！",
+      "お仕事が頂けている事、そして近場でお仕事をさせて頂けていることに感謝です✨🙏🏻"
+    ],
+    "images": [
+      {
+        "source": "assets/blog/2026-10-23-okegawa-balcony-topcoat-shop-painting-1.jpg",
+        "alt": "桶川市内の現場でトップコートを施工したベランダの床",
+        "loading": "eager",
+        "src": "assets/optimized/blog/full/blog/2026-10-23-okegawa-balcony-topcoat-shop-painting-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-23-okegawa-balcony-topcoat-shop-painting-1.webp"
+      },
+      {
+        "source": "assets/blog/2026-10-23-okegawa-balcony-topcoat-shop-painting-2.jpg",
+        "alt": "桶川市内の店舗で養生をして部分塗装を行っている壁",
+        "src": "assets/optimized/blog/full/blog/2026-10-23-okegawa-balcony-topcoat-shop-painting-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-23-okegawa-balcony-topcoat-shop-painting-2.webp"
+      }
+    ],
+    "slug": "2026-10-23-okegawa-balcony-topcoat-shop-painting"
+  },
+  {
     "date": "2026-10-21",
     "category": "現場ブログ",
     "title": "3現場分・合計27枚の網戸を張り替えました",
