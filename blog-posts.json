@@ -1,5 +1,32 @@
 [
   {
+    "date": "2026-10-24",
+    "category": "現場ブログ",
+    "title": "桶川と上尾の現場を行き来しながら作業を進めました",
+    "body": [
+      "おはようございます！\n今日は朝から☔️ですね。",
+      "昨日もバタバタと桶川の現場と上尾の現場を行ったり来たりの1日でした💨\n片方だけではなく両方とも進める事ができて良かったです✨",
+      "桶川の現場は明日完工予定💪🏼",
+      "現場が近くて行き来したり直ぐに対応できるので、良い点ばかりです😊\n近場での仕事を増やしていけるように頑張りたいと思います🔥"
+    ],
+    "images": [
+      {
+        "source": "assets/blog/2026-10-24-okegawa-ageo-site-work-1.jpg",
+        "alt": "凹凸のある壁をローラーで青色に塗装している様子",
+        "loading": "eager",
+        "src": "assets/optimized/blog/full/blog/2026-10-24-okegawa-ageo-site-work-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-24-okegawa-ageo-site-work-1.webp"
+      },
+      {
+        "source": "assets/blog/2026-10-24-okegawa-ageo-site-work-2.jpg",
+        "alt": "青色に塗装している壁とローラーの手元",
+        "src": "assets/optimized/blog/full/blog/2026-10-24-okegawa-ageo-site-work-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-24-okegawa-ageo-site-work-2.webp"
+      }
+    ],
+    "slug": "2026-10-24-okegawa-ageo-site-work"
+  },
+  {
     "date": "2026-10-23",
     "category": "現場ブログ",
     "title": "桶川市内でベランダのトップコートと店舗の部分塗装",
