@@ -219,3 +219,58 @@ body.rm-home{background:#fff}
 @media(max-width:700px){
   .rm-home.rm-ivory-home .hero .shade{background:linear-gradient(180deg,#f6f3ebd9 0%,#f6f3ebbf 42%,#f6f3eb99 100%)}
 }
+
+/* 2026-10-24 トップページ限定の青緑。共有CSSを使う別ページの配色は変えない。 */
+body.rm-home{
+  --green:#1d625b;
+  --green-hover:#174f49;
+  --green-shadow:#1d625b44;
+  --green-shadow-soft:#1d625b22;
+}
+.rm-home .trust,.rm-home.rm-ivory-home .trust{background:var(--green);color:#fff}
+.rm-home .hero h1 .hero-name,.rm-home.rm-ivory-home .hero h1 .hero-name{color:var(--green)}
+.rm-home .local-kicker .kicker-free,.rm-home.rm-ivory-home .hero h1 .kicker-free{background:var(--green);color:#fff}
+.rm-home .line,.rm-home .quick-consultation-button,
+.rm-home.rm-ivory-home .hero-line,.rm-home.rm-ivory-home .head-contact .line.mini,
+.rm-home .fixed a:last-child,.rm-home.rm-ivory-home .fixed a:last-child{background:var(--green);color:#fff}
+.rm-home .line{box-shadow:0 7px 18px var(--green-shadow)}
+.rm-home .line.mini{box-shadow:none}
+.rm-home.rm-ivory-home .hero-line{box-shadow:0 7px 18px var(--green-shadow-soft)}
+.rm-home.rm-ivory-home .head-contact .line.mini{box-shadow:0 4px 12px var(--green-shadow-soft)}
+.rm-home .line:hover,.rm-home .line:focus-visible,
+.rm-home .quick-consultation-button:hover,.rm-home .quick-consultation-button:focus-visible,
+.rm-home.rm-ivory-home .hero-line:hover,.rm-home.rm-ivory-home .hero-line:focus-visible,
+.rm-home.rm-ivory-home .head-contact .line.mini:hover,.rm-home.rm-ivory-home .head-contact .line.mini:focus-visible,
+.rm-home .fixed a:last-child:hover,.rm-home .fixed a:last-child:focus-visible,
+.rm-home.rm-ivory-home .fixed a:last-child:hover,.rm-home.rm-ivory-home .fixed a:last-child:focus-visible{background:var(--green-hover);color:#fff}
+.rm-home .service b,.rm-home .home-blog-card time,.rm-home .home-blog-more{color:var(--green)}
+.rm-home .message-example .example-message,.rm-home .quote-points>div{border-color:var(--green)}
+.rm-home .contact .consult-steps li:before{background:var(--green);color:#fff}
+/* 濃い紺色の背景上では、アクセントの小見出しも白で読みやすくする。 */
+.rm-home .check .kicker,.rm-home .contact .kicker{color:#fff}
+/* アウトラインと影だけで示し、ボックスの寸法・配置は変えない。 */
+.rm-home :where(a,button,summary,input,select,textarea,[tabindex]):focus-visible,
+.rm-home.rm-ivory-home .hero-line:focus-visible,
+.rm-home.rm-ivory-home .head-contact .line.mini:focus-visible{
+  outline:3px solid #fff;
+  outline-offset:3px;
+  box-shadow:0 0 0 6px var(--green);
+}
+/* 2026-10-24 問い合わせボタンだけは、LINEと分かる明るい緑にする（白文字 4.8:1）。帯・見出しは上の青緑のまま。 */
+body.rm-home{
+  --action:#00843d;
+  --action-hover:#006b32;
+}
+.rm-home .line,.rm-home .quick-consultation-button,
+.rm-home.rm-ivory-home .hero-line,.rm-home.rm-ivory-home .head-contact .line.mini,
+.rm-home .fixed a:last-child,.rm-home.rm-ivory-home .fixed a:last-child{background:var(--action);color:#fff}
+.rm-home .line{box-shadow:0 7px 18px #00843d44}
+.rm-home .line.mini{box-shadow:none}
+.rm-home.rm-ivory-home .hero-line{box-shadow:0 7px 18px #00843d22}
+.rm-home.rm-ivory-home .head-contact .line.mini{box-shadow:0 4px 12px #00843d22}
+.rm-home .line:hover,.rm-home .line:focus-visible,
+.rm-home .quick-consultation-button:hover,.rm-home .quick-consultation-button:focus-visible,
+.rm-home.rm-ivory-home .hero-line:hover,.rm-home.rm-ivory-home .hero-line:focus-visible,
+.rm-home.rm-ivory-home .head-contact .line.mini:hover,.rm-home.rm-ivory-home .head-contact .line.mini:focus-visible,
+.rm-home .fixed a:last-child:hover,.rm-home .fixed a:last-child:focus-visible,
+.rm-home.rm-ivory-home .fixed a:last-child:hover,.rm-home.rm-ivory-home .fixed a:last-child:focus-visible{background:var(--action-hover);color:#fff}
