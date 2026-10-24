@@ -9,6 +9,7 @@
   --works-line: #dedfd9;
   --works-radius: 14px;
   --works-shadow: 0 1px 1px rgba(21, 33, 26, .03), 0 8px 24px rgba(21, 33, 26, .055);
+  --line-button-leading: 26.25px; /* LINE主文字16pxでも既存のボタン行の高さを維持 */
 }
 
 body { padding-bottom: 68px; background: var(--works-paper); color: var(--works-ink); font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; font-size: 17px; line-height: 1.75; }

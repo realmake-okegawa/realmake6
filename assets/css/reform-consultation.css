@@ -274,3 +274,35 @@ body.rm-home{
 .rm-home.rm-ivory-home .head-contact .line.mini:hover,.rm-home.rm-ivory-home .head-contact .line.mini:focus-visible,
 .rm-home .fixed a:last-child:hover,.rm-home .fixed a:last-child:focus-visible,
 .rm-home.rm-ivory-home .fixed a:last-child:hover,.rm-home.rm-ivory-home .fixed a:last-child:focus-visible{background:var(--action-hover);color:#fff}
+
+/* ファーストビューの社名はLINEと同じ緑。帯・見積り無料の札は青緑を維持。 */
+.rm-home.rm-ivory-home .hero h1 .hero-name{color:var(--action)}
+/* 未反映だった下層のLINEにも行動色を適用。 */
+.reform-service{--action:#00843d;--action-hover:#006b32}
+.reform-service .line,.reform-service .fixed a:last-child{background:var(--action);color:#fff}
+.reform-service .line{box-shadow:0 7px 18px #00843d44}
+.reform-service .line:hover,.reform-service .line:focus-visible,
+.reform-service .fixed a:last-child:hover,.reform-service .fixed a:last-child:focus-visible{background:var(--action-hover);color:#fff}
+.rm-home .head-contact .line.mini,.reform-service .head-contact .line.mini{font-size:16px}
+.reform-service .head-contact .line.mini{box-shadow:0 4px 12px #00843d22}
+/* 701〜1000pxでは既存の開閉メニューを使い、入口が消えないようにする。 */
+@media(min-width:701px) and (max-width:1000px){
+  .rm-home .menu{display:block;margin-left:auto;min-width:44px;min-height:44px;border:0;background:transparent;color:var(--navy);font-size:25px}
+  .rm-home .mobile-nav{padding:9px 16px 17px;border-top:1px solid var(--line);background:#fff}
+  .rm-home .mobile-nav.open{display:grid}
+  .rm-home .mobile-nav a{padding:8px 0;border-bottom:1px solid #edf1ef;color:var(--navy);font-weight:800;text-decoration:none}
+}
+/* PCでは8項目を隠さず横並びにし、電話番号とLINEボタンも残す。 */
+@media(min-width:1001px){
+  .rm-home .header{gap:16px}
+  .rm-home .nav{display:flex;flex-wrap:nowrap;gap:14px}
+  .rm-home .nav>a{display:block}
+  .rm-home .menu,.rm-home .mobile-nav,.rm-home .mobile-nav.open{display:none}
+}
+@media(min-width:1001px) and (max-width:1240px){
+  .rm-home .header{gap:10px}
+  .rm-home .nav{gap:clamp(4px,calc(3vw - 26px),12px)}
+  .rm-home .nav>a{font-size:13px}
+  .rm-home .head-contact{gap:10px;padding-left:12px}
+  .rm-home .head-contact .line.mini{padding-inline:14px}
+}

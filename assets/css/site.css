@@ -554,3 +554,28 @@ a.trustbar-item:hover{text-decoration:underline}
 @media(max-width:760px){
   .contact-hero .consult-line-reply{margin-top:14px}
 }
+
+/* LINEだけを統一。電話・概算費用用の--ctaとシミュレーターは維持。 */
+body:not(.simulator-page){--line-g:#00843d;--line-g-hover:#006b32}
+body:not(.simulator-page) .btn.line,
+body:not(.simulator-page) .sticky a.line,
+body:not(.simulator-page) .consult-line-btn{
+  background:var(--line-g);border-color:var(--line-g);color:#fff;font-size:16px;
+}
+/* 文字を16pxにしても、並列の電話・概算費用ボタンの高さは維持。 */
+body:not(.simulator-page) .btn.line{line-height:var(--line-button-leading,30px)}
+body:not(.simulator-page) .sticky a.line{line-height:28px}
+@media(max-width:980px){body:not(.simulator-page) .sticky a.line{line-height:25px}}
+body:not(.simulator-page) .btn.line:hover,
+body:not(.simulator-page) .btn.line:focus-visible,
+body:not(.simulator-page) .sticky a.line:hover,
+body:not(.simulator-page) .sticky a.line:focus-visible,
+body:not(.simulator-page) .consult-line-btn:hover,
+body:not(.simulator-page) .consult-line-btn:focus-visible{
+  background:var(--line-g-hover);border-color:var(--line-g-hover);color:#fff;
+}
+body:not(.simulator-page) .btn.line:focus-visible,
+body:not(.simulator-page) .sticky a.line:focus-visible,
+body:not(.simulator-page) .consult-line-btn:focus-visible{
+  outline:3px solid #fff;outline-offset:3px;box-shadow:0 0 0 6px #12324a;
+}
