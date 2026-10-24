@@ -1,5 +1,26 @@
 [
   {
+    "date": "2026-10-25",
+    "category": "日々のこと",
+    "title": "雨の日に長男のサッカーの試合を見に行きました",
+    "body": [
+      "おはようございます！",
+      "昨日は朝から☔️だったので、現場作業は中止となりました。\nそこで長男の⚽️試合を見に行くことにしました💪🏼",
+      "雨が降っていてひどいグラウンドコンディションでしたが、高校サッカーは中止にならないんですね😅\nそんな中でも選手達はよく頑張っていました❗️",
+      "見に行くと毎回パワーと感動をもらえます✨\n今日はプライベートの話をさせて頂きました😊"
+    ],
+    "images": [
+      {
+        "source": "assets/blog/2026-10-25-rainy-day-soccer-1.jpg",
+        "alt": "雨でぬかるんだグラウンドに整列する高校サッカーの選手たち",
+        "loading": "eager",
+        "src": "assets/optimized/blog/full/blog/2026-10-25-rainy-day-soccer-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-25-rainy-day-soccer-1.webp"
+      }
+    ],
+    "slug": "2026-10-25-rainy-day-soccer"
+  },
+  {
     "date": "2026-10-24",
     "category": "現場ブログ",
     "title": "桶川と上尾の現場を行き来しながら作業を進めました",
