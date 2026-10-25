@@ -32,13 +32,34 @@
 .window-log a{color:#123654;font-size:17px;font-weight:700;text-underline-offset:4px}
 .window-log span{display:block;margin-top:4px;color:#4a606e;font-size:15px;line-height:1.7}
 @media(max-width:700px){.window-budget-table th,.window-budget-table td{padding:16px 12px}.window-budget-table tbody th{font-size:16px}.window-budget-table td strong{font-size:20px}.window-budget-table td small{font-size:13px}.window-log li{grid-template-columns:1fr;gap:4px}}
+/* 窓ページだけのヘッダー調整。PCでは8項目を残し、中間幅では開閉メニューを使う。 */
+@media(min-width:701px) and (max-width:1000px){
+  .window-reform-service .nav{display:none}
+  .window-reform-service .menu{display:block;margin-left:auto;min-width:44px;min-height:44px;border:0;background:transparent;color:var(--navy);font-size:25px}
+  .window-reform-service .mobile-nav{padding:9px 16px 17px;border-top:1px solid var(--line);background:#fff}
+  .window-reform-service .mobile-nav.open{display:grid}
+  .window-reform-service .mobile-nav a{padding:8px 0;border-bottom:1px solid #edf1ef;color:var(--navy);font-weight:800;text-decoration:none}
+}
+@media(min-width:1001px){
+  .window-reform-service .header{gap:16px}
+  .window-reform-service .nav{display:flex;flex-wrap:nowrap;gap:14px}
+  .window-reform-service .nav>a{display:block}
+  .window-reform-service .menu,.window-reform-service .mobile-nav,.window-reform-service .mobile-nav.open{display:none}
+}
+@media(min-width:1001px) and (max-width:1240px){
+  .window-reform-service .header{gap:10px}
+  .window-reform-service .nav{gap:clamp(4px,calc(3vw - 26px),12px)}
+  .window-reform-service .nav>a{font-size:13px}
+  .window-reform-service .head-contact{gap:10px;padding-left:12px}
+  .window-reform-service .head-contact .line.mini{padding-inline:14px}
+}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PCG1M6JXX0"></script>
 <script src="../../assets/js/site-analytics.js"></script>
 <script id="service-schema" type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"窓まわりの工事（内窓の取付け・網戸の張り替え・障子の張り替え・面格子の取付け・ガラス交換）","provider":{"@id":"https://realmake-okegawa.github.io/realmake6/#business"},"areaServed":[{"@type":"City","name":"桶川市"},{"@type":"City","name":"北本市"},{"@type":"City","name":"上尾市"},{"@type":"City","name":"鴻巣市"},{"@type":"AdministrativeArea","name":"伊奈町"}],"description":"窓の寒さ・結露・音・防犯の悩みや、網戸・障子の破れに対応する窓まわりの工事です。網戸1枚からご相談いただけます。","url":"https://realmake-okegawa.github.io/realmake6/services/window-reform/"}</script>
 <script id="faq-schema" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"網戸1枚・障子1枚だけでも頼めますか？","acceptedAnswer":{"@type":"Answer","text":"はい、1枚からご相談ください。網戸の張り替えは、幅90cmの網戸1枚で1,800円〜（税込・2026年10月時点の目安）です。"}},{"@type":"Question","name":"網戸を取り外して持って行ってもらえますか？","acceptedAnswer":{"@type":"Answer","text":"はい。網戸の取り外し・引き取りから張り替え、取り付けまで対応します。2026年9月には、会社様の網戸をまとめて引き取って張り替えました。"}},{"@type":"Question","name":"内窓に補助金は使えますか？","acceptedAnswer":{"@type":"Answer","text":"補助金の対象になる場合があります。熊谷市で19か所に内窓を取り付けた事例では、約200万円（税込）の工事費に対して約70万円の補助金を活用しました。使える制度と条件は時期や製品で変わるため、お見積りのときに確認してお伝えします。"}},{"@type":"Question","name":"防犯のために窓に何か付けたいのですが、何がいいか分かりません。","acceptedAnswer":{"@type":"Answer","text":"窓の場所と大きさを見て、内窓・面格子・シャッターボックスなどから合うものをご提案します。面格子は、純正品より価格を抑えた製品をご提案することもあります。"}}]}</script>
 </head>
-<body class="reform-service">
+<body class="reform-service window-reform-service">
   <div class="trust"><div class="wrap">桶川市を拠点に対応　｜　職人歴24年以上　｜　見積り無料・LINE相談OK</div></div>
   <header>
     <div class="wrap header">
