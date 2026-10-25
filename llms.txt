@@ -5,7 +5,7 @@
 - 所在地：〒363-0020 埼玉県桶川市上日出谷南2-1-19
 - 電話：090-1434-0189（受付 8:00〜18:00。代表の大川が出ます）
 - LINE：https://lin.ee/sEbKJ6O（その日のうちに返事）
-- 対応地域：桶川市全域。北本市・上尾市・鴻巣市・伊奈町など周辺の地域
+- 対応地域：桶川市を中心に、北本市・上尾市・鴻巣市・伊奈町など周辺地域
 - 現地の確認とお見積り：無料
 - Googleクチコミ：★5.0（20件、2026年10月時点）
 - 桶川市住宅リフォーム資金補助金の対象業者（市内に事業所があるため）
@@ -34,3 +34,4 @@
 - [内装リフォーム](https://realmake-okegawa.github.io/realmake6/services/interior-reform/)
 - [キッチンリフォーム](https://realmake-okegawa.github.io/realmake6/services/kitchen-reform/)
 - [トイレリフォーム](https://realmake-okegawa.github.io/realmake6/services/toilet-reform/)
+- [窓まわりの工事（内窓・網戸・障子・面格子）](https://realmake-okegawa.github.io/realmake6/services/window-reform/)

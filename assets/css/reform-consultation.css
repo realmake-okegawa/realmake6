@@ -306,3 +306,5 @@ body.rm-home{
   .rm-home .head-contact{gap:10px;padding-left:12px}
   .rm-home .head-contact .line.mini{padding-inline:14px}
 }
+/* 2026-10-25 ダークモードの閲覧環境でも、工事別ページの背景を白に固定する（紺の文字が黒背景に沈むのを防ぐ）。 */
+html:has(body.reform-service),body.reform-service{background:#fff;color-scheme:light}
