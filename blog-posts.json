@@ -1,5 +1,38 @@
 [
   {
+    "date": "2026-10-26",
+    "category": "現場ブログ",
+    "title": "店舗の足場解体前に最終確認と窓拭きを行いました",
+    "body": [
+      "おはようございます！",
+      "昨日は元請け会社様の店舗の足場解体日でした。",
+      "足場解体がお昼頃から予定だったので、朝一で現場へ行き最終確認と窓拭きをしました✨",
+      "午後足場を解体して無事に完了となりました😊"
+    ],
+    "images": [
+      {
+        "source": "assets/blog/2026-10-26-shop-scaffold-removal-final-check-1.jpg",
+        "alt": "店舗の窓ガラスを拭いて最終清掃をしている様子",
+        "loading": "eager",
+        "src": "assets/optimized/blog/full/blog/2026-10-26-shop-scaffold-removal-final-check-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-26-shop-scaffold-removal-final-check-1.webp"
+      },
+      {
+        "source": "assets/blog/2026-10-26-shop-scaffold-removal-final-check-2.jpg",
+        "alt": "足場解体前の店舗の外観",
+        "src": "assets/optimized/blog/full/blog/2026-10-26-shop-scaffold-removal-final-check-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-26-shop-scaffold-removal-final-check-2.webp"
+      },
+      {
+        "source": "assets/blog/2026-10-26-shop-scaffold-removal-final-check-3.jpg",
+        "alt": "足場の解体が完了した店舗の外観",
+        "src": "assets/optimized/blog/full/blog/2026-10-26-shop-scaffold-removal-final-check-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-10-26-shop-scaffold-removal-final-check-3.webp"
+      }
+    ],
+    "slug": "2026-10-26-shop-scaffold-removal-final-check"
+  },
+  {
     "date": "2026-10-25",
     "category": "日々のこと",
     "title": "雨の日に長男のサッカーの試合を見に行きました",
