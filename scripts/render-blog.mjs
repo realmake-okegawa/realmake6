@@ -24,7 +24,6 @@ const relatedTargets = {
   windows: ["works/?type=windows#works-list", "窓まわり（内窓・網戸・面格子）の施工事例"],
   faq: ["faq/", "リフォーム・小さな工事のよくある質問"],
   home: ["works/?type=home#works-list", "小修繕の施工事例"],
-  freeSupport: ["free-support/", "桶川市の30分無料サポート"],
   toilet: ["services/toilet-reform/", "トイレリフォームについて"],
   okegawa: ["area/okegawa/", "桶川市のリフォーム・外壁塗装"],
   budgetInterior: ["budget/#budget-interior", "工事ごとの予算の目安（内装・窓まわり）"],
@@ -38,7 +37,7 @@ const relatedGroups = [
     "2026-09-11-okegawa-inner-window-window-grille-installation", "2026-09-16-shoji-repapering", "2026-09-19-screen-replacement",
   ], ["windows", "faq"]],
   [["2026-09-21-toilet-holder-iron-bar"], ["toilet", "home"]],
-  [["2026-06-08-post-replacement-1", "2026-07-08-room-cleanout-request-1", "2026-07-10-cleanout-complete-1"], ["home", "freeSupport"]],
+  [["2026-06-08-post-replacement-1", "2026-07-08-room-cleanout-request-1", "2026-07-10-cleanout-complete-1"], ["home"]],
   [["2026-09-05-okegawa-balcony-waterproofing-prep"], ["faq"]],
   [["2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film"], ["windows", "budgetInterior", "faq"]],
   [["2026-10-09-kitamoto-window-shutter-box"], ["windows", "faq"]],
@@ -128,7 +127,7 @@ function header(relativePath) {
 }
 
 function footer(relativePath) {
-  return `  <footer class="sitefoot"><div class="wrap"><a href="${relativePath}index.html">ホーム</a><a href="${relativePath}services/exterior-painting/index.html">外壁塗装</a><a href="${relativePath}services/roof-painting/index.html">屋根塗装</a><a href="${relativePath}works/index.html">施工事例</a><a href="${relativePath}company/index.html">代表・会社情報</a><a href="${relativePath}faq/index.html">FAQ</a><a href="${relativePath}area/okegawa/index.html">桶川市</a><a href="${relativePath}free-support/">30分無料サポート</a><div class="cp">Real Make（リアルメイク）／埼玉県桶川市上日出谷南2-1-19／090-1434-0189</div></div></footer>`;
+  return `  <footer class="sitefoot"><div class="wrap"><a href="${relativePath}index.html">ホーム</a><a href="${relativePath}services/exterior-painting/index.html">外壁塗装</a><a href="${relativePath}services/roof-painting/index.html">屋根塗装</a><a href="${relativePath}works/index.html">施工事例</a><a href="${relativePath}company/index.html">代表・会社情報</a><a href="${relativePath}faq/index.html">FAQ</a><a href="${relativePath}area/okegawa/index.html">桶川市</a><div class="cp">Real Make（リアルメイク）／埼玉県桶川市上日出谷南2-1-19／090-1434-0189</div></div></footer>`;
 }
 
 function head({ title, description, canonical, relativePath, data, ogImage = defaultOgImage, type = "website" }) {
