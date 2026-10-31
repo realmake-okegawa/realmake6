@@ -1,5 +1,27 @@
 [
   {
+    "date": "2026-11-01",
+    "category": "日々のこと",
+    "title": "特定健診と網戸の解体・分別、11月がスタートしました",
+    "body": [
+      "おはようございます☀\n10月最後の昨日は朝一から病院へ行き、特定健診を受けて来ました！",
+      "歳を重ねるごとに代謝が落ちて、同じ量を食べていても年間2kgも増加するらしいです😱\n食べるのを我慢するか、その分運動しないとですね💦",
+      "午後からは先日網戸交換で引き下げてきた網戸の解体などを行いました！\n分別してゴミに出せるように準備です💪🏼",
+      "さて、今日から11月がスタート❗️\n今年もあと2ヶ月とか早すぎますね💦",
+      "寒くなって来たので体調管理を気をつけながら頑張りましょう😊"
+    ],
+    "images": [
+      {
+        "source": "assets/blog/2026-11-01-health-check-screen-disassembly-1.jpg",
+        "alt": "交換後に引き下げた網戸を解体し、枠と網を分別している作業場",
+        "loading": "eager",
+        "src": "assets/optimized/blog/full/blog/2026-11-01-health-check-screen-disassembly-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-01-health-check-screen-disassembly-1.webp"
+      }
+    ],
+    "slug": "2026-11-01-health-check-screen-disassembly"
+  },
+  {
     "date": "2026-10-30",
     "category": "現場ブログ",
     "title": "桶川市で雨戸交換・内窓4箇所、北本市で網戸16枚を交換しました",
