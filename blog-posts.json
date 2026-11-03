@@ -1,5 +1,26 @@
 [
   {
+    "date": "2026-11-04",
+    "category": "日々のこと",
+    "title": "長男のリーグ戦を観戦、強豪相手に3-1で勝利しました",
+    "body": [
+      "おはようございます☀\n昨日は午前中予定を空けて長男のリーグ戦⚽️を観戦に行きました🔥",
+      "強豪相手に3-1で勝利✨\n子供達の頑張ってる姿は本当にいいですね😊",
+      "残すところあと１試合です⚽️",
+      "さて、今日からは気持ちを切り替えて細かい仕事が続くのでバタバタと動いて行きたいと思います💪🏼"
+    ],
+    "images": [
+      {
+        "source": "assets/blog/2026-11-04-eldest-son-league-match-1.jpg",
+        "alt": "晴れた日の学校のグラウンドで行われた高校サッカーのリーグ戦",
+        "loading": "eager",
+        "src": "assets/optimized/blog/full/blog/2026-11-04-eldest-son-league-match-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-04-eldest-son-league-match-1.webp"
+      }
+    ],
+    "slug": "2026-11-04-eldest-son-league-match"
+  },
+  {
     "date": "2026-11-01",
     "category": "日々のこと",
     "title": "特定健診と網戸の解体・分別、11月がスタートしました",

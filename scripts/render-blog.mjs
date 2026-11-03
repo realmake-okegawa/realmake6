@@ -135,7 +135,7 @@ function head({ title, description, canonical, relativePath, data, ogImage = def
   return `<head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}">
-  <link rel="canonical" href="${escapeHtml(canonical)}"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:image" content="${escapeHtml(absoluteOgImage)}"><meta property="og:url" content="${escapeHtml(canonical)}"><meta property="og:type" content="${type}"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="${relativePath}assets/css/site.css">
+  <link rel="canonical" href="${escapeHtml(canonical)}"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:image" content="${escapeHtml(absoluteOgImage)}"><meta property="og:url" content="${escapeHtml(canonical)}"><meta property="og:type" content="${type}"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="${relativePath}assets/css/site.css?v=20261024-fix">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PCG1M6JXX0"></script>
   <script src="${relativePath}assets/js/site-analytics.js"></script>
   <script src="${relativePath}assets/js/nav.js" defer></script>${data ? `\n  <script type="application/ld+json">${escapeJson(data)}</script>` : ""}
@@ -235,7 +235,7 @@ function legacyRedirect(newSlug) {
   const relativePath = "../../";
   const target = `${siteUrl}/blog/${newSlug}/`;
   return `<!doctype html>
-<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,follow"><meta http-equiv="refresh" content="0; url=${target}"><link rel="canonical" href="${target}"><title>記事のURLが変わりました｜Real Make</title><link rel="stylesheet" href="${relativePath}assets/css/site.css"><script src="${relativePath}assets/js/nav.js" defer></script></head>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,follow"><meta http-equiv="refresh" content="0; url=${target}"><link rel="canonical" href="${target}"><title>記事のURLが変わりました｜Real Make</title><link rel="stylesheet" href="${relativePath}assets/css/site.css?v=20261024-fix"><script src="${relativePath}assets/js/nav.js" defer></script></head>
 <body>${header(relativePath)}<main><section><div class="narrow"><h1>記事のURLが変わりました</h1><p>新しいページへ移動します。移動しない場合は、<a href="../${newSlug}/index.html">こちらを選択してください。</a></p></div></section></main>${footer(relativePath)}</body></html>
 `;
 }
