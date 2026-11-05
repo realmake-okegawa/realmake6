@@ -1,5 +1,32 @@
 [
   {
+    "date": "2026-11-06",
+    "category": "現場ブログ",
+    "title": "桶川市のマンションで室内の木枠を塗装しました",
+    "body": [
+      "おはようございます☀",
+      "一昨日、昨日と天気が悪く雨が降りましたが、タイミングよく内装の木枠の塗装をさせていただきました✨",
+      "桶川市内のマンションの木枠を、下地処理から上塗りまでさせていただきました😊",
+      "最後、お客様とのお話に夢中になってしまい、完工写真を撮り忘れてしまいました😅\nでも、お客様に大変喜んでいただけたので、良かったです✨"
+    ],
+    "images": [
+      {
+        "source": "assets/blog/2026-11-06-okegawa-apartment-wood-frame-painting-1.jpg",
+        "alt": "桶川市のマンションで室内の出入り口の木枠を塗装している作業中の様子",
+        "loading": "eager",
+        "src": "assets/optimized/blog/full/blog/2026-11-06-okegawa-apartment-wood-frame-painting-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-06-okegawa-apartment-wood-frame-painting-1.webp"
+      },
+      {
+        "source": "assets/blog/2026-11-06-okegawa-apartment-wood-frame-painting-2.jpg",
+        "alt": "マンションの窓まわりの木枠を塗装している作業中の様子",
+        "src": "assets/optimized/blog/full/blog/2026-11-06-okegawa-apartment-wood-frame-painting-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-06-okegawa-apartment-wood-frame-painting-2.webp"
+      }
+    ],
+    "slug": "2026-11-06-okegawa-apartment-wood-frame-painting"
+  },
+  {
     "date": "2026-11-04",
     "category": "日々のこと",
     "title": "長男のリーグ戦を観戦、強豪相手に3-1で勝利しました",
