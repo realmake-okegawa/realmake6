@@ -44,6 +44,7 @@ body.rm-home .hero.hero-c .hero-owner p{margin:0;color:#1c2427;font-size:14px;li
 .hero-c .hero-stats li:first-child:hover{border-color:var(--green)}
 
 /* ボタン */
+.hero-c .hero-budget{display:none}
 body.rm-home .hero.hero-c .hero-buttons{margin-top:22px}
 body.rm-home .hero.hero-c .hero-line{border-radius:999px}
 body.rm-home .hero.hero-c .ghost{background:transparent;border:0;color:var(--green);font-weight:700}
@@ -53,6 +54,20 @@ body.rm-home .hero.hero-c .hero-content>.hero-help{color:#5f696d}
 @media(max-width:700px){
   body.rm-home .hero.hero-c .hero-content{padding-top:24px;padding-bottom:52px}
   body.rm-home .hero.hero-c h1{font-size:30px;letter-spacing:.02em}
+  .hero-c .hero-budget{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    min-height:44px;
+    padding:6px 14px;
+    border:1px solid var(--green);
+    border-radius:999px;
+    background:#fff;
+    color:var(--green);
+    font-weight:700;
+    text-decoration:none;
+  }
+  .hero-c .hero-budget:hover,.hero-c .hero-budget:focus-visible{text-decoration:underline}
   body.rm-home .hero.hero-c .hero-buttons{margin-top:20px}
   body.rm-home .hero.hero-c .hero-content>.hero-help{text-align:center}
 }
