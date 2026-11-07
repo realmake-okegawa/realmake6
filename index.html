@@ -49,7 +49,7 @@
           <li><small>職人歴</small><b>24<span>年以上</span></b></li>
           <li><small>お見積り</small><b>無料</b></li>
         </ul>
-        <div class="hero-buttons"><a class="line hero-line" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener"><small>写真がなくてもOK</small><b>LINEで相談する　→</b></a><a class="ghost" href="#services">できる工事を見る　↓</a></div>
+        <div class="hero-buttons"><a class="line hero-line" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener" data-ga-location="home_hero"><small>写真がなくてもOK</small><b>LINEで相談する　→</b></a><a class="ghost" href="#services">できる工事を見る　↓</a></div>
         <p class="hero-help"><span>相談だけでも大丈夫です。</span><span>LINEはその日のうちにお返事します。</span></p>
       </div>
     </section>
@@ -115,9 +115,12 @@
       <a class="outline review-more" href="./reviews/">お客様の声・クチコミをすべて見る　→</a>
     </div></section>
 
-    <section class="section intro"><div class="wrap two">
+    <section class="section intro" id="first-visit"><div class="wrap two">
       <div><p class="kicker">はじめての方へ</p><h2>「これ、どこに頼めばいい？」<br>からで大丈夫です。</h2></div>
-      <div><p>外壁の傷み、雨漏り、窓まわり、水回り、暮らしの中の小さな不便まで。工事の種類が分からない段階でも、まずは状況をお聞かせください。</p><p>長年手がけて培った現場経験を軸に、必要な工事を分かりやすくご案内し、完了まで一貫して管理します。</p><a class="text-link" href="#reason">Real Makeの考え方を見る　→</a></div>
+      <div><p>外壁の傷み、雨漏り、窓まわり、水回り、暮らしの中の小さな不便まで。工事の種類が分からない段階でも、まずは状況をお聞かせください。</p><p>長年手がけて培った現場経験を軸に、必要な工事を分かりやすくご案内し、完了まで一貫して管理します。</p>
+        <div><a class="text-link" href="#reason">Real Makeの考え方を見る　→</a></div>
+        <div><a class="text-link" href="./how-to-choose/">桶川市でのリフォーム会社の選び方を見る　→</a></div>
+      </div>
     </div></section>
 
     <section class="section" id="services"><div class="wrap">
@@ -193,7 +196,7 @@
     .owner b{font-size:21px;text-shadow:none}.owner small{font-size:12px;text-shadow:none}
     @media(max-width:700px){.footer-rich{grid-template-columns:1fr;gap:24px}.footer-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-nav a{padding:13px 8px;font-size:12px}.footer-company p{font-size:12px}.footer-copy{grid-column:auto}.owner span{right:14px;bottom:14px;left:14px;padding:9px 12px}.owner b{font-size:20px}}
   </style>
-  <nav class="fixed"><a href="tel:09014340189"><small>受付 8:00〜18:00</small><b>電話で相談</b></a><a href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener"><small>写真がなくてもOK</small><b>LINEで相談</b></a></nav>
+  <nav class="fixed" data-ga-location="fixed_bar"><a href="tel:09014340189"><small>受付 8:00〜18:00</small><b>電話で相談</b></a><a href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener"><small>写真がなくてもOK</small><b>LINEで相談</b></a></nav>
   <script>const b=document.querySelector('.menu'),n=document.querySelector('.mobile-nav');b.onclick=()=>{const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!o);n.classList.toggle('open',!o)};n.querySelectorAll('a').forEach(a=>a.onclick=()=>{b.setAttribute('aria-expanded',false);n.classList.remove('open')});</script>
   <script src="./assets/js/home-guide.js?v=20261029-remove-free-support" defer></script>
 </body>
