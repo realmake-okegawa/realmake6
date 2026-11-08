@@ -14,7 +14,7 @@
 
 - [トップページ](https://realmake-okegawa.github.io/realmake6/): 会社の概要と、できる工事の一覧
 - [リフォーム会社の選び方](https://realmake-okegawa.github.io/realmake6/how-to-choose/): 桶川市でリフォーム会社を選ぶときのポイントと、Real Makeの基本情報
-- [予算の目安](https://realmake-okegawa.github.io/realmake6/budget/): 工事ごとの費用の目安（税込・2026年10月時点）
+- [予算の目安](https://realmake-okegawa.github.io/realmake6/budget/): 工事ごとの費用の目安（税込・2026年11月時点）
 - [施工事例](https://realmake-okegawa.github.io/realmake6/works/): 場所・築年数・使った塗料・費用・工期を公開
 - [お客様の声](https://realmake-okegawa.github.io/realmake6/reviews/): Googleクチコミの本文
 - [よくある質問](https://realmake-okegawa.github.io/realmake6/faq/): 費用・工期・補助金・小さな工事についての質問と回答
