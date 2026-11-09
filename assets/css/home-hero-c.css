@@ -30,7 +30,7 @@ body.rm-home .hero.hero-c .hero-content>p.hero-lead{margin-top:14px;color:#5f696
 .hero-c .hero-owner-name{margin-bottom:6px;font-size:20px;font-weight:800;line-height:1.4;color:#1c2427}
 body.rm-home .hero.hero-c .hero-owner p{margin:0;color:#1c2427;font-size:14px;line-height:1.65}
 .hero-c .hero-owner p span{display:inline-block}
-.hero-c .hero-owner p small{display:block;margin-top:4px;color:#5f696d;font-size:12px}
+.hero-c .hero-owner p small{display:block;margin-top:4px;color:inherit;font-size:inherit}
 
 /* 3つのカード */
 .hero-c .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0 0;padding:0;list-style:none}
