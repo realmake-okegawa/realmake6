@@ -1,5 +1,38 @@
 [
   {
+    "date": "2026-11-11",
+    "category": "現場ブログ",
+    "title": "屋上の笠木のケレンとサビ止め塗装を行いました",
+    "body": [
+      "おはようございます！",
+      "昨日は、ついさっきまで雨が降っていたのかと思うくらい現場が濡れていたので☔️、予定を変更して午前中に用事を済ませ、午後から現場へ向かいました💪🏼",
+      "屋上の笠木（かさぎ：屋上のまわりの壁の上にかぶせてある部材）をケレン（サビや古い塗膜を落とす下地処理）して、サビ止め塗装まで行いました✨",
+      "急に寒くなったので、体調を崩さないように気をつけてください⚠️"
+    ],
+    "images": [
+      {
+        "source": "assets/blog/2026-11-11-rooftop-coping-rust-prevention-1.jpg",
+        "alt": "屋上の笠木の表面を研磨パッドでケレンしている様子",
+        "loading": "eager",
+        "src": "assets/optimized/blog/full/blog/2026-11-11-rooftop-coping-rust-prevention-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-11-rooftop-coping-rust-prevention-1.webp"
+      },
+      {
+        "source": "assets/blog/2026-11-11-rooftop-coping-rust-prevention-2.jpg",
+        "alt": "ケレンした笠木に、ローラーで白いサビ止めを塗っている途中の様子",
+        "src": "assets/optimized/blog/full/blog/2026-11-11-rooftop-coping-rust-prevention-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-11-rooftop-coping-rust-prevention-2.webp"
+      },
+      {
+        "source": "assets/blog/2026-11-11-rooftop-coping-rust-prevention-3.jpg",
+        "alt": "サビ止め塗装を終えた屋上の笠木と、周りの住宅街の景色",
+        "src": "assets/optimized/blog/full/blog/2026-11-11-rooftop-coping-rust-prevention-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-11-rooftop-coping-rust-prevention-3.webp"
+      }
+    ],
+    "slug": "2026-11-11-rooftop-coping-rust-prevention"
+  },
+  {
     "date": "2026-11-10",
     "category": "現場ブログ",
     "title": "網戸16枚の張り替えと押さえゴムの交換を行いました",
