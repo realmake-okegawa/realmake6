@@ -1,5 +1,50 @@
 [
   {
+    "date": "2026-11-12",
+    "category": "現場ブログ",
+    "title": "屋上の笠木の朝露を拭き取り、テープ貼りとコーキングを行いました",
+    "body": [
+      "おはようございます☀",
+      "昨日は放射冷却（晴れた夜に熱が空へ逃げて、朝方ぐっと冷え込む現象）の影響で、朝一の笠木（かさぎ：屋上のまわりの壁の上にかぶせてある部材）は朝露でびしょびしょでした💦",
+      "そこで、まずは朝露の拭き取り作業から☝🏼 拭き取ったあと、午前中は乾かすために時間をおき、午後から笠木のつなぎ目にテープを貼って、コーキング（すき間を埋める材料）を打ちました💪🏼",
+      "寒暖差のある時期ですので、体調管理に気をつけてください✨"
+    ],
+    "images": [
+      {
+        "source": "assets/blog/2026-11-12-rooftop-coping-dew-caulking-1.jpg",
+        "alt": "朝露を拭き取って乾かした、屋上の笠木の角",
+        "loading": "eager",
+        "src": "assets/optimized/blog/full/blog/2026-11-12-rooftop-coping-dew-caulking-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-12-rooftop-coping-dew-caulking-1.webp"
+      },
+      {
+        "source": "assets/blog/2026-11-12-rooftop-coping-dew-caulking-2.jpg",
+        "alt": "笠木のつなぎ目の両側に青いマスキングテープを貼った様子",
+        "src": "assets/optimized/blog/full/blog/2026-11-12-rooftop-coping-dew-caulking-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-12-rooftop-coping-dew-caulking-2.webp"
+      },
+      {
+        "source": "assets/blog/2026-11-12-rooftop-coping-dew-caulking-3.jpg",
+        "alt": "笠木のつなぎ目に、コーキングガンでコーキングを打っている様子",
+        "src": "assets/optimized/blog/full/blog/2026-11-12-rooftop-coping-dew-caulking-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-12-rooftop-coping-dew-caulking-3.webp"
+      },
+      {
+        "source": "assets/blog/2026-11-12-rooftop-coping-dew-caulking-4.jpg",
+        "alt": "打ったコーキングを、ヘラでならしている様子",
+        "src": "assets/optimized/blog/full/blog/2026-11-12-rooftop-coping-dew-caulking-4.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-12-rooftop-coping-dew-caulking-4.webp"
+      },
+      {
+        "source": "assets/blog/2026-11-12-rooftop-coping-dew-caulking-5.jpg",
+        "alt": "コーキングを打ち終えた笠木のつなぎ目",
+        "src": "assets/optimized/blog/full/blog/2026-11-12-rooftop-coping-dew-caulking-5.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-12-rooftop-coping-dew-caulking-5.webp"
+      }
+    ],
+    "slug": "2026-11-12-rooftop-coping-dew-caulking"
+  },
+  {
     "date": "2026-11-11",
     "category": "現場ブログ",
     "title": "屋上の笠木のケレンとサビ止め塗装を行いました",
