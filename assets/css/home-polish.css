@@ -21,3 +21,6 @@
 .contact .contact-form-link small{display:block;color:#d3e1e6;font-size:13px;line-height:1.5}
 .contact .contact-form-link b{display:block;margin-top:3px;font-size:17px;line-height:1.4}
 .contact .contact-form-link i{flex:none;font-style:normal;font-size:20px}
+
+/* 代表の欄のリンク（会社情報と、会社の選び方） */
+.reason .reason-links{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:4px}
