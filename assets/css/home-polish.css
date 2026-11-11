@@ -1,0 +1,23 @@
+/* トップの細かな仕上げ（2026-11）
+   見出しの改行位置、施工前・施工後の写真、一番下のフォームの入口。 */
+
+/* 言葉の途中で改行しないためのまとまり */
+.rm-nb{display:inline-block}
+
+/* 施工事例カード：施工前と施工後を左右に並べる */
+.work-photo.work-ba{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:#fff}
+.work-photo.work-ba figure{position:relative;margin:0;min-width:0;height:100%;overflow:hidden}
+.work-photo.work-ba figure img{display:block;width:100%;height:100%;object-fit:cover}
+.work-photo.work-ba figcaption{position:absolute;left:8px;bottom:8px;padding:3px 9px;border-radius:999px;background:#1c2427cc;color:#fff;font-size:12px;font-weight:800;line-height:1.5}
+.work-photo.work-ba figure+figure figcaption{background:var(--action,#00843d)}
+.work-photo.work-ba>span{z-index:1}
+
+/* 内装・トイレのカード写真の見せ方 */
+.service img[src*="toilet-holder-iron-bar"]{object-position:50% 35%}
+
+/* 一番下の相談欄：フォームの入口 */
+.contact .contact-form-link{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:11px;padding:16px 19px;border:1px solid #ffffff66;color:#fff;text-decoration:none;transition:background .2s}
+.contact .contact-form-link:hover,.contact .contact-form-link:focus-visible{background:#ffffff14}
+.contact .contact-form-link small{display:block;color:#d3e1e6;font-size:13px;line-height:1.5}
+.contact .contact-form-link b{display:block;margin-top:3px;font-size:17px;line-height:1.4}
+.contact .contact-form-link i{flex:none;font-style:normal;font-size:20px}
