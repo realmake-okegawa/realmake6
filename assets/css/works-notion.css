@@ -105,3 +105,17 @@ body { padding-bottom: 68px; background: var(--works-paper); color: var(--works-
   .sitefoot .cp { grid-column: 1 / -1; }
   .sticky a { min-height: 62px; padding: 5px 8px; font-size: 15px; line-height: 1.35; }
 }
+
+/* 2026-11：見出しの改行と、スマホで絞り込みを早く見せる */
+.works-hero .t .rm-nb, .works-content-intro h2 .rm-nb { display: inline-block; }
+@media (max-width: 420px) {
+  .works-hero .t { font-size: 29px !important; }
+}
+@media (max-width: 700px) {
+  .works-hero { padding: 36px 0 32px; }
+  /* 件数は絞り込みの下にも出るので、スマホでは囲みを省いて絞り込みを先に見せる */
+  .works-hero-note { display: none; }
+  .works-content { padding-top: 32px; }
+  .works-content-intro { margin-bottom: 16px; }
+  .works-content-intro p { display: none; }
+}

@@ -19,7 +19,15 @@
   <meta name="twitter:card" content="summary_large_image">
   <script id="breadcrumb-schema" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://realmake-okegawa.github.io/realmake6/"},{"@type":"ListItem","position":2,"name":"工事ごとの予算の目安","item":"https://realmake-okegawa.github.io/realmake6/budget/"}]}</script>
 <style>
-.budget-group{margin-top:34px}
+.budget-group{margin-top:34px;scroll-margin-top:112px}
+.budget-jump{margin:16px 0 18px}
+.budget-lead-more{margin:0 0 18px;color:var(--muted);font-size:15px;line-height:1.8}
+.budget-jump p{margin:0 0 8px;color:var(--muted);font-size:14px;font-weight:700}
+.budget-jump ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0;padding:0;list-style:none}
+.budget-jump a{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:52px;padding:10px 14px;background:#fff;border:1px solid #cfdcd8;border-radius:12px;color:#0b704b;font-size:15px;font-weight:800;line-height:1.4;text-decoration:none}
+.budget-jump a::after{content:"↓";flex:none}
+.budget-jump a:hover,.budget-jump a:focus-visible{border-color:#0b704b;background:#f3f8f6}
+@media(max-width:700px){.budget-jump ul{grid-template-columns:1fr}.budget-jump a{min-height:48px}}
 .budget-group h3{margin:0 0 6px;color:var(--ink);font-size:20px}
 .budget-group .budget-note{margin:0 0 14px;color:var(--muted);font-size:15px}
 .budget-list{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
@@ -79,7 +87,9 @@
       <div class="pagehero-copy">
         <div class="label">予算の目安</div>
         <h1>工事ごとの、だいたいの予算</h1>
-        <p class="lead">「だいたいいくらかかるの？」にお答えするための目安です（2026年11月時点）。掲載金額はすべて税込です。設備は商品代＋工事費込み、塗装は足場代込みの金額です。建物や現場の状況で変わるため、正確な金額は現地を確認してからお見積りします。現地の確認とお見積りは無料です。</p>
+        <p class="lead">「だいたいいくらかかるの？」にお答えするための目安です（2026年11月時点）。掲載金額はすべて税込です。</p>
+        <nav class="budget-jump" aria-label="工事の種類から料金を見る"><p>見たい工事を選んでください</p><ul><li><a href="#budget-exterior">外壁・屋根・ベランダ</a></li><li><a href="#budget-water">水まわり・設備</a></li><li><a href="#budget-interior">内装・窓まわり・そのほか</a></li></ul></nav>
+        <p class="budget-lead-more">設備は商品代＋工事費込み、塗装は足場代込みの金額です。建物や現場の状況で変わるため、正確な金額は現地を確認してからお見積りします。現地の確認とお見積りは無料です。</p>
         <div class="page-actions"><a class="btn line" href="https://lin.ee/sEbKJ6O" target="_blank" rel="noopener">LINEで写真を送って聞いてみる</a><a class="btn ghost" href="tel:09014340189">電話で聞いてみる 090-1434-0189</a></div>
       </div>
     </div>
