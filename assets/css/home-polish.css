@@ -24,3 +24,17 @@
 
 /* 代表の欄のリンク（会社情報と、会社の選び方） */
 .reason .reason-links{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:4px}
+
+/* 相談欄の下：工事の流れのページへ */
+.contact .consult-flow-link{display:inline-block;margin-top:12px;color:#fff;font-size:15px}
+
+/* スマホ：現場ブログは写真なしの一覧にして、ページを短くする */
+@media(max-width:700px){
+  .rm-home .home-blog-grid{gap:0;border-top:1px solid #dce3e0}
+  .rm-home .home-blog-card{border:0;border-bottom:1px solid #dce3e0;background:transparent}
+  .rm-home .home-blog-card img{display:none}
+  .rm-home .home-blog-card>div{padding:13px 2px}
+  .rm-home .home-blog-card h3{font-size:16px}
+  .rm-home .home-blog-card .home-blog-more{display:none}
+  .rm-home .home-blog-card:hover,.rm-home .home-blog-card:focus-visible{box-shadow:none;transform:none}
+}
