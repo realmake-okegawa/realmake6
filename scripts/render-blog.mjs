@@ -32,6 +32,9 @@ const relatedTargets = {
   exteriorService: ["services/exterior-painting/", "桶川市の外壁塗装・外壁補修（症状・施工方法・料金目安）"],
   worksExterior: ["works/?type=exterior#works-list", "外壁・屋根塗装の施工事例（費用・工期つき）"],
   paintPrice: ["price/", "外壁塗装・屋根塗装の料金目安と、費用を知る3つの方法"],
+  roofService: ["services/roof-painting/", "桶川市の屋根塗装・屋根修理（劣化症状・施工方法・料金目安）"],
+  paintCost: ["blog/2026-11-12-okegawa-exterior-painting-cost/", "桶川市で外壁塗装をするといくら？費用の目安と金額が変わる理由"],
+  interiorService: ["services/interior-reform/", "桶川市周辺の内装リフォーム"],
 };
 const relatedGroups = [
   [["2026-09-04-kumagaya-inner-window-opening"], ["kumagaya"]],
@@ -49,10 +52,28 @@ const relatedGroups = [
   [["2026-11-11-okegawa-screen-repair-price"], ["windowService", "budgetInterior", "screenPickup"]],
   [["2026-11-12-okegawa-exterior-painting-cost"], ["exteriorService", "worksExterior", "paintPrice"]],
 ];
-const relatedLinks = (slug) => {
-  const keys = relatedGroups.filter(([slugs]) => slugs.includes(slug)).flatMap(([, targets]) => targets);
-  if (keys.length && slug.includes("okegawa")) keys.push("okegawa");
-  return [...new Set(keys)].slice(0, 3).map((key) => relatedTargets[key]);
+// 個別に決めていない記事は、内容から工事ページへの案内を自動で付ける（読んだ人を工事の説明・費用・事例へ）。
+// タイトルを優先して判定し、日々のこと・地域活動の記事には付けない。
+const autoTopics = [
+  ["window", /網戸|内窓|障子|面格子|ガラス|雨戸|サッシ/, ["windowService", "windows", "budgetInterior"]],
+  ["interior", /トイレ|キッチン|クロス|壁紙|内装|洗面|浴室|お風呂|給湯|木枠/, ["interiorService", "budgetInterior", "home"]],
+  ["roof", /屋根|棟板金|瓦/, ["roofService", "paintCost", "worksExterior"]],
+  ["exterior", /外壁|塗装|塗り替え|コーキング|シーリング|防水|笠木|破風|雨樋|軒天|サビ止め|ケレン|トップコート|高圧洗浄|足場|付帯部|上塗り|中塗り|下塗り|養生|雨漏り/, ["exteriorService", "paintCost", "worksExterior"]],
+];
+const autoRelatedKeys = (post) => {
+  if (!post || ["日々のこと", "地域活動"].includes(post.category)) return [];
+  const body = (Array.isArray(post.body) ? post.body : [post.body || ""]).join(" ");
+  for (const text of [post.title || "", body]) {
+    const hit = autoTopics.find(([, pattern]) => pattern.test(text));
+    if (hit) return hit[2];
+  }
+  return [];
+};
+const relatedLinks = (slug, post) => {
+  let keys = relatedGroups.filter(([slugs]) => slugs.includes(slug)).flatMap(([, targets]) => targets);
+  if (!keys.length) keys = [...autoRelatedKeys(post)];
+  else if (slug.includes("okegawa")) keys.push("okegawa");
+  return [...new Set(keys)].filter((key) => !relatedTargets[key][0].includes(slug)).slice(0, 3).map((key) => relatedTargets[key]);
 };
 
 const escapeHtml = (value = "") => String(value)
@@ -183,7 +204,7 @@ function articlePage(post, older, newer) {
   const gallery = postImages.map((image) => `          <figure class="blog-article-image"><img src="${escapeHtml(sourceImage(relativePath, image.src))}" alt="${escapeHtml(image.alt)}" loading="${image.loading === "eager" ? "eager" : "lazy"}" decoding="async"></figure>`).join("\n");
   const olderLink = older ? `<a href="../${escapeHtml(older.slug)}/index.html" rel="prev">← 前の記事<br><strong>${escapeHtml(older.title)}</strong></a>` : "";
   const newerLink = newer ? `<a href="../${escapeHtml(newer.slug)}/index.html" rel="next">次の記事 →<br><strong>${escapeHtml(newer.title)}</strong></a>` : "";
-  const related = relatedLinks(post.slug);
+  const related = relatedLinks(post.slug, post);
   const relatedNav = related.length ? `      <nav class="blog-related" aria-label="関連するページ" style="margin-top:36px"><p class="label">関連するページ</p><div class="section-links">${related.map(([href, label]) => `<a href="${relativePath}${escapeHtml(href)}">${escapeHtml(label)} →</a>`).join("")}</div></nav>\n` : "";
   return `<!doctype html>
 <html lang="ja">
