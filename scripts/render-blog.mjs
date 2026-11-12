@@ -29,6 +29,9 @@ const relatedTargets = {
   budgetInterior: ["budget/#budget-interior", "工事ごとの予算の目安（内装・窓まわり）"],
   windowService: ["services/window-reform/", "窓まわりの工事（網戸・障子・内窓・面格子）"],
   screenPickup: ["blog/2026-09-19-screen-replacement/", "網戸の取り外し・引き取りから張り替えまで対応した記録"],
+  exteriorService: ["services/exterior-painting/", "桶川市の外壁塗装・外壁補修（症状・施工方法・料金目安）"],
+  worksExterior: ["works/?type=exterior#works-list", "外壁・屋根塗装の施工事例（費用・工期つき）"],
+  paintPrice: ["price/", "外壁塗装・屋根塗装の料金目安と、費用を知る3つの方法"],
 };
 const relatedGroups = [
   [["2026-09-04-kumagaya-inner-window-opening"], ["kumagaya"]],
@@ -44,6 +47,7 @@ const relatedGroups = [
   [["2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film"], ["windows", "budgetInterior", "faq"]],
   [["2026-10-09-kitamoto-window-shutter-box"], ["windows", "faq"]],
   [["2026-11-11-okegawa-screen-repair-price"], ["windowService", "budgetInterior", "screenPickup"]],
+  [["2026-11-12-okegawa-exterior-painting-cost"], ["exteriorService", "worksExterior", "paintPrice"]],
 ];
 const relatedLinks = (slug) => {
   const keys = relatedGroups.filter(([slugs]) => slugs.includes(slug)).flatMap(([, targets]) => targets);
