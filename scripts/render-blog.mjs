@@ -35,6 +35,8 @@ const relatedTargets = {
   roofService: ["services/roof-painting/", "桶川市の屋根塗装・屋根修理（劣化症状・施工方法・料金目安）"],
   paintCost: ["blog/2026-11-12-okegawa-exterior-painting-cost/", "桶川市で外壁塗装をするといくら？費用の目安と金額が変わる理由"],
   interiorService: ["services/interior-reform/", "桶川市周辺の内装リフォーム"],
+  iwatsukiRoof: ["works/saitama-iwatsuki-monier/", "モニエル瓦の屋根塗装の施工事例（さいたま市岩槻区）"],
+  roofCost: ["blog/2026-11-13-okegawa-roof-painting-cost/", "桶川市で屋根塗装をするといくら？費用の目安と、塗装が必要な屋根"],
 };
 const relatedGroups = [
   [["2026-09-04-kumagaya-inner-window-opening"], ["kumagaya"]],
@@ -51,13 +53,14 @@ const relatedGroups = [
   [["2026-10-09-kitamoto-window-shutter-box"], ["windows", "faq"]],
   [["2026-11-11-okegawa-screen-repair-price"], ["windowService", "budgetInterior", "screenPickup"]],
   [["2026-11-12-okegawa-exterior-painting-cost"], ["exteriorService", "worksExterior", "paintPrice"]],
+  [["2026-11-13-okegawa-roof-painting-cost"], ["roofService", "iwatsukiRoof", "paintPrice"]],
 ];
 // 個別に決めていない記事は、内容から工事ページへの案内を自動で付ける（読んだ人を工事の説明・費用・事例へ）。
 // タイトルを優先して判定し、日々のこと・地域活動の記事には付けない。
 const autoTopics = [
   ["window", /網戸|内窓|障子|面格子|ガラス|雨戸|サッシ/, ["windowService", "windows", "budgetInterior"]],
   ["interior", /トイレ|キッチン|クロス|壁紙|内装|洗面|浴室|お風呂|給湯|木枠/, ["interiorService", "budgetInterior", "home"]],
-  ["roof", /屋根|棟板金|瓦/, ["roofService", "paintCost", "worksExterior"]],
+  ["roof", /屋根|棟板金|瓦/, ["roofService", "roofCost", "worksExterior"]],
   ["exterior", /外壁|塗装|塗り替え|コーキング|シーリング|防水|笠木|破風|雨樋|軒天|サビ止め|ケレン|トップコート|高圧洗浄|足場|付帯部|上塗り|中塗り|下塗り|養生|雨漏り/, ["exteriorService", "paintCost", "worksExterior"]],
 ];
 const autoRelatedKeys = (post) => {
