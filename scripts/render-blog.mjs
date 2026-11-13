@@ -39,6 +39,8 @@ const relatedTargets = {
   roofCost: ["blog/2026-11-13-okegawa-roof-painting-cost/", "桶川市で屋根塗装をするといくら？費用の目安と、塗装が必要な屋根"],
   balconyCost: ["blog/2026-11-13-okegawa-balcony-waterproofing-cost/", "桶川市でベランダ防水を頼むといくら？費用の目安と点検したいサイン"],
   balconyPrep: ["blog/2026-09-05-okegawa-balcony-waterproofing-prep/", "床が浮いていたベランダの、シートの撤去と下地処理の記録"],
+  innerCost: ["blog/2026-11-13-okegawa-inner-window-cost/", "桶川市で内窓を付けるといくら？費用の例と、12月末までの国の補助金"],
+  shojiInner: ["works/okegawa-shoji-style-inner-window/", "桶川市で障子風の内窓を取り付けた施工事例"],
   budgetExterior: ["budget/#budget-exterior", "工事ごとの予算の目安（外壁・屋根・ベランダ防水）"],
 };
 const relatedGroups = [
@@ -48,20 +50,22 @@ const relatedGroups = [
     "2026-08-28-window-grille-research", "2026-08-30-shoji-style-inner-window-installation", "2026-09-01-inner-window-installation-ten-windows",
     "2026-09-04-kumagaya-inner-window-opening", "2026-09-08-okegawa-factory-glass-replacement", "2026-09-10-rainy-day-window-grille-installation",
     "2026-09-11-okegawa-inner-window-window-grille-installation", "2026-09-16-shoji-repapering", "2026-09-19-screen-replacement",
-  ], ["windows", "faq"]],
+  ], ["innerCost", "windows", "faq"]],
   [["2026-09-21-toilet-holder-iron-bar"], ["toilet", "home"]],
   [["2026-06-08-post-replacement-1", "2026-07-08-room-cleanout-request-1", "2026-07-10-cleanout-complete-1"], ["home"]],
   [["2026-09-05-okegawa-balcony-waterproofing-prep"], ["balconyCost", "exteriorService", "faq"]],
-  [["2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film"], ["windows", "budgetInterior", "faq"]],
+  [["2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film"], ["innerCost", "windows", "faq"]],
   [["2026-10-09-kitamoto-window-shutter-box"], ["windows", "faq"]],
   [["2026-11-11-okegawa-screen-repair-price"], ["windowService", "budgetInterior", "screenPickup"]],
   [["2026-11-12-okegawa-exterior-painting-cost"], ["exteriorService", "worksExterior", "paintPrice"]],
   [["2026-11-13-okegawa-roof-painting-cost"], ["roofService", "iwatsukiRoof", "paintPrice"]],
   [["2026-11-13-okegawa-balcony-waterproofing-cost"], ["exteriorService", "balconyPrep", "budgetExterior"]],
+  [["2026-11-13-okegawa-inner-window-cost"], ["windowService", "kumagaya", "shojiInner"]],
 ];
 // 個別に決めていない記事は、内容から工事ページへの案内を自動で付ける（読んだ人を工事の説明・費用・事例へ）。
 // タイトルを優先して判定し、日々のこと・地域活動の記事には付けない。
 const autoTopics = [
+  ["innerWindow", /内窓/, ["innerCost", "windowService", "windows"]],
   ["window", /網戸|内窓|障子|面格子|ガラス|雨戸|サッシ/, ["windowService", "windows", "budgetInterior"]],
   ["interior", /トイレ|キッチン|クロス|壁紙|内装|洗面|浴室|お風呂|給湯|木枠/, ["interiorService", "budgetInterior", "home"]],
   ["balcony", /防水|トップコート/, ["balconyCost", "exteriorService", "worksExterior"]],
