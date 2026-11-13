@@ -4,6 +4,10 @@ Allow: /
 # AI検索クローラーを拒否しない（引用対象から外れてしまうため）
 User-agent: GPTBot
 Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
 User-agent: PerplexityBot
 Allow: /
 User-agent: ClaudeBot
