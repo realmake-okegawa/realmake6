@@ -1,5 +1,44 @@
 [
   {
+    "date": "2026-11-14",
+    "category": "現場ブログ",
+    "title": "屋上の笠木の中塗り・上塗りを、夜露がおりる前の15時までに終えました",
+    "body": [
+      "おはようございます☀",
+      "一昨日、昨日と2日に分けて、笠木（かさぎ：屋上のまわりの壁の上にかぶせてある部材）の中塗りと上塗り（仕上げの色を2回に分けて塗る工程）を行いました。",
+      "夜露・朝露の関係があるので、朝露が乾いてから塗りはじめ、15時までには塗り終えることを意識しての作業となりました💪🏼",
+      "塗ってから乾く前に夜露がおりてしまうと、艶がなくなってしまったりします。寒い時期の屋根や笠木など、夜露の影響がある場所は、15時以降は塗らないのが理想的です☝🏼"
+    ],
+    "images": [
+      {
+        "source": "assets/blog/2026-11-14-rooftop-coping-middle-top-coat-1.jpg",
+        "alt": "白い下塗りの笠木に、ローラーで緑色の中塗りをしている様子",
+        "loading": "eager",
+        "src": "assets/optimized/blog/full/blog/2026-11-14-rooftop-coping-middle-top-coat-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-14-rooftop-coping-middle-top-coat-1.webp"
+      },
+      {
+        "source": "assets/blog/2026-11-14-rooftop-coping-middle-top-coat-2.jpg",
+        "alt": "中塗りが進んだ笠木と、まだ白い下塗りのままの部分",
+        "src": "assets/optimized/blog/full/blog/2026-11-14-rooftop-coping-middle-top-coat-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-14-rooftop-coping-middle-top-coat-2.webp"
+      },
+      {
+        "source": "assets/blog/2026-11-14-rooftop-coping-middle-top-coat-3.jpg",
+        "alt": "笠木の角まで、ローラーで上塗りをしている様子",
+        "src": "assets/optimized/blog/full/blog/2026-11-14-rooftop-coping-middle-top-coat-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-14-rooftop-coping-middle-top-coat-3.webp"
+      },
+      {
+        "source": "assets/blog/2026-11-14-rooftop-coping-middle-top-coat-4.jpg",
+        "alt": "上塗りを終えた、屋上のまわりの笠木",
+        "src": "assets/optimized/blog/full/blog/2026-11-14-rooftop-coping-middle-top-coat-4.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-14-rooftop-coping-middle-top-coat-4.webp"
+      }
+    ],
+    "slug": "2026-11-14-rooftop-coping-middle-top-coat"
+  },
+  {
     "date": "2026-11-13",
     "category": "お知らせ",
     "title": "桶川市で内窓を付けるといくら？費用の例と、12月末までの国の補助金",
