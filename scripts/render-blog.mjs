@@ -37,6 +37,9 @@ const relatedTargets = {
   interiorService: ["services/interior-reform/", "桶川市周辺の内装リフォーム"],
   iwatsukiRoof: ["works/saitama-iwatsuki-monier/", "モニエル瓦の屋根塗装の施工事例（さいたま市岩槻区）"],
   roofCost: ["blog/2026-11-13-okegawa-roof-painting-cost/", "桶川市で屋根塗装をするといくら？費用の目安と、塗装が必要な屋根"],
+  balconyCost: ["blog/2026-11-13-okegawa-balcony-waterproofing-cost/", "桶川市でベランダ防水を頼むといくら？費用の目安と点検したいサイン"],
+  balconyPrep: ["blog/2026-09-05-okegawa-balcony-waterproofing-prep/", "床が浮いていたベランダの、シートの撤去と下地処理の記録"],
+  budgetExterior: ["budget/#budget-exterior", "工事ごとの予算の目安（外壁・屋根・ベランダ防水）"],
 };
 const relatedGroups = [
   [["2026-09-04-kumagaya-inner-window-opening"], ["kumagaya"]],
@@ -48,24 +51,28 @@ const relatedGroups = [
   ], ["windows", "faq"]],
   [["2026-09-21-toilet-holder-iron-bar"], ["toilet", "home"]],
   [["2026-06-08-post-replacement-1", "2026-07-08-room-cleanout-request-1", "2026-07-10-cleanout-complete-1"], ["home"]],
-  [["2026-09-05-okegawa-balcony-waterproofing-prep"], ["faq"]],
+  [["2026-09-05-okegawa-balcony-waterproofing-prep"], ["balconyCost", "exteriorService", "faq"]],
   [["2026-10-03-higashimatsuyama-inner-window-kitamoto-wave-plate-film"], ["windows", "budgetInterior", "faq"]],
   [["2026-10-09-kitamoto-window-shutter-box"], ["windows", "faq"]],
   [["2026-11-11-okegawa-screen-repair-price"], ["windowService", "budgetInterior", "screenPickup"]],
   [["2026-11-12-okegawa-exterior-painting-cost"], ["exteriorService", "worksExterior", "paintPrice"]],
   [["2026-11-13-okegawa-roof-painting-cost"], ["roofService", "iwatsukiRoof", "paintPrice"]],
+  [["2026-11-13-okegawa-balcony-waterproofing-cost"], ["exteriorService", "balconyPrep", "budgetExterior"]],
 ];
 // 個別に決めていない記事は、内容から工事ページへの案内を自動で付ける（読んだ人を工事の説明・費用・事例へ）。
 // タイトルを優先して判定し、日々のこと・地域活動の記事には付けない。
 const autoTopics = [
   ["window", /網戸|内窓|障子|面格子|ガラス|雨戸|サッシ/, ["windowService", "windows", "budgetInterior"]],
   ["interior", /トイレ|キッチン|クロス|壁紙|内装|洗面|浴室|お風呂|給湯|木枠/, ["interiorService", "budgetInterior", "home"]],
+  ["balcony", /防水|トップコート/, ["balconyCost", "exteriorService", "worksExterior"]],
   ["roof", /屋根|棟板金|瓦/, ["roofService", "roofCost", "worksExterior"]],
   ["exterior", /外壁|塗装|塗り替え|コーキング|シーリング|防水|笠木|破風|雨樋|軒天|サビ止め|ケレン|トップコート|高圧洗浄|足場|付帯部|上塗り|中塗り|下塗り|養生|雨漏り/, ["exteriorService", "paintCost", "worksExterior"]],
 ];
 const autoRelatedKeys = (post) => {
   if (!post || ["日々のこと", "地域活動"].includes(post.category)) return [];
-  const body = (Array.isArray(post.body) ? post.body : [post.body || ""]).join(" ");
+  // 記事の最後によく入る「外壁塗装・屋根塗装の塗り替え工事をお考えの方は…」などの決まり文句は判定に使わない
+  const body = (Array.isArray(post.body) ? post.body : [post.body || ""]).join("\n")
+    .split(/\n/).filter((line) => !/外壁塗装・屋根塗装/.test(line)).join(" ");
   for (const text of [post.title || "", body]) {
     const hit = autoTopics.find(([, pattern]) => pattern.test(text));
     if (hit) return hit[2];
