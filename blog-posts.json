@@ -1,5 +1,39 @@
 [
   {
+    "date": "2026-11-19",
+    "category": "現場ブログ",
+    "title": "東松山市で、隙間風が入る高い所の窓に内窓を取り付けました",
+    "body": [
+      "おはようございます☀",
+      "昨日は東松山市で、内窓（今ある窓の内側に、もう1つ取り付ける窓）の取付けを行いました💪🏼",
+      "高い所にある窓ですが、経年劣化でガラスと周りのゴムとの間に隙間ができてしまい、隙間風が入ってきてしまうと、お客様が悩まれておりました🌀",
+      "そこで、ガラスの周りにコーキング（すき間を埋めるゴム状の材料）をしてから、内窓を取り付けました❗️\nこれで間違いなくお悩み解消です✨☝🏼",
+      "高い所だったので、足場板を渡しての作業でしたが、足がプルプルして大変でした笑\nしかし、お客様に喜んで頂けて良かったです😊"
+    ],
+    "images": [
+      {
+        "source": "assets/blog/2026-11-19-higashimatsuyama-high-window-inner-window-1.jpg",
+        "alt": "高い所にあるステンドグラスの窓2か所と、作業のために渡した足場板",
+        "loading": "eager",
+        "src": "assets/optimized/blog/full/blog/2026-11-19-higashimatsuyama-high-window-inner-window-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-19-higashimatsuyama-high-window-inner-window-1.webp"
+      },
+      {
+        "source": "assets/blog/2026-11-19-higashimatsuyama-high-window-inner-window-2.jpg",
+        "alt": "別の角度から見た、内窓を取り付ける前のステンドグラスの窓",
+        "src": "assets/optimized/blog/full/blog/2026-11-19-higashimatsuyama-high-window-inner-window-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-19-higashimatsuyama-high-window-inner-window-2.webp"
+      },
+      {
+        "source": "assets/blog/2026-11-19-higashimatsuyama-high-window-inner-window-3.jpg",
+        "alt": "内側に内窓を取り付けた、ステンドグラスの窓2か所",
+        "src": "assets/optimized/blog/full/blog/2026-11-19-higashimatsuyama-high-window-inner-window-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-19-higashimatsuyama-high-window-inner-window-3.webp"
+      }
+    ],
+    "slug": "2026-11-19-higashimatsuyama-high-window-inner-window"
+  },
+  {
     "date": "2026-11-14",
     "category": "現場ブログ",
     "title": "屋上の笠木の中塗り・上塗りを、夜露がおりる前の15時までに終えました",
