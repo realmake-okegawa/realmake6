@@ -91,3 +91,5 @@ body.rm-home .hero.hero-c .hero-tags .kicker-area,
 body.rm-home .hero.hero-c .hero-tags .kicker-free{display:inline-block;margin:0;padding:2px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:0;line-height:1.7}
 body.rm-home .hero.hero-c .hero-tags .kicker-area{background:#fff;border:1px solid #e3e8e6;color:#5f696d}
 body.rm-home .hero.hero-c .hero-tags .kicker-free{background:var(--green);border:1px solid var(--green);color:#fff}
+body.rm-home .hero.hero-c .hero-content>.hero-check{display:inline-block;justify-self:start;margin:10px 0 0;color:var(--green);font-size:15px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+body.rm-home .hero.hero-c .hero-content>.hero-check:hover,body.rm-home .hero.hero-c .hero-content>.hero-check:focus-visible{text-decoration-thickness:2px}
