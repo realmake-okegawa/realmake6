@@ -1,5 +1,38 @@
 [
   {
+    "date": "2026-11-23",
+    "category": "現場ブログ",
+    "title": "桶川市の新築のお宅で、門柱に表札を取り付けました",
+    "body": [
+      "おはようございます🌞",
+      "昨日は桶川市内で、新築のお客様からのお問い合わせで、表札の取付け工事をさせて頂きました！",
+      "位置決めをして、ドリルで穴を開けて取付けしました💪🏼\n最後に、仮で付けていたテープ表札のテープのりを掃除して完了です❗️",
+      "お客様も確認して喜んで頂けて良かったです😊"
+    ],
+    "images": [
+      {
+        "source": "assets/blog/2026-11-23-new-house-nameplate-installation-1.jpg",
+        "alt": "桶川市の新築のお宅の門柱。インターホンの上に、仮のテープ表札が貼ってある（取付け前）",
+        "loading": "eager",
+        "src": "assets/optimized/blog/full/blog/2026-11-23-new-house-nameplate-installation-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-23-new-house-nameplate-installation-1.webp"
+      },
+      {
+        "source": "assets/blog/2026-11-23-new-house-nameplate-installation-2.jpg",
+        "alt": "表札を付ける位置をテープで決めているところ。下には仮の表札のテープのりが残っている",
+        "src": "assets/optimized/blog/full/blog/2026-11-23-new-house-nameplate-installation-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-23-new-house-nameplate-installation-2.webp"
+      },
+      {
+        "source": "assets/blog/2026-11-23-new-house-nameplate-installation-3.jpg",
+        "alt": "表札の取付けを終え、テープのりも掃除した門柱",
+        "src": "assets/optimized/blog/full/blog/2026-11-23-new-house-nameplate-installation-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-23-new-house-nameplate-installation-3.webp"
+      }
+    ],
+    "slug": "2026-11-23-new-house-nameplate-installation"
+  },
+  {
     "date": "2026-11-22",
     "category": "現場ブログ",
     "title": "桶川市のマンションで、窓まわりの木部をパテで形を整えてから白で塗装しました",
