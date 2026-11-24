@@ -37,3 +37,4 @@
 - [キッチンリフォーム](https://realmake-okegawa.github.io/realmake6/services/kitchen-reform/)
 - [トイレリフォーム](https://realmake-okegawa.github.io/realmake6/services/toilet-reform/)
 - [窓まわりの工事（内窓・網戸・障子・面格子）](https://realmake-okegawa.github.io/realmake6/services/window-reform/)
+- [ハウスクリーニング（エアコン・キッチン・浴室・洗面所。窓口はReal Make、作業は提携の専門スタッフ）](https://realmake-okegawa.github.io/realmake6/services/house-cleaning/)
