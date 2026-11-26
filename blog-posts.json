@@ -1,5 +1,41 @@
 [
   {
+    "date": "2026-11-27",
+    "category": "お知らせ",
+    "title": "年末年始の来客に向けた和室・トイレ・内窓の工事は、お早めにご相談ください",
+    "body": [
+      "おはようございます☀",
+      "最近、「年末年始にお客様が来るので、それまでに間に合いますか？」というご相談を多くいただいています🙇🏻‍♂️",
+      "実際に多いのはこんなご相談です☝🏼\n・泊まっていただく和室の壁と襖をきれいにしたい\n・お客様が使うトイレを新しくしたい\n・お部屋が寒くならないように内窓を付けたい",
+      "どれも「お客様に気持ちよく過ごしてほしい」という気持ちからのご相談で、私たちもできる限りお応えしたいと思っています✨",
+      "ただ、年末は職人の予定や材料の取り寄せが混み合う時期です💦\n内容によっては年内に間に合わない場合もあるので、気になっている方は早めにご相談いただけると安心です🙏🏻",
+      "「うちの場合は間に合う？」\n「まずはいくらくらいか知りたい」",
+      "そんな段階でも大丈夫です！\nお話を聞かせて頂いて、間に合うかどうかも正直にお伝えします😊\n悩んでいても進まないので、まずはお気軽にお問い合わせください✨"
+    ],
+    "images": [
+      {
+        "source": "assets/blog/2026-11-27-year-end-guests-reform-1.jpg",
+        "alt": "「年末年始のお迎え前に 和室の壁と襖 年内工事はお早めにご相談を」と記載した和室のご案内画像",
+        "loading": "eager",
+        "src": "assets/optimized/blog/full/blog/2026-11-27-year-end-guests-reform-1.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-27-year-end-guests-reform-1.webp"
+      },
+      {
+        "source": "assets/blog/2026-11-27-year-end-guests-reform-2.jpg",
+        "alt": "「年末年始のお迎え前に トイレの交換 年内工事はお早めにご相談を」と記載したトイレのご案内画像",
+        "src": "assets/optimized/blog/full/blog/2026-11-27-year-end-guests-reform-2.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-27-year-end-guests-reform-2.webp"
+      },
+      {
+        "source": "assets/blog/2026-11-27-year-end-guests-reform-3.jpg",
+        "alt": "「年末年始のお迎え前に 内窓の取り付け 年内工事はお早めにご相談を」と記載した内窓のご案内画像",
+        "src": "assets/optimized/blog/full/blog/2026-11-27-year-end-guests-reform-3.webp",
+        "thumbnail": "assets/optimized/blog/thumb/blog/2026-11-27-year-end-guests-reform-3.webp"
+      }
+    ],
+    "slug": "2026-11-27-year-end-guests-reform"
+  },
+  {
     "date": "2026-11-26",
     "category": "お知らせ",
     "title": "桶川市周辺で、年末年始の来客までに工事を終えたい方へ。年内の塗り替え、まだ間に合います",
